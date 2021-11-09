@@ -403,28 +403,6 @@ IDEA中集成Git
 
 git分支中常用指令：
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 ```
 # 列出所有本地分支git branch
 # 列出所有远程分支git branch -r
@@ -448,3 +426,18 @@ master主分支应该非常稳定，用来发布新版本，一般情况下不�
 1、不要把Git想的很难，工作中多练习使用就自然而然的会了！
 
 2、Git的学习也十分多，看完我的Git教程之后，可以多去思考，总结到自己博客！
+
+
+
+# 解决p12中用ssh-key后仍须输入密码的问题
+1、使用ssh方式克隆 git clone git@gitee.com:Name/project.git
+就是说，在项目克隆/下载处，选择ssh方式的下载地址
+2、如果你已经用https方式克隆了仓库，不必删除仓库重新克隆，只需将当前项目中的 .git/config文件中的
+url = https://gitee.com/Name/project.git
+修改为
+url = git@gitee.com:Name/project.git
+再次提交就不需要密码了！
+
+如果用ssh出现private email错误,去gitee设置里把自己邮箱私有选项取消掉
+
+还有那个弹出来的用户名密码分别对应的是 gitee仓库的ssh链接git@gitee.com:Name/project.git里面Name 密码是你gitee的登录密码
