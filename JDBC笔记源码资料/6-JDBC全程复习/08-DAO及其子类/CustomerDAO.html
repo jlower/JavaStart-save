@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>CustomerDAO.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: 'ËÎÌו';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f9fbf;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts8>CustomerDAO</span></p>
+<p><span class=rvts8><br></span></p>
+<p><span class=rvts2>/*</span></p>
+<p><span class=rvts2> * &#27492;&#25509;&#21475;&#29992;&#20110;&#35268;&#33539;&#38024;&#23545;&#20110;customers&#34920;&#30340;&#24120;&#29992;&#25805;&#20316;</span></p>
+<p><span class=rvts2> */</span></p>
+<p><span class=rvts3>public</span><span class=rvts4> </span><span class=rvts3>interface</span><span class=rvts4> CustomerDAO {</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#23558;cust&#23545;&#35937;&#28155;&#21152;&#21040;&#25968;&#25454;&#24211;&#20013;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:00:27</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> cust</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>void</span><span class=rvts4> insert(Connection </span><span class=rvts7>conn</span><span class=rvts4>,Customer </span><span class=rvts7>cust</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#38024;&#23545;&#25351;&#23450;&#30340;id&#65292;&#21024;&#38500;&#34920;&#20013;&#30340;&#19968;&#26465;&#35760;&#24405;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:01:07</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> id</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>void</span><span class=rvts4> deleteById(Connection </span><span class=rvts7>conn</span><span class=rvts4>,</span><span class=rvts3>int</span><span class=rvts4> </span><span class=rvts7>id</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#38024;&#23545;&#20869;&#23384;&#20013;&#30340;cust&#23545;&#35937;&#65292;&#21435;&#20462;&#25913;&#25968;&#25454;&#34920;&#20013;&#25351;&#23450;&#30340;&#35760;&#24405;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:02:14</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> cust</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>void</span><span class=rvts4> update(Connection </span><span class=rvts7>conn</span><span class=rvts4>,Customer </span><span class=rvts7>cust</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#38024;&#23545;&#25351;&#23450;&#30340;id&#26597;&#35810;&#24471;&#21040;&#23545;&#24212;&#30340;Customer&#23545;&#35937;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:02:59</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> id</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Customer getCustomerById(Connection </span><span class=rvts7>conn</span><span class=rvts4>,</span><span class=rvts3>int</span><span class=rvts4> </span><span class=rvts7>id</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#26597;&#35810;&#34920;&#20013;&#30340;&#25152;&#35760;&#24405;&#26500;&#25104;&#30340;&#38598;&#21512;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:03:50</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@return</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>List&lt;Customer&gt; getAll(Connection </span><span class=rvts7>conn</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#36820;&#22238;&#25968;&#25454;&#34920;&#20013;&#30340;&#25968;&#25454;&#30340;&#26465;&#30446;&#25968;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:04:44</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@return</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Long getCount(Connection </span><span class=rvts7>conn</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>/**</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@Description</span><span class=rvts5> &#36820;&#22238;&#25968;&#25454;&#34920;&#20013;&#26368;&#22823;&#30340;&#29983;&#26085;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@author</span><span class=rvts5> shkstart</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@date</span><span class=rvts5> &#19978;&#21320;11:05:33</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@param</span><span class=rvts5> conn</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> * </span><span class=rvts6>@return</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Date getMaxBirth(Connection </span><span class=rvts7>conn</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4>}</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</body></html>

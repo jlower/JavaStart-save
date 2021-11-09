@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>自定义泛型类、泛型接口、泛型方法.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #20999d;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts14>&#33258;&#23450;&#20041;&#27867;&#22411;&#31867;&#12289;&#27867;&#22411;&#25509;&#21475;&#12289;&#27867;&#22411;&#26041;&#27861;</span></p>
+<p><span class=rvts14><br></span></p>
+<p><span class=rvts2>1.&#20030;&#20363;:</span></p>
+<p><span class=rvts2>&#12304;Order.java&#12305;</span></p>
+<p class=rvps2><span class=rvts2></span><br><span class=rvts5>public class </span><span class=rvts2>Order&lt;</span><span class=rvts7>T</span><span class=rvts2>&gt; {</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;String </span><span class=rvts8>orderName</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>int </span><span class=rvts8>orderId</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#31867;&#30340;&#20869;&#37096;&#32467;&#26500;&#23601;&#21487;&#20197;&#20351;&#29992;&#31867;&#30340;&#27867;&#22411;</span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts7>T </span><span class=rvts8>orderT</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts2>Order(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#32534;&#35793;&#19981;&#36890;&#36807;</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;T[] arr = new T[10];</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts6>&#32534;&#35793;&#36890;&#36807;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>T</span><span class=rvts2>[] arr = (</span><span class=rvts7>T</span><span class=rvts2>[]) </span><span class=rvts5>new </span><span class=rvts2>Object[</span><span class=rvts9>10</span><span class=rvts2>];</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts2>Order(String orderName,</span><span class=rvts5>int </span><span class=rvts2>orderId,</span><span class=rvts7>T </span><span class=rvts2>orderT){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>this</span><span class=rvts2>.</span><span class=rvts8>orderName </span><span class=rvts2>= orderName;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>this</span><span class=rvts2>.</span><span class=rvts8>orderId </span><span class=rvts2>= orderId;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>this</span><span class=rvts2>.</span><span class=rvts8>orderT </span><span class=rvts2>= orderT;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#22914;&#19979;&#30340;&#20010;&#26041;&#27861;&#37117;&#19981;&#26159;&#27867;&#22411;&#26041;&#27861;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts7>T </span><span class=rvts2>getOrderT(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return </span><span class=rvts8>orderT</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>setOrderT(</span><span class=rvts7>T </span><span class=rvts2>orderT){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>this</span><span class=rvts2>.</span><span class=rvts8>orderT </span><span class=rvts2>= orderT;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts10>@Override</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts2>String toString() {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return </span><span class=rvts11>"Order{" </span><span class=rvts2>+</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>"orderName='" </span><span class=rvts2>+ </span><span class=rvts8>orderName </span><span class=rvts2>+ </span><span class=rvts11>'</span><span class=rvts5>\'</span><span class=rvts11>' </span><span class=rvts2>+</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>", orderId=" </span><span class=rvts2>+ </span><span class=rvts8>orderId </span><span class=rvts2>+</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>", orderT=" </span><span class=rvts2>+ </span><span class=rvts8>orderT </span><span class=rvts2>+</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>'}'</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#38745;&#24577;&#26041;&#27861;&#20013;&#19981;&#33021;&#20351;&#29992;&#31867;&#30340;&#27867;&#22411;&#12290;</span><br><span class=rvts4>// &nbsp; &nbsp;public static void show(T orderT){</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(orderT);</span><br><span class=rvts4>// &nbsp; &nbsp;}</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>show(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#32534;&#35793;&#19981;&#36890;&#36807;</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;try{</span><br><span class=rvts4>//</span><br><span class=rvts4>//</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;}catch(T t){</span><br><span class=rvts4>//</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts2>}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#27867;&#22411;&#26041;&#27861;&#65306;&#22312;&#26041;&#27861;&#20013;&#20986;&#29616;&#20102;&#27867;&#22411;&#30340;&#32467;&#26500;&#65292;&#27867;&#22411;&#21442;&#25968;&#19982;&#31867;&#30340;&#27867;&#22411;&#21442;&#25968;&#27809;&#20219;&#20309;&#20851;&#31995;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#25442;&#21477;&#35805;&#35828;&#65292;&#27867;&#22411;&#26041;&#27861;&#25152;&#23646;&#30340;&#31867;&#26159;&#19981;&#26159;&#27867;&#22411;&#31867;&#37117;&#27809;&#20851;&#31995;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#27867;&#22411;&#26041;&#27861;&#65292;&#21487;&#20197;&#22768;&#26126;&#20026;&#38745;&#24577;&#30340;&#12290;&#21407;&#22240;&#65306;&#27867;&#22411;&#21442;&#25968;&#26159;&#22312;&#35843;&#29992;&#26041;&#27861;&#26102;&#30830;&#23450;&#30340;&#12290;&#24182;&#38750;&#22312;&#23454;&#20363;&#21270;&#31867;&#26102;&#30830;&#23450;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public static </span><span class=rvts2>&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; &nbsp;List&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; copyFromArrayToList(</span><span class=rvts7>E</span><span class=rvts2>[] arr){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;ArrayList&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; list = </span><span class=rvts5>new </span><span class=rvts2>ArrayList&lt;&gt;();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>for</span><span class=rvts2>(</span><span class=rvts7>E </span><span class=rvts2>e : arr){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;list.add(e);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return </span><span class=rvts2>list;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#12304;SubOrder.java&#12305;</span></p>
+<p class=rvps2><span class=rvts5>public class </span><span class=rvts2>SubOrder </span><span class=rvts5>extends </span><span class=rvts2>Order&lt;Integer&gt; {</span><span class=rvts4>//SubOrder:</span><span class=rvts6>&#19981;&#26159;&#27867;&#22411;&#31867;</span><br><span class=rvts6></span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public static </span><span class=rvts2>&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; List&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; copyFromArrayToList(</span><span class=rvts7>E</span><span class=rvts2>[] arr){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;ArrayList&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; list = </span><span class=rvts5>new </span><span class=rvts2>ArrayList&lt;&gt;();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>for</span><span class=rvts2>(</span><span class=rvts7>E </span><span class=rvts2>e : arr){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;list.add(e);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return </span><span class=rvts2>list;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>//&#23454;&#20363;&#21270;&#26102;&#65292;&#22914;&#19979;&#30340;&#20195;&#30721;&#26159;&#38169;&#35823;&#30340;</span></p>
+<p class=rvps2><span class=rvts2>SubOrder&lt;Integer&gt; o = new SubOrder&lt;&gt;();</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#12304;SubOrder1.java&#12305;</span></p>
+<p class=rvps2><span class=rvts5>public class </span><span class=rvts2>SubOrder1&lt;</span><span class=rvts7>T</span><span class=rvts2>&gt; </span><span class=rvts5>extends </span><span class=rvts2>Order&lt;</span><span class=rvts7>T</span><span class=rvts2>&gt; {</span><span class=rvts4>//SubOrder1&lt;T&gt;:</span><span class=rvts6>&#20173;&#28982;&#26159;&#27867;&#22411;&#31867;</span></p>
+<p class=rvps2><span class=rvts2></span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#12304;&#27979;&#35797;&#12305;</span></p>
+<p class=rvps2><span class=rvts10>@Test</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>test1(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#22914;&#26524;&#23450;&#20041;&#20102;&#27867;&#22411;&#31867;&#65292;&#23454;&#20363;&#21270;&#27809;&#25351;&#26126;&#31867;&#30340;&#27867;&#22411;&#65292;&#21017;&#35748;&#20026;&#27492;&#27867;&#22411;&#31867;&#22411;&#20026;</span><span class=rvts4>Object</span><span class=rvts6>&#31867;&#22411;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#35201;&#27714;&#65306;&#22914;&#26524;&#22823;&#23478;&#23450;&#20041;&#20102;&#31867;&#26159;&#24102;&#27867;&#22411;&#30340;&#65292;&#24314;&#35758;&#22312;&#23454;&#20363;&#21270;&#26102;&#35201;&#25351;&#26126;&#31867;&#30340;&#27867;&#22411;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Order order = </span><span class=rvts5>new </span><span class=rvts2>Order();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;order.setOrderT(</span><span class=rvts9>123</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;order.setOrderT(</span><span class=rvts11>"ABC"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#24314;&#35758;&#65306;&#23454;&#20363;&#21270;&#26102;&#25351;&#26126;&#31867;&#30340;&#27867;&#22411;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Order&lt;String&gt; order1 = </span><span class=rvts5>new </span><span class=rvts2>Order&lt;String&gt;(</span><span class=rvts11>"orderAA"</span><span class=rvts2>,</span><span class=rvts9>1001</span><span class=rvts2>,</span><span class=rvts11>"order:AA"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;order1.setOrderT(</span><span class=rvts11>"AA:hello"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts10>@Test</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>test2(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;SubOrder sub1 = </span><span class=rvts5>new </span><span class=rvts2>SubOrder();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#30001;&#20110;&#23376;&#31867;&#22312;&#32487;&#25215;&#24102;&#27867;&#22411;&#30340;&#29238;&#31867;&#26102;&#65292;&#25351;&#26126;&#20102;&#27867;&#22411;&#31867;&#22411;&#12290;&#21017;&#23454;&#20363;&#21270;&#23376;&#31867;&#23545;&#35937;&#26102;&#65292;&#19981;&#20877;&#38656;&#35201;&#25351;&#26126;&#27867;&#22411;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>sub1.setOrderT(</span><span class=rvts9>1122</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;SubOrder1&lt;String&gt; sub2 = </span><span class=rvts5>new </span><span class=rvts2>SubOrder1&lt;&gt;();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;sub2.setOrderT(</span><span class=rvts11>"order2..."</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts10>@Test</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>test3(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;ArrayList&lt;String&gt; list1 = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;ArrayList&lt;Integer&gt; list2 = </span><span class=rvts5>new </span><span class=rvts2>ArrayList&lt;Integer&gt;();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#27867;&#22411;&#19981;&#21516;&#30340;&#24341;&#29992;&#19981;&#33021;&#30456;&#20114;&#36171;&#20540;&#12290;</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;list1 = list2;</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Person p1 = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Person p2 = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;p1 = p2;</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#27979;&#35797;&#27867;&#22411;&#26041;&#27861;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts10>@Test</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>test4(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Order&lt;String&gt; order = </span><span class=rvts5>new </span><span class=rvts2>Order&lt;&gt;();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Integer[] arr = </span><span class=rvts5>new </span><span class=rvts2>Integer[]{</span><span class=rvts9>1</span><span class=rvts2>,</span><span class=rvts9>2</span><span class=rvts2>,</span><span class=rvts9>3</span><span class=rvts2>,</span><span class=rvts9>4</span><span class=rvts2>};</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#27867;&#22411;&#26041;&#27861;&#22312;&#35843;&#29992;&#26102;&#65292;&#25351;&#26126;&#27867;&#22411;&#21442;&#25968;&#30340;&#31867;&#22411;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>List&lt;Integer&gt; list = order.</span><span class=rvts12>copyFromArrayToList</span><span class=rvts2>(arr);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts2>.println(list);</span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#27880;&#24847;&#28857;&#65306;</span></p>
+<p><img alt="" style="padding : 1px;" src="自定义泛型类、泛型接口、泛型方法.files/img1.jpg"></p>
+<p><img alt="" style="padding : 1px;" src="自定义泛型类、泛型接口、泛型方法.files/img2.jpg"></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.&#24212;&#29992;&#22330;&#26223;&#20030;&#20363;&#65306;</span></p>
+<p><span class=rvts2>&#12304;DAO.java&#12305;:&#23450;&#20041;&#20102;&#25805;&#20316;&#25968;&#25454;&#24211;&#20013;&#30340;&#34920;&#30340;&#36890;&#29992;&#25805;&#20316;&#12290; &nbsp; ORM&#24605;&#24819;(&#25968;&#25454;&#24211;&#20013;&#30340;&#34920;&#21644;Java&#20013;&#30340;&#31867;&#23545;&#24212;)</span></p>
+<p class=rvps2><span class=rvts5>public class </span><span class=rvts2>DAO&lt;</span><span class=rvts7>T</span><span class=rvts2>&gt; {</span><span class=rvts4>//</span><span class=rvts6>&#34920;&#30340;&#20849;&#24615;&#25805;&#20316;&#30340;</span><span class=rvts4>DAO</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;//</span><span class=rvts6>&#28155;&#21152;&#19968;&#26465;&#35760;&#24405;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>add(</span><span class=rvts7>T </span><span class=rvts2>t){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#21024;&#38500;&#19968;&#26465;&#35760;&#24405;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public boolean </span><span class=rvts2>remove(</span><span class=rvts5>int </span><span class=rvts2>index){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return false</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#20462;&#25913;&#19968;&#26465;&#35760;&#24405;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>update(</span><span class=rvts5>int </span><span class=rvts2>index,</span><span class=rvts7>T </span><span class=rvts2>t){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#26597;&#35810;&#19968;&#26465;&#35760;&#24405;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts7>T </span><span class=rvts2>getIndex(</span><span class=rvts5>int </span><span class=rvts2>index){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#26597;&#35810;&#22810;&#26465;&#35760;&#24405;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts2>List&lt;</span><span class=rvts7>T</span><span class=rvts2>&gt; getForList(</span><span class=rvts5>int </span><span class=rvts2>index){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#27867;&#22411;&#26041;&#27861;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts6>&#20030;&#20363;&#65306;&#33719;&#21462;&#34920;&#20013;&#19968;&#20849;&#26377;&#22810;&#23569;&#26465;&#35760;&#24405;&#65311;&#33719;&#21462;&#26368;&#22823;&#30340;&#21592;&#24037;&#20837;&#32844;&#26102;&#38388;&#65311;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts5>public </span><span class=rvts2>&lt;</span><span class=rvts7>E</span><span class=rvts2>&gt; </span><span class=rvts7>E </span><span class=rvts2>getValue(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>return null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#12304;CustomerDAO.java&#12305;:</span></p>
+<p class=rvps2><span class=rvts5>public class </span><span class=rvts2>CustomerDAO </span><span class=rvts5>extends </span><span class=rvts2>DAO&lt;Customer&gt;{</span><span class=rvts4>//</span><span class=rvts6>&#21482;&#33021;&#25805;&#20316;&#26576;&#19968;&#20010;&#34920;&#30340;</span><span class=rvts4>DAO</span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#12304;StudentDAO.java&#12305;:</span></p>
+<p class=rvps2><span class=rvts5>public class </span><span class=rvts2>StudentDAO </span><span class=rvts5>extends </span><span class=rvts2>DAO&lt;Student&gt; {</span><span class=rvts4>//</span><span class=rvts6>&#21482;&#33021;&#25805;&#20316;&#26576;&#19968;&#20010;&#34920;&#30340;</span><span class=rvts4>DAO</span><br><span class=rvts2>}</span></p>
+</body></html>

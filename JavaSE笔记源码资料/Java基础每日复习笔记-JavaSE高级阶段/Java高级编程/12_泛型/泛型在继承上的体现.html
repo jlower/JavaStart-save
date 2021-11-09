@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>泛型在继承上的体现.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts7>&#27867;&#22411;&#22312;&#32487;&#25215;&#19978;&#30340;&#20307;&#29616;</span></p>
+<p><span class=rvts7><br></span></p>
+<p><span class=rvts2>&#27867;&#22411;&#22312;&#32487;&#25215;&#19978;&#30340;&#20307;&#29616;:</span></p>
+<p class=rvps2><span class=rvts3>/*</span><br><span class=rvts3> &nbsp; &nbsp;1. </span><span class=rvts4>&#27867;&#22411;&#22312;&#32487;&#25215;&#26041;&#38754;&#30340;&#20307;&#29616;</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp;&#34429;&#28982;&#31867;</span><span class=rvts3>A</span><span class=rvts4>&#26159;&#31867;</span><span class=rvts3>B</span><span class=rvts4>&#30340;&#29238;&#31867;&#65292;&#20294;&#26159;</span><span class=rvts3>G&lt;A&gt; </span><span class=rvts4>&#21644;</span><span class=rvts3>G&lt;B&gt;</span><span class=rvts4>&#20108;&#32773;&#19981;&#20855;&#22791;&#23376;&#29238;&#31867;&#20851;&#31995;&#65292;&#20108;&#32773;&#26159;&#24182;&#21015;&#20851;&#31995;&#12290;</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &#34917;&#20805;&#65306;&#31867;</span><span class=rvts3>A</span><span class=rvts4>&#26159;&#31867;</span><span class=rvts3>B</span><span class=rvts4>&#30340;&#29238;&#31867;&#65292;</span><span class=rvts3>A&lt;G&gt; </span><span class=rvts4>&#26159;</span><span class=rvts3> B&lt;G&gt; </span><span class=rvts4>&#30340;&#29238;&#31867;</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp; */</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts5>@Test</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts6>public void </span><span class=rvts2>test1(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Object obj = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;String str = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;obj = str;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Object[] arr1 = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;String[] arr2 = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;arr1 = arr2;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#32534;&#35793;&#19981;&#36890;&#36807;</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp;Date date = new Date();</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp;str = date;</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>List&lt;Object&gt; list1 = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;List&lt;String&gt; list2 = </span><span class=rvts6>new </span><span class=rvts2>ArrayList&lt;String&gt;();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#27492;&#26102;&#30340;</span><span class=rvts3>list1</span><span class=rvts4>&#21644;</span><span class=rvts3>list2</span><span class=rvts4>&#30340;&#31867;&#22411;&#19981;&#20855;&#23376;&#29238;&#31867;&#20851;&#31995;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#32534;&#35793;&#19981;&#36890;&#36807;</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp;list1 = list2;</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;/*</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>&#21453;&#35777;&#27861;&#65306;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;&#20551;&#35774;</span><span class=rvts3>list1 = list2;</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; list1.add(123);</span><span class=rvts4>&#23548;&#33268;&#28151;&#20837;&#38750;</span><span class=rvts3>String</span><span class=rvts4>&#30340;&#25968;&#25454;&#12290;&#20986;&#38169;&#12290;</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp; */</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>show(list1);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;show1(list2);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>public void </span><span class=rvts2>show1(List&lt;String&gt; list){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>public void </span><span class=rvts2>show(List&lt;Object&gt; list){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>@Test</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts6>public void </span><span class=rvts2>test2(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;AbstractList&lt;String&gt; list1 = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;List&lt;String&gt; list2 = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;ArrayList&lt;String&gt; list3 = </span><span class=rvts6>null</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;list1 = list3;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;list2 = list3;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;List&lt;String&gt; list4 = </span><span class=rvts6>new </span><span class=rvts2>ArrayList&lt;&gt;();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>类的结构之三：构造器.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ffff00;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts10
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 48px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts11>&#31867;&#30340;&#32467;&#26500;&#20043;&#19977;&#65306;&#26500;&#36896;&#22120;</span></p>
+<p class=rvps2><span class=rvts11><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#26500;&#36896;&#22120;&#65288;&#25110;&#26500;&#36896;&#26041;&#27861;&#65289;&#65306;Constructor</span></p>
+<p class=rvps2><span class=rvts2>&#26500;&#36896;&#22120;&#30340;&#20316;&#29992;&#65306;</span></p>
+<p><span class=rvts3> * 1.&#21019;&#24314;&#23545;&#35937;</span></p>
+<p><span class=rvts3> * 2.&#21021;&#22987;&#21270;&#23545;&#35937;&#30340;&#20449;&#24687;</span></p>
+<p class=rvps2><span class=rvts2>2.&#20351;&#29992;&#35828;&#26126;&#65306;</span></p>
+<p><span class=rvts3> * 1.&#22914;&#26524;&#27809;&#26174;&#24335;&#30340;&#23450;&#20041;&#31867;&#30340;&#26500;&#36896;&#22120;&#30340;&#35805;&#65292;&#21017;&#31995;&#32479;&#40664;&#35748;&#25552;&#20379;&#19968;&#20010;&#31354;&#21442;&#30340;&#26500;&#36896;&#22120;</span></p>
+<p><span class=rvts3> * 2.&#23450;&#20041;&#26500;&#36896;&#22120;&#30340;&#26684;&#24335;&#65306;&#26435;&#38480;&#20462;&#39280;&#31526; &nbsp;&#31867;&#21517;(&#24418;&#21442;&#21015;&#34920;){}</span></p>
+<p><span class=rvts3> * 3.&#19968;&#20010;&#31867;&#20013;&#23450;&#20041;&#30340;&#22810;&#20010;&#26500;&#36896;&#22120;&#65292;&#24444;&#27492;&#26500;&#25104;&#37325;&#36733;</span></p>
+<p><span class=rvts3> * 4.&#19968;&#26086;&#25105;&#20204;&#26174;&#24335;&#30340;&#23450;&#20041;&#20102;&#31867;&#30340;&#26500;&#36896;&#22120;&#20043;&#21518;&#65292;&#31995;&#32479;&#23601;&#19981;&#20877;&#25552;&#20379;&#40664;&#35748;&#30340;&#31354;&#21442;&#26500;&#36896;&#22120;</span></p>
+<p><span class=rvts3> * </span><span class=rvts4>5.&#19968;&#20010;&#31867;&#20013;&#65292;&#33267;&#23569;&#20250;&#26377;&#19968;&#20010;&#26500;&#36896;&#22120;&#12290;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#20030;&#20363;&#65306;</span></p>
+<p class=rvps3><span class=rvts3>//&#26500;&#36896;&#22120;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts5> Person(){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>System.</span><span class=rvts7>out</span><span class=rvts5>.println(</span><span class=rvts8>"Person()....."</span><span class=rvts5>);</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts5> Person(String </span><span class=rvts9>n</span><span class=rvts5>){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>name</span><span class=rvts5> = </span><span class=rvts9>n</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts5> Person(String </span><span class=rvts9>n</span><span class=rvts5>,</span><span class=rvts6>int</span><span class=rvts5> </span><span class=rvts9>a</span><span class=rvts5>){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>name</span><span class=rvts5> = </span><span class=rvts9>n</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>age</span><span class=rvts5> = </span><span class=rvts9>a</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+</body></html>

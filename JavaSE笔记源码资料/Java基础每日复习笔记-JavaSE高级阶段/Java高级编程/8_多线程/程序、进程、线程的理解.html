@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>程序、进程、线程的理解.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #ff0000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts8>&#31243;&#24207;&#12289;&#36827;&#31243;&#12289;&#32447;&#31243;&#30340;&#29702;&#35299;</span></p>
+<p class=rvps2><span class=rvts8><br></span></p>
+<p class=rvps2><span class=rvts2>01. &#31243;&#24207;(programm)</span></p>
+<p class=rvps2><span class=rvts2>&#27010;&#24565;&#65306;</span><span class=rvts3>&#26159;&#20026;&#23436;&#25104;&#29305;&#23450;&#20219;&#21153;&#12289;&#29992;&#26576;&#31181;&#35821;&#35328;&#32534;&#20889;&#30340;&#19968;&#32452;&#25351;&#20196;&#30340;&#38598;&#21512;&#12290;&#21363;&#25351;</span><span class=rvts4>&#19968;&#27573;&#38745;&#24577;&#30340;&#20195;&#30721;&#12290;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>02. &#36827;&#31243;(process)</span></p>
+<p class=rvps2><span class=rvts2>&#27010;&#24565;&#65306;</span><span class=rvts3>&#31243;&#24207;&#30340;&#19968;&#27425;&#25191;&#34892;&#36807;&#31243;&#65292;&#25110;&#26159;</span><span class=rvts4>&#27491;&#22312;&#36816;&#34892;&#30340;&#19968;&#20010;&#31243;&#24207;</span><span class=rvts3>&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#35828;&#26126;&#65306;</span><span class=rvts5>&#36827;&#31243;&#20316;&#20026;&#36164;&#28304;&#20998;&#37197;&#30340;&#21333;&#20301;&#65292;</span><span class=rvts6>&#31995;&#32479;&#22312;&#36816;&#34892;&#26102;&#20250;&#20026;&#27599;&#20010;&#36827;&#31243;&#20998;&#37197;&#19981;&#21516;&#30340;&#20869;&#23384;&#21306;&#22495;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>03. &#32447;&#31243;(thread)</span></p>
+<p class=rvps2><span class=rvts2>&#27010;&#24565;&#65306;</span><span class=rvts3>&#36827;&#31243;&#21487;&#36827;&#19968;&#27493;&#32454;&#21270;&#20026;&#32447;&#31243;&#65292;&#26159;&#19968;&#20010;&#31243;&#24207;&#20869;&#37096;&#30340;&#19968;&#26465;&#25191;&#34892;&#36335;&#24452;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#35828;&#26126;&#65306;</span><span class=rvts5>&#32447;&#31243;&#20316;&#20026;&#35843;&#24230;&#21644;&#25191;&#34892;&#30340;&#21333;&#20301;&#65292;&#27599;&#20010;&#32447;&#31243;&#25317;&#29420;&#31435;&#30340;&#36816;&#34892;&#26632;&#21644;&#31243;&#24207;&#35745;&#25968;&#22120;</span><span class=rvts7>(pc)</span><span class=rvts6>&#65292;&#32447;&#31243;&#20999;&#25442;&#30340;&#24320;&#38144;&#23567;&#12290;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="程序、进程、线程的理解.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#34917;&#20805;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#20869;&#23384;&#32467;&#26500;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="程序、进程、线程的理解.files/img2.jpg"></p>
+<p class=rvps2><span class=rvts2>&#36827;&#31243;&#21487;&#20197;&#32454;&#21270;&#20026;&#22810;&#20010;&#32447;&#31243;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#27599;&#20010;&#32447;&#31243;&#65292;&#25317;&#26377;&#33258;&#24049;&#29420;&#31435;&#30340;&#65306;&#26632;&#12289;&#31243;&#24207;&#35745;&#25968;&#22120;</span></p>
+<p class=rvps2><span class=rvts2>&#22810;&#20010;&#32447;&#31243;&#65292;&#20849;&#20139;&#21516;&#19968;&#20010;&#36827;&#31243;&#20013;&#30340;&#32467;&#26500;&#65306;&#26041;&#27861;&#21306;&#12289;&#22534;&#12290;</span></p>
+</body></html>

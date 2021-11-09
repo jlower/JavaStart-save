@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Collection子接口：Set接口.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts16
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts17
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 54px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts17>Collection&#23376;&#25509;&#21475;&#65306;Set&#25509;&#21475;</span></p>
+<p class=rvps2><span class=rvts17><br></span></p>
+<p class=rvps2><span class=rvts3>1. &#23384;&#20648;&#30340;&#25968;&#25454;&#29305;&#28857;&#65306;&#26080;&#24207;&#30340;&#12289;&#19981;&#21487;&#37325;&#22797;&#30340;&#20803;&#32032;</span></p>
+<p><span class=rvts4>&#20855;&#20307;&#30340;&#65306;</span></p>
+<p class=rvps3><span class=rvts8>&#20197;</span><span class=rvts9>HashSet</span><span class=rvts8>&#20026;&#20363;&#35828;&#26126;&#65306;</span><br><span class=rvts9>1. </span><span class=rvts8>&#26080;&#24207;&#24615;&#65306;&#19981;&#31561;&#20110;&#38543;&#26426;&#24615;&#12290;&#23384;&#20648;&#30340;&#25968;&#25454;&#22312;&#24213;&#23618;&#25968;&#32452;&#20013;&#24182;&#38750;&#29031;&#25968;&#32452;&#32034;&#24341;&#30340;&#39034;&#24207;&#28155;&#21152;&#65292;&#32780;&#26159;&#26681;&#25454;&#25968;&#25454;&#30340;&#21704;&#24076;&#20540;&#20915;&#23450;&#30340;&#12290;</span><br><span class=rvts9>2. </span><span class=rvts8>&#19981;&#21487;&#37325;&#22797;&#24615;&#65306;&#20445;&#35777;&#28155;&#21152;&#30340;&#20803;&#32032;&#29031;</span><span class=rvts9>equals()</span><span class=rvts8>&#21028;&#26029;&#26102;&#65292;&#19981;&#33021;&#36820;&#22238;</span><span class=rvts9>true.</span><span class=rvts8>&#21363;&#65306;&#30456;&#21516;&#30340;&#20803;&#32032;&#21482;&#33021;&#28155;&#21152;&#19968;&#20010;&#12290;</span><br><span class=rvts6><br></span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts3>2. &#20803;&#32032;&#28155;&#21152;&#36807;&#31243;&#65306;(&#20197;HashSet&#20026;&#20363;)</span></p>
+<p class=rvps3><span class=rvts6>&#25105;&#20204;&#21521;</span><span class=rvts7>HashSet</span><span class=rvts6>&#20013;&#28155;&#21152;&#20803;&#32032;</span><span class=rvts7>a,</span><span class=rvts6>&#39318;&#20808;&#35843;&#29992;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#25152;&#22312;&#31867;&#30340;</span><span class=rvts7>hashCode()</span><span class=rvts6>&#26041;&#27861;&#65292;&#35745;&#31639;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#30340;&#21704;&#24076;&#20540;&#65292;</span><br><span class=rvts6>&#27492;&#21704;&#24076;&#20540;&#25509;&#30528;&#36890;&#36807;&#26576;&#31181;&#31639;&#27861;&#35745;&#31639;&#20986;&#22312;</span><span class=rvts7>HashSet</span><span class=rvts6>&#24213;&#23618;&#25968;&#32452;&#20013;&#30340;&#23384;&#25918;&#20301;&#32622;&#65288;&#21363;&#20026;&#65306;&#32034;&#24341;&#20301;&#32622;&#65292;&#21028;&#26029;</span><br><span class=rvts6>&#25968;&#32452;&#27492;&#20301;&#32622;&#19978;&#26159;&#21542;&#24050;&#32463;&#20803;&#32032;&#65306;</span><br><span class=rvts6> &nbsp; &nbsp;&#22914;&#26524;&#27492;&#20301;&#32622;&#19978;&#27809;&#20854;&#20182;&#20803;&#32032;&#65292;&#21017;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#28155;&#21152;&#25104;&#21151;&#12290;</span><span class=rvts7> ---&gt;</span><span class=rvts6>&#24773;&#20917;</span><span class=rvts7>1</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts6>&#22914;&#26524;&#27492;&#20301;&#32622;&#19978;&#20854;&#20182;&#20803;&#32032;</span><span class=rvts7>b(</span><span class=rvts6>&#25110;&#20197;&#38142;&#34920;&#24418;&#24335;&#23384;&#22312;&#30340;&#22810;&#20010;&#20803;&#32032;&#65292;&#21017;&#27604;&#36739;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#19982;&#20803;&#32032;</span><span class=rvts7>b</span><span class=rvts6>&#30340;</span><span class=rvts7>hash</span><span class=rvts6>&#20540;&#65306;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;&#22914;&#26524;</span><span class=rvts7>hash</span><span class=rvts6>&#20540;&#19981;&#30456;&#21516;&#65292;&#21017;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#28155;&#21152;&#25104;&#21151;&#12290;</span><span class=rvts7>---&gt;</span><span class=rvts6>&#24773;&#20917;</span><span class=rvts7>2</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>&#22914;&#26524;</span><span class=rvts7>hash</span><span class=rvts6>&#20540;&#30456;&#21516;&#65292;&#36827;&#32780;&#38656;&#35201;&#35843;&#29992;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#25152;&#22312;&#31867;&#30340;</span><span class=rvts7>equals()</span><span class=rvts6>&#26041;&#27861;&#65306;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; equals()</span><span class=rvts6>&#36820;&#22238;</span><span class=rvts7>true,</span><span class=rvts6>&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#28155;&#21152;&#22833;&#36133;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; equals()</span><span class=rvts6>&#36820;&#22238;</span><span class=rvts7>false,</span><span class=rvts6>&#21017;&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#28155;&#21152;&#25104;&#21151;&#12290;</span><span class=rvts7>---&gt;</span><span class=rvts6>&#24773;&#20917;</span><span class=rvts7>2</span><br><span class=rvts7></span><br><span class=rvts6>&#23545;&#20110;&#28155;&#21152;&#25104;&#21151;&#30340;&#24773;&#20917;</span><span class=rvts7>2</span><span class=rvts6>&#21644;&#24773;&#20917;</span><span class=rvts7>3</span><span class=rvts6>&#32780;&#35328;&#65306;&#20803;&#32032;</span><span class=rvts7>a </span><span class=rvts6>&#19982;&#24050;&#32463;&#23384;&#22312;&#25351;&#23450;&#32034;&#24341;&#20301;&#32622;&#19978;&#25968;&#25454;&#20197;&#38142;&#34920;&#30340;&#26041;&#24335;&#23384;&#20648;&#12290;</span><br><span class=rvts7>jdk 7 :</span><span class=rvts6>&#20803;&#32032;</span><span class=rvts7>a</span><span class=rvts6>&#25918;&#21040;&#25968;&#32452;&#20013;&#65292;&#25351;&#21521;&#21407;&#26469;&#30340;&#20803;&#32032;&#12290;</span><br><span class=rvts7>jdk 8 :</span><span class=rvts6>&#21407;&#26469;&#30340;&#20803;&#32032;&#22312;&#25968;&#32452;&#20013;&#65292;&#25351;&#21521;&#20803;&#32032;</span><span class=rvts7>a</span><br><span class=rvts6>&#24635;&#32467;&#65306;&#19971;&#19978;&#20843;&#19979;</span><br><span class=rvts7></span><br><span class=rvts7>HashSet</span><span class=rvts6>&#24213;&#23618;&#65306;&#25968;&#32452;</span><span class=rvts7>+</span><span class=rvts6>&#38142;&#34920;&#30340;&#32467;&#26500;&#12290;&#65288;&#21069;&#25552;&#65306;jdk7)</span></p>
+<p><span class=rvts5><br></span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts3>3. &#24120;&#29992;&#26041;&#27861;</span></p>
+<p class=rvps3><span class=rvts7>Set</span><span class=rvts6>&#25509;&#21475;&#20013;&#27809;&#39069;&#22806;&#23450;&#20041;&#26032;&#30340;&#26041;&#27861;&#65292;&#20351;&#29992;&#30340;&#37117;&#26159;</span><span class=rvts7>Collection</span><span class=rvts6>&#20013;&#22768;&#26126;&#36807;&#30340;&#26041;&#27861;&#12290;</span></p>
+<p class=rvps3><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts3>4. &#24120;&#29992;&#23454;&#29616;&#31867;&#65306;</span></p>
+<p class=rvps3><span class=rvts9>|----Collection</span><span class=rvts8>&#25509;&#21475;&#65306;&#21333;&#21015;&#38598;&#21512;&#65292;&#29992;&#26469;&#23384;&#20648;&#19968;&#20010;&#19968;&#20010;&#30340;&#23545;&#35937;</span><br><span class=rvts9>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|----Set</span><span class=rvts8>&#25509;&#21475;&#65306;&#23384;&#20648;&#26080;&#24207;&#30340;&#12289;&#19981;&#21487;&#37325;&#22797;&#30340;&#25968;&#25454; &nbsp; </span><span class=rvts9>--&gt;</span><span class=rvts8>&#39640;&#20013;&#35762;&#30340;</span><span class=rvts9>&#8220;</span><span class=rvts8>&#38598;&#21512;</span><span class=rvts9>&#8221;</span><br><span class=rvts9>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|----HashSet</span><span class=rvts8>&#65306;&#20316;&#20026;</span><span class=rvts9>Set</span><span class=rvts8>&#25509;&#21475;&#30340;&#20027;&#35201;&#23454;&#29616;&#31867;&#65307;&#32447;&#31243;&#19981;&#23433;&#20840;&#30340;&#65307;&#21487;&#20197;&#23384;&#20648;</span><span class=rvts9>null</span><span class=rvts8>&#20540;</span><br><span class=rvts9>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|----LinkedHashSet</span><span class=rvts8>&#65306;&#20316;&#20026;</span><span class=rvts9>HashSet</span><span class=rvts8>&#30340;&#23376;&#31867;&#65307;&#36941;&#21382;&#20854;&#20869;&#37096;&#25968;&#25454;&#26102;&#65292;&#21487;&#20197;&#25353;&#29031;&#28155;&#21152;&#30340;&#39034;&#24207;&#36941;&#21382;</span><br><span class=rvts9>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts6>&#22312;&#28155;&#21152;&#25968;&#25454;&#30340;&#21516;&#26102;&#65292;&#27599;&#20010;&#25968;&#25454;&#36824;&#32500;&#25252;&#20102;&#20004;&#20010;&#24341;&#29992;&#65292;&#35760;&#24405;&#27492;&#25968;&#25454;&#21069;&#19968;&#20010;&#25968;&#25454;&#21644;&#21518;&#19968;&#20010;&#25968;&#25454;&#12290;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts8>&#23545;&#20110;&#39057;&#32321;&#30340;&#36941;&#21382;&#25805;&#20316;&#65292;</span><span class=rvts9>LinkedHashSet</span><span class=rvts8>&#25928;&#29575;&#39640;&#20110;</span><span class=rvts9>HashSet.</span><br><span class=rvts9>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|----TreeSet</span><span class=rvts8>&#65306;&#21487;&#20197;&#29031;&#28155;&#21152;&#23545;&#35937;&#30340;&#25351;&#23450;&#23646;&#24615;&#65292;&#36827;&#34892;&#25490;&#24207;&#12290;</span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts3>5. &#23384;&#20648;&#23545;&#35937;&#25152;&#22312;&#31867;&#30340;&#35201;&#27714;&#65306;</span></p>
+<p><span class=rvts5>HashSet/LinkedHashSet:</span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps3><span class=rvts6>&#35201;&#27714;&#65306;&#21521;</span><span class=rvts7>Set(</span><span class=rvts6>&#20027;&#35201;&#25351;&#65306;</span><span class=rvts7>HashSet</span><span class=rvts6>&#12289;</span><span class=rvts7>LinkedHashSet)</span><span class=rvts6>&#20013;&#28155;&#21152;&#30340;&#25968;&#25454;&#65292;&#20854;&#25152;&#22312;&#30340;&#31867;&#19968;&#23450;&#35201;&#37325;&#20889;</span><span class=rvts7>hashCode()</span><span class=rvts6>&#21644;</span><span class=rvts7>equals()</span><br><span class=rvts6>&#35201;&#27714;&#65306;&#37325;&#20889;&#30340;</span><span class=rvts7>hashCode()</span><span class=rvts6>&#21644;</span><span class=rvts7>equals()</span><span class=rvts6>&#23613;&#21487;&#33021;&#20445;&#25345;&#19968;&#33268;&#24615;&#65306;&#30456;&#31561;&#30340;&#23545;&#35937;&#24517;&#39035;&#20855;&#26377;&#30456;&#31561;&#30340;&#25955;&#21015;&#30721;</span><br><span class=rvts7>* &nbsp; &nbsp;</span><span class=rvts6>&#37325;&#20889;&#20004;&#20010;&#26041;&#27861;&#30340;&#23567;&#25216;&#24039;&#65306;&#23545;&#35937;&#20013;&#29992;&#20316; </span><span class=rvts7>equals() </span><span class=rvts6>&#26041;&#27861;&#27604;&#36739;&#30340; </span><span class=rvts7>Field</span><span class=rvts6>&#65292;&#37117;&#24212;&#35813;&#29992;&#26469;&#35745;&#31639; </span><span class=rvts7>hashCode </span><span class=rvts6>&#20540;&#12290;</span><br><span class=rvts7>*</span></p>
+<p><span class=rvts5><br></span></p>
+<p><span class=rvts5>TreeSet:</span></p>
+<p class=rvps3><span class=rvts7>1.</span><span class=rvts6>&#33258;&#28982;&#25490;&#24207;&#20013;&#65292;&#27604;&#36739;&#20004;&#20010;&#23545;&#35937;&#26159;&#21542;&#30456;&#21516;&#30340;&#26631;&#20934;&#20026;&#65306;</span><span class=rvts7>compareTo()</span><span class=rvts6>&#36820;&#22238;</span><span class=rvts7>0.</span><span class=rvts6>&#19981;&#20877;&#26159;</span><span class=rvts7>equals().</span><br><span class=rvts7>2.</span><span class=rvts6>&#23450;&#21046;&#25490;&#24207;&#20013;&#65292;&#27604;&#36739;&#20004;&#20010;&#23545;&#35937;&#26159;&#21542;&#30456;&#21516;&#30340;&#26631;&#20934;&#20026;&#65306;</span><span class=rvts7>compare()</span><span class=rvts6>&#36820;&#22238;</span><span class=rvts7>0.</span><span class=rvts6>&#19981;&#20877;&#26159;</span><span class=rvts7>equals().</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4>6. TreeSet&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts4>6.1 &#20351;&#29992;&#35828;&#26126;:</span></p>
+<p class=rvps3><span class=rvts7>1.</span><span class=rvts6>&#21521;</span><span class=rvts7>TreeSet</span><span class=rvts6>&#20013;&#28155;&#21152;&#30340;&#25968;&#25454;&#65292;&#35201;&#27714;&#26159;&#30456;&#21516;&#31867;&#30340;&#23545;&#35937;&#12290;</span><br><span class=rvts7>2.</span><span class=rvts6>&#20004;&#31181;&#25490;&#24207;&#26041;&#24335;&#65306;&#33258;&#28982;&#25490;&#24207;&#65288;&#23454;&#29616;</span><span class=rvts7>Comparable</span><span class=rvts6>&#25509;&#21475; &#21644; &#23450;&#21046;&#25490;&#24207;&#65288;</span><span class=rvts7>Comparator&#65289;</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4>6.2 &#24120;&#29992;&#30340;&#25490;&#24207;&#26041;&#24335;:</span></p>
+<p><span class=rvts4>//&#26041;&#24335;&#19968;&#65306;&#33258;&#28982;&#25490;&#24207;</span></p>
+<p class=rvps3><span class=rvts10>@Test</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts11>public void </span><span class=rvts4>test1(){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;TreeSet set = </span><span class=rvts11>new </span><span class=rvts4>TreeSet();</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>//</span><span class=rvts6>&#22833;&#36133;&#65306;&#19981;&#33021;&#28155;&#21152;&#19981;&#21516;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(123);</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(456);</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add("AA");</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(new User("Tom",12));</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts6>&#20030;&#20363;&#19968;&#65306;</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(34);</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(-34);</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(43);</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(11);</span><br><span class=rvts7>// &nbsp; &nbsp; &nbsp; &nbsp;set.add(8);</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts6>&#20030;&#20363;&#20108;&#65306;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Tom"</span><span class=rvts4>,</span><span class=rvts13>12</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jerry"</span><span class=rvts4>,</span><span class=rvts13>32</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jim"</span><span class=rvts4>,</span><span class=rvts13>2</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Mike"</span><span class=rvts4>,</span><span class=rvts13>65</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jack"</span><span class=rvts4>,</span><span class=rvts13>33</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jack"</span><span class=rvts4>,</span><span class=rvts13>56</span><span class=rvts4>));</span><br><span class=rvts4></span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;Iterator iterator = set.iterator();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>while</span><span class=rvts4>(iterator.hasNext()){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts14>out</span><span class=rvts4>.println(iterator.next());</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;}</span><br><span class=rvts4><br></span></p>
+<p class=rvps3><span class=rvts4>//&#26041;&#24335;&#20108;&#65306;&#23450;&#21046;&#25490;&#24207;</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts10>@Test</span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts11>public void </span><span class=rvts4>test2(){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;Comparator com = </span><span class=rvts11>new </span><span class=rvts4>Comparator() {</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>//</span><span class=rvts6>&#29031;&#24180;&#40836;&#20174;&#23567;&#21040;&#22823;&#25490;&#21015;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>@Override</span><br><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>public int </span><span class=rvts4>compare(Object o1, Object o2) {</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>if</span><span class=rvts4>(o1 </span><span class=rvts11>instanceof </span><span class=rvts4>User &amp;&amp; o2 </span><span class=rvts11>instanceof </span><span class=rvts4>User){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;User u1 = (User)o1;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;User u2 = (User)o2;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>return </span><span class=rvts4>Integer.</span><span class=rvts15>compare</span><span class=rvts4>(u1.getAge(),u2.getAge());</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><span class=rvts11>else</span><span class=rvts4>{</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>throw new </span><span class=rvts4>RuntimeException(</span><span class=rvts12>"</span><span class=rvts16>&#36755;&#20837;&#30340;&#25968;&#25454;&#31867;&#22411;&#19981;&#21305;&#37197;</span><span class=rvts12>"</span><span class=rvts4>);</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;};</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;TreeSet set = </span><span class=rvts11>new </span><span class=rvts4>TreeSet(com);</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Tom"</span><span class=rvts4>,</span><span class=rvts13>12</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jerry"</span><span class=rvts4>,</span><span class=rvts13>32</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jim"</span><span class=rvts4>,</span><span class=rvts13>2</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Mike"</span><span class=rvts4>,</span><span class=rvts13>65</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Mary"</span><span class=rvts4>,</span><span class=rvts13>33</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jack"</span><span class=rvts4>,</span><span class=rvts13>33</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;set.add(</span><span class=rvts11>new </span><span class=rvts4>User(</span><span class=rvts12>"Jack"</span><span class=rvts4>,</span><span class=rvts13>56</span><span class=rvts4>));</span><br><span class=rvts4></span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;Iterator iterator = set.iterator();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>while</span><span class=rvts4>(iterator.hasNext()){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts14>out</span><span class=rvts4>.println(iterator.next());</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp;}</span></p>
+</body></html>

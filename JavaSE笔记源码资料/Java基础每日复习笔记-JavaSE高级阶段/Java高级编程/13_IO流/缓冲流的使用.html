@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>缓冲流的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 36px;
+}
+.rvps4
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts10>&#32531;&#20914;&#27969;&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2>1.&#32531;&#20914;&#27969;&#28041;&#21450;&#21040;&#30340;&#31867;&#65306;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps4><span class=rvts3>* BufferedInputStream</span><br><span class=rvts3>* BufferedOutputStream</span><br><span class=rvts3>* BufferedReader</span><br><span class=rvts3>* BufferedWriter</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#20316;&#29992;&#65306;</span></p>
+<p class=rvps4><span class=rvts4>&#20316;&#29992;&#65306;&#25552;&#20379;&#27969;&#30340;&#35835;&#21462;&#12289;&#20889;&#20837;&#30340;&#36895;&#24230;</span><br><span class=rvts4>&#25552;&#39640;&#35835;&#20889;&#36895;&#24230;&#30340;&#21407;&#22240;&#65306;&#20869;&#37096;&#25552;&#20379;&#20102;&#19968;&#20010;&#32531;&#20914;&#21306;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#26159;8kb</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="缓冲流的使用.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#20856;&#22411;&#20195;&#30721;</span></p>
+<p class=rvps2><span class=rvts2>3.1 &#20351;&#29992;BufferedInputStream&#21644;BufferedOutputStream:&#22788;&#29702;&#38750;&#25991;&#26412;&#25991;&#20214;</span></p>
+<p class=rvps4><span class=rvts3>//</span><span class=rvts4>&#23454;&#29616;&#25991;&#20214;&#22797;&#21046;&#30340;&#26041;&#27861;</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>copyFileWithBuffered(String srcPath,String destPath){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;BufferedInputStream bis = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;BufferedOutputStream bos = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//1.</span><span class=rvts4>&#36896;&#25991;&#20214;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>File srcFile = </span><span class=rvts5>new </span><span class=rvts2>File(srcPath);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;File destFile = </span><span class=rvts5>new </span><span class=rvts2>File(destPath);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//2.</span><span class=rvts4>&#36896;&#27969;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//2.1 </span><span class=rvts4>&#36896;&#33410;&#28857;&#27969;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>FileInputStream fis = </span><span class=rvts5>new </span><span class=rvts2>FileInputStream((srcFile));</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;FileOutputStream fos = </span><span class=rvts5>new </span><span class=rvts2>FileOutputStream(destFile);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//2.2 </span><span class=rvts4>&#36896;&#32531;&#20914;&#27969;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>bis = </span><span class=rvts5>new </span><span class=rvts2>BufferedInputStream(fis);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bos = </span><span class=rvts5>new </span><span class=rvts2>BufferedOutputStream(fos);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//3.</span><span class=rvts4>&#22797;&#21046;&#30340;&#32454;&#33410;&#65306;&#35835;&#21462;&#12289;&#20889;&#20837;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>byte</span><span class=rvts2>[] buffer = </span><span class=rvts5>new byte</span><span class=rvts2>[</span><span class=rvts6>1024</span><span class=rvts2>];</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>int </span><span class=rvts2>len;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>while</span><span class=rvts2>((len = bis.read(buffer)) != -</span><span class=rvts6>1</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bos.write(buffer,</span><span class=rvts6>0</span><span class=rvts2>,len);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>finally </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//4.</span><span class=rvts4>&#36164;&#28304;&#20851;&#38381;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#35201;&#27714;&#65306;&#20808;&#20851;&#38381;&#22806;&#23618;&#30340;&#27969;&#65292;&#20877;&#20851;&#38381;&#20869;&#23618;&#30340;&#27969;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>if</span><span class=rvts2>(bos != </span><span class=rvts5>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bos.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>if</span><span class=rvts2>(bis != </span><span class=rvts5>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bis.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#35828;&#26126;&#65306;&#20851;&#38381;&#22806;&#23618;&#27969;&#30340;&#21516;&#26102;&#65292;&#20869;&#23618;&#27969;&#20063;&#20250;&#33258;&#21160;&#30340;&#36827;&#34892;&#20851;&#38381;&#12290;&#20851;&#20110;&#20869;&#23618;&#27969;&#30340;&#20851;&#38381;&#65292;&#25105;&#20204;&#21487;&#20197;&#30465;&#30053;</span><span class=rvts3>.</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp;fos.close();</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp;fis.close();</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.2 &#20351;&#29992;BufferedReader&#21644;BufferedWriter&#65306;&#22788;&#29702;&#25991;&#26412;&#25991;&#20214;</span></p>
+<p class=rvps4><span class=rvts7>@Test</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>testBufferedReaderBufferedWriter(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;BufferedReader br = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;BufferedWriter bw = </span><span class=rvts5>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#21019;&#24314;&#25991;&#20214;&#21644;&#30456;&#24212;&#30340;&#27969;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>br = </span><span class=rvts5>new </span><span class=rvts2>BufferedReader(</span><span class=rvts5>new </span><span class=rvts2>FileReader(</span><span class=rvts5>new </span><span class=rvts2>File(</span><span class=rvts8>"dbcp.txt"</span><span class=rvts2>)));</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bw = </span><span class=rvts5>new </span><span class=rvts2>BufferedWriter(</span><span class=rvts5>new </span><span class=rvts2>FileWriter(</span><span class=rvts5>new </span><span class=rvts2>File(</span><span class=rvts8>"dbcp1.txt"</span><span class=rvts2>)));</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#35835;&#20889;&#25805;&#20316;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#24335;&#19968;&#65306;&#20351;&#29992;</span><span class=rvts3>char[]</span><span class=rvts4>&#25968;&#32452;</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;char[] cbuf = new char[1024];</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int len;</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;while((len = br.read(cbuf)) != -1){</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bw.write(cbuf,0,len);</span><br><span class=rvts3>// &nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bw.flush();</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts4>&#26041;&#24335;&#20108;&#65306;&#20351;&#29992;</span><span class=rvts3>String</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String data;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>while</span><span class=rvts2>((</span><span class=rvts9>data = br.readLine()</span><span class=rvts2>) != </span><span class=rvts5>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#27861;&#19968;&#65306;</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bw.write(data + "\n");//data</span><span class=rvts4>&#20013;&#19981;&#21253;&#21547;&#25442;&#34892;&#31526;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#27861;&#20108;&#65306;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>bw.write(data);</span><span class=rvts3>//data</span><span class=rvts4>&#20013;&#19981;&#21253;&#21547;&#25442;&#34892;&#31526;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>bw.newLine();</span><span class=rvts3>//</span><span class=rvts4>&#25552;&#20379;&#25442;&#34892;&#30340;&#25805;&#20316;</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>finally </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#20851;&#38381;&#36164;&#28304;</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>if</span><span class=rvts2>(bw != </span><span class=rvts5>null</span><span class=rvts2>){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bw.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>if</span><span class=rvts2>(br != </span><span class=rvts5>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;br.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts5>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+</body></html>

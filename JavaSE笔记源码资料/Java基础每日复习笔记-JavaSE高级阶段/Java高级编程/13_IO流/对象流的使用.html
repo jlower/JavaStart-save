@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>对象流的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: '????';
+ font-weight: bold;
+ color: #c00000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+ background-color: #ffff00;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+ background-color: #ffff00;
+}
+span.rvts16
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+ background-color: #ffff00;
+}
+span.rvts17
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+ background-color: #ffff00;
+}
+span.rvts18
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts19
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+.rvps4
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 18px;
+}
+.rvps5
+{
+ background: #ffffff;
+}
+.rvps6
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps6><span class=rvts19>&#23545;&#35937;&#27969;&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts19><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#23545;&#35937;&#27969;&#65306; </span></p>
+<p class=rvps2><span class=rvts2>ObjectInputStream &#21644; ObjectOutputStream</span></p>
+<p class=rvps2><span class=rvts2>2.&#20316;&#29992;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>ObjectOutputStream:&#20869;&#23384;&#20013;&#30340;&#23545;&#35937;---&gt;&#23384;&#20648;&#20013;&#30340;&#25991;&#20214;&#12289;&#36890;&#36807;&#32593;&#32476;&#20256;&#36755;&#20986;&#21435;&#65306;&#24207;&#21015;&#21270;&#36807;&#31243;</span></p>
+<p class=rvps2><span class=rvts2>ObjectInputStream:&#23384;&#20648;&#20013;&#30340;&#25991;&#20214;&#12289;&#36890;&#36807;&#32593;&#32476;&#25509;&#25910;&#36807;&#26469; ---&gt;&#20869;&#23384;&#20013;&#30340;&#23545;&#35937;&#65306;&#21453;&#24207;&#21015;&#21270;&#36807;&#31243;</span></p>
+<p class=rvps2><span class=rvts2>3.&#23545;&#35937;&#30340;&#24207;&#21015;&#21270;&#26426;&#21046;&#65306;</span></p>
+<p class=rvps4><span class=rvts3>&#23545;&#35937;&#24207;&#21015;&#21270;&#26426;&#21046;</span><span class=rvts4>&#20801;&#35768;&#25226;&#20869;&#23384;&#20013;&#30340;</span><span class=rvts5>Java</span><span class=rvts4>&#23545;&#35937;&#36716;&#25442;&#25104;&#24179;&#21488;&#26080;&#20851;&#30340;&#20108;&#36827;&#21046;&#27969;&#65292;&#20174;&#32780;&#20801;&#35768;&#25226;&#36825;&#31181;&#20108;&#36827;&#21046;&#27969;&#25345;&#20037;&#22320;&#20445;&#23384;&#22312;&#30913;&#30424;</span></p>
+<p class=rvps4><span class=rvts4>&#19978;&#65292;&#25110;&#36890;&#36807;&#32593;&#32476;&#23558;&#36825;&#31181;&#20108;&#36827;&#21046;&#27969;&#20256;&#36755;&#21040;&#21478;&#19968;&#20010;&#32593;&#32476;&#33410;&#28857;&#12290;</span><span class=rvts5>//</span><span class=rvts4>&#24403;&#20854;&#23427;&#31243;&#24207;&#33719;&#21462;&#20102;&#36825;&#31181;&#20108;&#36827;&#21046;&#27969;&#65292;&#23601;&#21487;&#20197;&#24674;&#22797;&#25104;&#21407;&#26469;&#30340;</span></p>
+<p class=rvps4><span class=rvts5>Java</span><span class=rvts4>&#23545;&#35937;</span></p>
+<p class=rvps2><span class=rvts2>4.</span></p>
+<p class=rvps2><span class=rvts2>&#24207;&#21015;&#21270;&#20195;&#30721;&#23454;&#29616;&#65306;</span></p>
+<p class=rvps5><span class=rvts6>@Test</span><br><span class=rvts7>public void </span><span class=rvts2>testObjectOutputStream(){</span><br><span class=rvts2> &nbsp; &nbsp;ObjectOutputStream oos = </span><span class=rvts7>null</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>//1.</span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>oos = </span><span class=rvts7>new </span><span class=rvts2>ObjectOutputStream(</span><span class=rvts7>new </span><span class=rvts2>FileOutputStream(</span><span class=rvts9>"object.dat"</span><span class=rvts2>));</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>//2.</span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>oos.writeObject(</span><span class=rvts7>new </span><span class=rvts2>String(</span><span class=rvts9>"</span><span class=rvts10>&#25105;&#29233;&#21271;&#20140;&#22825;&#23433;&#38376;</span><span class=rvts9>"</span><span class=rvts2>));</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;oos.flush();</span><span class=rvts8>//</span><span class=rvts11>&#21047;&#26032;&#25805;&#20316;</span><br><span class=rvts11></span><br><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts13>oos.writeObject(</span><span class=rvts17>new </span><span class=rvts13>Person(</span><span class=rvts15>"</span><span class=rvts16>&#29579;&#38125;</span><span class=rvts15>"</span><span class=rvts13>,</span><span class=rvts14>23</span><span class=rvts13>));</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;oos.flush();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;oos.writeObject(</span><span class=rvts7>new </span><span class=rvts2>Person(</span><span class=rvts9>"</span><span class=rvts10>&#24352;&#23398;&#33391;</span><span class=rvts9>"</span><span class=rvts2>,</span><span class=rvts12>23</span><span class=rvts2>,</span><span class=rvts12>1001</span><span class=rvts2>,</span><span class=rvts7>new </span><span class=rvts2>Account(</span><span class=rvts12>5000</span><span class=rvts2>)));</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;oos.flush();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>finally </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>if</span><span class=rvts2>(oos != </span><span class=rvts7>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>//3.</span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;oos.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>5.</span></p>
+<p class=rvps2><span class=rvts2>&#21453;&#24207;&#21015;&#21270;&#20195;&#30721;&#23454;&#29616;&#65306;</span></p>
+<p class=rvps5><span class=rvts6>@Test</span><br><span class=rvts7>public void </span><span class=rvts2>testObjectInputStream(){</span><br><span class=rvts2> &nbsp; &nbsp;ObjectInputStream ois = </span><span class=rvts7>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;ois = </span><span class=rvts7>new </span><span class=rvts2>ObjectInputStream(</span><span class=rvts7>new </span><span class=rvts2>FileInputStream(</span><span class=rvts9>"object.dat"</span><span class=rvts2>));</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>Object obj = ois.readObject();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;String str = (String) obj;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Person p = (Person) ois.readObject();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Person p1 = (Person) ois.readObject();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts18>out</span><span class=rvts2>.println(str);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts18>out</span><span class=rvts2>.println(p);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts18>out</span><span class=rvts2>.println(p1);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(ClassNotFoundException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>finally </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>if</span><span class=rvts2>(ois != </span><span class=rvts7>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ois.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts2>6.&#23454;&#29616;&#24207;&#21015;&#21270;&#30340;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#38656;&#35201;&#28385;&#36275;&#65306;</span></p>
+<p class=rvps5><span class=rvts8> &nbsp;1.</span><span class=rvts11>&#38656;&#35201;&#23454;&#29616;&#25509;&#21475;&#65306;</span><span class=rvts8>Serializable</span><br><span class=rvts8>* 2.</span><span class=rvts11>&#24403;&#21069;&#31867;&#25552;&#20379;&#19968;&#20010;&#20840;&#23616;&#24120;&#37327;&#65306;</span><span class=rvts8>serialVersionUID</span><br><span class=rvts8>* 3.</span><span class=rvts11>&#38500;&#20102;&#24403;&#21069;</span><span class=rvts8>Person</span><span class=rvts11>&#31867;&#38656;&#35201;&#23454;&#29616;</span><span class=rvts8>Serializable</span><span class=rvts11>&#25509;&#21475;&#20043;&#22806;&#65292;&#36824;&#24517;&#39035;&#20445;&#35777;&#20854;&#20869;&#37096;&#25152;&#23646;&#24615;</span><br><span class=rvts8>* &nbsp; </span><span class=rvts11>&#20063;&#24517;&#39035;&#26159;&#21487;&#24207;&#21015;&#21270;&#30340;&#12290;&#65288;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#21487;&#24207;&#21015;&#21270;&#65289;</span><br><span class=rvts8>*</span><br><span class=rvts8>*</span><br><span class=rvts8>* </span><span class=rvts11>&#34917;&#20805;&#65306;</span><span class=rvts8>ObjectOutputStream</span><span class=rvts11>&#21644;</span><span class=rvts8>ObjectInputStream</span><span class=rvts11>&#19981;&#33021;&#24207;&#21015;&#21270;</span><span class=rvts8>static</span><span class=rvts11>&#21644;</span><span class=rvts8>transient</span><span class=rvts11>&#20462;&#39280;&#30340;&#25104;&#21592;&#21464;&#37327;</span><br><span class=rvts8>*</span></p>
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>泛型的理解.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #ff0000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #ff0000;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: justify;
+ text-justify: inter-word;
+ text-align-last: auto;
+ text-indent: -30px;
+ margin: 0px 0px 0px 30px;
+}
+.rvps4
+{
+ text-align: justify;
+ text-justify: inter-word;
+ text-align-last: auto;
+}
+.rvps5
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps5><span class=rvts7>&#27867;&#22411;&#30340;&#29702;&#35299;</span></p>
+<p class=rvps2><span class=rvts7><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#27867;&#22411;&#30340;&#27010;&#24565;</span></p>
+<p class=rvps3><span class=rvts3>&#25152;&#35859;&#27867;&#22411;&#65292;&#23601;&#26159;&#20801;&#35768;&#22312;&#23450;&#20041;&#31867;&#12289;&#25509;&#21475;&#26102;&#36890;&#36807;&#19968;&#20010;&#26631;&#35782;&#34920;&#31034;&#31867;&#20013;&#26576;&#20010;&#23646;&#24615;&#30340;&#31867;&#22411;&#25110;&#32773;&#26159;&#26576;&#20010;&#26041;&#27861;&#30340;&#36820;</span></p>
+<p class=rvps3><span class=rvts3>&#22238;&#20540;&#21450;&#21442;&#25968;&#31867;&#22411;&#12290;&#36825;&#20010;&#31867;&#22411;&#21442;&#25968;&#23558;&#22312;&#20351;&#29992;&#26102;&#65288;&#20363;&#22914;&#65292;&#32487;&#25215;&#25110;&#23454;&#29616;&#36825;&#20010;&#25509;&#21475;&#65292;&#29992;&#36825;&#20010;&#31867;&#22411;&#22768;&#26126;&#21464;&#37327;&#12289;</span></p>
+<p class=rvps3><span class=rvts3>&#21019;&#24314;&#23545;&#35937;&#26102;&#30830;&#23450;&#65288;&#21363;&#20256;&#20837;&#23454;&#38469;&#30340;&#31867;&#22411;&#21442;&#25968;&#65292;&#20063;&#31216;&#20026;&#31867;&#22411;&#23454;&#21442;&#65289;&#12290;</span></p>
+<p class=rvps3><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#27867;&#22411;&#30340;&#24341;&#20837;&#32972;&#26223;</span></p>
+<p class=rvps4><span class=rvts4>&#38598;&#21512;&#23481;&#22120;&#31867;&#22312;&#35774;&#35745;&#38454;&#27573;/&#22768;&#26126;&#38454;&#27573;&#19981;&#33021;&#30830;&#23450;&#36825;&#20010;&#23481;&#22120;&#21040;&#24213;&#23454;&#38469;&#23384;&#30340;&#26159;&#20160;&#20040;&#31867;&#22411;&#30340;&#23545;&#35937;&#65292;&#25152;&#20197;</span><span class=rvts6>&#22312;JDK1.5&#20043;&#21069;&#21482;&#33021;&#25226;&#20803;&#32032;&#31867;&#22411;&#35774;&#35745;&#20026;Object&#65292;JDK1.5&#20043;&#21518;&#20351;&#29992;&#27867;&#22411;&#26469;&#35299;&#20915;&#12290;</span><span class=rvts4>&#22240;&#20026;&#36825;&#20010;&#26102;&#20505;&#38500;&#20102;&#20803;&#32032;&#30340;&#31867;&#22411;&#19981;&#30830;&#23450;&#65292;&#20854;&#20182;&#30340;&#37096;&#20998;&#26159;&#30830;&#23450;&#30340;&#65292;&#20363;&#22914;&#20851;&#20110;&#36825;&#20010;&#20803;&#32032;&#22914;&#20309;&#20445;&#23384;&#65292;&#22914;&#20309;&#31649;&#29702;&#31561;&#26159;&#30830;&#23450;&#30340;&#65292;&#22240;&#27492;&#27492;&#26102;</span><span class=rvts5>&#25226;&#20803;&#32032;&#30340;&#31867;&#22411;&#35774;&#35745;&#25104;&#19968;&#20010;&#21442;&#25968;&#65292;&#36825;&#20010;&#31867;&#22411;&#21442;&#25968;&#21483;&#20570;&#27867;&#22411;&#12290;</span><span class=rvts4>Collection&lt;E&gt;&#65292;List&lt;E&gt;&#65292;ArrayList&lt;E&gt; &nbsp; &#36825;&#20010;&lt;E&gt;&#23601;&#26159;&#31867;&#22411;&#21442;&#25968;&#65292;&#21363;&#27867;&#22411;&#12290;</span></p>
+</body></html>

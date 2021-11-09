@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>main()的使用说明.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 12pt;
+ background-color: #c0c0c0;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ffff00;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ff0000;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #00ff00;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #00ffff;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #c0c0c0;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 32px;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts9>main()&#30340;&#20351;&#29992;&#35828;&#26126;</span></p>
+<p><span class=rvts9><br></span></p>
+<p><span class=rvts3> * 1. main()&#26041;&#27861;&#20316;&#20026;&#31243;&#24207;&#30340;&#20837;&#21475;</span></p>
+<p><span class=rvts3> * 2. main()&#26041;&#27861;&#20063;&#26159;&#19968;&#20010;&#26222;&#36890;&#30340;&#38745;&#24577;&#26041;&#27861;</span></p>
+<p><span class=rvts3> * 3. main()&#26041;&#27861;&#21487;&#20197;&#20316;&#20026;&#25105;&#20204;&#19982;&#25511;&#21046;&#21488;&#20132;&#20114;&#30340;&#26041;&#24335;&#12290;&#65288;&#20043;&#21069;&#65306;&#20351;&#29992;Scanner&#65289;</span></p>
+<p><span class=rvts3> &nbsp;</span></p>
+<p><span class=rvts3>&#22914;&#20309;&#23558;&#25511;&#21046;&#21488;&#33719;&#21462;&#30340;&#25968;&#25454;&#20256;&#32473;&#24418;&#21442;&#65306;String[] args?</span></p>
+<p><span class=rvts3> &nbsp;&#36816;&#34892;&#26102;&#65306;java &#31867;&#21517; "Tom" "Jerry" "123" "true"</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3>sysout(args[0]);//"Tom"</span></p>
+<p><span class=rvts3>sysout(args[3]);//"true" &nbsp;--&gt;Boolean.parseBoolean(args[3]);</span></p>
+<p><span class=rvts3>sysout(args[4]);//&#25253;&#24322;&#24120;</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3>&#23567;&#32467;&#65306;&#19968;&#21494;&#30693;&#31179;</span></p>
+<p><span class=rvts4>public</span><span class=rvts3> </span><span class=rvts5>static</span><span class=rvts3> </span><span class=rvts6>void</span><span class=rvts3> </span><span class=rvts7>main</span><span class=rvts3>(</span><span class=rvts8>String[] args</span><span class=rvts3>){//&#26041;&#27861;&#20307;}</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts4>&#26435;&#38480;&#20462;&#39280;&#31526;&#65306;private &#32570;&#30465; protected pubilc ----&gt;&#23553;&#35013;&#24615;</span></p>
+<p><span class=rvts5>&#20462;&#39280;&#31526;&#65306;static \ final \ abstract \native &#21487;&#20197;&#29992;&#26469;&#20462;&#39280;&#26041;&#27861;</span></p>
+<p><span class=rvts6>&#36820;&#22238;&#20540;&#31867;&#22411;&#65306; &#26080;&#36820;&#22238;&#20540; / &#26377;&#36820;&#22238;&#20540; --&gt;return</span></p>
+<p><span class=rvts7>&#26041;&#27861;&#21517;&#65306;&#38656;&#35201;&#28385;&#36275;&#26631;&#35782;&#31526;&#21629;&#21517;&#30340;&#35268;&#21017;&#12289;&#35268;&#33539;&#65307;"&#35265;&#21517;&#30693;&#24847;"</span></p>
+<p><span class=rvts8>&#24418;&#21442;&#21015;&#34920;&#65306;&#37325;&#36733; vs &#37325;&#20889;&#65307;&#21442;&#25968;&#30340;&#20540;&#20256;&#36882;&#26426;&#21046;&#65307;&#20307;&#29616;&#23545;&#35937;&#30340;&#22810;&#24577;&#24615;</span></p>
+<p><span class=rvts3>&#26041;&#27861;&#20307;&#65306;&#26469;&#20307;&#29616;&#26041;&#27861;&#30340;&#21151;&#33021;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>main(){</span></p>
+<p class=rvps3><span class=rvts2>Person p = new Man();</span></p>
+<p class=rvps3><span class=rvts2>p.eat();</span></p>
+<p class=rvps3><span class=rvts2>//p.earnMoney();</span></p>
+<p class=rvps3><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts2>Man man = new Man();</span></p>
+<p class=rvps3><span class=rvts2>man.eat();</span></p>
+<p class=rvps3><span class=rvts2>man.earnMoney();</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+</body></html>

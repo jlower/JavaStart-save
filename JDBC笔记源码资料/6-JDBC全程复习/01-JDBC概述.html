@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>01-JDBC¸ÅÊö.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: 'ËÎÌå';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #ff0000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '????';
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+ font-weight: bold;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts8>01-JDBC&#27010;&#36848;</span></p>
+<p class=rvps2><span class=rvts8><br></span></p>
+<p class=rvps2><span class=rvts4>1. &#25968;&#25454;&#30340;&#25345;&#20037;&#21270;:</span></p>
+<p><span class=rvts6>&#25345;&#20037;&#21270;(persistence)&#65306;</span><span class=rvts7>&#25226;&#25968;&#25454;&#20445;&#23384;&#21040;&#21487;&#25481;&#30005;&#24335;&#23384;&#20648;&#35774;&#22791;&#20013;&#20197;&#20379;&#20043;&#21518;&#20351;&#29992;</span><span class=rvts6>&#12290;</span></p>
+<p><span class=rvts6><br></span></p>
+<p class=rvps3><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts4>2. JDBC&#30340;&#29702;&#35299;&#65306;</span></p>
+<p><span class=rvts6>JDBC(Java Database Connectivity)&#26159;&#19968;&#20010;</span><span class=rvts7>&#29420;&#31435;&#20110;&#29305;&#23450;&#25968;&#25454;&#24211;&#31649;&#29702;&#31995;&#32479;&#12289;&#36890;&#29992;&#30340;SQL&#25968;&#25454;&#24211;&#23384;&#21462;&#21644;&#25805;&#20316;&#30340;&#20844;&#20849;&#25509;&#21475;</span><span class=rvts6>&#65288;&#19968;&#32452;API&#65289;</span></p>
+<p><span class=rvts6><br></span></p>
+<p><span class=rvts6>&#31616;&#21333;&#29702;&#35299;&#20026;&#65306;JDBC&#65292;&#26159;SUN&#25552;&#20379;&#30340;&#19968;&#22871; API&#65292;&#20351;&#29992;&#36825;&#22871;API&#21487;&#20197;&#23454;&#29616;&#23545;&#20855;&#20307;&#25968;&#25454;&#24211;&#30340;&#25805;&#20316;&#65288;&#33719;&#21462;&#36830;&#25509;&#12289;&#20851;&#38381;&#36830;&#25509;&#12289;DML&#12289;DDL&#12289;DCL)</span></p>
+<p><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts4>3.&#22270;&#31034;&#29702;&#35299;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="01-JDBC¸ÅÊö.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts4>&#22909;&#22788;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="01-JDBC¸ÅÊö.files/img2.jpg"></p>
+<p class=rvps2><span class=rvts4>&gt;&#20174;&#24320;&#21457;&#31243;&#24207;&#21592;&#30340;&#35282;&#24230;&#65306;&#19981;&#38656;&#35201;&#20851;&#27880;&#20855;&#20307;&#30340;&#25968;&#25454;&#24211;&#30340;&#32454;&#33410;</span></p>
+<p class=rvps2><span class=rvts4>&gt;&#25968;&#25454;&#24211;&#21378;&#21830;&#65306;&#21482;&#38656;&#35201;&#25552;&#20379;&#26631;&#20934;&#30340;&#20855;&#20307;&#23454;&#29616;&#12290;</span></p>
+<p class=rvps2><span class=rvts3>4. &#25968;&#25454;&#24211;&#30340;&#39537;&#21160;&#65306;</span></p>
+<p class=rvps2><span class=rvts3>&#25968;&#25454;&#24211;&#21378;&#21830;&#38024;&#23545;&#20110;JDBC&#36825;&#22871;&#25509;&#21475;&#65292;&#25552;&#20379;&#30340;&#20855;&#20307;&#23454;&#29616;&#31867;&#30340;&#38598;&#21512;&#12290;</span></p>
+<p class=rvps2><span class=rvts3>&#31867;&#20284;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="01-JDBC¸ÅÊö.files/img3.png"></p>
+<p class=rvps2><span class=rvts3>5.&#38754;&#21521;&#25509;&#21475;&#32534;&#31243;&#30340;&#24605;&#24819;&#65306;</span></p>
+<p><span class=rvts7>JDBC&#26159;sun&#20844;&#21496;&#25552;&#20379;&#19968;&#22871;&#29992;&#20110;&#25968;&#25454;&#24211;&#25805;&#20316;&#30340;&#25509;&#21475;&#65292;java&#31243;&#24207;&#21592;&#21482;&#38656;&#35201;&#38754;&#21521;&#36825;&#22871;&#25509;&#21475;&#32534;&#31243;&#21363;&#21487;&#12290;</span></p>
+<p><span class=rvts7>&#19981;&#21516;&#30340;&#25968;&#25454;&#24211;&#21378;&#21830;&#65292;&#38656;&#35201;&#38024;&#23545;&#36825;&#22871;&#25509;&#21475;&#65292;&#25552;&#20379;&#19981;&#21516;&#23454;&#29616;&#12290;&#19981;&#21516;&#30340;&#23454;&#29616;&#30340;&#38598;&#21512;&#65292;&#21363;&#20026;&#19981;&#21516;&#25968;&#25454;&#24211;&#30340;&#39537;&#21160;&#12290;</span></p>
+</body></html>

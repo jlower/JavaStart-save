@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>总结：考虑到事务以后的数据库操作(重点).html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts4
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-indent: 40px;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts4>&#24635;&#32467;&#65306;&#32771;&#34385;&#21040;&#20107;&#21153;&#20197;&#21518;&#30340;&#25968;&#25454;&#24211;&#25805;&#20316;(&#37325;&#28857;)</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts2>1.&#33719;&#21462;&#25968;&#25454;&#24211;&#30340;&#36830;&#25509;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>Connection conn = JDBCUtils.getConnection(); //</span><span class=rvts3>&#26041;&#24335;1&#65306;&#25163;&#21160;&#33719;&#21462;&#36830;&#25509; &#26041;&#24335;2:&#25968;&#25454;&#24211;&#36830;&#25509;&#27744;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>conn.setAutoCommit(false); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts3>//&#20307;&#29616;&#20107;&#21153;</span></p>
+<p><span class=rvts2>2.&#22914;&#19979;&#30340;&#22810;&#20010;DML&#25805;&#20316;&#65292;&#20316;&#20026;&#19968;&#20010;&#20107;&#21153;&#20986;&#29616;&#65306;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#25805;&#20316;1&#65306;&#38656;&#35201;&#20351;&#29992;&#36890;&#29992;&#30340;&#22686;&#21024;&#25913;&#26597;&#25805;&#20316;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>//&#36890;&#29992;&#30340;&#22686;&#21024;&#25913;&#26597;&#25805;&#20316;&#22914;&#20309;&#23454;&#29616;&#65311;</span></p>
+<p class=rvps2><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#26041;&#24335;1&#65306;&#25163;&#21160;&#20351;&#29992;PreparedStatement&#23454;&#29616;</span></p>
+<p><span class=rvts2>&#25805;&#20316;2&#65306;&#38656;&#35201;&#20351;&#29992;&#36890;&#29992;&#30340;&#22686;&#21024;&#25913;&#26597;&#25805;&#20316;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#26041;&#24335;2&#65306;&#20351;&#29992;dbutils.jar&#20013;QueryRunner&#31867;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#25805;&#20316;3&#65306;&#38656;&#35201;&#20351;&#29992;&#36890;&#29992;&#30340;&#22686;&#21024;&#25913;&#26597;&#25805;&#20316;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>conn.commit();</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.&#22914;&#26524;&#20986;&#29616;&#24322;&#24120;&#65292;&#21017;&#65306;</span></p>
+<p><span class=rvts2>conn.rollback();</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>4.&#20851;&#38381;&#36164;&#28304;</span></p>
+<p><span class=rvts2>JDBCUtils.closeResource(..,...,...);</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#26041;&#24335;1&#65306;&#25163;&#21160;&#20851;&#38381;&#36164;&#28304; &nbsp;&#26041;&#24335;2&#65306;DbUtils&#31867;&#30340;&#20851;&#38381;&#26041;&#27861;</span></p>
+</body></html>

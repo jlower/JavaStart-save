@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Collection子接口：List接口.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #ff0000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #ff0000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+ background-color: #e2ffe2;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 54px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts13>Collection&#23376;&#25509;&#21475;&#65306;List&#25509;&#21475;</span></p>
+<p class=rvps2><span class=rvts13><br></span></p>
+<p class=rvps2><span class=rvts3>1. &#23384;&#20648;&#30340;&#25968;&#25454;&#29305;&#28857;&#65306;</span><span class=rvts9>&#23384;&#20648;&#24207;&#30340;&#12289;&#21487;&#37325;&#22797;&#30340;&#25968;&#25454;&#12290;</span></p>
+<p class=rvps3><span class=rvts8><br></span></p>
+<p class=rvps2><span class=rvts3>2. &#24120;&#29992;&#26041;&#27861;&#65306;(&#35760;&#20303;)</span></p>
+<p class=rvps3><span class=rvts7>&#22686;&#65306;</span><span class=rvts6>add(Object obj)</span><br><span class=rvts7>&#21024;&#65306;</span><span class=rvts6>remove(int index) / remove(Object obj)</span><br><span class=rvts7>&#25913;&#65306;</span><span class=rvts6>set(int index, Object ele)</span><br><span class=rvts7>&#26597;&#65306;</span><span class=rvts6>get(int index)</span><br><span class=rvts7>&#25554;&#65306;</span><span class=rvts6>add(int index, Object ele)</span><br><span class=rvts7>&#38271;&#24230;&#65306;</span><span class=rvts6>size()</span><br><span class=rvts7>&#36941;&#21382;&#65306;</span><span class=rvts6>&#9312; Iterator</span><span class=rvts7>&#36845;&#20195;&#22120;&#26041;&#24335;</span><br><span class=rvts6> &nbsp; &nbsp; &#9313; </span><span class=rvts7>&#22686;&#24378;</span><span class=rvts6>for</span><span class=rvts7>&#24490;&#29615;</span><br><span class=rvts6> &nbsp; &nbsp; &#9314; </span><span class=rvts7>&#26222;&#36890;&#30340;&#24490;&#29615;</span><br><span class=rvts7><br></span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts3>3. &#24120;&#29992;&#23454;&#29616;&#31867;&#65306;</span></p>
+<p class=rvps3><span class=rvts8>|----Collection</span><span class=rvts9>&#25509;&#21475;&#65306;&#21333;&#21015;&#38598;&#21512;&#65292;&#29992;&#26469;&#23384;&#20648;&#19968;&#20010;&#19968;&#20010;&#30340;&#23545;&#35937;</span><br><span class=rvts8>* &nbsp;|----List</span><span class=rvts9>&#25509;&#21475;&#65306;&#23384;&#20648;&#24207;&#30340;&#12289;&#21487;&#37325;&#22797;&#30340;&#25968;&#25454;&#12290; &nbsp;</span><span class=rvts8>--&gt;&#8220;</span><span class=rvts9>&#21160;&#24577;</span><span class=rvts8>&#8221;</span><span class=rvts9>&#25968;&#32452;</span><span class=rvts8>,</span><span class=rvts9>&#26367;&#25442;&#21407;&#30340;&#25968;&#32452;</span><br><span class=rvts8>* &nbsp; &nbsp; &nbsp;|----ArrayList</span><span class=rvts9>&#65306;&#20316;&#20026;</span><span class=rvts8>List</span><span class=rvts9>&#25509;&#21475;&#30340;&#20027;&#35201;&#23454;&#29616;&#31867;&#65307;&#32447;&#31243;&#19981;&#23433;&#20840;&#30340;&#65292;&#25928;&#29575;&#39640;&#65307;&#24213;&#23618;&#20351;&#29992;</span><span class=rvts8>Object[] elementData</span><span class=rvts9>&#23384;&#20648;</span><br><span class=rvts8>* &nbsp; &nbsp; &nbsp;|----LinkedList</span><span class=rvts9>&#65306;&#23545;&#20110;&#39057;&#32321;&#30340;&#25554;&#20837;&#12289;&#21024;&#38500;&#25805;&#20316;&#65292;&#20351;&#29992;&#27492;&#31867;&#25928;&#29575;&#27604;</span><span class=rvts8>ArrayList</span><span class=rvts9>&#39640;&#65307;&#24213;&#23618;&#20351;&#29992;&#21452;&#21521;&#38142;&#34920;&#23384;&#20648;</span><br><span class=rvts8>* &nbsp; &nbsp; &nbsp;|----Vector</span><span class=rvts9>&#65306;&#20316;&#20026;</span><span class=rvts8>List</span><span class=rvts9>&#25509;&#21475;&#30340;&#21476;&#32769;&#23454;&#29616;&#31867;&#65307;&#32447;&#31243;&#23433;&#20840;&#30340;&#65292;&#25928;&#29575;&#20302;&#65307;&#24213;&#23618;&#20351;&#29992;</span><span class=rvts8>Object[] elementData</span><span class=rvts9>&#23384;&#20648;</span><br><span class=rvts6><br></span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts5>4. &#28304;&#30721;&#20998;&#26512;(&#38590;&#28857;)</span></p>
+<p class=rvps3><span class=rvts10>4.1 ArrayList</span><span class=rvts11>&#30340;&#28304;&#30721;&#20998;&#26512;&#65306;</span><br><span class=rvts6>* &nbsp; 2.1 jdk 7</span><span class=rvts7>&#24773;&#20917;&#19979;</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;ArrayList list = new ArrayList();//</span><span class=rvts7>&#24213;&#23618;&#21019;&#24314;&#20102;&#38271;&#24230;&#26159;</span><span class=rvts6>10</span><span class=rvts7>&#30340;</span><span class=rvts6>Object[]</span><span class=rvts7>&#25968;&#32452;</span><span class=rvts6>elementData</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;list.add(123);//elementData[0] = new Integer(123);</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;...</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;list.add(11);//</span><span class=rvts7>&#22914;&#26524;&#27492;&#27425;&#30340;&#28155;&#21152;&#23548;&#33268;&#24213;&#23618;</span><span class=rvts6>elementData</span><span class=rvts7>&#25968;&#32452;&#23481;&#37327;&#19981;&#22815;&#65292;&#21017;&#25193;&#23481;&#12290;</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#25193;&#23481;&#20026;&#21407;&#26469;&#30340;&#23481;&#37327;&#30340;</span><span class=rvts6>1.5</span><span class=rvts7>&#20493;&#65292;&#21516;&#26102;&#38656;&#35201;&#23558;&#21407;&#26377;&#25968;&#32452;&#20013;&#30340;&#25968;&#25454;&#22797;&#21046;&#21040;&#26032;&#30340;&#25968;&#32452;&#20013;&#12290;</span><br><span class=rvts6>*</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#32467;&#35770;&#65306;&#24314;&#35758;&#24320;&#21457;&#20013;&#20351;&#29992;&#24102;&#21442;&#30340;&#26500;&#36896;&#22120;&#65306;</span><span class=rvts6>ArrayList list = new ArrayList(int capacity)</span><br><span class=rvts6>*</span><br><span class=rvts6>* &nbsp; 2.2 jdk 8</span><span class=rvts7>&#20013;</span><span class=rvts6>ArrayList</span><span class=rvts7>&#30340;&#21464;&#21270;&#65306;</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;ArrayList list = new ArrayList();//</span><span class=rvts7>&#24213;&#23618;</span><span class=rvts6>Object[] elementData</span><span class=rvts7>&#21021;&#22987;&#21270;&#20026;</span><span class=rvts6>{}.</span><span class=rvts7>&#24182;&#27809;&#21019;&#24314;&#38271;&#24230;&#20026;</span><span class=rvts6>10</span><span class=rvts7>&#30340;&#25968;&#32452;</span><br><span class=rvts6>*</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;list.add(123);//</span><span class=rvts7>&#31532;&#19968;&#27425;&#35843;&#29992;</span><span class=rvts6>add()</span><span class=rvts7>&#26102;&#65292;&#24213;&#23618;&#25165;&#21019;&#24314;&#20102;&#38271;&#24230;</span><span class=rvts6>10</span><span class=rvts7>&#30340;&#25968;&#32452;&#65292;&#24182;&#23558;&#25968;&#25454;</span><span class=rvts6>123</span><span class=rvts7>&#28155;&#21152;&#21040;</span><span class=rvts6>elementData[0]</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;...</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#21518;&#32493;&#30340;&#28155;&#21152;&#21644;&#25193;&#23481;&#25805;&#20316;&#19982;</span><span class=rvts6>jdk 7 </span><span class=rvts7>&#26080;&#24322;&#12290;</span><br><span class=rvts6>* &nbsp; 2.3 </span><span class=rvts7>&#23567;&#32467;&#65306;</span><span class=rvts6>jdk7</span><span class=rvts7>&#20013;&#30340;</span><span class=rvts6>ArrayList</span><span class=rvts7>&#30340;&#23545;&#35937;&#30340;&#21019;&#24314;&#31867;&#20284;&#20110;&#21333;&#20363;&#30340;&#39295;&#27721;&#24335;&#65292;&#32780;</span><span class=rvts6>jdk8</span><span class=rvts7>&#20013;&#30340;</span><span class=rvts6>ArrayList</span><span class=rvts7>&#30340;&#23545;&#35937;</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#30340;&#21019;&#24314;&#31867;&#20284;&#20110;&#21333;&#20363;&#30340;&#25042;&#27721;&#24335;&#65292;&#24310;&#36831;&#20102;&#25968;&#32452;&#30340;&#21019;&#24314;&#65292;&#33410;&#30465;&#20869;&#23384;&#12290;</span><br><span class=rvts6>*</span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps3><span class=rvts10>4.2 LinkedList</span><span class=rvts11>&#30340;&#28304;&#30721;&#20998;&#26512;&#65306;</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;LinkedList list = new LinkedList(); </span><span class=rvts7>&#20869;&#37096;&#22768;&#26126;&#20102;</span><span class=rvts6>Node</span><span class=rvts7>&#31867;&#22411;&#30340;</span><span class=rvts6>first</span><span class=rvts7>&#21644;</span><span class=rvts6>last</span><span class=rvts7>&#23646;&#24615;&#65292;&#40664;&#35748;&#20540;&#20026;</span><span class=rvts6>null</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;list.add(123);//</span><span class=rvts7>&#23558;</span><span class=rvts6>123</span><span class=rvts7>&#23553;&#35013;&#21040;</span><span class=rvts6>Node</span><span class=rvts7>&#20013;&#65292;&#21019;&#24314;&#20102;</span><span class=rvts6>Node</span><span class=rvts7>&#23545;&#35937;&#12290;</span><br><span class=rvts6>*</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#20854;&#20013;&#65292;</span><span class=rvts6>Node</span><span class=rvts7>&#23450;&#20041;&#20026;&#65306;&#20307;&#29616;&#20102;</span><span class=rvts6>LinkedList</span><span class=rvts7>&#30340;&#21452;&#21521;&#38142;&#34920;&#30340;&#35828;&#27861;</span><br><span class=rvts6>* &nbsp; &nbsp; &nbsp;private static class Node</span><span class=rvts12>&lt;E&gt;</span><span class=rvts6> {</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;E item;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Node</span><span class=rvts12>&lt;E&gt;</span><span class=rvts6> next;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Node</span><span class=rvts12>&lt;E&gt;</span><span class=rvts6> prev;</span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Node(Node</span><span class=rvts12>&lt;E&gt;</span><span class=rvts6> prev, E element, Node</span><span class=rvts12>&lt;E&gt;</span><span class=rvts6> next) {</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;this.item = element;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;this.next = next;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;this.prev = prev;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;}</span></p>
+<p class=rvps3><span class=rvts10>4.3 Vector</span><span class=rvts11>&#30340;&#28304;&#30721;&#20998;&#26512;&#65306;</span></p>
+<p class=rvps3><span class=rvts6>jdk7</span><span class=rvts7>&#21644;</span><span class=rvts6>jdk8</span><span class=rvts7>&#20013;&#36890;&#36807;</span><span class=rvts6>Vector()</span><span class=rvts7>&#26500;&#36896;&#22120;&#21019;&#24314;&#23545;&#35937;&#26102;&#65292;&#24213;&#23618;&#37117;&#21019;&#24314;&#20102;&#38271;&#24230;&#20026;</span><span class=rvts6>10</span><span class=rvts7>&#30340;&#25968;&#32452;&#12290;</span><br><span class=rvts7>&#22312;&#25193;&#23481;&#26041;&#38754;&#65292;&#40664;&#35748;&#25193;&#23481;&#20026;&#21407;&#26469;&#30340;&#25968;&#32452;&#38271;&#24230;&#30340;</span><span class=rvts6>2</span><span class=rvts7>&#20493;&#12290;</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>5. &#23384;&#20648;&#30340;&#20803;&#32032;&#30340;&#35201;&#27714;&#65306;</span></p>
+<p class=rvps2><span class=rvts3>&#28155;&#21152;&#30340;&#23545;&#35937;&#65292;&#25152;&#22312;&#30340;&#31867;&#35201;&#37325;&#20889;equals()&#26041;&#27861;</span></p>
+<p><span class=rvts4>[&#38754;&#35797;&#39064;]</span></p>
+<p class=rvps3><span class=rvts6>* &nbsp;</span><span class=rvts7>&#38754;&#35797;&#39064;&#65306;</span><span class=rvts6>ArrayList</span><span class=rvts7>&#12289;</span><span class=rvts6>LinkedList</span><span class=rvts7>&#12289;</span><span class=rvts6>Vector</span><span class=rvts7>&#32773;&#30340;&#24322;&#21516;&#65311;</span><br><span class=rvts6>* &nbsp;</span><span class=rvts7>&#21516;&#65306;&#19977;&#20010;&#31867;&#37117;&#26159;&#23454;&#29616;&#20102;</span><span class=rvts6>List</span><span class=rvts7>&#25509;&#21475;&#65292;&#23384;&#20648;&#25968;&#25454;&#30340;&#29305;&#28857;&#30456;&#21516;&#65306;&#23384;&#20648;&#24207;&#30340;&#12289;&#21487;&#37325;&#22797;&#30340;&#25968;&#25454;</span><br><span class=rvts6>* &nbsp;</span><span class=rvts7>&#19981;&#21516;&#65306;&#35265;&#19978;&#65288;&#31532;3&#37096;&#20998;+&#31532;4&#37096;&#20998;&#65289;</span></p>
+</body></html>

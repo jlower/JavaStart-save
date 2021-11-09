@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>包装类的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+ text-decoration: underline;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 18px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts7>&#21253;&#35013;&#31867;&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts7><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#20026;&#20160;&#20040;&#35201;&#26377;&#21253;&#35013;&#31867;(&#25110;&#23553;&#35013;&#31867;&#65289;</span></p>
+<p><span class=rvts4>&#20026;&#20102;&#20351;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#30340;&#21464;&#37327;&#20855;&#26377;&#31867;&#30340;&#29305;&#24449;&#65292;&#24341;&#20837;&#21253;&#35013;&#31867;&#12290;</span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#19982;&#23545;&#24212;&#30340;&#21253;&#35013;&#31867;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="包装类的使用.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#38656;&#35201;&#25484;&#25569;&#30340;&#31867;&#22411;&#38388;&#30340;&#36716;&#25442;&#65306;&#65288;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#12289;&#21253;&#35013;&#31867;&#12289;String&#65289;</span></p>
+<p><img alt="" style="padding : 1px;" src="包装类的使用.files/img2.jpg"></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts2>&#31616;&#26131;&#29256;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&lt;---&gt;&#21253;&#35013;&#31867;&#65306;</span><span class=rvts4>JDK 5.0 &#26032;&#29305;&#24615;&#65306;&#33258;&#21160;&#35013;&#31665; &#19982;&#33258;&#21160;&#25286;&#31665;</span></p>
+<p class=rvps2><span class=rvts2>&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#12289;&#21253;&#35013;&#31867;---&gt;String:</span><span class=rvts4>&#35843;&#29992;String&#37325;&#36733;&#30340;valueOf(</span><span class=rvts6>Xxx</span><span class=rvts4> </span><span class=rvts6>xxx</span><span class=rvts4>)</span></p>
+<p class=rvps2><span class=rvts2>String---&gt;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#12289;&#21253;&#35013;&#31867;:</span><span class=rvts4>&#35843;&#29992;&#21253;&#35013;&#31867;&#30340;parseXxx(String s)</span></p>
+<p class=rvps2><span class=rvts4> &nbsp; &nbsp; &#27880;&#24847;&#65306;&#36716;&#25442;&#26102;&#65292;&#21487;&#33021;&#20250;&#25253;NumberFormatException</span></p>
+<p class=rvps2><span class=rvts2>&#24212;&#29992;&#22330;&#26223;&#20030;&#20363;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#9312; Vector&#31867;&#20013;&#20851;&#20110;&#28155;&#21152;&#20803;&#32032;&#65292;&#21482;&#23450;&#20041;&#20102;&#24418;&#21442;&#20026;Object&#31867;&#22411;&#30340;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>v.addElement(Object obj); &nbsp; //&#22522;&#26412;&#25968;&#25454;&#31867;&#22411; ---&gt;&#21253;&#35013;&#31867; ---&gt;&#20351;&#29992;&#22810;&#24577;</span></p>
+</body></html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>方法的重载.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+ background-color: #e8f2fe;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts11
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts12
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts13
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts14
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts15
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts17
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #ff0000;
+}
+span.rvts18
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts18>&#26041;&#27861;&#30340;&#37325;&#36733;</span></p>
+<p class=rvps2><span class=rvts18><br></span></p>
+<p class=rvps2><span class=rvts5>1.&#26041;&#27861;&#30340;&#37325;&#36733;&#30340;&#27010;&#24565;</span></p>
+<p><span class=rvts2>&#23450;&#20041;&#65306;&#22312;&#21516;&#19968;&#20010;&#31867;&#20013;&#65292;&#20801;&#35768;&#23384;&#22312;&#19968;&#20010;&#20197;&#19978;&#30340;&#21516;&#21517;&#26041;&#27861;&#65292;&#21482;&#35201;&#23427;&#20204;&#30340;&#21442;&#25968;&#20010;&#25968;&#25110;&#32773;&#21442;&#25968;&#31867;&#22411;&#19981;&#21516;&#21363;&#21487;&#12290;</span></p>
+<p><span class=rvts2> * </span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2>&#24635;&#32467;&#65306;"&#20004;&#21516;&#19968;&#19981;&#21516;":&#21516;&#19968;&#20010;&#31867;&#12289;&#30456;&#21516;&#26041;&#27861;&#21517;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#21442;&#25968;&#21015;&#34920;&#19981;&#21516;&#65306;&#21442;&#25968;&#20010;&#25968;&#19981;&#21516;&#65292;&#21442;&#25968;&#31867;&#22411;&#19981;&#21516;</span></p>
+<p><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts5>2.</span></p>
+<p class=rvps2><span class=rvts5>&#26500;&#25104;&#37325;&#36733;&#30340;&#20030;&#20363;&#65306;</span></p>
+<p class=rvps2><span class=rvts5>&#20030;&#20363;&#19968;&#65306;</span><span class=rvts8>Arrays&#31867;&#20013;&#37325;&#36733;&#30340;sort() / binarySearch()&#65307;PrintStream&#20013;&#30340;println()</span></p>
+<p class=rvps2><span class=rvts8>&#20030;&#20363;&#20108;&#65306;</span></p>
+<p><span class=rvts2>//&#22914;&#19979;&#30340;4&#20010;&#26041;&#27861;&#26500;&#25104;&#20102;&#37325;&#36733;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts11> </span><span class=rvts10>void</span><span class=rvts11> getSum(</span><span class=rvts10>int</span><span class=rvts11> </span><span class=rvts14>i</span><span class=rvts11>,</span><span class=rvts10>int</span><span class=rvts11> </span><span class=rvts14>j</span><span class=rvts11>){</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>System.</span><span class=rvts13>out</span><span class=rvts11>.println(</span><span class=rvts12>"1"</span><span class=rvts11>);</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>}</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts11> </span><span class=rvts10>void</span><span class=rvts11> getSum(</span><span class=rvts10>double</span><span class=rvts11> </span><span class=rvts14>d1</span><span class=rvts11>,</span><span class=rvts10>double</span><span class=rvts11> </span><span class=rvts14>d2</span><span class=rvts11>){</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>System.</span><span class=rvts13>out</span><span class=rvts11>.println(</span><span class=rvts12>"2"</span><span class=rvts11>);</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>}</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts11> </span><span class=rvts10>void</span><span class=rvts11> getSum(String </span><span class=rvts14>s</span><span class=rvts11> ,</span><span class=rvts10>int</span><span class=rvts11> </span><span class=rvts14>i</span><span class=rvts11>){</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>System.</span><span class=rvts13>out</span><span class=rvts11>.println(</span><span class=rvts12>"3"</span><span class=rvts11>);</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>}</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts11> </span><span class=rvts10>void</span><span class=rvts11> getSum(</span><span class=rvts10>int</span><span class=rvts11> </span><span class=rvts14>i</span><span class=rvts11>,String </span><span class=rvts14>s</span><span class=rvts11>){</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>System.</span><span class=rvts13>out</span><span class=rvts11>.println(</span><span class=rvts12>"4"</span><span class=rvts11>);</span></p>
+<p><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>}</span></p>
+<p><span class=rvts7> &nbsp; </span></p>
+<p class=rvps2><span class=rvts5>&#19981;&#26500;&#25104;&#37325;&#36733;&#30340;&#20030;&#20363;&#65306;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>//&#22914;&#19979;&#30340;3&#20010;&#26041;&#27861;&#19981;&#33021;&#19982;&#19978;&#36848;4&#20010;&#26041;&#27861;&#26500;&#25104;&#37325;&#36733;</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>public </span><span class=rvts15>int</span><span class=rvts2> getSum(</span><span class=rvts15>int</span><span class=rvts2> i,</span><span class=rvts15>int</span><span class=rvts2> j){</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>return 0;</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>public void getSum(</span><span class=rvts15>int</span><span class=rvts2> m,</span><span class=rvts15>int</span><span class=rvts2> n){</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>private void getSum(</span><span class=rvts15>int</span><span class=rvts2> i,</span><span class=rvts15>int</span><span class=rvts2> j){</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2>//</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts5>3. &#22914;&#20309;&#21028;&#26029;&#26159;&#21542;&#26500;&#25104;&#26041;&#27861;&#30340;&#37325;&#36733;&#65311;</span></p>
+<p class=rvps2><span class=rvts4>&#20005;&#26684;&#25353;&#29031;&#23450;&#20041;&#21028;&#26029;&#65306;&#20004;&#21516;&#19968;&#19981;&#21516;&#12290;</span></p>
+<p><span class=rvts16>&#36319;&#26041;&#27861;&#30340;&#26435;&#38480;&#20462;&#39280;&#31526;&#12289;&#36820;&#22238;&#20540;&#31867;&#22411;&#12289;&#24418;&#21442;&#21464;&#37327;&#21517;&#12289;&#26041;&#27861;&#20307;&#37117;&#27809;&#20851;&#31995;&#65281;</span></p>
+<p class=rvps2><span class=rvts17>4.&#22914;&#20309;&#30830;&#23450;&#31867;&#20013;&#26576;&#19968;&#20010;&#26041;&#27861;&#30340;&#35843;&#29992;&#65306;</span></p>
+<p><span class=rvts8>&#26041;&#27861;&#21517; ---&gt; &#21442;&#25968;&#21015;&#34920;</span></p>
+<p><span class=rvts8><br></span></p>
+<p><span class=rvts8><br></span></p>
+<p><span class=rvts8>&#38754;&#35797;&#39064;&#65306;&#26041;&#27861;&#30340;&#37325;&#36733;&#19982;&#37325;&#20889;&#30340;&#21306;&#21035;&#65311;</span></p>
+<p><span class=rvts8><br></span></p>
+<p><span class=rvts8>throws\throw</span></p>
+<p><span class=rvts8>String\StringBuffer\StringBuilder</span></p>
+<p><span class=rvts8>Collection\Collections</span></p>
+<p><span class=rvts8>final\finally\finalize</span></p>
+<p><span class=rvts8>...</span></p>
+<p><span class=rvts8><br></span></p>
+<p><span class=rvts8>&#25277;&#35937;&#31867;&#12289;&#25509;&#21475;</span></p>
+<p><span class=rvts8>sleep() / wait()</span></p>
+</body></html>

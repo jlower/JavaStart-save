@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>线程安全的单例模式(懒汉式).html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #660e7a;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts8>&#32447;&#31243;&#23433;&#20840;&#30340;&#21333;&#20363;&#27169;&#24335;(&#25042;&#27721;&#24335;)</span></p>
+<p class=rvps3><span class=rvts8><br></span></p>
+<p class=rvps3><span class=rvts7>&#20351;&#29992;&#21516;&#27493;&#26426;&#21046;&#23558;&#21333;&#20363;&#27169;&#24335;&#20013;&#30340;&#25042;&#27721;&#24335;&#25913;&#20889;&#20026;&#32447;&#31243;&#23433;&#20840;&#30340;&#12290;</span></p>
+<p class=rvps3><span class=rvts7><br></span></p>
+<p class=rvps3><span class=rvts7><br></span></p>
+<p class=rvps3><span class=rvts3>class </span><span class=rvts4>Bank{</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>private </span><span class=rvts4>Bank(){}</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>private static </span><span class=rvts4>Bank </span><span class=rvts5>instance </span><span class=rvts4>= </span><span class=rvts3>null</span><span class=rvts4>;</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>public static </span><span class=rvts4>Bank getInstance(){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//</span><span class=rvts7>&#26041;&#24335;&#19968;&#65306;&#25928;&#29575;&#31245;&#24046;</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;synchronized (Bank.class) {</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(instance == null){</span><br><span class=rvts6>//</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;instance = new Bank();</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return instance;</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts7>&#26041;&#24335;&#20108;&#65306;&#25928;&#29575;&#26356;&#39640;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>if</span><span class=rvts4>(</span><span class=rvts5>instance </span><span class=rvts4>== </span><span class=rvts3>null</span><span class=rvts4>){</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>synchronized </span><span class=rvts4>(Bank.</span><span class=rvts3>class</span><span class=rvts4>) {</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>if</span><span class=rvts4>(</span><span class=rvts5>instance </span><span class=rvts4>== </span><span class=rvts3>null</span><span class=rvts4>){</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>instance </span><span class=rvts4>= </span><span class=rvts3>new </span><span class=rvts4>Bank();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>return </span><span class=rvts5>instance</span><span class=rvts4>;</span><br><span class=rvts4> &nbsp; &nbsp;}</span><br><span class=rvts4></span><br><span class=rvts4>}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#38754;&#35797;&#39064;&#65306;&#20889;&#19968;&#20010;&#32447;&#31243;&#23433;&#20840;&#30340;&#21333;&#20363;&#27169;&#24335;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#39295;&#27721;&#24335;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#25042;&#27721;&#24335;&#65306;&#19978;&#38754;&#25552;&#20379;&#30340;&#12290;</span></p>
+</body></html>

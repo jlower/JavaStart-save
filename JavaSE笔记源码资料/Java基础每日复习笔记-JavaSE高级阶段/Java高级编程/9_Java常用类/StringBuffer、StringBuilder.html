@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>StringBuffer¡¢StringBuilder.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: 'ËÎÌå';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #ff0000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts9>StringBuffer&#12289;StringBuilder</span></p>
+<p class=rvps2><span class=rvts9><br></span></p>
+<p class=rvps2><span class=rvts4>1.String&#12289;StringBuffer&#12289;StringBuilder&#19977;&#32773;&#30340;&#23545;&#27604;</span></p>
+<p class=rvps3><span class=rvts5>String:</span><span class=rvts6>&#19981;&#21487;&#21464;&#30340;&#23383;&#31526;&#24207;&#21015;&#65307;&#24213;&#23618;&#20351;&#29992;</span><span class=rvts5>char[]</span><span class=rvts6>&#23384;&#20648;</span><br><span class=rvts5>StringBuffer:</span><span class=rvts6>&#21487;&#21464;&#30340;&#23383;&#31526;&#24207;&#21015;&#65307;&#32447;&#31243;&#23433;&#20840;&#30340;&#65292;&#25928;&#29575;&#20302;&#65307;&#24213;&#23618;&#20351;&#29992;</span><span class=rvts5>char[]</span><span class=rvts6>&#23384;&#20648;</span><br><span class=rvts5>StringBuilder:</span><span class=rvts6>&#21487;&#21464;&#30340;&#23383;&#31526;&#24207;&#21015;&#65307;</span><span class=rvts5>jdk5.0</span><span class=rvts6>&#26032;&#22686;&#30340;&#65292;&#32447;&#31243;&#19981;&#23433;&#20840;&#30340;&#65292;&#25928;&#29575;&#39640;&#65307;&#24213;&#23618;&#20351;&#29992;</span><span class=rvts5>char[]</span><span class=rvts6>&#23384;&#20648;</span><br><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts3>2.StringBuffer&#19982;StringBuilder&#30340;&#20869;&#23384;&#35299;&#26512;</span></p>
+<p class=rvps2><span class=rvts3>&#20197;StringBuffer&#20026;&#20363;&#65306;</span></p>
+<p class=rvps3><span class=rvts7>String str = new String();//char[] value = new char[0];</span><br><span class=rvts7>String str1 = new String("abc");//char[] value = new char[]{'a','b','c'};</span><br><span class=rvts7></span><br><span class=rvts7>StringBuffer sb1 = new StringBuffer();//char[] value = new char[16];</span><span class=rvts8>&#24213;&#23618;&#21019;&#24314;&#20102;&#19968;&#20010;&#38271;&#24230;&#26159;</span><span class=rvts7>16</span><span class=rvts8>&#30340;&#25968;&#32452;&#12290;</span><br><span class=rvts7>System.out.println(sb1.length());//</span><br><span class=rvts7>sb1.append('a');//value[0] = 'a';</span><br><span class=rvts7>sb1.append('b');//value[1] = 'b';</span><br><span class=rvts7></span><br><span class=rvts7>StringBuffer sb2 = new StringBuffer("abc");//char[] value = new char["abc".length() + 16];</span><br><span class=rvts7></span><br><span class=rvts7>//</span><span class=rvts8>&#38382;&#39064;</span><span class=rvts7>1. System.out.println(sb2.length());//3</span><br><span class=rvts7>//</span><span class=rvts8>&#38382;&#39064;</span><span class=rvts7>2. </span><span class=rvts8>&#25193;&#23481;&#38382;&#39064;</span><span class=rvts7>:</span><span class=rvts8>&#22914;&#26524;&#35201;&#28155;&#21152;&#30340;&#25968;&#25454;&#24213;&#23618;&#25968;&#32452;&#30427;&#19981;&#19979;&#20102;&#65292;&#37027;&#23601;&#38656;&#35201;&#25193;&#23481;&#24213;&#23618;&#30340;&#25968;&#32452;&#12290;</span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp; &#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#25193;&#23481;&#20026;&#21407;&#26469;&#23481;&#37327;&#30340;</span><span class=rvts7>2</span><span class=rvts8>&#20493;</span><span class=rvts7> + 2</span><span class=rvts8>&#65292;&#21516;&#26102;&#23558;&#21407;&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#22797;&#21046;&#21040;&#26032;&#30340;&#25968;&#32452;&#20013;&#12290;</span><br><span class=rvts8></span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;&#25351;&#23548;&#24847;&#20041;&#65306;&#24320;&#21457;&#20013;&#24314;&#35758;&#22823;&#23478;&#20351;&#29992;&#65306;</span><span class=rvts7>StringBuffer(int capacity) </span><span class=rvts8>&#25110;</span><span class=rvts7> StringBuilder(int capacity)</span><br><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts3>3.&#23545;&#27604;String&#12289;StringBuffer&#12289;StringBuilder&#19977;&#32773;&#30340;&#25191;&#34892;&#25928;&#29575;</span></p>
+<p class=rvps3><span class=rvts6>&#20174;&#39640;&#21040;&#20302;&#25490;&#21015;&#65306;</span><span class=rvts5>StringBuilder &gt; StringBuffer &gt; String</span></p>
+<p class=rvps3><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts3>4.StringBuffer&#12289;StringBuilder&#20013;&#30340;&#24120;&#29992;&#26041;&#27861;</span></p>
+<p class=rvps3><span class=rvts6>&#22686;&#65306;</span><span class=rvts5>append(xxx)</span><br><span class=rvts6>&#21024;&#65306;</span><span class=rvts5>delete(int start,int end)</span><br><span class=rvts6>&#25913;&#65306;</span><span class=rvts5>setCharAt(int n ,char ch) / replace(int start, int end, String str)</span><br><span class=rvts6>&#26597;&#65306;</span><span class=rvts5>charAt(int n )</span><br><span class=rvts6>&#25554;&#65306;</span><span class=rvts5>insert(int offset, xxx)</span><br><span class=rvts6>&#38271;&#24230;&#65306;</span><span class=rvts5>length();</span><br><span class=rvts5>*</span><span class=rvts6>&#36941;&#21382;&#65306;</span><span class=rvts5>for() + charAt() / toString()</span></p>
+</body></html>

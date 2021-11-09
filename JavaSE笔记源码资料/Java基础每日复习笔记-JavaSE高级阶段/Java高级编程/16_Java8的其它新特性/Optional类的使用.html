@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Optional类的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #0000ff;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #0000ff;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -30px;
+ margin: 0px 0px 0px 30px;
+}
+.rvps4
+{
+ background: #ffffff;
+}
+.rvps5
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps5><span class=rvts16>Optional&#31867;&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts16><br></span></p>
+<p class=rvps2><span class=rvts4>java.util.Optional&#31867;</span></p>
+<p class=rvps2><span class=rvts4>1.&#29702;&#35299;&#65306;&#20026;&#20102;&#35299;&#20915;java&#20013;&#30340;&#31354;&#25351;&#38024;&#38382;&#39064;&#32780;&#29983;&#65281;</span></p>
+<p class=rvps3><span class=rvts6>Optional&lt;T&gt; </span><span class=rvts7>&#31867;</span><span class=rvts6>(java.util.Optional) </span><span class=rvts7>&#26159;&#19968;&#20010;&#23481;&#22120;&#31867;&#65292;&#23427;&#21487;&#20197;&#20445;&#23384;&#31867;&#22411;</span><span class=rvts6>T</span><span class=rvts7>&#30340;&#20540;&#65292;&#20195;&#34920;&#36825;&#20010;&#20540;&#23384;&#22312;&#12290;&#25110;&#32773;&#20165;&#20165;&#20445;&#23384;</span><span class=rvts6>null</span></p>
+<p class=rvps3><span class=rvts7>&#65292;&#34920;&#31034;&#36825;&#20010;&#20540;&#19981;&#23384;&#22312;&#12290;&#21407;&#26469;&#29992; </span><span class=rvts6>null </span><span class=rvts7>&#34920;&#31034;&#19968;&#20010;&#20540;&#19981;&#23384;&#22312;&#65292;&#29616;&#22312; </span><span class=rvts6>Optional </span><span class=rvts7>&#21487;&#20197;&#26356;&#22909;&#30340;&#34920;&#36798;&#36825;&#20010;&#27010;&#24565;&#12290;&#24182;&#19988;&#21487;&#20197;&#36991;</span></p>
+<p class=rvps3><span class=rvts7>&#20813;&#31354;&#25351;&#38024;&#24322;&#24120;&#12290;</span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts4>2.&#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps4><span class=rvts8>@Test</span><br><span class=rvts8> &nbsp; &nbsp;</span><span class=rvts9>public void </span><span class=rvts3>test1(){</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>//empty():</span><span class=rvts11>&#21019;&#24314;&#30340;</span><span class=rvts10>Optional</span><span class=rvts11>&#23545;&#35937;&#20869;&#37096;&#30340;</span><span class=rvts10>value = null</span><br><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>Optional&lt;Object&gt; op1 = Optional.</span><span class=rvts12>empty</span><span class=rvts3>();</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>if</span><span class=rvts3>(!op1.isPresent()){</span><span class=rvts10>//Optional</span><span class=rvts11>&#23553;&#35013;&#30340;&#25968;&#25454;&#26159;&#21542;&#21253;&#21547;&#25968;&#25454;</span><br><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>System.</span><span class=rvts13>out</span><span class=rvts3>.println(</span><span class=rvts14>"</span><span class=rvts15>&#25968;&#25454;&#20026;&#31354;</span><span class=rvts14>"</span><span class=rvts3>);</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts3>.println(op1);</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts3>.println(op1.isPresent());</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>//</span><span class=rvts11>&#22914;&#26524;</span><span class=rvts10>Optional</span><span class=rvts11>&#23553;&#35013;&#30340;&#25968;&#25454;</span><span class=rvts10>value</span><span class=rvts11>&#20026;&#31354;&#65292;&#21017;</span><span class=rvts10>get()</span><span class=rvts11>&#25253;&#38169;&#12290;&#21542;&#21017;&#65292;</span><span class=rvts10>value</span><span class=rvts11>&#19981;&#20026;&#31354;&#26102;&#65292;&#36820;&#22238;</span><span class=rvts10>value.</span><br><span class=rvts10>// &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(op1.get());</span><br><span class=rvts10></span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts3>}</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts8>@Test</span><br><span class=rvts8> &nbsp; &nbsp;</span><span class=rvts9>public void </span><span class=rvts3>test2(){</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;String str = </span><span class=rvts14>"hello"</span><span class=rvts3>;</span><br><span class=rvts10>// &nbsp; &nbsp; &nbsp; &nbsp;str = null;</span><br><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;//of(T t):</span><span class=rvts11>&#23553;&#35013;&#25968;&#25454;</span><span class=rvts10>t</span><span class=rvts11>&#29983;&#25104;</span><span class=rvts10>Optional</span><span class=rvts11>&#23545;&#35937;&#12290;&#35201;&#27714;</span><span class=rvts10>t</span><span class=rvts11>&#38750;&#31354;&#65292;&#21542;&#21017;&#25253;&#38169;&#12290;</span><br><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>Optional&lt;String&gt; op1 = Optional.</span><span class=rvts12>of</span><span class=rvts3>(str);</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>//get()</span><span class=rvts11>&#36890;&#24120;&#19982;</span><span class=rvts10>of()</span><span class=rvts11>&#26041;&#27861;&#25645;&#37197;&#20351;&#29992;&#12290;&#29992;&#20110;&#33719;&#21462;&#20869;&#37096;&#30340;&#23553;&#35013;&#30340;&#25968;&#25454;</span><span class=rvts10>value</span><br><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>String str1 = op1.get();</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts3>.println(str1);</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;}</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts8>@Test</span><br><span class=rvts8> &nbsp; &nbsp;</span><span class=rvts9>public void </span><span class=rvts3>test3(){</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;String str = </span><span class=rvts14>"beijing"</span><span class=rvts3>;</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;str = </span><span class=rvts9>null</span><span class=rvts3>;</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>//ofNullable(T t) </span><span class=rvts11>&#65306;&#23553;&#35013;&#25968;&#25454;</span><span class=rvts10>t</span><span class=rvts11>&#36171;&#32473;</span><span class=rvts10>Optional</span><span class=rvts11>&#20869;&#37096;&#30340;</span><span class=rvts10>value</span><span class=rvts11>&#12290;&#19981;&#35201;&#27714;</span><span class=rvts10>t</span><span class=rvts11>&#38750;&#31354;</span><br><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>Optional&lt;String&gt; op1 = Optional.</span><span class=rvts12>ofNullable</span><span class=rvts3>(str);</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>//orElse(T t1):</span><span class=rvts11>&#22914;&#26524;</span><span class=rvts10>Optional</span><span class=rvts11>&#20869;&#37096;&#30340;</span><span class=rvts10>value</span><span class=rvts11>&#38750;&#31354;&#65292;&#21017;&#36820;&#22238;&#27492;</span><span class=rvts10>value</span><span class=rvts11>&#20540;&#12290;&#22914;&#26524;</span><br><span class=rvts11> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>//value</span><span class=rvts11>&#20026;&#31354;&#65292;&#21017;&#36820;&#22238;</span><span class=rvts10>t1.</span><br><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>String str2 = op1.orElse(</span><span class=rvts14>"shanghai"</span><span class=rvts3>);</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts3>.println(str2);</span><span class=rvts10>//</span><br><span class=rvts10></span><br><span class=rvts10></span><br><span class=rvts10> &nbsp; &nbsp;</span><span class=rvts3>}</span></p>
+<p class=rvps2><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts4>3.&#20856;&#22411;&#32451;&#20064;&#65306;</span></p>
+<p class=rvps2><span class=rvts4>&#33021;&#20445;&#35777;&#22914;&#19979;&#30340;&#26041;&#27861;&#25191;&#34892;&#20013;&#19981;&#20250;&#20986;&#29616;&#31354;&#25351;&#38024;&#30340;&#24322;&#24120;&#12290;</span></p>
+<p class=rvps4><span class=rvts10>//</span><span class=rvts11>&#20351;&#29992;</span><span class=rvts10>Optional</span><span class=rvts11>&#31867;&#30340;</span><span class=rvts10>getGirlName():</span><br><span class=rvts9>public </span><span class=rvts3>String getGirlName2(Boy boy){</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;Optional&lt;Boy&gt; boyOptional = Optional.</span><span class=rvts12>ofNullable</span><span class=rvts3>(boy);</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts10>//</span><span class=rvts11>&#27492;&#26102;&#30340;</span><span class=rvts10>boy1</span><span class=rvts11>&#19968;&#23450;&#38750;&#31354;</span><br><span class=rvts11> &nbsp; &nbsp;</span><span class=rvts3>Boy boy1 = boyOptional.orElse(</span><span class=rvts9>new </span><span class=rvts3>Boy(</span><span class=rvts9>new </span><span class=rvts3>Girl(</span><span class=rvts14>"</span><span class=rvts15>&#36842;&#20029;&#28909;&#24052;</span><span class=rvts14>"</span><span class=rvts3>)));</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;Girl girl = boy1.getGirl();</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;Optional&lt;Girl&gt; girlOptional = Optional.</span><span class=rvts12>ofNullable</span><span class=rvts3>(girl);</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts10>//girl1</span><span class=rvts11>&#19968;&#23450;&#38750;&#31354;</span><br><span class=rvts11> &nbsp; &nbsp;</span><span class=rvts3>Girl girl1 = girlOptional.orElse(</span><span class=rvts9>new </span><span class=rvts3>Girl(</span><span class=rvts14>"</span><span class=rvts15>&#21476;&#21147;&#23068;&#25166;</span><span class=rvts14>"</span><span class=rvts3>));</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts9>return </span><span class=rvts3>girl1.getName();</span><br><span class=rvts3>}</span><br><span class=rvts3></span><br><span class=rvts8>@Test</span><br><span class=rvts9>public void </span><span class=rvts3>test5(){</span><br><span class=rvts3> &nbsp; &nbsp;Boy boy = </span><span class=rvts9>null</span><span class=rvts3>;</span><br><span class=rvts3> &nbsp; &nbsp;boy = </span><span class=rvts9>new </span><span class=rvts3>Boy();</span><br><span class=rvts3> &nbsp; &nbsp;boy = </span><span class=rvts9>new </span><span class=rvts3>Boy(</span><span class=rvts9>new </span><span class=rvts3>Girl(</span><span class=rvts14>"</span><span class=rvts15>&#33485;&#32769;&#24072;</span><span class=rvts14>"</span><span class=rvts3>));</span><br><span class=rvts3> &nbsp; &nbsp;String girlName = getGirlName2(boy);</span><br><span class=rvts3> &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts3>.println(girlName);</span><br><span class=rvts3></span><br><span class=rvts3>}</span></p>
+</body></html>

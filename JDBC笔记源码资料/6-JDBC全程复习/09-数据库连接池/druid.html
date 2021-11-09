@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>druid.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: 'ËÎÌו';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts11
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #0000c0;
+}
+span.rvts12
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts13
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts14
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 40px;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts15>druid</span></p>
+<p><span class=rvts15><br></span></p>
+<p><span class=rvts3>&#23548;&#20837;jar&#21253;&#65306;</span></p>
+<p><span class=rvts3><br></span></p>
+<p><img alt="" style="padding : 1px;" src="druid.files/img1.jpg"></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3>&#27979;&#35797;&#36830;&#25509;&#30340;&#20195;&#30721;&#65306;</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps3><span class=rvts8>/**</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * &#20351;&#29992;Druid&#25968;&#25454;&#24211;&#36830;&#25509;&#27744;&#25216;&#26415;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>private</span><span class=rvts5> </span><span class=rvts10>static</span><span class=rvts5> DataSource </span><span class=rvts11>source1</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>static</span><span class=rvts5>{</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts5> {</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>Properties </span><span class=rvts9>pros</span><span class=rvts5> = </span><span class=rvts10>new</span><span class=rvts5> Properties();</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>InputStream </span><span class=rvts9>is</span><span class=rvts5> = ClassLoader.</span><span class=rvts12>getSystemClassLoader</span><span class=rvts5>().getResourceAsStream(</span><span class=rvts13>"druid.properties"</span><span class=rvts5>);</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>pros</span><span class=rvts5>.load(</span><span class=rvts9>is</span><span class=rvts5>);</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>source1</span><span class=rvts5> = DruidDataSourceFactory.</span><span class=rvts12>createDataSource</span><span class=rvts5>(</span><span class=rvts9>pros</span><span class=rvts5>);</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>} </span><span class=rvts10>catch</span><span class=rvts5> (Exception </span><span class=rvts9>e</span><span class=rvts5>) {</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>e</span><span class=rvts5>.printStackTrace();</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts5> </span><span class=rvts10>static</span><span class=rvts5> Connection getConnection3() </span><span class=rvts10>throws</span><span class=rvts5> SQLException{</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>Connection </span><span class=rvts9>conn</span><span class=rvts5> = </span><span class=rvts11>source1</span><span class=rvts5>.getConnection();</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>return</span><span class=rvts5> </span><span class=rvts9>conn</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts4>&#20854;&#20013;&#65292;&#37197;&#32622;&#25991;&#20214;&#23450;&#20041;&#22312;src&#19979;&#65306;druid.properties</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts6>url=</span><span class=rvts7>jdbc:mysql:///test</span></p>
+<p><span class=rvts6>username=</span><span class=rvts7>root</span></p>
+<p><span class=rvts6>password=</span><span class=rvts7>abc123</span></p>
+<p><span class=rvts6>driverClassName=</span><span class=rvts7>com.mysql.jdbc.Driver</span></p>
+<p><span class=rvts14><br></span></p>
+<p><span class=rvts6>initialSize=</span><span class=rvts7>10</span></p>
+<p><span class=rvts6>maxActive=</span><span class=rvts7>10</span></p>
+</body></html>

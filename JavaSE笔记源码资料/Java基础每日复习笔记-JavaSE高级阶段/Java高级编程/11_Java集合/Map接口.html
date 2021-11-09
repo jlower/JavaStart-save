@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Map接口.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+ background-color: #ffff00;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+ background-color: #ffff00;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts13>Map&#25509;&#21475;</span></p>
+<p class=rvps2><span class=rvts13><br></span></p>
+<p class=rvps2><span class=rvts4>&#21452;&#21015;&#38598;&#21512;&#26694;&#26550;&#65306;Map</span></p>
+<p class=rvps2><span class=rvts4>1.&#24120;&#29992;&#23454;&#29616;&#31867;&#32467;&#26500;</span></p>
+<p class=rvps3><span class=rvts7>|----Map:&#21452;&#21015;&#25968;&#25454;&#65292;&#23384;&#20648;key-value&#23545;&#30340;&#25968;&#25454; &nbsp; ---&#31867;&#20284;&#20110;&#39640;&#20013;&#30340;&#20989;&#25968;&#65306;y = f(x)</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; |----HashMap:&#20316;&#20026;Map&#30340;&#20027;&#35201;&#23454;&#29616;&#31867;&#65307;&#32447;&#31243;&#19981;&#23433;&#20840;&#30340;&#65292;&#25928;&#29575;&#39640;&#65307;&#23384;&#20648;null&#30340;key&#21644;value</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|----LinkedHashMap:&#20445;&#35777;&#22312;&#36941;&#21382;map&#20803;&#32032;&#26102;&#65292;&#21487;&#20197;&#29031;&#28155;&#21152;&#30340;&#39034;&#24207;&#23454;&#29616;&#36941;&#21382;&#12290;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#21407;&#22240;&#65306;&#22312;&#21407;&#30340;HashMap&#24213;&#23618;&#32467;&#26500;&#22522;&#30784;&#19978;&#65292;&#28155;&#21152;&#20102;&#19968;&#23545;&#25351;&#38024;&#65292;&#25351;&#21521;&#21069;&#19968;&#20010;&#21644;&#21518;&#19968;&#20010;&#20803;&#32032;&#12290;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#23545;&#20110;&#39057;&#32321;&#30340;&#36941;&#21382;&#25805;&#20316;&#65292;&#27492;&#31867;&#25191;&#34892;&#25928;&#29575;&#39640;&#20110;HashMap&#12290;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; |----TreeMap:&#20445;&#35777;&#29031;&#28155;&#21152;&#30340;key-value&#23545;&#36827;&#34892;&#25490;&#24207;&#65292;&#23454;&#29616;&#25490;&#24207;&#36941;&#21382;&#12290;&#27492;&#26102;&#32771;&#34385;key&#30340;&#33258;&#28982;&#25490;&#24207;&#25110;&#23450;&#21046;&#25490;&#24207;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#24213;&#23618;&#20351;&#29992;&#32418;&#40657;&#26641;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; |----Hashtable:&#20316;&#20026;&#21476;&#32769;&#30340;&#23454;&#29616;&#31867;&#65307;&#32447;&#31243;&#23433;&#20840;&#30340;&#65292;&#25928;&#29575;&#20302;&#65307;&#19981;&#33021;&#23384;&#20648;null&#30340;key&#21644;value</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|----Properties:&#24120;&#29992;&#26469;&#22788;&#29702;&#37197;&#32622;&#25991;&#20214;&#12290;key&#21644;value&#37117;&#26159;String&#31867;&#22411;</span><br><span class=rvts7>*</span><br><span class=rvts7>*</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;HashMap&#30340;&#24213;&#23618;&#65306;&#25968;&#32452;+&#38142;&#34920; &nbsp;&#65288;jdk7&#21450;&#20043;&#21069;)</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#25968;&#32452;+&#38142;&#34920;+&#32418;&#40657;&#26641; &#65288;jdk 8)</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3>[&#38754;&#35797;&#39064;]</span></p>
+<p class=rvps3><span class=rvts5>* &nbsp;1. HashMap&#30340;&#24213;&#23618;&#23454;&#29616;&#21407;&#29702;&#65311;</span><br><span class=rvts5>* &nbsp;2. HashMap &#21644; Hashtable&#30340;&#24322;&#21516;&#65311;</span><br><span class=rvts5>* &nbsp;3. CurrentHashMap &#19982; Hashtable&#30340;&#24322;&#21516;&#65311;&#65288;&#26242;&#26102;&#19981;&#35762;)</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts4>2.&#23384;&#20648;&#32467;&#26500;&#30340;&#29702;&#35299;&#65306;</span></p>
+<p class=rvps3><span class=rvts7>&gt;Map&#20013;&#30340;key:&#26080;&#24207;&#30340;&#12289;&#19981;&#21487;&#37325;&#22797;&#30340;&#65292;&#20351;&#29992;Set&#23384;&#20648;&#25152;&#30340;key &nbsp;---&gt; key&#25152;&#22312;&#30340;&#31867;&#35201;&#37325;&#20889;equals()&#21644;hashCode() &#65288;&#20197;HashMap&#20026;&#20363;)</span><br><span class=rvts7>&gt;Map&#20013;&#30340;value:&#26080;&#24207;&#30340;&#12289;&#21487;&#37325;&#22797;&#30340;&#65292;&#20351;&#29992;Collection&#23384;&#20648;&#25152;&#30340;value ---&gt;value&#25152;&#22312;&#30340;&#31867;&#35201;&#37325;&#20889;equals()</span><br><span class=rvts7>&gt; &#19968;&#20010;&#38190;&#20540;&#23545;&#65306;key-value&#26500;&#25104;&#20102;&#19968;&#20010;Entry&#23545;&#35937;&#12290;</span><br><span class=rvts7>&gt;Map&#20013;&#30340;entry:&#26080;&#24207;&#30340;&#12289;&#19981;&#21487;&#37325;&#22797;&#30340;&#65292;&#20351;&#29992;Set&#23384;&#20648;&#25152;&#30340;entry</span></p>
+<p class=rvps2><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts4>&#22270;&#31034;&#65306;</span></p>
+<p><img alt="" style="padding : 1px;" src="Map接口.files/img1.jpg"></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts4>3.&#24120;&#29992;&#26041;&#27861;</span></p>
+<p class=rvps3><span class=rvts5>* &#28155;&#21152;&#65306;put(Object key,Object value)</span><br><span class=rvts5>* &#21024;&#38500;&#65306;remove(Object key)</span><br><span class=rvts5>* &#20462;&#25913;&#65306;put(Object key,Object value)</span><br><span class=rvts5>* &#26597;&#35810;&#65306;get(Object key)</span><br><span class=rvts5>* &#38271;&#24230;&#65306;size()</span><br><span class=rvts5>* &#36941;&#21382;&#65306;keySet() / values() / entrySet()</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts4>4. &#20869;&#23384;&#32467;&#26500;&#35828;&#26126;&#65306;&#65288;&#38590;&#28857;&#65289;</span></p>
+<p><span class=rvts2>4.1 HashMap&#22312;jdk7&#20013;&#23454;&#29616;&#21407;&#29702;&#65306;</span></p>
+<p class=rvps3><span class=rvts7>HashMap map = new HashMap():</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;&#22312;&#23454;&#20363;&#21270;&#20197;&#21518;&#65292;&#24213;&#23618;&#21019;&#24314;&#20102;&#38271;&#24230;&#26159;16&#30340;&#19968;&#32500;&#25968;&#32452;Entry[] table&#12290;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;...&#21487;&#33021;&#24050;&#32463;&#25191;&#34892;&#36807;&#22810;&#27425;put...</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;map.put(key1,value1):</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;&#39318;&#20808;&#65292;&#35843;&#29992;key1&#25152;&#22312;&#31867;&#30340;hashCode()&#35745;&#31639;key1&#21704;&#24076;&#20540;&#65292;&#27492;&#21704;&#24076;&#20540;&#32463;&#36807;&#26576;&#31181;&#31639;&#27861;&#35745;&#31639;&#20197;&#21518;&#65292;&#24471;&#21040;&#22312;Entry&#25968;&#32452;&#20013;&#30340;&#23384;&#25918;&#20301;&#32622;&#12290;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;&#22914;&#26524;&#27492;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#20026;&#31354;&#65292;&#27492;&#26102;&#30340;key1-value1&#28155;&#21152;&#25104;&#21151;&#12290; ----&#24773;&#20917;1</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;&#22914;&#26524;&#27492;&#20301;&#32622;&#19978;&#30340;&#25968;&#25454;&#19981;&#20026;&#31354;&#65292;(&#24847;&#21619;&#30528;&#27492;&#20301;&#32622;&#19978;&#23384;&#22312;&#19968;&#20010;&#25110;&#22810;&#20010;&#25968;&#25454;(&#20197;&#38142;&#34920;&#24418;&#24335;&#23384;&#22312;)),&#27604;&#36739;key1&#21644;&#24050;&#32463;&#23384;&#22312;&#30340;&#19968;&#20010;&#25110;&#22810;&#20010;&#25968;&#25454;&#30340;&#21704;&#24076;&#20540;&#65306;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#22914;&#26524;key1&#30340;&#21704;&#24076;&#20540;&#19982;&#24050;&#32463;&#23384;&#22312;&#30340;&#25968;&#25454;&#30340;&#21704;&#24076;&#20540;&#37117;&#19981;&#30456;&#21516;&#65292;&#27492;&#26102;key1-value1&#28155;&#21152;&#25104;&#21151;&#12290;----&#24773;&#20917;2</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#22914;&#26524;key1&#30340;&#21704;&#24076;&#20540;&#21644;&#24050;&#32463;&#23384;&#22312;&#30340;&#26576;&#19968;&#20010;&#25968;&#25454;(key2-value2)&#30340;&#21704;&#24076;&#20540;&#30456;&#21516;&#65292;&#32487;&#32493;&#27604;&#36739;&#65306;&#35843;&#29992;key1&#25152;&#22312;&#31867;&#30340;equals(key2)&#26041;&#27861;&#65292;&#27604;&#36739;&#65306;</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#22914;&#26524;equals()&#36820;&#22238;false:&#27492;&#26102;key1-value1&#28155;&#21152;&#25104;&#21151;&#12290;----&#24773;&#20917;3</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#22914;&#26524;equals()&#36820;&#22238;true:&#20351;&#29992;value1&#26367;&#25442;value2&#12290;</span><br><span class=rvts7>*</span><br><span class=rvts7>* &nbsp; &nbsp; &nbsp;&#34917;&#20805;&#65306;&#20851;&#20110;&#24773;&#20917;2&#21644;&#24773;&#20917;3&#65306;&#27492;&#26102;key1-value1&#21644;&#21407;&#26469;&#30340;&#25968;&#25454;&#20197;&#38142;&#34920;&#30340;&#26041;&#24335;&#23384;&#20648;&#12290;</span><br><span class=rvts7>*</span><br><span class=rvts7>* &nbsp; &nbsp; &#22312;&#19981;&#26029;&#30340;&#28155;&#21152;&#36807;&#31243;&#20013;&#65292;&#20250;&#28041;&#21450;&#21040;&#25193;&#23481;&#38382;&#39064;&#65292;&#24403;&#36229;&#20986;&#20020;&#30028;&#20540;(&#19988;&#35201;&#23384;&#25918;&#30340;&#20301;&#32622;&#38750;&#31354;)&#26102;&#65292;&#25193;&#23481;&#12290;&#40664;&#35748;&#30340;&#25193;&#23481;&#26041;&#24335;&#65306;&#25193;&#23481;&#20026;&#21407;&#26469;&#23481;&#37327;&#30340;2&#20493;&#65292;&#24182;&#23558;&#21407;&#30340;&#25968;&#25454;&#22797;&#21046;&#36807;&#26469;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>4.2 HashMap&#22312;jdk8&#20013;&#30456;&#36739;&#20110;jdk7&#22312;&#24213;&#23618;&#23454;&#29616;&#26041;&#38754;&#30340;&#19981;&#21516;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>1. new HashMap():&#24213;&#23618;&#27809;&#21019;&#24314;&#19968;&#20010;&#38271;&#24230;&#20026;16&#30340;&#25968;&#32452;</span><br><span class=rvts5>2. jdk 8&#24213;&#23618;&#30340;&#25968;&#32452;&#26159;&#65306;Node[],&#32780;&#38750;Entry[]</span><br><span class=rvts5>3. &#39318;&#27425;&#35843;&#29992;put()&#26041;&#27861;&#26102;&#65292;&#24213;&#23618;&#21019;&#24314;&#38271;&#24230;&#20026;16&#30340;&#25968;&#32452;</span><br><span class=rvts5>4. jdk7&#24213;&#23618;&#32467;&#26500;&#21482;&#65306;&#25968;&#32452;+&#38142;&#34920;&#12290;jdk8&#20013;&#24213;&#23618;&#32467;&#26500;&#65306;&#25968;&#32452;+&#38142;&#34920;+&#32418;&#40657;&#26641;&#12290;</span></p>
+<p class=rvps3><span class=rvts5>4.1 &#24418;&#25104;&#38142;&#34920;&#26102;&#65292;&#19971;&#19978;&#20843;&#19979;&#65288;jdk7:&#26032;&#30340;&#20803;&#32032;&#25351;&#21521;&#26087;&#30340;&#20803;&#32032;&#12290;jdk8&#65306;&#26087;&#30340;&#20803;&#32032;&#25351;&#21521;&#26032;&#30340;&#20803;&#32032;&#65289;</span><br><span class=rvts5>4.2 &#24403;&#25968;&#32452;&#30340;&#26576;&#19968;&#20010;&#32034;&#24341;&#20301;&#32622;&#19978;&#30340;&#20803;&#32032;&#20197;&#38142;&#34920;&#24418;&#24335;&#23384;&#22312;&#30340;&#25968;&#25454;&#20010;&#25968; &gt; 8 &#19988;&#24403;&#21069;&#25968;&#32452;&#30340;&#38271;&#24230; &gt; 64&#26102;&#65292;&#27492;&#26102;&#27492;&#32034;&#24341;&#20301;&#32622;&#19978;&#30340;&#25152;&#25968;&#25454;&#25913;&#20026;&#20351;&#29992;&#32418;&#40657;&#26641;&#23384;&#20648;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>4.3 HashMap&#24213;&#23618;&#20856;&#22411;&#23646;&#24615;&#30340;&#23646;&#24615;&#30340;&#35828;&#26126;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>DEFAULT_INITIAL_CAPACITY : HashMap</span><span class=rvts6>&#30340;&#40664;&#35748;&#23481;&#37327;&#65292;</span><span class=rvts5>16</span><br><span class=rvts5>DEFAULT_LOAD_FACTOR</span><span class=rvts6>&#65306;</span><span class=rvts5>HashMap</span><span class=rvts6>&#30340;</span><span class=rvts8>&#40664;&#35748;&#21152;&#36733;&#22240;&#23376;&#65306;</span><span class=rvts9>0.75</span><br><span class=rvts5>threshold</span><span class=rvts6>&#65306;&#25193;&#23481;&#30340;&#20020;&#30028;&#20540;&#65292;</span><span class=rvts5>=</span><span class=rvts6>&#23481;&#37327;</span><span class=rvts5>*</span><span class=rvts6>&#22635;&#20805;&#22240;&#23376;&#65306;</span><span class=rvts5>16 * 0.75 =&gt; 12</span><br><span class=rvts5>TREEIFY_THRESHOLD</span><span class=rvts6>&#65306;</span><span class=rvts5>Bucket</span><span class=rvts6>&#20013;&#38142;&#34920;&#38271;&#24230;&#22823;&#20110;&#35813;&#40664;&#35748;&#20540;&#65292;&#36716;&#21270;&#20026;&#32418;&#40657;&#26641;</span><span class=rvts5>:8</span><br><span class=rvts5>MIN_TREEIFY_CAPACITY</span><span class=rvts6>&#65306;&#26742;&#20013;&#30340;</span><span class=rvts5>Node</span><span class=rvts6>&#34987;&#26641;&#21270;&#26102;&#26368;&#23567;&#30340;</span><span class=rvts5>hash</span><span class=rvts6>&#34920;&#23481;&#37327;</span><span class=rvts5>:64</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>4.4 LinkedHashMap&#30340;&#24213;&#23618;&#23454;&#29616;&#21407;&#29702;(&#20102;&#35299;)</span></p>
+<p><span class=rvts2>LinkedHashMap&#24213;&#23618;&#20351;&#29992;&#30340;&#32467;&#26500;&#19982;HashMap&#30456;&#21516;&#65292;&#22240;&#20026;LinkedHashMap&#32487;&#25215;&#20110;HashMap.</span></p>
+<p><span class=rvts2>&#21306;&#21035;&#23601;&#22312;&#20110;&#65306;LinkedHashMap&#20869;&#37096;&#25552;&#20379;&#20102;Entry&#65292;&#26367;&#25442;HashMap&#20013;&#30340;Node.</span></p>
+<p><img alt="" style="padding : 1px;" src="Map接口.files/img2.jpg"></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>5. TreeMap&#30340;&#20351;&#29992;</span></p>
+<p class=rvps3><span class=rvts5>//</span><span class=rvts6>&#21521;</span><span class=rvts5>TreeMap</span><span class=rvts6>&#20013;&#28155;&#21152;</span><span class=rvts5>key-value</span><span class=rvts6>&#65292;&#35201;&#27714;</span><span class=rvts5>key</span><span class=rvts6>&#24517;&#39035;&#26159;&#30001;&#21516;&#19968;&#20010;&#31867;&#21019;&#24314;&#30340;&#23545;&#35937;</span><br><span class=rvts5>//</span><span class=rvts6>&#22240;&#20026;&#35201;&#29031;</span><span class=rvts5>key</span><span class=rvts6>&#36827;&#34892;&#25490;&#24207;&#65306;&#33258;&#28982;&#25490;&#24207; &#12289;&#23450;&#21046;&#25490;&#24207;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts4>6.&#20351;&#29992;Properties&#35835;&#21462;&#37197;&#32622;&#25991;&#20214;</span></p>
+<p class=rvps3><span class=rvts5>//Properties:</span><span class=rvts6>&#24120;&#29992;&#26469;&#22788;&#29702;&#37197;&#32622;&#25991;&#20214;&#12290;</span><span class=rvts5>key</span><span class=rvts6>&#21644;</span><span class=rvts5>value</span><span class=rvts6>&#37117;&#26159;</span><span class=rvts5>String</span><span class=rvts6>&#31867;&#22411;</span><br><span class=rvts10>public static void </span><span class=rvts2>main(String[] args) &nbsp;{</span><br><span class=rvts2> &nbsp; &nbsp;FileInputStream fis = </span><span class=rvts10>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts10>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Properties pros = </span><span class=rvts10>new </span><span class=rvts2>Properties();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;fis = </span><span class=rvts10>new </span><span class=rvts2>FileInputStream(</span><span class=rvts11>"jdbc.properties"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;pros.load(fis);</span><span class=rvts5>//</span><span class=rvts6>&#21152;&#36733;&#27969;&#23545;&#24212;&#30340;&#25991;&#20214;</span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String name = pros.getProperty(</span><span class=rvts11>"name"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;String password = pros.getProperty(</span><span class=rvts11>"password"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts12>out</span><span class=rvts2>.println(</span><span class=rvts11>"name = " </span><span class=rvts2>+ name + </span><span class=rvts11>", password = " </span><span class=rvts2>+ password);</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts10>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts10>finally </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>if</span><span class=rvts2>(fis != </span><span class=rvts10>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;fis.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts10>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+</body></html>

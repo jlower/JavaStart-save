@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>08-DAO及其子类.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+ text-decoration: underline;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+ text-decoration: underline;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts11>08-DAO&#21450;&#20854;&#23376;&#31867;</span></p>
+<p><span class=rvts11><br></span></p>
+<p><span class=rvts3>/*</span></p>
+<p><span class=rvts3> * DAO: data(base) access object</span></p>
+<p><span class=rvts3> * &#23553;&#35013;&#20102;&#38024;&#23545;&#20110;&#25968;&#25454;&#34920;&#30340;&#36890;&#29992;&#30340;&#25805;&#20316;</span></p>
+<p><span class=rvts3> */</span></p>
+<p><span class=rvts4>public</span><span class=rvts2> </span><span class=rvts4>abstract</span><span class=rvts2> </span><span class=rvts4>class</span><span class=rvts2> BaseDAO&lt;T&gt; {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>private</span><span class=rvts2> Class&lt;T&gt; </span><span class=rvts9>clazz</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>public BaseDAO(){</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>{</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#33719;&#21462;&#24403;&#21069;BaseDAO&#30340;&#23376;&#31867;&#32487;&#25215;&#30340;&#29238;&#31867;&#20013;&#30340;&#27867;&#22411;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Type </span><span class=rvts5>genericSuperclass</span><span class=rvts2> = </span><span class=rvts4>this</span><span class=rvts2>.getClass().getGenericSuperclass();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ParameterizedType </span><span class=rvts5>paramType</span><span class=rvts2> = (ParameterizedType) </span><span class=rvts5>genericSuperclass</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Type[] </span><span class=rvts5>typeArguments</span><span class=rvts2> = </span><span class=rvts5>paramType</span><span class=rvts2>.getActualTypeArguments();</span><span class=rvts3>//&#33719;&#21462;&#20102;&#29238;&#31867;&#30340;&#27867;&#22411;&#21442;&#25968;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>clazz</span><span class=rvts2> = </span><span class=rvts7>(Class&lt;T&gt;) </span><span class=rvts8>typeArguments</span><span class=rvts7>[0]</span><span class=rvts2>;</span><span class=rvts3>//&#27867;&#22411;&#30340;&#31532;&#19968;&#20010;&#21442;&#25968;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#36890;&#29992;&#30340;&#22686;&#21024;&#25913;&#25805;&#20316;---version 2.0 &#65288;&#32771;&#34385;&#19978;&#20107;&#21153;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts2> </span><span class=rvts4>int</span><span class=rvts2> update(Connection </span><span class=rvts5>conn</span><span class=rvts2>, String </span><span class=rvts5>sql</span><span class=rvts2>, Object... </span><span class=rvts5>args</span><span class=rvts2>) {</span><span class=rvts3>// sql&#20013;&#21344;&#20301;&#31526;&#30340;&#20010;&#25968;&#19982;&#21487;&#21464;&#24418;&#21442;&#30340;&#38271;&#24230;&#30456;&#21516;&#65281;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>PreparedStatement </span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>try</span><span class=rvts2> {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// 1.&#39044;&#32534;&#35793;sql&#35821;&#21477;&#65292;&#36820;&#22238;PreparedStatement&#30340;&#23454;&#20363;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts5>conn</span><span class=rvts2>.prepareStatement(</span><span class=rvts5>sql</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// 2.&#22635;&#20805;&#21344;&#20301;&#31526;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts2> (</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>i</span><span class=rvts2> = 0; </span><span class=rvts5>i</span><span class=rvts2> &lt; </span><span class=rvts5>args</span><span class=rvts2>.</span><span class=rvts9>length</span><span class=rvts2>; </span><span class=rvts5>i</span><span class=rvts2>++) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2>.setObject(</span><span class=rvts5>i</span><span class=rvts2> + 1, </span><span class=rvts5>args</span><span class=rvts2>[</span><span class=rvts5>i</span><span class=rvts2>]);</span><span class=rvts3>// &#23567;&#24515;&#21442;&#25968;&#22768;&#26126;&#38169;&#35823;&#65281;&#65281;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// 3.&#25191;&#34892;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts5>ps</span><span class=rvts2>.executeUpdate();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>catch</span><span class=rvts2> (Exception </span><span class=rvts5>e</span><span class=rvts2>) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>e</span><span class=rvts2>.printStackTrace();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>finally</span><span class=rvts2> {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// 4.&#36164;&#28304;&#30340;&#20851;&#38381;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>JDBCUtils.</span><span class=rvts6>closeResource</span><span class=rvts2>(</span><span class=rvts4>null</span><span class=rvts2>, </span><span class=rvts5>ps</span><span class=rvts2>);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> 0;</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#36890;&#29992;&#30340;&#26597;&#35810;&#25805;&#20316;&#65292;&#29992;&#20110;&#36820;&#22238;&#25968;&#25454;&#34920;&#20013;&#30340;&#19968;&#26465;&#35760;&#24405;&#65288;version 2.0&#65306;&#32771;&#34385;&#19978;&#20107;&#21153;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts2> T getInstance(Connection </span><span class=rvts5>conn</span><span class=rvts2>, String </span><span class=rvts5>sql</span><span class=rvts2>, Object... </span><span class=rvts5>args</span><span class=rvts2>) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>PreparedStatement </span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ResultSet </span><span class=rvts5>rs</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>try</span><span class=rvts2> {</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts5>conn</span><span class=rvts2>.prepareStatement(</span><span class=rvts5>sql</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts2> (</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>i</span><span class=rvts2> = 0; </span><span class=rvts5>i</span><span class=rvts2> &lt; </span><span class=rvts5>args</span><span class=rvts2>.</span><span class=rvts9>length</span><span class=rvts2>; </span><span class=rvts5>i</span><span class=rvts2>++) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2>.setObject(</span><span class=rvts5>i</span><span class=rvts2> + 1, </span><span class=rvts5>args</span><span class=rvts2>[</span><span class=rvts5>i</span><span class=rvts2>]);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>rs</span><span class=rvts2> = </span><span class=rvts5>ps</span><span class=rvts2>.executeQuery();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#33719;&#21462;&#32467;&#26524;&#38598;&#30340;&#20803;&#25968;&#25454; :ResultSetMetaData</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ResultSetMetaData </span><span class=rvts5>rsmd</span><span class=rvts2> = </span><span class=rvts5>rs</span><span class=rvts2>.getMetaData();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#36890;&#36807;ResultSetMetaData&#33719;&#21462;&#32467;&#26524;&#38598;&#20013;&#30340;&#21015;&#25968;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>columnCount</span><span class=rvts2> = </span><span class=rvts5>rsmd</span><span class=rvts2>.getColumnCount();</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>if</span><span class=rvts2> (</span><span class=rvts5>rs</span><span class=rvts2>.next()) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>T </span><span class=rvts5>t</span><span class=rvts2> = </span><span class=rvts9>clazz</span><span class=rvts2>.newInstance();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#22788;&#29702;&#32467;&#26524;&#38598;&#19968;&#34892;&#25968;&#25454;&#20013;&#30340;&#27599;&#19968;&#20010;&#21015;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts2> (</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>i</span><span class=rvts2> = 0; </span><span class=rvts5>i</span><span class=rvts2> &lt; </span><span class=rvts5>columnCount</span><span class=rvts2>; </span><span class=rvts5>i</span><span class=rvts2>++) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#33719;&#21462;&#21015;&#20540;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Object </span><span class=rvts5>columValue</span><span class=rvts2> = </span><span class=rvts5>rs</span><span class=rvts2>.getObject(</span><span class=rvts5>i</span><span class=rvts2> + 1);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#33719;&#21462;&#27599;&#20010;&#21015;&#30340;&#21015;&#21517;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// String columnName = rsmd.getColumnName(i + 1);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String </span><span class=rvts5>columnLabel</span><span class=rvts2> = </span><span class=rvts5>rsmd</span><span class=rvts2>.getColumnLabel(</span><span class=rvts5>i</span><span class=rvts2> + 1);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#32473;t&#23545;&#35937;&#25351;&#23450;&#30340;columnName&#23646;&#24615;&#65292;&#36171;&#20540;&#20026;columValue&#65306;&#36890;&#36807;&#21453;&#23556;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Field </span><span class=rvts5>field</span><span class=rvts2> = </span><span class=rvts9>clazz</span><span class=rvts2>.getDeclaredField(</span><span class=rvts5>columnLabel</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>field</span><span class=rvts2>.setAccessible(</span><span class=rvts4>true</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>field</span><span class=rvts2>.set(</span><span class=rvts5>t</span><span class=rvts2>, </span><span class=rvts5>columValue</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts5>t</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>catch</span><span class=rvts2> (Exception </span><span class=rvts5>e</span><span class=rvts2>) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>e</span><span class=rvts2>.printStackTrace();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>finally</span><span class=rvts2> {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>JDBCUtils.</span><span class=rvts6>closeResource</span><span class=rvts2>(</span><span class=rvts4>null</span><span class=rvts2>, </span><span class=rvts5>ps</span><span class=rvts2>, </span><span class=rvts5>rs</span><span class=rvts2>);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#36890;&#29992;&#30340;&#26597;&#35810;&#25805;&#20316;&#65292;&#29992;&#20110;&#36820;&#22238;&#25968;&#25454;&#34920;&#20013;&#30340;&#22810;&#26465;&#35760;&#24405;&#26500;&#25104;&#30340;&#38598;&#21512;&#65288;version 2.0&#65306;&#32771;&#34385;&#19978;&#20107;&#21153;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts2> List&lt;T&gt; getForList(Connection </span><span class=rvts5>conn</span><span class=rvts2>, String </span><span class=rvts5>sql</span><span class=rvts2>, Object... </span><span class=rvts5>args</span><span class=rvts2>) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>PreparedStatement </span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ResultSet </span><span class=rvts5>rs</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>try</span><span class=rvts2> {</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts5>conn</span><span class=rvts2>.prepareStatement(</span><span class=rvts5>sql</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts2> (</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>i</span><span class=rvts2> = 0; </span><span class=rvts5>i</span><span class=rvts2> &lt; </span><span class=rvts5>args</span><span class=rvts2>.</span><span class=rvts9>length</span><span class=rvts2>; </span><span class=rvts5>i</span><span class=rvts2>++) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2>.setObject(</span><span class=rvts5>i</span><span class=rvts2> + 1, </span><span class=rvts5>args</span><span class=rvts2>[</span><span class=rvts5>i</span><span class=rvts2>]);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>rs</span><span class=rvts2> = </span><span class=rvts5>ps</span><span class=rvts2>.executeQuery();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#33719;&#21462;&#32467;&#26524;&#38598;&#30340;&#20803;&#25968;&#25454; :ResultSetMetaData</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ResultSetMetaData </span><span class=rvts5>rsmd</span><span class=rvts2> = </span><span class=rvts5>rs</span><span class=rvts2>.getMetaData();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#36890;&#36807;ResultSetMetaData&#33719;&#21462;&#32467;&#26524;&#38598;&#20013;&#30340;&#21015;&#25968;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>columnCount</span><span class=rvts2> = </span><span class=rvts5>rsmd</span><span class=rvts2>.getColumnCount();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#21019;&#24314;&#38598;&#21512;&#23545;&#35937;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ArrayList&lt;T&gt; </span><span class=rvts5>list</span><span class=rvts2> = </span><span class=rvts4>new</span><span class=rvts2> ArrayList&lt;T&gt;();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>while</span><span class=rvts2> (</span><span class=rvts5>rs</span><span class=rvts2>.next()) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>T </span><span class=rvts5>t</span><span class=rvts2> = </span><span class=rvts9>clazz</span><span class=rvts2>.newInstance();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#22788;&#29702;&#32467;&#26524;&#38598;&#19968;&#34892;&#25968;&#25454;&#20013;&#30340;&#27599;&#19968;&#20010;&#21015;:&#32473;t&#23545;&#35937;&#25351;&#23450;&#30340;&#23646;&#24615;&#36171;&#20540;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts2> (</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>i</span><span class=rvts2> = 0; </span><span class=rvts5>i</span><span class=rvts2> &lt; </span><span class=rvts5>columnCount</span><span class=rvts2>; </span><span class=rvts5>i</span><span class=rvts2>++) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#33719;&#21462;&#21015;&#20540;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Object </span><span class=rvts5>columValue</span><span class=rvts2> = </span><span class=rvts5>rs</span><span class=rvts2>.getObject(</span><span class=rvts5>i</span><span class=rvts2> + 1);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#33719;&#21462;&#27599;&#20010;&#21015;&#30340;&#21015;&#21517;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// String columnName = rsmd.getColumnName(i + 1);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String </span><span class=rvts5>columnLabel</span><span class=rvts2> = </span><span class=rvts5>rsmd</span><span class=rvts2>.getColumnLabel(</span><span class=rvts5>i</span><span class=rvts2> + 1);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>// &#32473;t&#23545;&#35937;&#25351;&#23450;&#30340;columnName&#23646;&#24615;&#65292;&#36171;&#20540;&#20026;columValue&#65306;&#36890;&#36807;&#21453;&#23556;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Field </span><span class=rvts5>field</span><span class=rvts2> = </span><span class=rvts9>clazz</span><span class=rvts2>.getDeclaredField(</span><span class=rvts5>columnLabel</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>field</span><span class=rvts2>.setAccessible(</span><span class=rvts4>true</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>field</span><span class=rvts2>.set(</span><span class=rvts5>t</span><span class=rvts2>, </span><span class=rvts5>columValue</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>list</span><span class=rvts2>.add(</span><span class=rvts5>t</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts5>list</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>catch</span><span class=rvts2> (Exception </span><span class=rvts5>e</span><span class=rvts2>) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>e</span><span class=rvts2>.printStackTrace();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>finally</span><span class=rvts2> {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>JDBCUtils.</span><span class=rvts6>closeResource</span><span class=rvts2>(</span><span class=rvts4>null</span><span class=rvts2>, </span><span class=rvts5>ps</span><span class=rvts2>, </span><span class=rvts5>rs</span><span class=rvts2>);</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#29992;&#20110;&#26597;&#35810;&#29305;&#27530;&#20540;&#30340;&#36890;&#29992;&#30340;&#26041;&#27861;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts2> &lt;E&gt; E getValue(Connection </span><span class=rvts5>conn</span><span class=rvts2>,String </span><span class=rvts5>sql</span><span class=rvts2>,Object...</span><span class=rvts5>args</span><span class=rvts2>){</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>PreparedStatement </span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ResultSet </span><span class=rvts5>rs</span><span class=rvts2> = </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>try</span><span class=rvts2> {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2> = </span><span class=rvts5>conn</span><span class=rvts2>.prepareStatement(</span><span class=rvts5>sql</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts2>(</span><span class=rvts4>int</span><span class=rvts2> </span><span class=rvts5>i</span><span class=rvts2> = 0;</span><span class=rvts5>i</span><span class=rvts2> &lt; </span><span class=rvts5>args</span><span class=rvts2>.</span><span class=rvts9>length</span><span class=rvts2>;</span><span class=rvts5>i</span><span class=rvts2>++){</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>ps</span><span class=rvts2>.setObject(</span><span class=rvts5>i</span><span class=rvts2> + 1, </span><span class=rvts5>args</span><span class=rvts2>[</span><span class=rvts5>i</span><span class=rvts2>]);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>rs</span><span class=rvts2> = </span><span class=rvts5>ps</span><span class=rvts2>.executeQuery();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>if</span><span class=rvts2>(</span><span class=rvts5>rs</span><span class=rvts2>.next()){</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts7>(E) </span><span class=rvts8>rs</span><span class=rvts7>.getObject(1)</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} </span><span class=rvts4>catch</span><span class=rvts2> (SQLException </span><span class=rvts5>e</span><span class=rvts2>) {</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>e</span><span class=rvts2>.printStackTrace();</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span><span class=rvts4>finally</span><span class=rvts2>{</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>JDBCUtils.</span><span class=rvts6>closeResource</span><span class=rvts2>(</span><span class=rvts4>null</span><span class=rvts2>, </span><span class=rvts5>ps</span><span class=rvts2>, </span><span class=rvts5>rs</span><span class=rvts2>);</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>return</span><span class=rvts2> </span><span class=rvts4>null</span><span class=rvts2>;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2>}</span></p>
+</body></html>

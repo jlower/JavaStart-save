@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Class类的理解与获取Class的实例.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-indent: 44px;
+ background: #ffffff;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts9>Class&#31867;&#30340;&#29702;&#35299;&#19982;&#33719;&#21462;Class&#30340;&#23454;&#20363;</span></p>
+<p><span class=rvts9><br></span></p>
+<p><span class=rvts2>1.Class&#31867;&#30340;&#29702;&#35299;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts3>1.</span><span class=rvts4>&#31867;&#30340;&#21152;&#36733;&#36807;&#31243;&#65306;</span><br><span class=rvts4>&#31243;&#24207;&#32463;&#36807;</span><span class=rvts3>javac.exe</span><span class=rvts4>&#21629;&#20196;&#20197;&#21518;&#65292;&#20250;&#29983;&#25104;&#19968;&#20010;&#25110;&#22810;&#20010;&#23383;&#33410;&#30721;&#25991;&#20214;</span><span class=rvts3>(.class</span><span class=rvts4>&#32467;&#23614;</span><span class=rvts3>)</span><span class=rvts4>&#12290;</span><br><span class=rvts4>&#25509;&#30528;&#25105;&#20204;&#20351;&#29992;</span><span class=rvts3>java.exe</span><span class=rvts4>&#21629;&#20196;&#23545;&#26576;&#20010;&#23383;&#33410;&#30721;&#25991;&#20214;&#36827;&#34892;&#35299;&#37322;&#36816;&#34892;&#12290;&#30456;&#24403;&#20110;&#23558;&#26576;&#20010;&#23383;&#33410;&#30721;&#25991;&#20214;</span><br><span class=rvts4>&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#12290;&#27492;&#36807;&#31243;&#23601;&#31216;&#20026;&#31867;&#30340;&#21152;&#36733;&#12290;&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#30340;&#31867;&#65292;&#25105;&#20204;&#23601;&#31216;&#20026;&#36816;&#34892;&#26102;&#31867;&#65292;&#27492;</span><br><span class=rvts4>&#36816;&#34892;&#26102;&#31867;&#65292;&#23601;&#20316;&#20026;</span><span class=rvts3>Class</span><span class=rvts4>&#30340;&#19968;&#20010;&#23454;&#20363;&#12290;</span><br><span class=rvts3>2.</span><span class=rvts4>&#25442;&#21477;&#35805;&#35828;&#65292;</span><span class=rvts3>Class</span><span class=rvts4>&#30340;&#23454;&#20363;&#23601;&#23545;&#24212;&#30528;&#19968;&#20010;&#36816;&#34892;&#26102;&#31867;&#12290;</span><br><span class=rvts3>3.</span><span class=rvts4>&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#30340;&#36816;&#34892;&#26102;&#31867;&#65292;&#20250;&#32531;&#23384;&#19968;&#23450;&#30340;&#26102;&#38388;&#12290;&#22312;&#27492;&#26102;&#38388;&#20043;&#20869;&#65292;&#25105;&#20204;&#21487;&#20197;&#36890;&#36807;&#19981;&#21516;&#30340;&#26041;&#24335;</span><br><span class=rvts4>&#26469;&#33719;&#21462;&#27492;&#36816;&#34892;&#26102;&#31867;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#33719;&#21462;Class&#23454;&#20363;&#30340;&#20960;&#31181;&#26041;&#24335;&#65306;&#65288;</span><span class=rvts4>&#21069;&#19977;&#31181;&#26041;&#24335;&#38656;&#35201;&#25484;&#25569;&#65289;</span></p>
+<p class=rvps4><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#24335;&#19968;&#65306;&#35843;&#29992;&#36816;&#34892;&#26102;&#31867;&#30340;&#23646;&#24615;&#65306;</span><span class=rvts3>.class</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Class clazz1 = Person.</span><span class=rvts5>class</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz1);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#24335;&#20108;&#65306;&#36890;&#36807;&#36816;&#34892;&#26102;&#31867;&#30340;&#23545;&#35937;</span><span class=rvts3>,</span><span class=rvts4>&#35843;&#29992;</span><span class=rvts3>getClass()</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Person p1 = </span><span class=rvts5>new </span><span class=rvts2>Person();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Class clazz2 = p1.getClass();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz2);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#24335;&#19977;&#65306;&#35843;&#29992;</span><span class=rvts3>Class</span><span class=rvts4>&#30340;&#38745;&#24577;&#26041;&#27861;&#65306;</span><span class=rvts3>forName(String classPath)</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Class clazz3 = Class.</span><span class=rvts7>forName</span><span class=rvts2>(</span><span class=rvts8>"com.atguigu.java.Person"</span><span class=rvts2>);</span><br><span class=rvts3>// &nbsp; &nbsp; &nbsp; &nbsp;clazz3 = Class.forName("java.lang.String");</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz3);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz1 == clazz2);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz1 == clazz3);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#26041;&#24335;&#22235;&#65306;&#20351;&#29992;&#31867;&#30340;&#21152;&#36733;&#22120;&#65306;</span><span class=rvts3>ClassLoader &nbsp;(</span><span class=rvts4>&#20102;&#35299;</span><span class=rvts3>)</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ClassLoader classLoader = ReflectionTest.</span><span class=rvts5>class</span><span class=rvts2>.getClassLoader();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Class clazz4 = classLoader.loadClass(</span><span class=rvts8>"com.atguigu.java.Person"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz4);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts6>out</span><span class=rvts2>.println(clazz1 == clazz4);</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#24635;&#32467;&#65306;&#21019;&#24314;&#31867;&#30340;&#23545;&#35937;&#30340;&#26041;&#24335;?</span></p>
+<p class=rvps2><span class=rvts2>&#26041;&#24335;&#19968;&#65306;new + &#26500;&#36896;&#22120;</span></p>
+<p class=rvps2><span class=rvts2>&#26041;&#24335;&#20108;&#65306;&#35201;&#21019;&#24314;Xxx&#31867;&#30340;&#23545;&#35937;&#65292;&#21487;&#20197;&#32771;&#34385;&#65306;Xxx&#12289;Xxxs&#12289;XxxFactory&#12289;XxxBuilder&#31867;&#20013;&#26597;&#30475;&#26159;&#21542;&#26377;</span></p>
+<p class=rvps2><span class=rvts2>&#38745;&#24577;&#26041;&#27861;&#30340;&#23384;&#22312;&#12290;&#21487;&#20197;&#35843;&#29992;&#20854;&#38745;&#24577;&#26041;&#27861;&#65292;&#21019;&#24314;Xxx&#23545;&#35937;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#26041;&#24335;&#19977;&#65306;&#36890;&#36807;&#21453;&#23556;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>4.Class&#23454;&#20363;&#21487;&#20197;&#26159;&#21738;&#20123;&#32467;&#26500;&#30340;&#35828;&#26126;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Class类的理解与获取Class的实例.files/img1.jpg"></p>
+</body></html>

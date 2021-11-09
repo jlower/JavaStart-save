@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>模板方法的设计模式.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #646464;
+}
+span.rvts11
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts12
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 30px; list-style-position: outside; list-style-type: disc;}
+.list1 {text-indent: 0px; margin-left: 59px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts13>&#27169;&#26495;&#26041;&#27861;&#30340;&#35774;&#35745;&#27169;&#24335;</span></p>
+<p><span class=rvts13><br></span></p>
+<p><span class=rvts2>1. &#35299;&#20915;&#30340;&#38382;&#39064;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>&#22312;&#36719;&#20214;&#24320;&#21457;&#20013;&#23454;&#29616;&#19968;&#20010;&#31639;&#27861;&#26102;&#65292;&#25972;&#20307;&#27493;&#39588;&#24456;&#22266;&#23450;&#12289;&#36890;&#29992;&#65292;&#36825;&#20123;&#27493;&#39588;&#24050;&#32463;&#22312;&#29238;&#31867;&#20013;&#20889;&#22909;&#20102;&#12290;&#20294;&#26159;&#26576;&#20123;&#37096;&#20998;&#26131;&#21464;&#65292;&#26131;&#21464;</span></p>
+<p class=rvps2><span class=rvts3>&#37096;&#20998;&#21487;&#20197;&#25277;&#35937;&#20986;&#26469;&#65292;&#20379;&#19981;&#21516;&#23376;&#31867;&#23454;&#29616;&#12290;&#36825;&#23601;&#26159;&#19968;&#31181;&#27169;&#26495;&#27169;&#24335;&#12290;</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p><span class=rvts2>2. &#20030;&#20363;</span></p>
+<p><span class=rvts4>abstract</span><span class=rvts5> </span><span class=rvts4>class</span><span class=rvts5> Template{</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//&#35745;&#31639;&#26576;&#27573;&#20195;&#30721;&#25191;&#34892;&#25152;&#38656;&#35201;&#33457;&#36153;&#30340;&#26102;&#38388;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts5> </span><span class=rvts4>void</span><span class=rvts5> spendTime(){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>long</span><span class=rvts5> </span><span class=rvts7>start</span><span class=rvts5> = System.</span><span class=rvts9>currentTimeMillis</span><span class=rvts5>();</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>this</span><span class=rvts5>.code();</span><span class=rvts12>//&#19981;&#30830;&#23450;&#30340;&#37096;&#20998;&#12289;&#26131;&#21464;&#30340;&#37096;&#20998;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>long</span><span class=rvts5> </span><span class=rvts7>end</span><span class=rvts5> = System.</span><span class=rvts9>currentTimeMillis</span><span class=rvts5>();</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>System.</span><span class=rvts8>out</span><span class=rvts5>.println(</span><span class=rvts11>"&#33457;&#36153;&#30340;&#26102;&#38388;&#20026;&#65306;"</span><span class=rvts5> + (</span><span class=rvts7>end</span><span class=rvts5> - </span><span class=rvts7>start</span><span class=rvts5>));</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts5> </span><span class=rvts4>abstract</span><span class=rvts5> </span><span class=rvts4>void</span><span class=rvts5> code();</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5>}</span></p>
+<p><span class=rvts6><br></span></p>
+<p><span class=rvts4>class</span><span class=rvts5> SubTemplate </span><span class=rvts4>extends</span><span class=rvts5> Template{</span></p>
+<p><span class=rvts6><br></span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>@Override</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts5> </span><span class=rvts4>void</span><span class=rvts5> code() {</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts5>(</span><span class=rvts4>int</span><span class=rvts5> </span><span class=rvts7>i</span><span class=rvts5> = 2;</span><span class=rvts7>i</span><span class=rvts5> &lt;= 1000;</span><span class=rvts7>i</span><span class=rvts5>++){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>boolean</span><span class=rvts5> </span><span class=rvts7>isFlag</span><span class=rvts5> = </span><span class=rvts4>true</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts5>(</span><span class=rvts4>int</span><span class=rvts5> </span><span class=rvts7>j</span><span class=rvts5> = 2;</span><span class=rvts7>j</span><span class=rvts5> &lt;= Math.</span><span class=rvts9>sqrt</span><span class=rvts5>(</span><span class=rvts7>i</span><span class=rvts5>);</span><span class=rvts7>j</span><span class=rvts5>++){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>if</span><span class=rvts5>(</span><span class=rvts7>i</span><span class=rvts5> % </span><span class=rvts7>j</span><span class=rvts5> == 0){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>isFlag</span><span class=rvts5> = </span><span class=rvts4>false</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>break</span><span class=rvts5>;</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>if</span><span class=rvts5>(</span><span class=rvts7>isFlag</span><span class=rvts5>){</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>System.</span><span class=rvts8>out</span><span class=rvts5>.println(</span><span class=rvts7>i</span><span class=rvts5>);</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts6><br></span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>}</span></p>
+<p><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3. &#24212;&#29992;&#22330;&#26223;</span></p>
+<p><img alt="" style="padding : 1px;" src="模板方法的设计模式.files/img1.jpg"></p>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>JDBCUtils.java.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: 'ËÎÌו';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 12pt;
+}
+span.rvts3
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts3>JDBCUtils.java</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts2>package com.atguigu3.util;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>/**</span></p>
+<p><span class=rvts2> * </span></p>
+<p><span class=rvts2> * @Description &#25805;&#20316;&#25968;&#25454;&#24211;&#30340;&#24037;&#20855;&#31867;</span></p>
+<p><span class=rvts2> * @author shkstart Email:shkstart@126.com</span></p>
+<p><span class=rvts2> * @version</span></p>
+<p><span class=rvts2> * @date &#19978;&#21320;9:10:02</span></p>
+<p><span class=rvts2> *</span></p>
+<p><span class=rvts2> */</span></p>
+<p><span class=rvts2>public class JDBCUtils {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>/**</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * </span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @Description &#33719;&#21462;&#25968;&#25454;&#24211;&#30340;&#36830;&#25509;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @author shkstart</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @date &#19978;&#21320;9:11:23</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @return</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @throws Exception</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> */</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>public static Connection getConnection() throws Exception {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>// 1.&#35835;&#21462;&#37197;&#32622;&#25991;&#20214;&#20013;&#30340;4&#20010;&#22522;&#26412;&#20449;&#24687;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Properties pros = new Properties();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>pros.load(is);</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String user = pros.getProperty("user");</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String password = pros.getProperty("password");</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String url = pros.getProperty("url");</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String driverClass = pros.getProperty("driverClass");</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>// 2.&#21152;&#36733;&#39537;&#21160;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Class.forName(driverClass);</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>// 3.&#33719;&#21462;&#36830;&#25509;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Connection conn = DriverManager.getConnection(url, user, password);</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>return conn;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>/**</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * </span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @Description &#20851;&#38381;&#36830;&#25509;&#21644;Statement&#30340;&#25805;&#20316;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @author shkstart</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @date &#19978;&#21320;9:12:40</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @param conn</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @param ps</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> */</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>public static void closeResource(Connection conn,Statement ps){</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>try {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>if(ps != null)</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ps.close();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} catch (SQLException e) {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>e.printStackTrace();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>try {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>if(conn != null)</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>conn.close();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} catch (SQLException e) {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>e.printStackTrace();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>/**</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * </span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @Description &#20851;&#38381;&#36164;&#28304;&#25805;&#20316;</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @author shkstart</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @date &#19978;&#21320;10:21:15</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @param conn</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @param ps</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> * @param rs</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> */</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>public static void closeResource(Connection conn,Statement ps,ResultSet rs){</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>try {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>if(ps != null)</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>ps.close();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} catch (SQLException e) {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>e.printStackTrace();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>try {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>if(conn != null)</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>conn.close();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} catch (SQLException e) {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>e.printStackTrace();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>try {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>if(rs != null)</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>rs.close();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>} catch (SQLException e) {</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>e.printStackTrace();</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2>}</span></p>
+</body></html>

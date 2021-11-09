@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Thread类中的常用方法.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '????';
+ font-weight: bold;
+ color: #c00000;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts7>Thread&#31867;&#20013;&#30340;&#24120;&#29992;&#26041;&#27861;</span></p>
+<p><span class=rvts7><br></span></p>
+<p><span class=rvts2>Thread&#31867;&#20013;&#30340;&#24120;&#29992;&#30340;&#26041;&#27861;:</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts3>* 1. start():</span><span class=rvts4>&#21551;&#21160;&#24403;&#21069;&#32447;&#31243;&#65307;&#35843;&#29992;&#24403;&#21069;&#32447;&#31243;&#30340;</span><span class=rvts3>run()</span><br><span class=rvts3>* 2. run(): </span><span class=rvts4>&#36890;&#24120;&#38656;&#35201;&#37325;&#20889;</span><span class=rvts3>Thread</span><span class=rvts4>&#31867;&#20013;&#30340;&#27492;&#26041;&#27861;&#65292;&#23558;&#21019;&#24314;&#30340;&#32447;&#31243;&#35201;&#25191;&#34892;&#30340;&#25805;&#20316;&#22768;&#26126;&#22312;&#27492;&#26041;&#27861;&#20013;</span><br><span class=rvts3>* 3. currentThread():</span><span class=rvts4>&#38745;&#24577;&#26041;&#27861;&#65292;&#36820;&#22238;&#25191;&#34892;&#24403;&#21069;&#20195;&#30721;&#30340;&#32447;&#31243;</span><br><span class=rvts3>* 4. getName():</span><span class=rvts4>&#33719;&#21462;&#24403;&#21069;&#32447;&#31243;&#30340;&#21517;&#23383;</span><br><span class=rvts3>* 5. setName():</span><span class=rvts4>&#35774;&#32622;&#24403;&#21069;&#32447;&#31243;&#30340;&#21517;&#23383;</span><br><span class=rvts3>* 6. yield():</span><span class=rvts4>&#37322;&#25918;&#24403;&#21069;</span><span class=rvts3>cpu</span><span class=rvts4>&#30340;&#25191;&#34892;&#26435;</span><br><span class=rvts3>* 7. join():</span><span class=rvts4>&#22312;&#32447;&#31243;</span><span class=rvts3>a</span><span class=rvts4>&#20013;&#35843;&#29992;&#32447;&#31243;</span><span class=rvts3>b</span><span class=rvts4>&#30340;</span><span class=rvts3>join(),</span><span class=rvts4>&#27492;&#26102;&#32447;&#31243;</span><span class=rvts3>a</span><span class=rvts4>&#23601;&#36827;&#20837;&#38459;&#22622;&#29366;&#24577;&#65292;&#30452;&#21040;&#32447;&#31243;</span><span class=rvts3>b</span><span class=rvts4>&#23436;&#20840;&#25191;&#34892;&#23436;&#20197;&#21518;&#65292;&#32447;&#31243;</span><span class=rvts3>a</span><span class=rvts4>&#25165;&#32467;&#26463;&#38459;&#22622;&#29366;&#24577;&#12290;</span><br><span class=rvts3>* 8. stop():</span><span class=rvts4>&#24050;&#36807;&#26102;&#12290;&#24403;&#25191;&#34892;&#27492;&#26041;&#27861;&#26102;&#65292;&#24378;&#21046;&#32467;&#26463;&#24403;&#21069;&#32447;&#31243;&#12290;</span><br><span class=rvts3>* 9. sleep(long millitime):</span><span class=rvts4>&#35753;&#24403;&#21069;&#32447;&#31243;</span><span class=rvts3>&#8220;</span><span class=rvts4>&#30561;&#30496;</span><span class=rvts3>&#8221;</span><span class=rvts4>&#25351;&#23450;&#30340;</span><span class=rvts3>millitime</span><span class=rvts4>&#27627;&#31186;&#12290;&#22312;&#25351;&#23450;&#30340;</span><span class=rvts3>millitime</span><span class=rvts4>&#27627;&#31186;&#26102;&#38388;&#20869;&#65292;&#24403;&#21069;&#32447;&#31243;&#26159;&#38459;&#22622;&#29366;&#24577;&#12290;</span><br><span class=rvts3>* 10. isAlive():</span><span class=rvts4>&#21028;&#26029;&#24403;&#21069;&#32447;&#31243;&#26159;&#21542;&#23384;&#27963;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts3>* </span><span class=rvts4>&#32447;&#31243;&#30340;&#20248;&#20808;&#32423;&#65306;</span><br><span class=rvts3>* 1.</span><br><span class=rvts3>* MAX_PRIORITY</span><span class=rvts4>&#65306;</span><span class=rvts3>10</span><br><span class=rvts3>* MIN _PRIORITY</span><span class=rvts4>&#65306;</span><span class=rvts3>1</span><br><span class=rvts3>* NORM_PRIORITY</span><span class=rvts4>&#65306;</span><span class=rvts3>5 &nbsp;--&gt;</span><span class=rvts4>&#40664;&#35748;&#20248;&#20808;&#32423;</span><br><span class=rvts3>* 2.</span><span class=rvts4>&#22914;&#20309;&#33719;&#21462;&#21644;&#35774;&#32622;&#24403;&#21069;&#32447;&#31243;&#30340;&#20248;&#20808;&#32423;&#65306;</span><br><span class=rvts3>* &nbsp; getPriority():</span><span class=rvts4>&#33719;&#21462;&#32447;&#31243;&#30340;&#20248;&#20808;&#32423;</span><br><span class=rvts3>* &nbsp; setPriority(int p):</span><span class=rvts4>&#35774;&#32622;&#32447;&#31243;&#30340;&#20248;&#20808;&#32423;</span><br><span class=rvts3>*</span><br><span class=rvts3>* &nbsp; </span><span class=rvts4>&#35828;&#26126;&#65306;&#39640;&#20248;&#20808;&#32423;&#30340;&#32447;&#31243;&#35201;&#25250;&#21344;&#20302;&#20248;&#20808;&#32423;&#32447;&#31243;</span><span class=rvts3>cpu</span><span class=rvts4>&#30340;&#25191;&#34892;&#26435;&#12290;&#20294;&#26159;&#21482;&#26159;&#20174;&#27010;&#29575;&#19978;&#35762;&#65292;&#39640;&#20248;&#20808;&#32423;&#30340;&#32447;&#31243;&#39640;&#27010;&#29575;&#30340;&#24773;&#20917;&#19979;&#34987;&#25191;&#34892;&#12290;&#24182;&#19981;&#24847;&#21619;&#30528;&#21482;&#24403;&#39640;&#20248;&#20808;&#32423;&#30340;&#32447;&#31243;&#25191;&#34892;&#23436;&#20197;&#21518;&#65292;&#20302;&#20248;&#20808;&#32423;&#30340;&#32447;&#31243;&#25165;&#25191;&#34892;&#12290;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps3><span class=rvts4>&#32447;&#31243;&#36890;&#20449;&#65306;wait() / notify() / notifyAll() :&#27492;&#19977;&#20010;&#26041;&#27861;&#23450;&#20041;&#22312;Object&#31867;&#20013;&#30340;&#12290;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#34917;&#20805;&#65306;&#32447;&#31243;&#30340;&#20998;&#31867;</span></p>
+<p><span class=rvts5>&#19968;&#31181;&#26159;</span><span class=rvts6>&#23432;&#25252;&#32447;&#31243;</span><span class=rvts5>&#65292;&#19968;&#31181;&#26159;</span><span class=rvts6>&#29992;&#25143;&#32447;&#31243;</span><span class=rvts5>&#12290;</span></p>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>注解的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #ff0000;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: ;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: ;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+.rvps4
+{
+ background: #ffffff;
+}
+.rvps5
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps5><span class=rvts15>&#27880;&#35299;&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts15><br></span></p>
+<p class=rvps2><span class=rvts3>1. &#27880;&#35299;&#30340;&#29702;&#35299;</span></p>
+<p class=rvps4><span class=rvts5>&#9312; jdk 5.0 </span><span class=rvts6>&#26032;&#22686;&#30340;&#21151;&#33021;</span><br><span class=rvts5>*</span><br><span class=rvts5>&#9313; Annotation </span><span class=rvts6>&#20854;&#23454;&#23601;&#26159;&#20195;&#30721;&#37324;&#30340;&#29305;&#27530;&#26631;&#35760;</span><span class=rvts5>, </span><span class=rvts6>&#36825;&#20123;&#26631;&#35760;&#21487;&#20197;&#22312;&#32534;&#35793;</span><span class=rvts5>, </span><span class=rvts6>&#31867;&#21152;&#36733;</span><span class=rvts5>, </span><span class=rvts6>&#36816;&#34892;&#26102;&#34987;&#35835;&#21462;</span><span class=rvts5>, </span><span class=rvts6>&#24182;&#25191;&#34892;&#30456;&#24212;&#30340;&#22788;&#29702;&#12290;&#36890;&#36807;&#20351;&#29992; </span><span class=rvts5>Annotation,</span><br><span class=rvts5>* </span><span class=rvts6>&#31243;&#24207;&#21592;&#21487;&#20197;&#22312;&#19981;&#25913;&#21464;&#21407;&#36923;&#36753;&#30340;&#24773;&#20917;&#19979;</span><span class=rvts5>, </span><span class=rvts6>&#22312;&#28304;&#25991;&#20214;&#20013;&#23884;&#20837;&#19968;&#20123;&#34917;&#20805;&#20449;&#24687;&#12290;</span><br><span class=rvts5>*</span><br><span class=rvts5>&#9314;</span><span class=rvts6>&#22312;</span><span class=rvts5>JavaSE</span><span class=rvts6>&#20013;&#65292;&#27880;&#35299;&#30340;&#20351;&#29992;&#30446;&#30340;&#27604;&#36739;&#31616;&#21333;&#65292;&#20363;&#22914;&#26631;&#35760;&#36807;&#26102;&#30340;&#21151;&#33021;&#65292;&#24573;&#30053;&#35686;&#21578;&#31561;&#12290;&#22312;</span><span class=rvts5>JavaEE/Android</span><br><span class=rvts5>* </span><span class=rvts6>&#20013;&#27880;&#35299;&#21344;&#25454;&#20102;&#26356;&#37325;&#35201;&#30340;&#35282;&#33394;&#65292;&#20363;&#22914;&#29992;&#26469;&#37197;&#32622;&#24212;&#29992;&#31243;&#24207;&#30340;&#20219;&#20309;&#20999;&#38754;&#65292;&#20195;&#26367;</span><span class=rvts5>JavaEE</span><span class=rvts6>&#26087;&#29256;&#20013;&#25152;&#36951;&#30041;&#30340;&#32321;&#20887;</span><br><span class=rvts5>* </span><span class=rvts6>&#20195;&#30721;&#21644;</span><span class=rvts5>XML</span><span class=rvts6>&#37197;&#32622;&#31561;&#12290;</span></p>
+<p class=rvps4><span class=rvts6><br></span></p>
+<p class=rvps4><span class=rvts7>&#26694;&#26550; = &#27880;&#35299; + &#21453;&#23556;&#26426;&#21046; + &#35774;&#35745;&#27169;&#24335;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts3>2. &#27880;&#35299;&#30340;&#20351;&#29992;&#31034;&#20363;</span></p>
+<p class=rvps4><span class=rvts5>* </span><span class=rvts6>&#31034;&#20363;&#19968;&#65306;&#29983;&#25104;&#25991;&#26723;&#30456;&#20851;&#30340;&#27880;&#35299;</span><br><span class=rvts5>* </span><span class=rvts6>&#31034;&#20363;&#20108;&#65306;&#22312;&#32534;&#35793;&#26102;&#36827;&#34892;&#26684;&#24335;&#26816;&#26597;</span><span class=rvts5>(JDK</span><span class=rvts6>&#20869;&#32622;&#30340;&#20010;&#22522;&#26412;&#27880;&#35299;</span><span class=rvts5>)</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts8>@Override: </span><span class=rvts6>&#38480;&#23450;&#37325;&#20889;&#29238;&#31867;&#26041;&#27861;</span><span class=rvts5>, </span><span class=rvts6>&#35813;&#27880;&#35299;&#21482;&#33021;&#29992;&#20110;&#26041;&#27861;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts8>@Deprecated: </span><span class=rvts6>&#29992;&#20110;&#34920;&#31034;&#25152;&#20462;&#39280;&#30340;&#20803;&#32032;</span><span class=rvts5>(</span><span class=rvts6>&#31867;</span><span class=rvts5>, </span><span class=rvts6>&#26041;&#27861;&#31561;</span><span class=rvts5>)</span><span class=rvts6>&#24050;&#36807;&#26102;&#12290;&#36890;&#24120;&#26159;&#22240;&#20026;&#25152;&#20462;&#39280;&#30340;&#32467;&#26500;&#21361;&#38505;&#25110;&#23384;&#22312;&#26356;&#22909;&#30340;&#25321;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts8>@SuppressWarnings: </span><span class=rvts6>&#25233;&#21046;&#32534;&#35793;&#22120;&#35686;&#21578;</span><br><span class=rvts6></span><br><span class=rvts6> </span><span class=rvts5>* </span><span class=rvts6>&#31034;&#20363;&#65306;&#36319;&#36394;&#20195;&#30721;&#20381;&#36182;&#24615;&#65292;&#23454;&#29616;&#26367;&#20195;&#37197;&#32622;&#25991;&#20214;&#21151;&#33021;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>3. &#22914;&#20309;&#33258;&#23450;&#20041;&#27880;&#35299;&#65306;</span><span class=rvts6>&#21442;&#29031;</span><span class=rvts5>@SuppressWarnings</span><span class=rvts6>&#23450;&#20041;</span></p>
+<p class=rvps4><span class=rvts9><br></span></p>
+<p class=rvps4><span class=rvts4><br></span></p>
+<p class=rvps4><span class=rvts4> </span><span class=rvts5>* &#9312; </span><span class=rvts6>&#27880;&#35299;&#22768;&#26126;&#20026;&#65306;</span><span class=rvts5>@interface</span><br><span class=rvts5> * &#9313; </span><span class=rvts6>&#20869;&#37096;&#23450;&#20041;&#25104;&#21592;&#65292;&#36890;&#24120;&#20351;&#29992;</span><span class=rvts5>value</span><span class=rvts6>&#34920;&#31034;</span><br><span class=rvts6> </span><span class=rvts5>* &#9314; </span><span class=rvts6>&#21487;&#20197;&#25351;&#23450;&#25104;&#21592;&#30340;&#40664;&#35748;&#20540;&#65292;&#20351;&#29992;</span><span class=rvts5>default</span><span class=rvts6>&#23450;&#20041;</span><br><span class=rvts6> </span><span class=rvts5>* &#9315; </span><span class=rvts6>&#22914;&#26524;&#33258;&#23450;&#20041;&#27880;&#35299;&#27809;&#25104;&#21592;&#65292;&#34920;&#26126;&#26159;&#19968;&#20010;&#26631;&#35782;&#20316;&#29992;&#12290;</span><br><span class=rvts6></span><br><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts3>&#35828;&#26126;&#65306;</span></p>
+<p class=rvps4><span class=rvts6>&#22914;&#26524;&#27880;&#35299;&#26377;&#25104;&#21592;&#65292;&#22312;&#20351;&#29992;&#27880;&#35299;&#26102;&#65292;&#38656;&#35201;&#25351;&#26126;&#25104;&#21592;&#30340;&#20540;&#12290;</span><br><span class=rvts6>&#33258;&#23450;&#20041;&#27880;&#35299;&#24517;&#39035;&#37197;&#19978;&#27880;&#35299;&#30340;&#20449;&#24687;&#22788;&#29702;&#27969;&#31243;</span><span class=rvts5>(</span><span class=rvts6>&#20351;&#29992;&#21453;&#23556;</span><span class=rvts5>)</span><span class=rvts6>&#25165;&#24847;&#20041;&#12290;</span><br><span class=rvts6>&#33258;&#23450;&#20041;&#27880;&#35299;&#36890;&#36807;&#37117;&#20250;&#25351;&#26126;&#20004;&#20010;&#20803;&#27880;&#35299;&#65306;</span><span class=rvts5>Retention</span><span class=rvts6>&#12289;</span><span class=rvts5>Target</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>&#20195;&#30721;&#20030;&#20363;&#65306;</span></p>
+<p class=rvps4><span class=rvts9>@Inherited</span><br><span class=rvts9>@Repeatable</span><span class=rvts4>(</span><span class=rvts9>MyAnnotations</span><span class=rvts4>.</span><span class=rvts10>class</span><span class=rvts4>)</span><br><span class=rvts9>@Retention</span><span class=rvts4>(RetentionPolicy.</span><span class=rvts11>RUNTIME</span><span class=rvts4>)</span><br><span class=rvts9>@Target</span><span class=rvts4>({</span><span class=rvts11>TYPE</span><span class=rvts4>, </span><span class=rvts11>FIELD</span><span class=rvts4>, </span><span class=rvts11>METHOD</span><span class=rvts4>, </span><span class=rvts11>PARAMETER</span><span class=rvts4>, </span><span class=rvts11>CONSTRUCTOR</span><span class=rvts4>, </span><span class=rvts11>LOCAL_VARIABLE</span><span class=rvts4>,</span><span class=rvts11>TYPE_PARAMETER</span><span class=rvts4>,</span><span class=rvts11>TYPE_USE</span><span class=rvts4>})</span><br><span class=rvts10>public </span><span class=rvts4>@</span><span class=rvts10>interface </span><span class=rvts9>MyAnnotation </span><span class=rvts4>{</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;String value() </span><span class=rvts10>default </span><span class=rvts12>"hello"</span><span class=rvts4>;</span><br><span class=rvts4>}</span></p>
+<p class=rvps2><span class=rvts3>4. &#20803;&#27880;&#35299; &#65306;&#23545;&#29616;&#26377;&#30340;&#27880;&#35299;&#36827;&#34892;&#35299;&#37322;&#35828;&#26126;&#30340;&#27880;&#35299;&#12290; </span></p>
+<p class=rvps4><span class=rvts5>jdk </span><span class=rvts6>&#25552;&#20379;&#30340;</span><span class=rvts5>4</span><span class=rvts6>&#31181;&#20803;&#27880;&#35299;&#65306;</span><br><span class=rvts5>Retention</span><span class=rvts6>&#65306;&#25351;&#23450;&#25152;&#20462;&#39280;&#30340; </span><span class=rvts5>Annotation </span><span class=rvts6>&#30340;&#29983;&#21629;&#21608;&#26399;&#65306;</span><span class=rvts5>SOURCE\CLASS</span><span class=rvts6>&#65288;&#40664;&#35748;&#34892;&#20026;</span><span class=rvts5>\RUNTIME</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; </span><span class=rvts6>&#21482;&#22768;&#26126;&#20026;</span><span class=rvts5>RUNTIME</span><span class=rvts6>&#29983;&#21629;&#21608;&#26399;&#30340;&#27880;&#35299;&#65292;&#25165;&#33021;&#36890;&#36807;&#21453;&#23556;&#33719;&#21462;&#12290;</span><br><span class=rvts5>Target:</span><span class=rvts6>&#29992;&#20110;&#25351;&#23450;&#34987;&#20462;&#39280;&#30340; </span><span class=rvts5>Annotation </span><span class=rvts6>&#33021;&#29992;&#20110;&#20462;&#39280;&#21738;&#20123;&#31243;&#24207;&#20803;&#32032;</span><br><span class=rvts5>*******</span><span class=rvts6>&#20986;&#29616;&#30340;&#39057;&#29575;&#36739;&#20302;</span><span class=rvts5>*******</span><br><span class=rvts5>Documented:</span><span class=rvts6>&#34920;&#31034;&#25152;&#20462;&#39280;&#30340;&#27880;&#35299;&#22312;&#34987;</span><span class=rvts5>javadoc</span><span class=rvts6>&#35299;&#26512;&#26102;&#65292;&#20445;&#30041;&#19979;&#26469;&#12290;</span><br><span class=rvts5>Inherited:</span><span class=rvts6>&#34987;&#23427;&#20462;&#39280;&#30340; </span><span class=rvts5>Annotation </span><span class=rvts6>&#23558;&#20855;&#32487;&#25215;&#24615;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>---&gt;&#31867;&#27604;&#65306;&#20803;&#25968;&#25454;&#30340;&#27010;&#24565;&#65306;String name = "Tom";</span></p>
+<p class=rvps2><span class=rvts3>5. &#22914;&#20309;&#33719;&#21462;&#27880;&#35299;&#20449;&#24687;:&#36890;&#36807;&#21457;&#23556;&#26469;&#36827;&#34892;&#33719;&#21462;&#12289;&#35843;&#29992;&#12290;</span></p>
+<p class=rvps2><span class=rvts13>&#21069;&#25552;&#65306;&#35201;&#27714;&#27492;&#27880;&#35299;&#30340;&#20803;&#27880;&#35299;</span><span class=rvts14>Retention&#20013;&#22768;&#26126;&#30340;&#29983;&#21629;&#21608;&#26399;&#29366;&#24577;&#20026;&#65306;RUNTIME.</span></p>
+<p class=rvps2><span class=rvts3>6.JDK8&#20013;&#27880;&#35299;&#30340;&#26032;&#29305;&#24615;&#65306;</span><span class=rvts6>&#21487;&#37325;&#22797;&#27880;&#35299;&#12289;&#31867;&#22411;&#27880;&#35299;</span><br><span class=rvts6></span><br><span class=rvts5>6.1 </span><span class=rvts6>&#21487;&#37325;&#22797;&#27880;&#35299;&#65306;</span><span class=rvts5>&#9312; </span><span class=rvts6>&#22312;</span><span class=rvts5>MyAnnotation</span><span class=rvts6>&#19978;&#22768;&#26126;</span><span class=rvts5>@Repeatable</span><span class=rvts6>&#65292;&#25104;&#21592;&#20540;&#20026;</span><span class=rvts5>MyAnnotations.class</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9313; MyAnnotation</span><span class=rvts6>&#30340;</span><span class=rvts5>Target</span><span class=rvts6>&#21644;</span><span class=rvts5>Retention</span><span class=rvts6>&#31561;&#20803;&#27880;&#35299;&#19982;</span><span class=rvts5>MyAnnotations</span><span class=rvts6>&#30456;&#21516;&#12290;</span><br><span class=rvts6></span><br><span class=rvts5>6.2 </span><span class=rvts6>&#31867;&#22411;&#27880;&#35299;&#65306;</span><br><span class=rvts5>ElementType.TYPE_PARAMETER </span><span class=rvts6>&#34920;&#31034;&#35813;&#27880;&#35299;&#33021;&#20889;&#22312;&#31867;&#22411;&#21464;&#37327;&#30340;&#22768;&#26126;&#35821;&#21477;&#20013;&#65288;&#22914;&#65306;&#27867;&#22411;&#22768;&#26126;&#12290;</span><br><span class=rvts5>ElementType.TYPE_USE </span><span class=rvts6>&#34920;&#31034;&#35813;&#27880;&#35299;&#33021;&#20889;&#22312;&#20351;&#29992;&#31867;&#22411;&#30340;&#20219;&#20309;&#35821;&#21477;&#20013;&#12290;</span></p>
+</body></html>

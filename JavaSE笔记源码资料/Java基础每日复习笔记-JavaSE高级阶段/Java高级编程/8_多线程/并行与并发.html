@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>并行与并发.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: '??????';
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 84px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts9>&#24182;&#34892;&#19982;&#24182;&#21457;</span></p>
+<p class=rvps2><span class=rvts9><br></span></p>
+<p class=rvps2><span class=rvts3>01. &#21333;&#26680;CPU&#19982;&#22810;&#26680;CPU&#30340;&#29702;&#35299;</span></p>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts4>&#21333;&#26680;</span><span class=rvts5>CPU</span><span class=rvts4>&#65292;&#20854;&#23454;&#26159;&#19968;&#31181;&#20551;&#30340;&#22810;&#32447;&#31243;&#65292;&#22240;&#20026;&#22312;&#19968;&#20010;&#26102;&#38388;&#21333;&#20803;&#20869;&#65292;&#20063;&#21482;&#33021;&#25191;&#34892;&#19968;&#20010;&#32447;&#31243;&#30340;&#20219;&#21153;&#12290;&#20363;&#22914;&#65306;&#34429;&#28982;&#26377;&#22810;&#36710;&#36947;&#65292;&#20294;&#26159;&#25910;&#36153;&#31449;&#21482;&#26377;&#19968;&#20010;&#24037;&#20316;&#20154;&#21592;&#22312;&#25910;&#36153;&#65292;&#21482;&#26377;&#25910;&#20102;&#36153;&#25165;&#33021;&#36890;&#36807;&#65292;&#37027;&#20040;</span><span class=rvts5>CPU</span><span class=rvts4>&#23601;&#22909;&#27604;&#25910;&#36153;&#20154;&#21592;&#12290;&#22914;&#26524;&#26576;&#20010;&#20154;&#19981;&#24819;&#20132;&#38065;&#65292;&#37027;&#20040;&#25910;&#36153;&#20154;&#21592;&#21487;&#20197;&#25226;&#20182;&#8220;&#25346;&#36215;&#8221;&#65288;&#26238;&#30528;&#20182;&#65292;&#31561;&#20182;&#24819;&#36890;&#20102;&#65292;&#20934;&#22791;&#22909;&#20102;&#38065;&#65292;&#20877;&#21435;&#25910;&#36153;&#12290;&#65289;&#20294;&#26159;&#22240;&#20026;</span><span class=rvts5>CPU</span><span class=rvts4>&#26102;&#38388;&#21333;&#20803;&#29305;&#21035;&#30701;&#65292;&#22240;&#27492;&#24863;&#35273;&#19981;&#20986;&#26469;&#12290;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts4>&#22914;&#26524;&#26159;&#22810;&#26680;&#30340;&#35805;&#65292;&#25165;&#33021;&#26356;&#22909;&#30340;&#21457;&#25381;&#22810;&#32447;&#31243;&#30340;&#25928;&#29575;&#12290;&#65288;&#29616;&#22312;&#30340;&#26381;&#21153;&#22120;&#37117;&#26159;&#22810;&#26680;&#30340;&#65289;</span></li>
+</ul>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts6>&#19968;&#20010;</span><span class=rvts7>Java</span><span class=rvts6>&#24212;&#29992;&#31243;&#24207;</span><span class=rvts7>java.exe</span><span class=rvts6>&#65292;&#20854;&#23454;&#33267;&#23569;&#19977;&#20010;&#32447;&#31243;&#65306;</span><span class=rvts7>main()</span><span class=rvts6>&#20027;&#32447;&#31243;&#65292;</span><span class=rvts7>gc()</span><span class=rvts6>&#22403;&#22334;&#22238;&#25910;&#32447;&#31243;&#65292;&#24322;&#24120;&#22788;&#29702;&#32447;&#31243;&#12290;&#24403;&#28982;&#22914;&#26524;&#21457;&#29983;&#24322;&#24120;&#65292;&#20250;&#24433;&#21709;&#20027;&#32447;&#31243;&#12290;</span></li>
+<p class=rvps2><span class=rvts3>02. &#24182;&#34892;&#19982;&#24182;&#21457;&#30340;&#29702;&#35299;</span></li>
+</ul>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts8>&#24182;&#34892;&#65306;</span><span class=rvts4>&#22810;&#20010;CPU&#21516;&#26102;&#25191;&#34892;&#22810;&#20010;&#20219;&#21153;&#12290;&#27604;&#22914;&#65306;&#22810;&#20010;&#20154;&#21516;&#26102;&#20570;&#19981;&#21516;&#30340;&#20107;&#12290;</span></li>
+</ul>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts8>&#24182;&#21457;&#65306;</span><span class=rvts4>&#19968;&#20010;CPU(&#37319;&#29992;&#26102;&#38388;&#29255;)&#21516;&#26102;&#25191;&#34892;&#22810;&#20010;&#20219;&#21153;&#12290;&#27604;&#22914;&#65306;&#31186;&#26432;&#12289;&#22810;&#20010;&#20154;&#20570;&#21516;&#19968;&#20214;&#20107;</span></li>
+</ul>
+</body></html>

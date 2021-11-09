@@ -1,0 +1,2 @@
+导入驱动或其他文件只需要 .jar包即可
+idea右键 .jar包 点击最下面 Add as Library... 选择导入范围(global,project,module)即可导入

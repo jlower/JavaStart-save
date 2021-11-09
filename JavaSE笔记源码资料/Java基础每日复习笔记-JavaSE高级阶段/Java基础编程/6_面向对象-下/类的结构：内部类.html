@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>类的结构：内部类.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+ text-decoration: underline;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts10
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts12
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts13
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+}
+span.rvts14
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts15
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts16
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts17
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts18
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+}
+span.rvts19
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+ background-color: #d4d4d4;
+}
+span.rvts20
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+ background-color: #d4d4d4;
+}
+span.rvts21
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #646464;
+ background-color: #d4d4d4;
+}
+span.rvts22
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+}
+span.rvts23
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+ text-decoration: underline;
+}
+span.rvts24
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts25
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts26
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts27
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts28
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 48px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts28>&#31867;&#30340;&#32467;&#26500;&#65306;&#20869;&#37096;&#31867;</span></p>
+<p class=rvps2><span class=rvts28><br></span></p>
+<p class=rvps2><span class=rvts2>&#20869;&#37096;&#31867;&#65306;</span><span class=rvts4>&#31867;&#30340;&#31532;&#20116;&#20010;&#25104;&#21592;</span></p>
+<p class=rvps2><span class=rvts2>1.&#23450;&#20041;&#65306;</span><span class=rvts6>Java&#20013;&#20801;&#35768;&#23558;&#19968;&#20010;&#31867;A&#22768;&#26126;&#22312;&#21478;&#19968;&#20010;&#31867;B&#20013;&#65292;&#21017;&#31867;A&#23601;&#26159;&#20869;&#37096;&#31867;&#65292;&#31867;B&#31216;&#20026;&#22806;&#37096;&#31867;.</span></p>
+<p class=rvps2><span class=rvts2>2.&#20869;&#37096;&#31867;&#30340;&#20998;&#31867;&#65306;</span></p>
+<p class=rvps2><span class=rvts6>&#25104;&#21592;&#20869;&#37096;&#31867;&#65288;&#38745;&#24577;&#12289;&#38750;&#38745;&#24577; &#65289; </span><span class=rvts7>vs</span><span class=rvts6> &#23616;&#37096;&#20869;&#37096;&#31867;(&#26041;&#27861;&#20869;&#12289;&#20195;&#30721;&#22359;&#20869;&#12289;&#26500;&#36896;&#22120;&#20869;)</span></p>
+<p class=rvps2><span class=rvts2>3.&#25104;&#21592;&#20869;&#37096;&#31867;&#30340;&#29702;&#35299;&#65306;</span></p>
+<p><span class=rvts9>&#19968;&#26041;&#38754;&#65292;&#20316;&#20026;&#22806;&#37096;&#31867;&#30340;&#25104;&#21592;&#65306;</span></p>
+<p><span class=rvts9> * </span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>&gt;&#35843;&#29992;&#22806;&#37096;&#31867;&#30340;&#32467;&#26500;</span></p>
+<p><span class=rvts9> * </span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>&gt;&#21487;&#20197;&#34987;static&#20462;&#39280;</span></p>
+<p><span class=rvts9> * </span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>&gt;&#21487;&#20197;&#34987;4&#31181;&#19981;&#21516;&#30340;&#26435;&#38480;&#20462;&#39280;</span></p>
+<p><span class=rvts9> * </span></p>
+<p><span class=rvts9>&#21478;&#19968;&#26041;&#38754;&#65292;&#20316;&#20026;&#19968;&#20010;&#31867;&#65306;</span></p>
+<p><span class=rvts9> * </span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>&gt; &#31867;&#20869;&#21487;&#20197;&#23450;&#20041;&#23646;&#24615;&#12289;&#26041;&#27861;&#12289;&#26500;&#36896;&#22120;&#31561;</span></p>
+<p><span class=rvts9> * </span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>&gt; &#21487;&#20197;&#34987;final&#20462;&#39280;&#65292;&#34920;&#31034;&#27492;&#31867;&#19981;&#33021;&#34987;&#32487;&#25215;&#12290;&#35328;&#22806;&#20043;&#24847;&#65292;&#19981;&#20351;&#29992;final&#65292;&#23601;&#21487;&#20197;&#34987;&#32487;&#25215;</span></p>
+<p><span class=rvts9> * </span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>&gt; &#21487;&#20197;&#34987;abstract&#20462;&#39280;</span></p>
+<p class=rvps2><span class=rvts2>4.&#25104;&#21592;&#20869;&#37096;&#31867;&#65306;</span></p>
+<p><span class=rvts4>4.1&#22914;&#20309;&#21019;&#24314;&#25104;&#21592;&#20869;&#37096;&#31867;&#30340;&#23545;&#35937;&#65311;(&#38745;&#24577;&#30340;&#65292;&#38750;&#38745;&#24577;&#30340;)</span></p>
+<p><span class=rvts8>//&#21019;&#24314;&#38745;&#24577;&#30340;Dog&#20869;&#37096;&#31867;&#30340;&#23454;&#20363;(&#38745;&#24577;&#30340;&#25104;&#21592;&#20869;&#37096;&#31867;):</span></p>
+<p><span class=rvts10>Person.Dog </span><span class=rvts11>dog</span><span class=rvts10> = </span><span class=rvts12>new</span><span class=rvts10> Person.Dog();</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts8>//&#21019;&#24314;&#38750;&#38745;&#24577;&#30340;Bird&#20869;&#37096;&#31867;&#30340;&#23454;&#20363;(&#38750;&#38745;&#24577;&#30340;&#25104;&#21592;&#20869;&#37096;&#31867;):</span></p>
+<p><span class=rvts8>//Person.Bird bird = new Person.Bird();//&#38169;&#35823;&#30340;</span></p>
+<p><span class=rvts10>Person </span><span class=rvts11>p</span><span class=rvts10> = </span><span class=rvts12>new</span><span class=rvts10> Person();</span></p>
+<p><span class=rvts13>Person.Bird</span><span class=rvts10> </span><span class=rvts11>bird</span><span class=rvts10> = </span><span class=rvts11>p</span><span class=rvts10>.</span><span class=rvts12>new</span><span class=rvts10> </span><span class=rvts13>Bird</span><span class=rvts10>();</span></p>
+<p><span class=rvts5><br></span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4>4.2&#22914;&#20309;&#22312;&#25104;&#21592;&#20869;&#37096;&#31867;&#20013;&#35843;&#29992;&#22806;&#37096;&#31867;&#30340;&#32467;&#26500;&#65311;</span></p>
+<p><span class=rvts12>class</span><span class=rvts10> Person{</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>String </span><span class=rvts14>name</span><span class=rvts10> = </span><span class=rvts15>"&#23567;&#26126;"</span><span class=rvts10>;</span></p>
+<p class=rvps3><span class=rvts10>public void eat(){</span></p>
+<p class=rvps3><span class=rvts10>}</span></p>
+<p class=rvps3><span class=rvts8>//&#38750;&#38745;&#24577;&#25104;&#21592;&#20869;&#37096;&#31867;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>class</span><span class=rvts10> Bird{</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>String </span><span class=rvts14>name</span><span class=rvts10> = </span><span class=rvts15>"&#26460;&#40515;"</span><span class=rvts10>;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>public</span><span class=rvts10> </span><span class=rvts12>void</span><span class=rvts10> display(String </span><span class=rvts11>name</span><span class=rvts10>){</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts16>out</span><span class=rvts10>.println(</span><span class=rvts11>name</span><span class=rvts10>);</span><span class=rvts8>//&#26041;&#27861;&#30340;&#24418;&#21442;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts16>out</span><span class=rvts10>.println(</span><span class=rvts12>this</span><span class=rvts10>.</span><span class=rvts14>name</span><span class=rvts10>);</span><span class=rvts8>//&#20869;&#37096;&#31867;&#30340;&#23646;&#24615;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts16>out</span><span class=rvts10>.println(Person.</span><span class=rvts12>this</span><span class=rvts10>.</span><span class=rvts14>name</span><span class=rvts10>);</span><span class=rvts8>//&#22806;&#37096;&#31867;&#30340;&#23646;&#24615;</span></p>
+<p class=rvps3><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>//Person.this.eat();</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>}</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>}</span></p>
+<p><span class=rvts3>}</span></p>
+<p class=rvps2><span class=rvts2>5.&#23616;&#37096;&#20869;&#37096;&#31867;&#30340;&#20351;&#29992;&#65306;</span></p>
+<p><span class=rvts9>//&#36820;&#22238;&#19968;&#20010;&#23454;&#29616;&#20102;Comparable&#25509;&#21475;&#30340;&#31867;&#30340;&#23545;&#35937;</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts25>public</span><span class=rvts17> </span><span class=rvts23>Comparable</span><span class=rvts17> getComparable(){</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>//&#21019;&#24314;&#19968;&#20010;&#23454;&#29616;&#20102;Comparable&#25509;&#21475;&#30340;&#31867;:&#23616;&#37096;&#20869;&#37096;&#31867;</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>//&#26041;&#24335;&#19968;&#65306;</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>class MyComparable implements Comparable{</span></p>
+<p><span class=rvts9>//</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>@Override</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>public </span><span class=rvts24>int</span><span class=rvts9> compareTo(Object o) {</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>return 0;</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9>//</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>return new MyComparable();</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>//&#26041;&#24335;&#20108;&#65306;</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts19>return</span><span class=rvts18> </span><span class=rvts19>new</span><span class=rvts18> </span><span class=rvts23>Comparable</span><span class=rvts18>(){</span></p>
+<p><span class=rvts22><br></span></p>
+<p><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts21>@Override</span></p>
+<p><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts19>public</span><span class=rvts18> </span><span class=rvts19>int</span><span class=rvts18> compareTo(Object </span><span class=rvts20>o</span><span class=rvts18>) {</span></p>
+<p><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts19>return</span><span class=rvts18> 0;</span></p>
+<p><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18>}</span></p>
+<p><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts18>};</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts17> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#27880;&#24847;&#28857;&#65306;</span></p>
+<p><span class=rvts26>&#22312;&#23616;&#37096;&#20869;&#37096;&#31867;&#30340;&#26041;&#27861;&#20013;&#65288;&#27604;&#22914;&#65306;show&#22914;&#26524;&#35843;&#29992;&#23616;&#37096;&#20869;&#37096;&#31867;&#25152;&#22768;&#26126;&#30340;&#26041;&#27861;(&#27604;&#22914;&#65306;method)&#20013;&#30340;&#23616;&#37096;&#21464;&#37327;(&#27604;&#22914;&#65306;</span><span class=rvts27>num</span><span class=rvts26>)&#30340;&#35805;,&#35201;&#27714;&#27492;&#23616;&#37096;&#21464;&#37327;&#22768;&#26126;&#20026;final&#30340;&#12290;</span></p>
+<p><span class=rvts26> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts26> * </span></p>
+<p><span class=rvts27>jdk</span><span class=rvts26> 7&#21450;&#20043;&#21069;&#29256;&#26412;&#65306;&#35201;&#27714;&#27492;&#23616;&#37096;&#21464;&#37327;&#26174;&#24335;&#30340;&#22768;&#26126;&#20026;final&#30340;</span></p>
+<p><span class=rvts27>jdk</span><span class=rvts26> 8&#21450;&#20043;&#21518;&#30340;&#29256;&#26412;&#65306;&#21487;&#20197;&#30465;&#30053;final&#30340;&#22768;&#26126;</span></p>
+<p class=rvps2><span class=rvts2>&#24635;&#32467;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#25104;&#21592;&#20869;&#37096;&#31867;&#21644;&#23616;&#37096;&#20869;&#37096;&#31867;&#65292;&#22312;&#32534;&#35793;&#20197;&#21518;&#65292;&#37117;&#20250;&#29983;&#25104;&#23383;&#33410;&#30721;&#25991;&#20214;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>&#26684;&#24335;&#65306;&#25104;&#21592;&#20869;&#37096;&#31867;&#65306;&#22806;&#37096;&#31867;$&#20869;&#37096;&#31867;&#21517;.class</span></p>
+<p class=rvps2><span class=rvts2> &nbsp; &nbsp; &nbsp;&#23616;&#37096;&#20869;&#37096;&#31867;&#65306;&#22806;&#37096;&#31867;$&#25968;&#23383; &#20869;&#37096;&#31867;&#21517;.class</span></p>
+</body></html>

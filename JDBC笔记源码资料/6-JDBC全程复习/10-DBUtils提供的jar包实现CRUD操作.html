@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>10-DBUtils提供的jar包实现CRUD操作.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #646464;
+}
+span.rvts17
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f9fbf;
+}
+span.rvts18
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+}
+span.rvts19
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f9fbf;
+}
+span.rvts20
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts21
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts21>10-DBUtils&#25552;&#20379;&#30340;jar&#21253;&#23454;&#29616;CRUD&#25805;&#20316;</span></p>
+<p class=rvps2><span class=rvts21><br></span></p>
+<p class=rvps2><span class=rvts2>&#23548;&#20837;jar&#21253;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="10-DBUtils提供的jar包实现CRUD操作.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#20351;&#29992;&#29616;&#25104;&#30340;jar&#20013;&#30340;QueryRunner&#27979;&#35797;&#22686;&#12289;&#21024;&#12289;&#25913;&#30340;&#25805;&#20316;:</span></p>
+<p><span class=rvts8>//&#27979;&#35797;&#25554;&#20837;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testInsert() {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>QueryRunner</span><span class=rvts9> </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> </span><span class=rvts15>QueryRunner</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"insert into customers(name,email,birth)values(?,?,?)"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>int</span><span class=rvts9> </span><span class=rvts11>insertCount</span><span class=rvts9> = </span><span class=rvts11>runner</span><span class=rvts9>.update(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts13>"&#34081;&#24464;&#22372;"</span><span class=rvts9>,</span><span class=rvts13>"caixukun@126.com"</span><span class=rvts9>,</span><span class=rvts13>"1997-09-08"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts14>out</span><span class=rvts9>.println(</span><span class=rvts13>"&#28155;&#21152;&#20102;"</span><span class=rvts9> + </span><span class=rvts11>insertCount</span><span class=rvts9> + </span><span class=rvts13>"&#26465;&#35760;&#24405;"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#20351;&#29992;&#29616;&#25104;&#30340;jar&#20013;&#30340;QueryRunner&#27979;&#35797;&#26597;&#35810;&#30340;&#25805;&#20316;:</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts8>//&#27979;&#35797;&#26597;&#35810;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>/*</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * BeanHander:&#26159;ResultSetHandler&#25509;&#21475;&#30340;&#23454;&#29616;&#31867;&#65292;&#29992;&#20110;&#23553;&#35013;&#34920;&#20013;&#30340;&#19968;&#26465;&#35760;&#24405;&#12290;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery1(){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select id,name,email,birth from customers where id = ?"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>BeanHandler&lt;Customer&gt; </span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> BeanHandler&lt;&gt;(Customer.</span><span class=rvts10>class</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Customer </span><span class=rvts11>customer</span><span class=rvts9> = </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>, 23);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts14>out</span><span class=rvts9>.println(</span><span class=rvts11>customer</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>// </span><span class=rvts19>TODO</span><span class=rvts8> Auto-generated catch block</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>/*</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * BeanListHandler:&#26159;ResultSetHandler&#25509;&#21475;&#30340;&#23454;&#29616;&#31867;&#65292;&#29992;&#20110;&#23553;&#35013;&#34920;&#20013;&#30340;&#22810;&#26465;&#35760;&#24405;&#26500;&#25104;&#30340;&#38598;&#21512;&#12290;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery2() {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select id,name,email,birth from customers where id &lt; ?"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>BeanListHandler&lt;Customer&gt; &nbsp;</span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> BeanListHandler&lt;&gt;(Customer.</span><span class=rvts10>class</span><span class=rvts9>);</span></p>
+<p><span class=rvts18><br></span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>List&lt;Customer&gt; </span><span class=rvts11>list</span><span class=rvts9> = </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>, 23);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>list</span><span class=rvts9>.forEach(System.</span><span class=rvts14>out</span><span class=rvts9>::println);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>/*</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * MapHander:&#26159;ResultSetHandler&#25509;&#21475;&#30340;&#23454;&#29616;&#31867;&#65292;&#23545;&#24212;&#34920;&#20013;&#30340;&#19968;&#26465;&#35760;&#24405;&#12290;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * &#23558;&#23383;&#27573;&#21450;&#30456;&#24212;&#23383;&#27573;&#30340;&#20540;&#20316;&#20026;map&#20013;&#30340;key&#21644;value</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery3(){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select id,name,email,birth from customers where id = ?"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>MapHandler </span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> MapHandler();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Map&lt;String, Object&gt; </span><span class=rvts11>map</span><span class=rvts9> = </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>, 23);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts14>out</span><span class=rvts9>.println(</span><span class=rvts11>map</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>/*</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * MapListHander:&#26159;ResultSetHandler&#25509;&#21475;&#30340;&#23454;&#29616;&#31867;&#65292;&#23545;&#24212;&#34920;&#20013;&#30340;&#22810;&#26465;&#35760;&#24405;&#12290;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * &#23558;&#23383;&#27573;&#21450;&#30456;&#24212;&#23383;&#27573;&#30340;&#20540;&#20316;&#20026;map&#20013;&#30340;key&#21644;value&#12290;&#23558;&#36825;&#20123;map&#28155;&#21152;&#21040;List&#20013;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery4(){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select id,name,email,birth from customers where id &lt; ?"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>MapListHandler </span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> MapListHandler();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>List&lt;Map&lt;String, Object&gt;&gt; </span><span class=rvts11>list</span><span class=rvts9> = </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>, 23);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>list</span><span class=rvts9>.forEach(System.</span><span class=rvts14>out</span><span class=rvts9>::println);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>/*</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * ScalarHandler:&#29992;&#20110;&#26597;&#35810;&#29305;&#27530;&#20540;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery5(){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select count(*) from customers"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>ScalarHandler </span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> ScalarHandler();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Long </span><span class=rvts11>count</span><span class=rvts9> = (Long) </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts14>out</span><span class=rvts9>.println(</span><span class=rvts11>count</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery6(){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select max(birth) from customers"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>ScalarHandler </span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> ScalarHandler();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Date </span><span class=rvts11>maxBirth</span><span class=rvts9> = (Date) </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts14>out</span><span class=rvts9>.println(</span><span class=rvts11>maxBirth</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>/*</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * &#33258;&#23450;&#20041;ResultSetHandler&#30340;&#23454;&#29616;&#31867;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Test</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> </span><span class=rvts10>void</span><span class=rvts9> testQuery7(){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Connection </span><span class=rvts11>conn</span><span class=rvts9> = </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts9> {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>QueryRunner </span><span class=rvts11>runner</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> QueryRunner();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>conn</span><span class=rvts9> = JDBCUtils.</span><span class=rvts12>getConnection3</span><span class=rvts9>();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>sql</span><span class=rvts9> = </span><span class=rvts13>"select id,name,email,birth from customers where id = ?"</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>ResultSetHandler&lt;Customer&gt; </span><span class=rvts11>handler</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> ResultSetHandler&lt;Customer&gt;(){</span></p>
+<p><span class=rvts18><br></span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>@Override</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts9> Customer handle(ResultSet </span><span class=rvts11>rs</span><span class=rvts9>) </span><span class=rvts10>throws</span><span class=rvts9> SQLException {</span></p>
+<p><span class=rvts8>//</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.out.println("handle");</span></p>
+<p><span class=rvts8>//</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>return null;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts8>//</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>return new Customer(12, "&#25104;&#40857;", "Jacky@126.com", new Date(234324234324L));</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>if</span><span class=rvts9>(</span><span class=rvts11>rs</span><span class=rvts9>.next()){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>int</span><span class=rvts9> </span><span class=rvts11>id</span><span class=rvts9> = </span><span class=rvts11>rs</span><span class=rvts9>.getInt(</span><span class=rvts13>"id"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>name</span><span class=rvts9> = </span><span class=rvts11>rs</span><span class=rvts9>.getString(</span><span class=rvts13>"name"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>String </span><span class=rvts11>email</span><span class=rvts9> = </span><span class=rvts11>rs</span><span class=rvts9>.getString(</span><span class=rvts13>"email"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Date </span><span class=rvts11>birth</span><span class=rvts9> = </span><span class=rvts11>rs</span><span class=rvts9>.getDate(</span><span class=rvts13>"birth"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Customer </span><span class=rvts11>customer</span><span class=rvts9> = </span><span class=rvts10>new</span><span class=rvts9> Customer(</span><span class=rvts11>id</span><span class=rvts9>, </span><span class=rvts11>name</span><span class=rvts9>, </span><span class=rvts11>email</span><span class=rvts9>, </span><span class=rvts11>birth</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>return</span><span class=rvts9> </span><span class=rvts11>customer</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>return</span><span class=rvts9> </span><span class=rvts10>null</span><span class=rvts9>;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>};</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>Customer </span><span class=rvts11>customer</span><span class=rvts9> = </span><span class=rvts11>runner</span><span class=rvts9>.query(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts11>sql</span><span class=rvts9>, </span><span class=rvts11>handler</span><span class=rvts9>,23);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts14>out</span><span class=rvts9>.println(</span><span class=rvts11>customer</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>} </span><span class=rvts10>catch</span><span class=rvts9> (SQLException </span><span class=rvts11>e</span><span class=rvts9>) {</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>e</span><span class=rvts9>.printStackTrace();</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span><span class=rvts10>finally</span><span class=rvts9>{</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>JDBCUtils.</span><span class=rvts12>closeResource</span><span class=rvts9>(</span><span class=rvts11>conn</span><span class=rvts9>, </span><span class=rvts10>null</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9><br></span></p>
+<p><span class=rvts4>&#20351;&#29992;dbutils.jar&#21253;&#20013;&#30340;DbUtils&#24037;&#20855;&#31867;&#23454;&#29616;&#36830;&#25509;&#31561;&#36164;&#28304;&#30340;&#20851;&#38381;&#65306;</span></p>
+<p><span class=rvts20>/**</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span><span class=rvts17>@Description</span><span class=rvts20> &#20351;&#29992;dbutils.jar&#20013;&#25552;&#20379;&#30340;DbUtils&#24037;&#20855;&#31867;&#65292;&#23454;&#29616;&#36164;&#28304;&#30340;&#20851;&#38381;</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span><span class=rvts17>@author</span><span class=rvts20> shkstart</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span><span class=rvts17>@date</span><span class=rvts20> &#19979;&#21320;4:53:09</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span><span class=rvts17>@param</span><span class=rvts20> conn</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span><span class=rvts17>@param</span><span class=rvts20> ps</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> * </span><span class=rvts17>@param</span><span class=rvts20> rs</span></p>
+<p><span class=rvts20> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts20> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>public</span><span class=rvts4> </span><span class=rvts5>static</span><span class=rvts4> </span><span class=rvts5>void</span><span class=rvts4> closeResource1(Connection </span><span class=rvts6>conn</span><span class=rvts4>,Statement </span><span class=rvts6>ps</span><span class=rvts4>,ResultSet </span><span class=rvts6>rs</span><span class=rvts4>){</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>try {</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>DbUtils.close(conn);</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>} catch (SQLException e) {</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>e.printStackTrace();</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>}</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>try {</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>DbUtils.close(ps);</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>} catch (SQLException e) {</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>e.printStackTrace();</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>}</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>try {</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>DbUtils.close(rs);</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>} catch (SQLException e) {</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>e.printStackTrace();</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>}</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>DbUtils.</span><span class=rvts7>closeQuietly</span><span class=rvts4>(</span><span class=rvts6>conn</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>DbUtils.</span><span class=rvts7>closeQuietly</span><span class=rvts4>(</span><span class=rvts6>ps</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>DbUtils.</span><span class=rvts7>closeQuietly</span><span class=rvts4>(</span><span class=rvts6>rs</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span></p>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>了解ClassLoader.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ background-color: #ffff00;
+}
+span.rvts4
+{
+ font-size: 17pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+ background-color: #ffff00;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+ background-color: #ffff00;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+ background-color: #ffff00;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: justify;
+ text-justify: inter-word;
+ text-align-last: auto;
+ text-indent: -30px;
+ margin: 0px 0px 0px 30px;
+}
+.rvps4
+{
+ background: #ffffff;
+}
+.rvps5
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps5><span class=rvts16>&#20102;&#35299;ClassLoader</span></p>
+<p class=rvps2><span class=rvts16><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#31867;&#30340;&#21152;&#36733;&#36807;&#31243;----&#20102;&#35299;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="了解ClassLoader.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts2>2.&#31867;&#30340;&#21152;&#36733;&#22120;&#30340;&#20316;&#29992;</span></p>
+<p class=rvps3><img alt="" style="padding : 1px;" src="了解ClassLoader.files/img2.jpg"></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#31867;&#30340;&#21152;&#36733;&#22120;&#30340;&#20998;&#31867;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="了解ClassLoader.files/img3.jpg"></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>4.Java&#31867;&#32534;&#35793;&#12289;&#36816;&#34892;&#30340;&#25191;&#34892;&#30340;&#27969;&#31243;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="了解ClassLoader.files/img4.jpg"></p>
+<p class=rvps2><span class=rvts3>5.&#20351;&#29992;Classloader&#21152;&#36733;src&#30446;&#24405;&#19979;&#30340;&#37197;&#32622;&#25991;&#20214;</span></p>
+<p class=rvps4><span class=rvts5>@Test</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts6>public void </span><span class=rvts7>test2() </span><span class=rvts6>throws </span><span class=rvts7>Exception {</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;Properties pros = &nbsp;</span><span class=rvts6>new </span><span class=rvts7>Properties();</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>//</span><span class=rvts9>&#27492;&#26102;&#30340;&#25991;&#20214;&#40664;&#35748;&#22312;&#24403;&#21069;&#30340;</span><span class=rvts8>module</span><span class=rvts9>&#19979;&#12290;</span><br><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>//</span><span class=rvts9>&#35835;&#21462;&#37197;&#32622;&#25991;&#20214;&#30340;&#26041;&#24335;&#19968;&#65306;</span><br><span class=rvts8>// &nbsp; &nbsp; &nbsp; &nbsp;FileInputStream fis = new FileInputStream("jdbc.properties");</span><br><span class=rvts8>// &nbsp; &nbsp; &nbsp; &nbsp;FileInputStream fis = new FileInputStream("src\\jdbc1.properties");</span><br><span class=rvts8>// &nbsp; &nbsp; &nbsp; &nbsp;pros.load(fis);</span><br><span class=rvts8></span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts9>&#35835;&#21462;&#37197;&#32622;&#25991;&#20214;&#30340;&#26041;&#24335;&#20108;&#65306;&#20351;&#29992;</span><span class=rvts8>ClassLoader</span><br><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts9>&#37197;&#32622;&#25991;&#20214;&#40664;&#35748;&#35782;&#21035;&#20026;&#65306;&#24403;&#21069;</span><span class=rvts8>module</span><span class=rvts9>&#30340;</span><span class=rvts15>src</span><span class=rvts14>&#19979;</span><br><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>ClassLoader classLoader = ClassLoaderTest.</span><span class=rvts6>class</span><span class=rvts7>.getClassLoader();</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;InputStream is = </span><span class=rvts12>classLoader.getResourceAsStream(</span><span class=rvts13>"jdbc1.properties"</span><span class=rvts12>);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;pros.load(is);</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;String user = pros.getProperty(</span><span class=rvts10>"user"</span><span class=rvts7>);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;String password = pros.getProperty(</span><span class=rvts10>"password"</span><span class=rvts7>);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts11>out</span><span class=rvts7>.println(</span><span class=rvts10>"user = " </span><span class=rvts7>+ user + </span><span class=rvts10>",password = " </span><span class=rvts7>+ password);</span><br><span class=rvts7></span><br><span class=rvts7></span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp;}</span></p>
+</body></html>

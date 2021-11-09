@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Path、Paths、Files的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #c00000;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -30px;
+ margin: 0px 0px 0px 48px;
+}
+.rvps4
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 18px;
+}
+.rvps5
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps5><span class=rvts6>Path&#12289;Paths&#12289;Files&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts3>1.NIO&#30340;&#20351;&#29992;&#35828;&#26126;&#65306;</span></p>
+<p class=rvps4><span class=rvts4>&gt;Java NIO (New IO&#65292;Non-Blocking IO)&#26159;&#20174;Java 1.4&#29256;&#26412;&#24320;&#22987;&#24341;&#20837;&#30340;&#19968;&#22871;&#26032;&#30340;IO API&#65292;&#21487;&#20197;&#26367;&#20195;&#26631;&#20934;&#30340;Java </span></p>
+<p class=rvps4><span class=rvts4>IO AP&#12290;</span></p>
+<p class=rvps4><span class=rvts4>&gt;NIO&#19982;&#21407;&#26469;&#30340;IO&#21516;&#26679;&#30340;&#20316;&#29992;&#21644;&#30446;&#30340;&#65292;&#20294;&#26159;&#20351;&#29992;&#30340;&#26041;&#24335;&#23436;&#20840;&#19981;&#21516;&#65292;NIO&#25903;&#25345;&#38754;&#21521;&#32531;&#20914;&#21306;&#30340;(IO&#26159;&#38754;&#21521;&#27969;&#30340;)&#12289;&#22522;&#20110;</span></p>
+<p class=rvps4><span class=rvts4>&#36890;&#36947;&#30340;IO&#25805;&#20316;&#12290;</span></p>
+<p class=rvps4><span class=rvts5>&gt;NIO&#23558;&#20197;&#26356;&#21152;&#39640;&#25928;&#30340;&#26041;&#24335;&#36827;&#34892;&#25991;&#20214;&#30340;&#35835;&#20889;&#25805;&#20316;&#12290;</span></p>
+<p><span class=rvts4>&gt;&#38543;&#30528; JDK 7 &#30340;&#21457;&#24067;&#65292;Java&#23545;NIO&#36827;&#34892;&#20102;&#26497;&#22823;&#30340;&#25193;&#23637;&#65292;&#22686;&#24378;&#20102;&#23545;&#25991;&#20214;&#22788;&#29702;&#21644;&#25991;&#20214;&#31995;&#32479;&#29305;&#24615;&#30340;&#25903;&#25345;&#65292;&#20197;&#33267;&#20110;&#25105;&#20204;&#31216;&#20182;&#20204;&#20026; NIO.2&#12290;</span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts3>2.Path&#30340;&#20351;&#29992; ---jdk7&#25552;&#20379;</span></p>
+<p class=rvps2><span class=rvts3>2.1Path&#30340;&#35828;&#26126;&#65306;</span></p>
+<p class=rvps2><span class=rvts3>Path&#26367;&#25442;&#21407;&#26377;&#30340;File&#31867;&#12290;</span></p>
+<p class=rvps2><span class=rvts3>2.2&#22914;&#20309;&#23454;&#20363;&#21270;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Path、Paths、Files的使用.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts3>2.3&#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps3><img alt="" style="padding : 1px;" src="Path、Paths、Files的使用.files/img2.jpg"></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>3.Files&#24037;&#20855;&#31867; ---jdk7&#25552;&#20379;</span></p>
+<p class=rvps2><span class=rvts3>3.1&#20316;&#29992;&#65306;</span></p>
+<p class=rvps2><span class=rvts3>&#25805;&#20316;&#25991;&#20214;&#25110;&#25991;&#20214;&#30446;&#24405;&#30340;&#24037;&#20855;&#31867;</span></p>
+<p class=rvps2><span class=rvts3>3.2&#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Path、Paths、Files的使用.files/img3.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Path、Paths、Files的使用.files/img4.jpg"></p>
+</body></html>

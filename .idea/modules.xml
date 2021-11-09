@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/EL_JSTL/EL_JSTL.iml" filepath="$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/EL_JSTL/EL_JSTL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaStart.iml" filepath="$PROJECT_DIR$/JavaStart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/cookie_session/cookie_session.iml" filepath="$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/cookie_session/cookie_session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/filter/filter.iml" filepath="$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/filter/filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/json_ajax_i18n/json_ajax_i18n.iml" filepath="$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/json_ajax_i18n/json_ajax_i18n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/jsp/jsp.iml" filepath="$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/jsp/jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/servlet/servlet.iml" filepath="$PROJECT_DIR$/src/com/learn/www/exercise/javaweb/servlet/servlet.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>反射的概述.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 18px;
+}
+.rvps4
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts14>&#21453;&#23556;&#30340;&#27010;&#36848;</span></p>
+<p><span class=rvts14><br></span></p>
+<p><span class=rvts2>1.&#26412;&#31456;&#30340;&#20027;&#35201;&#20869;&#23481;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><img alt="" style="padding : 1px;" src="反射的概述.files/img1.jpg"></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#20851;&#20110;&#21453;&#23556;&#30340;&#29702;&#35299;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts3>Reflection</span><span class=rvts4>&#65288;&#21453;&#23556;)&#26159;&#34987;&#35270;&#20026;</span><span class=rvts5>&#21160;&#24577;&#35821;&#35328;</span><span class=rvts4>&#30340;&#20851;&#38190;&#65292;&#21453;&#23556;&#26426;&#21046;&#20801;&#35768;&#31243;&#24207;&#22312;&#25191;&#34892;&#26399;&#20511;&#21161;&#20110;</span><span class=rvts3>Reflection API</span><span class=rvts4>&#21462;&#24471;&#20219;&#20309;</span></p>
+<p class=rvps3><span class=rvts4>&#31867;&#30340;&#20869;&#37096;&#20449;&#24687;&#65292;&#24182;&#33021;&#30452;&#25509;&#25805;&#20316;&#20219;&#24847;&#23545;&#35937;&#30340;&#20869;&#37096;&#23646;&#24615;&#21450;&#26041;&#27861;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#26694;&#26550; = &#21453;&#23556; + &#27880;&#35299; + &#35774;&#35745;&#27169;&#24335;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.&#20307;&#20250;&#21453;&#23556;&#26426;&#21046;&#30340;&#8220;&#21160;&#24577;&#24615;&#8221;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps4><span class=rvts6>//</span><span class=rvts7>&#20307;&#20250;&#21453;&#23556;&#30340;&#21160;&#24577;&#24615;</span><br><span class=rvts8>@Test</span><br><span class=rvts9>public void </span><span class=rvts2>test2(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts9>for</span><span class=rvts2>(</span><span class=rvts9>int </span><span class=rvts2>i = </span><span class=rvts10>0</span><span class=rvts2>;i &lt; </span><span class=rvts10>100</span><span class=rvts2>;i++){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>int </span><span class=rvts2>num = </span><span class=rvts9>new </span><span class=rvts2>Random().nextInt(</span><span class=rvts10>3</span><span class=rvts2>);</span><span class=rvts6>//0,1,2</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String classPath = </span><span class=rvts11>""</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>switch</span><span class=rvts2>(num){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>case </span><span class=rvts10>0</span><span class=rvts2>:</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;classPath = </span><span class=rvts11>"java.util.Date"</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>break</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>case </span><span class=rvts10>1</span><span class=rvts2>:</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;classPath = </span><span class=rvts11>"java.lang.Object"</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>break</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>case </span><span class=rvts10>2</span><span class=rvts2>:</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;classPath = </span><span class=rvts11>"com.atguigu.java.Person"</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>break</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Object obj = getInstance(classPath);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts12>out</span><span class=rvts2>.println(obj);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts9>catch </span><span class=rvts2>(Exception e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2>}</span><br><span class=rvts2></span><br><span class=rvts6>/*</span><br><span class=rvts7>&#21019;&#24314;&#19968;&#20010;&#25351;&#23450;&#31867;&#30340;&#23545;&#35937;&#12290;</span><br><span class=rvts6>classPath:</span><span class=rvts7>&#25351;&#23450;&#31867;&#30340;&#20840;&#31867;&#21517;</span><br><span class=rvts6> */</span><br><span class=rvts9>public </span><span class=rvts2>Object getInstance(String classPath) </span><span class=rvts9>throws </span><span class=rvts2>Exception {</span><br><span class=rvts2> &nbsp; Class clazz = &nbsp;Class.</span><span class=rvts13>forName</span><span class=rvts2>(classPath);</span><br><span class=rvts2> &nbsp; </span><span class=rvts9>return </span><span class=rvts2>clazz.newInstance();</span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>4.&#21453;&#23556;&#26426;&#21046;&#33021;&#25552;&#20379;&#30340;&#21151;&#33021;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><img alt="" style="padding : 1px;" src="反射的概述.files/img2.jpg"></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>5.&#30456;&#20851;API</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>java.lang.Class:&#21453;&#23556;&#30340;&#28304;&#22836;</span></p>
+<p><span class=rvts2>java.lang.reflect.Method</span></p>
+<p><span class=rvts2>java.lang.reflect.Field</span></p>
+<p><span class=rvts2>java.lang.reflect.Constructor</span></p>
+<p><span class=rvts2>....</span></p>
+</body></html>

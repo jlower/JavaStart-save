@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>构造器引用与数组引用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #1115ff;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: ;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts16
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts17
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts18
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts19
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts20
+{
+ font-size: 14pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts21
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts22
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 28px; list-style-position: outside; list-style-type: disc;}
+.list1 {text-indent: 0px; margin-left: 28px; list-style-position: outside; list-style-type: square;}
+.list2 {text-indent: 0px; margin-left: 28px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts22>&#26500;&#36896;&#22120;&#24341;&#29992;&#19982;&#25968;&#32452;&#24341;&#29992;</span></p>
+<p class=rvps2><span class=rvts22><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#26500;&#36896;&#22120;&#24341;&#29992;&#26684;&#24335;&#65306;</span></p>
+<p class=rvps3><span class=rvts7>&#31867;&#21517;::new</span></p>
+<p class=rvps3><span class=rvts7><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#26500;&#36896;&#22120;&#24341;&#29992;&#20351;&#29992;&#35201;&#27714;&#65306;</span></p>
+<p class=rvps3><span class=rvts8>&#21644;&#26041;&#27861;&#24341;&#29992;&#31867;&#20284;&#65292;&#20989;&#25968;&#24335;&#25509;&#21475;&#30340;&#25277;&#35937;&#26041;&#27861;&#30340;&#24418;&#21442;&#21015;&#34920;&#21644;&#26500;&#36896;&#22120;&#30340;&#24418;&#21442;&#21015;&#34920;&#19968;&#33268;&#12290;&#25277;&#35937;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#21363;&#20026;&#26500;&#36896;&#22120;&#25152;&#23646;&#30340;&#31867;&#30340;&#31867;&#22411;</span></p>
+<p class=rvps3><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#26500;&#36896;&#22120;&#24341;&#29992;&#20030;&#20363;&#65306;</span></p>
+<p class=rvps3><span class=rvts16>//Supplier</span><span class=rvts20>&#20013;&#30340;</span><span class=rvts16>T get()</span><br><span class=rvts16> &nbsp; //Employee</span><span class=rvts20>&#30340;&#31354;&#21442;&#26500;&#36896;&#22120;&#65306;</span><span class=rvts16>Employee()</span><br><span class=rvts16> &nbsp; </span><span class=rvts3>@Test</span><br><span class=rvts3> &nbsp; </span><span class=rvts4>public void </span><span class=rvts5>test1(){</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Supplier&lt;Employee&gt; sup = </span><span class=rvts4>new </span><span class=rvts5>Supplier&lt;Employee&gt;() {</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts3>@Override</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts4>public </span><span class=rvts5>Employee get() {</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts4>return new </span><span class=rvts5>Employee();</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; };</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(</span><span class=rvts17>"*******************"</span><span class=rvts5>);</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Supplier&lt;Employee&gt; &nbsp;sup1 = () -&gt; </span><span class=rvts4>new </span><span class=rvts5>Employee();</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(sup1.get());</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(</span><span class=rvts17>"*******************"</span><span class=rvts5>);</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Supplier&lt;Employee&gt; &nbsp;sup2 = Employee :: </span><span class=rvts4>new</span><span class=rvts5>;</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(sup2.get());</span><br><span class=rvts5> &nbsp; }</span><br><span class=rvts5></span><br><span class=rvts16>//Function</span><span class=rvts20>&#20013;&#30340;</span><span class=rvts16>R apply(T t)</span><br><span class=rvts16> &nbsp; </span><span class=rvts3>@Test</span><br><span class=rvts3> &nbsp; </span><span class=rvts4>public void </span><span class=rvts5>test2(){</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Function&lt;Integer,Employee&gt; func1 = id -&gt; </span><span class=rvts4>new </span><span class=rvts5>Employee(id);</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Employee employee = func1.apply(</span><span class=rvts18>1001</span><span class=rvts5>);</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(employee);</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(</span><span class=rvts17>"*******************"</span><span class=rvts5>);</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Function&lt;Integer,Employee&gt; func2 = Employee :: </span><span class=rvts4>new</span><span class=rvts5>;</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; Employee employee1 = func2.apply(</span><span class=rvts18>1002</span><span class=rvts5>);</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(employee1);</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; }</span><br><span class=rvts5></span><br><span class=rvts16>//BiFunction</span><span class=rvts20>&#20013;&#30340;</span><span class=rvts16>R apply(T t,U u)</span><br><span class=rvts16> &nbsp; </span><span class=rvts3>@Test</span><br><span class=rvts3> &nbsp; </span><span class=rvts4>public void </span><span class=rvts5>test3(){</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; BiFunction&lt;Integer,String,Employee&gt; func1 = (id,name) -&gt; </span><span class=rvts4>new </span><span class=rvts5>Employee(id,name);</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(func1.apply(</span><span class=rvts18>1001</span><span class=rvts5>,</span><span class=rvts17>"Tom"</span><span class=rvts5>));</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(</span><span class=rvts17>"*******************"</span><span class=rvts5>);</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; BiFunction&lt;Integer,String,Employee&gt; func2 = Employee :: </span><span class=rvts4>new</span><span class=rvts5>;</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; System.</span><span class=rvts19>out</span><span class=rvts5>.println(func2.apply(</span><span class=rvts18>1002</span><span class=rvts5>,</span><span class=rvts17>"Tom"</span><span class=rvts5>));</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; }</span><br><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>4.&#25968;&#32452;&#24341;&#29992;&#26684;&#24335;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>&#25968;&#32452;&#31867;&#22411;[] :: new</span></p>
+<p class=rvps3><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts2>5.&#25968;&#32452;&#24341;&#29992;&#20030;&#20363;&#65306;</span></p>
+<p class=rvps3><span class=rvts9>//Function</span><span class=rvts8>&#20013;&#30340;</span><span class=rvts9>R apply(T t)</span><br><span class=rvts10>@Test</span><br><span class=rvts11>public void </span><span class=rvts12>test4(){</span><br><span class=rvts12> &nbsp; &nbsp;Function&lt;Integer,String[]&gt; func1 = length -&gt; </span><span class=rvts11>new </span><span class=rvts12>String[length];</span><br><span class=rvts12> &nbsp; &nbsp;String[] arr1 = func1.apply(</span><span class=rvts15>5</span><span class=rvts12>);</span><br><span class=rvts12> &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts12>.println(Arrays.</span><span class=rvts21>toString</span><span class=rvts12>(arr1));</span><br><span class=rvts12></span><br><span class=rvts12> &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts12>.println(</span><span class=rvts14>"*******************"</span><span class=rvts12>);</span><br><span class=rvts12></span><br><span class=rvts12> &nbsp; &nbsp;Function&lt;Integer,String[]&gt; func2 = String[] :: </span><span class=rvts11>new</span><span class=rvts12>;</span><br><span class=rvts12> &nbsp; &nbsp;String[] arr2 = func2.apply(</span><span class=rvts15>10</span><span class=rvts12>);</span><br><span class=rvts12> &nbsp; &nbsp;System.</span><span class=rvts13>out</span><span class=rvts12>.println(Arrays.</span><span class=rvts21>toString</span><span class=rvts12>(arr2));</span><br><span class=rvts12></span><br><span class=rvts12>}</span></p>
+</body></html>

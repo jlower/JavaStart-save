@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>JDK5.0新增线程创建的方式.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 81px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts16>JDK5.0&#26032;&#22686;&#32447;&#31243;&#21019;&#24314;&#30340;&#26041;&#24335;</span></p>
+<p class=rvps2><span class=rvts16><br></span></p>
+<p class=rvps2><span class=rvts3>&#26032;&#22686;&#26041;&#24335;&#19968;&#65306;</span><span class=rvts4>&#23454;&#29616;</span><span class=rvts5>Callable</span><span class=rvts4>&#25509;&#21475;&#12290; </span><span class=rvts5>--- JDK 5.0</span><span class=rvts4>&#26032;&#22686;</span></p>
+<p class=rvps3><span class=rvts6>//1.</span><span class=rvts12>&#21019;&#24314;&#19968;&#20010;&#23454;&#29616;</span><span class=rvts6>Callable</span><span class=rvts12>&#30340;&#23454;&#29616;&#31867;</span><br><span class=rvts8>class </span><span class=rvts7>NumThread </span><span class=rvts8>implements </span><span class=rvts7>Callable{</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts6>//2.</span><span class=rvts12>&#23454;&#29616;</span><span class=rvts6>call</span><span class=rvts12>&#26041;&#27861;&#65292;&#23558;&#27492;&#32447;&#31243;&#38656;&#35201;&#25191;&#34892;&#30340;&#25805;&#20316;&#22768;&#26126;&#22312;</span><span class=rvts6>call()</span><span class=rvts12>&#20013;</span><br><span class=rvts12> &nbsp; &nbsp;</span><span class=rvts14>@Override</span><br><span class=rvts14> &nbsp; &nbsp;</span><span class=rvts8>public </span><span class=rvts7>Object call() </span><span class=rvts8>throws </span><span class=rvts7>Exception {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>int </span><span class=rvts7>sum = </span><span class=rvts13>0</span><span class=rvts7>;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>for </span><span class=rvts7>(</span><span class=rvts8>int </span><span class=rvts7>i = </span><span class=rvts13>1</span><span class=rvts7>; i &lt;= </span><span class=rvts13>100</span><span class=rvts7>; i++) {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>if</span><span class=rvts7>(i % </span><span class=rvts13>2 </span><span class=rvts7>== </span><span class=rvts13>0</span><span class=rvts7>){</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts11>out</span><span class=rvts7>.println(i);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sum += i;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>return </span><span class=rvts7>sum;</span><br><span class=rvts7> &nbsp; &nbsp;}</span><br><span class=rvts7>}</span><br><span class=rvts7></span><br><span class=rvts7></span><br><span class=rvts8>public class </span><span class=rvts7>ThreadNew {</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts8>public static void </span><span class=rvts7>main(String[] args) {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//3.</span><span class=rvts12>&#21019;&#24314;</span><span class=rvts6>Callable</span><span class=rvts12>&#25509;&#21475;&#23454;&#29616;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>NumThread numThread = </span><span class=rvts8>new </span><span class=rvts7>NumThread();</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//4.</span><span class=rvts12>&#23558;&#27492;</span><span class=rvts6>Callable</span><span class=rvts12>&#25509;&#21475;&#23454;&#29616;&#31867;&#30340;&#23545;&#35937;&#20316;&#20026;&#20256;&#36882;&#21040;</span><span class=rvts6>FutureTask</span><span class=rvts12>&#26500;&#36896;&#22120;&#20013;&#65292;&#21019;&#24314;</span><span class=rvts6>FutureTask</span><span class=rvts12>&#30340;&#23545;&#35937;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>FutureTask futureTask = </span><span class=rvts8>new </span><span class=rvts7>FutureTask(numThread);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//5.</span><span class=rvts12>&#23558;</span><span class=rvts6>FutureTask</span><span class=rvts12>&#30340;&#23545;&#35937;&#20316;&#20026;&#21442;&#25968;&#20256;&#36882;&#21040;</span><span class=rvts6>Thread</span><span class=rvts12>&#31867;&#30340;&#26500;&#36896;&#22120;&#20013;&#65292;&#21019;&#24314;</span><span class=rvts6>Thread</span><span class=rvts12>&#23545;&#35937;&#65292;&#24182;&#35843;&#29992;</span><span class=rvts6>start()</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>new </span><span class=rvts7>Thread(futureTask).start();</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>try </span><span class=rvts7>{</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//6.</span><span class=rvts12>&#33719;&#21462;</span><span class=rvts6>Callable</span><span class=rvts12>&#20013;</span><span class=rvts6>call</span><span class=rvts12>&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//get()</span><span class=rvts12>&#36820;&#22238;&#20540;&#21363;&#20026;</span><span class=rvts6>FutureTask</span><span class=rvts12>&#26500;&#36896;&#22120;&#21442;&#25968;</span><span class=rvts6>Callable</span><span class=rvts12>&#23454;&#29616;&#31867;&#37325;&#20889;&#30340;</span><span class=rvts6>call()</span><span class=rvts12>&#30340;&#36820;&#22238;&#20540;&#12290;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>Object sum = futureTask.get();</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts11>out</span><span class=rvts7>.println(</span><span class=rvts9>"</span><span class=rvts10>&#24635;&#21644;&#20026;&#65306;</span><span class=rvts9>" </span><span class=rvts7>+ sum);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts8>catch </span><span class=rvts7>(InterruptedException e) {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts8>catch </span><span class=rvts7>(ExecutionException e) {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp;}</span><br><span class=rvts7></span><br><span class=rvts7>}</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>&#35828;&#26126;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>* </span><span class=rvts4>&#22914;&#20309;&#29702;&#35299;&#23454;&#29616;</span><span class=rvts5>Callable</span><span class=rvts4>&#25509;&#21475;&#30340;&#26041;&#24335;&#21019;&#24314;&#22810;&#32447;&#31243;&#27604;&#23454;&#29616;</span><span class=rvts5>Runnable</span><span class=rvts4>&#25509;&#21475;&#21019;&#24314;&#22810;&#32447;&#31243;&#26041;&#24335;&#24378;&#22823;&#65311;</span><br><span class=rvts5>* 1. call()</span><span class=rvts4>&#21487;&#20197;&#36820;&#22238;&#20540;&#30340;&#12290;</span><br><span class=rvts5>* 2. call()</span><span class=rvts4>&#21487;&#20197;&#25243;&#20986;&#24322;&#24120;&#65292;&#34987;&#22806;&#38754;&#30340;&#25805;&#20316;&#25429;&#33719;&#65292;&#33719;&#21462;&#24322;&#24120;&#30340;&#20449;&#24687;</span><br><span class=rvts5>* 3. Callable</span><span class=rvts4>&#26159;&#25903;&#25345;&#27867;&#22411;&#30340;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts3>&#26032;&#22686;&#26041;&#24335;&#20108;&#65306;</span><span class=rvts4>&#20351;&#29992;&#32447;&#31243;&#27744;</span></p>
+<p class=rvps3><span class=rvts8>class </span><span class=rvts7>NumberThread </span><span class=rvts8>implements </span><span class=rvts7>Runnable{</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts14>@Override</span><br><span class=rvts14> &nbsp; &nbsp;</span><span class=rvts8>public void </span><span class=rvts7>run() {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>for</span><span class=rvts7>(</span><span class=rvts8>int </span><span class=rvts7>i = </span><span class=rvts13>0</span><span class=rvts7>;i &lt;= </span><span class=rvts13>100</span><span class=rvts7>;i++){</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>if</span><span class=rvts7>(i % </span><span class=rvts13>2 </span><span class=rvts7>== </span><span class=rvts13>0</span><span class=rvts7>){</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts11>out</span><span class=rvts7>.println(Thread.</span><span class=rvts15>currentThread</span><span class=rvts7>().getName() + </span><span class=rvts9>": " </span><span class=rvts7>+ i);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp;}</span><br><span class=rvts7>}</span><br><span class=rvts7></span><br><span class=rvts8>class </span><span class=rvts7>NumberThread1 </span><span class=rvts8>implements </span><span class=rvts7>Runnable{</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts14>@Override</span><br><span class=rvts14> &nbsp; &nbsp;</span><span class=rvts8>public void </span><span class=rvts7>run() {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>for</span><span class=rvts7>(</span><span class=rvts8>int </span><span class=rvts7>i = </span><span class=rvts13>0</span><span class=rvts7>;i &lt;= </span><span class=rvts13>100</span><span class=rvts7>;i++){</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>if</span><span class=rvts7>(i % </span><span class=rvts13>2 </span><span class=rvts7>!= </span><span class=rvts13>0</span><span class=rvts7>){</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts11>out</span><span class=rvts7>.println(Thread.</span><span class=rvts15>currentThread</span><span class=rvts7>().getName() + </span><span class=rvts9>": " </span><span class=rvts7>+ i);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts7> &nbsp; &nbsp;}</span><br><span class=rvts7>}</span><br><span class=rvts7></span><br><span class=rvts8>public class </span><span class=rvts7>ThreadPool {</span><br><span class=rvts7></span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts8>public static void </span><span class=rvts7>main(String[] args) {</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//1. </span><span class=rvts12>&#25552;&#20379;&#25351;&#23450;&#32447;&#31243;&#25968;&#37327;&#30340;&#32447;&#31243;&#27744;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>ExecutorService service = Executors.</span><span class=rvts15>newFixedThreadPool</span><span class=rvts7>(</span><span class=rvts13>10</span><span class=rvts7>);</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;ThreadPoolExecutor service1 = (ThreadPoolExecutor) service;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//</span><span class=rvts12>&#35774;&#32622;&#32447;&#31243;&#27744;&#30340;&#23646;&#24615;</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(service.getClass());</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;service1.setCorePoolSize(15);</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;service1.setKeepAliveTime();</span><br><span class=rvts6></span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;//2.</span><span class=rvts12>&#25191;&#34892;&#25351;&#23450;&#30340;&#32447;&#31243;&#30340;&#25805;&#20316;&#12290;&#38656;&#35201;&#25552;&#20379;&#23454;&#29616;</span><span class=rvts6>Runnable</span><span class=rvts12>&#25509;&#21475;&#25110;</span><span class=rvts6>Callable</span><span class=rvts12>&#25509;&#21475;&#23454;&#29616;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>service.execute(</span><span class=rvts8>new </span><span class=rvts7>NumberThread());</span><span class=rvts6>//</span><span class=rvts12>&#36866;&#21512;&#36866;&#29992;&#20110;</span><span class=rvts6>Runnable</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>service.execute(</span><span class=rvts8>new </span><span class=rvts7>NumberThread1());</span><span class=rvts6>//</span><span class=rvts12>&#36866;&#21512;&#36866;&#29992;&#20110;</span><span class=rvts6>Runnable</span><br><span class=rvts6></span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;service.submit(Callable callable);//</span><span class=rvts12>&#36866;&#21512;&#20351;&#29992;&#20110;</span><span class=rvts6>Callable</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;//3.</span><span class=rvts12>&#20851;&#38381;&#36830;&#25509;&#27744;</span><br><span class=rvts12> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>service.shutdown();</span><br><span class=rvts7> &nbsp; &nbsp;}</span><br><span class=rvts7></span><br><span class=rvts7>}</span></p>
+<p class=rvps2><span class=rvts3>&#35828;&#26126;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>* </span><span class=rvts4>&#22909;&#22788;&#65306;</span><br><span class=rvts5>* 1.</span><span class=rvts4>&#25552;&#39640;&#21709;&#24212;&#36895;&#24230;&#65288;&#20943;&#23569;&#20102;&#21019;&#24314;&#26032;&#32447;&#31243;&#30340;&#26102;&#38388;&#65289;</span><br><span class=rvts5>* 2.</span><span class=rvts4>&#38477;&#20302;&#36164;&#28304;&#28040;&#32791;&#65288;&#37325;&#22797;&#21033;&#29992;&#32447;&#31243;&#27744;&#20013;&#32447;&#31243;&#65292;&#19981;&#38656;&#35201;&#27599;&#27425;&#37117;&#21019;&#24314;&#65289;</span><br><span class=rvts5>* 3.</span><span class=rvts4>&#20415;&#20110;&#32447;&#31243;&#31649;&#29702;</span><br><span class=rvts5>* &nbsp; &nbsp; &nbsp;corePoolSize</span><span class=rvts4>&#65306;&#26680;&#24515;&#27744;&#30340;&#22823;&#23567;</span><br><span class=rvts5>* &nbsp; &nbsp; &nbsp;maximumPoolSize</span><span class=rvts4>&#65306;&#26368;&#22823;&#32447;&#31243;&#25968;</span><br><span class=rvts5>* &nbsp; &nbsp; &nbsp;keepAliveTime</span><span class=rvts4>&#65306;&#32447;&#31243;&#27809;&#20219;&#21153;&#26102;&#26368;&#22810;&#20445;&#25345;&#22810;&#38271;&#26102;&#38388;&#21518;&#20250;&#32456;&#27490;</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>&#38754;&#35797;&#39064;&#65306;Java&#20013;&#22810;&#32447;&#31243;&#30340;&#21019;&#24314;&#26377;&#20960;&#31181;&#26041;&#24335;&#65311;&#22235;&#31181;&#12290;</span></p>
+</body></html>

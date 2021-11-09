@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>补充：Scanner类的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 10pt;
+}
+span.rvts3
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts3>&#34917;&#20805;&#65306;Scanner&#31867;&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts2>/*</span></p>
+<p class=rvps2><span class=rvts2>&#22914;&#20309;&#20174;&#38190;&#30424;&#33719;&#21462;&#19981;&#21516;&#31867;&#22411;&#30340;&#21464;&#37327;&#65306;&#38656;&#35201;&#20351;&#29992;Scanner&#31867;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#20855;&#20307;&#23454;&#29616;&#27493;&#39588;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>1.&#23548;&#21253;&#65306;import java.util.Scanner;</span></p>
+<p class=rvps2><span class=rvts2>2.Scanner&#30340;&#23454;&#20363;&#21270;:Scanner scan = new Scanner(System.in);</span></p>
+<p class=rvps2><span class=rvts2>3.&#35843;&#29992;Scanner&#31867;&#30340;&#30456;&#20851;&#26041;&#27861;&#65288;next() / nextXxx()&#65289;&#65292;&#26469;&#33719;&#21462;&#25351;&#23450;&#31867;&#22411;&#30340;&#21464;&#37327;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#27880;&#24847;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#38656;&#35201;&#26681;&#25454;&#30456;&#24212;&#30340;&#26041;&#27861;&#65292;&#26469;&#36755;&#20837;&#25351;&#23450;&#31867;&#22411;&#30340;&#20540;&#12290;&#22914;&#26524;&#36755;&#20837;&#30340;&#25968;&#25454;&#31867;&#22411;&#19982;&#35201;&#27714;&#30340;&#31867;&#22411;&#19981;&#21305;&#37197;&#26102;&#65292;&#20250;&#25253;&#24322;&#24120;&#65306;InputMisMatchException</span></p>
+<p class=rvps2><span class=rvts2>&#23548;&#33268;&#31243;&#24207;&#32456;&#27490;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>*/</span></p>
+<p class=rvps2><span class=rvts2>//1.&#23548;&#21253;&#65306;import java.util.Scanner;</span></p>
+<p class=rvps2><span class=rvts2>import java.util.Scanner;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>class ScannerTest{</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>public static void main(String[] args){</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>//2.Scanner&#30340;&#23454;&#20363;&#21270;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Scanner scan = new Scanner(System.in);</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>//3.&#35843;&#29992;Scanner&#31867;&#30340;&#30456;&#20851;&#26041;&#27861;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println("&#35831;&#36755;&#20837;&#20320;&#30340;&#22995;&#21517;&#65306;");</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String name = scan.next();</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println(name);</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println("&#35831;&#36755;&#20837;&#20320;&#30340;&#33459;&#40836;&#65306;");</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>int age = scan.nextInt();</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println(age);</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println("&#35831;&#36755;&#20837;&#20320;&#30340;&#20307;&#37325;&#65306;");</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>double weight = scan.nextDouble();</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println(weight);</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println("&#20320;&#26159;&#21542;&#30456;&#20013;&#25105;&#20102;&#21602;&#65311;(true/false)");</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>boolean isLove = scan.nextBoolean();</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println(isLove);</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>//&#23545;&#20110;char&#22411;&#30340;&#33719;&#21462;&#65292;Scanner&#27809;&#26377;&#25552;&#20379;&#30456;&#20851;&#30340;&#26041;&#27861;&#12290;&#21482;&#33021;&#33719;&#21462;&#19968;&#20010;&#23383;&#31526;&#20018;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println("&#35831;&#36755;&#20837;&#20320;&#30340;&#24615;&#21035;&#65306;(&#30007;/&#22899;)");</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>String gender = scan.next();//"&#30007;"</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>char genderChar = gender.charAt(0);//&#33719;&#21462;&#32034;&#24341;&#20026;0&#20301;&#32622;&#19978;&#30340;&#23383;&#31526;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.out.println(genderChar);</span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class=rvps2><span class=rvts2></span><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+</body></html>

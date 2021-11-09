@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>JDK8中新日期时间API.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 22pt;
+ font-family: '????';
+ color: #0000ff;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #0000ff;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Calibri';
+ color: #0000ff;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: '????';
+ font-weight: bold;
+ color: #ff0000;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Calibri';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts12
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts13
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #646464;
+}
+span.rvts14
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts15
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts16
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts17
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts18
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts19
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts20
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+}
+span.rvts21
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts22
+{
+ font-size: 16pt;
+ font-family: '????';
+ color: #0000ff;
+}
+span.rvts23
+{
+ font-size: 16pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #0000ff;
+}
+span.rvts24
+{
+ font-size: 12pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts25
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts26
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts27
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts28
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts29
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts30
+{
+ font-size: 12pt;
+ font-family: '??';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts31
+{
+ font-size: 14pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts32
+{
+ font-size: 14pt;
+ font-family: 'Calibri';
+ color: #000000;
+}
+span.rvts33
+{
+ font-size: 14pt;
+ font-family: '??';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts34
+{
+ font-size: 14pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts35
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts36
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts37
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts38
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #ff0000;
+}
+span.rvts39
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts40
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts41
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+.rvps4
+{
+ text-indent: -36px;
+}
+.rvps5
+{
+ text-indent: 40px;
+}
+.rvps6
+{
+ text-indent: 40px;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps7
+{
+ background: #ffffff;
+}
+.rvps8
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps8><span class=rvts41>JDK8&#20013;&#26032;&#26085;&#26399;&#26102;&#38388;API</span></p>
+<p class=rvps2><span class=rvts41><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#26085;&#26399;&#26102;&#38388;API&#30340;&#36845;&#20195;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#31532;&#19968;&#20195;&#65306;jdk 1.0 Date&#31867;</span></p>
+<p class=rvps2><span class=rvts2>&#31532;&#20108;&#20195;&#65306;jdk 1.1 Calendar&#31867;&#65292;&#19968;&#23450;&#31243;&#24230;&#19978;&#26367;&#25442;Date&#31867;</span></p>
+<p class=rvps2><span class=rvts2>&#31532;&#19977;&#20195;&#65306;jdk 1.8 &#25552;&#20986;&#20102;&#26032;&#30340;&#19968;&#22871;API</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#21069;&#20004;&#20195;&#23384;&#22312;&#30340;&#38382;&#39064;&#20030;&#20363;&#65306;</span></p>
+<p><span class=rvts22>&#21487;&#21464;&#24615;&#65306;&#20687;&#26085;&#26399;&#21644;&#26102;&#38388;&#36825;&#26679;&#30340;&#31867;&#24212;&#35813;&#26159;&#19981;&#21487;&#21464;&#30340;&#12290;</span></p>
+<p><span class=rvts22>&#20559;&#31227;&#24615;&#65306;</span><span class=rvts23>Date</span><span class=rvts22>&#20013;&#30340;&#24180;&#20221;&#26159;&#20174;</span><span class=rvts23>1900</span><span class=rvts22>&#24320;&#22987;&#30340;&#65292;&#32780;&#26376;&#20221;&#37117;&#20174;</span><span class=rvts23>0</span><span class=rvts22>&#24320;&#22987;&#12290;</span></p>
+<p><span class=rvts22>&#26684;&#24335;&#21270;&#65306;&#26684;&#24335;&#21270;&#21482;&#23545;</span><span class=rvts23>Date</span><span class=rvts22>&#29992;&#65292;</span><span class=rvts23>Calendar</span><span class=rvts22>&#21017;&#19981;&#34892;&#12290;</span></p>
+<p><span class=rvts22>&#27492;&#22806;&#65292;&#23427;&#20204;&#20063;&#19981;&#26159;&#32447;&#31243;&#23433;&#20840;&#30340;&#65307;&#19981;&#33021;&#22788;&#29702;&#38384;&#31186;&#31561;&#12290;</span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>3.java 8 &#20013;&#26032;&#30340;&#26085;&#26399;&#26102;&#38388;API&#28041;&#21450;&#21040;&#30340;&#21253;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="JDK8中新日期时间API.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts11>4.&#26412;&#22320;&#26085;&#26399;&#12289;&#26412;&#22320;&#26102;&#38388;&#12289;&#26412;&#22320;&#26085;&#26399;&#26102;&#38388;&#30340;&#20351;&#29992;&#65306;LocalDate / LocalTime / LocalDateTime</span></p>
+<p class=rvps2><span class=rvts2>4.1 &#35828;&#26126;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#9312; </span><span class=rvts24>&#20998;&#21035;&#34920;&#31034;&#20351;&#29992; </span><span class=rvts25>ISO-8601</span><span class=rvts24>&#26085;&#21382;&#31995;&#32479;&#30340;&#26085;&#26399;&#12289;&#26102;&#38388;&#12289;&#26085;&#26399;&#21644;&#26102;&#38388;&#12290;&#23427;&#20204;&#25552;&#20379;&#20102;&#31616;&#21333;&#30340;&#26412;&#22320;&#26085;&#26399;&#25110;&#26102;&#38388;&#65292;&#24182;&#19981;&#21253;&#21547;&#24403;&#21069;&#30340;&#26102;&#38388;&#20449;&#24687;&#65292;&#20063;&#19981;&#21253;&#21547;&#19982;&#26102;&#21306;&#30456;&#20851;&#30340;&#20449;&#24687;&#12290;</span></p>
+<p class=rvps7><span class=rvts28>&#9313; LocalDateTime</span><span class=rvts29>&#30456;&#36739;&#20110;</span><span class=rvts28>LocalDate</span><span class=rvts29>&#12289;</span><span class=rvts28>LocalTime</span><span class=rvts29>&#65292;&#20351;&#29992;&#39057;&#29575;&#35201;&#39640;</span></p>
+<p class=rvps7><span class=rvts30>&#9314; </span><span class=rvts29>&#31867;&#20284;&#20110;</span><span class=rvts28>Calendar</span></p>
+<p class=rvps3><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts2>4.2 &#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="JDK8中新日期时间API.files/img2.jpg"></p>
+<p class=rvps2><span class=rvts11>5.&#26102;&#38388;&#28857;&#65306;Instant</span></p>
+<p class=rvps2><span class=rvts2>5.1 &#35828;&#26126;&#65306;</span></p>
+<p class=rvps3><span class=rvts32>&#9312; </span><span class=rvts31>&#26102;&#38388;&#32447;&#19978;&#30340;&#19968;&#20010;&#30636;&#26102;&#28857;&#12290; &#27010;&#24565;&#19978;&#35762;&#65292;&#23427;&#21482;&#26159;&#31616;&#21333;&#30340;&#34920;&#31034;&#33258;</span><span class=rvts34>1970</span><span class=rvts31>&#24180;</span><span class=rvts34>1</span><span class=rvts31>&#26376;</span><span class=rvts34>1</span><span class=rvts31>&#26085;</span><span class=rvts34>0</span><span class=rvts31>&#26102;</span><span class=rvts34>0</span><span class=rvts31>&#20998;</span><span class=rvts34>0</span><span class=rvts31>&#31186;&#65288;</span><span class=rvts34>UTC</span><span class=rvts31>&#24320;&#22987;&#30340;&#31186;&#25968;&#12290;&#65289;</span></p>
+<p class=rvps3><span class=rvts31>&#9313; </span><span class=rvts33>&#31867;&#20284;&#20110;</span><span class=rvts16> java.util.Date</span><span class=rvts33>&#31867;</span></p>
+<p class=rvps3><span class=rvts24><br></span></p>
+<p class=rvps2><span class=rvts2>5.2 &#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="JDK8中新日期时间API.files/img3.jpg"></p>
+<p><span class=rvts7><br></span></p>
+<p class=rvps2><span class=rvts11>6.&#26085;&#26399;&#26102;&#38388;&#26684;&#24335;&#21270;&#31867;&#65306;DateTimeFormatter</span></p>
+<p class=rvps2><span class=rvts2>6.1 &#35828;&#26126;&#65306;</span></p>
+<p class=rvps7><span class=rvts27>&#9312; &#26684;&#24335;&#21270;&#25110;&#35299;&#26512;&#26085;&#26399;&#12289;&#26102;&#38388;</span><br><span class=rvts27>&#9313; &#31867;&#20284;&#20110;</span><span class=rvts26>SimpleDateFormat</span></p>
+<p class=rvps2><span class=rvts2>6.2 &#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps2><span class=rvts6>&#9312; &#23454;&#20363;&#21270;&#26041;&#24335;&#65306;</span></p>
+<ul class=list0>
+<li style="text-indent: 0px" class=rvps4><span class=rvts35>&#39044;&#23450;&#20041;&#30340;&#26631;&#20934;&#26684;&#24335;&#12290;&#22914;&#65306;</span><span class=rvts36>ISO_LOCAL_DATE_TIME;ISO_LOCAL_DATE;ISO_LOCAL_TIME</span></li>
+</ul>
+<ul class=list0>
+<li style="text-indent: 0px" class=rvps4><span class=rvts35>&#26412;&#22320;&#21270;&#30456;&#20851;&#30340;&#26684;&#24335;&#12290;&#22914;&#65306;</span><span class=rvts25>ofLocalizedDateTime(FormatStyle.LONG)</span></li>
+</ul>
+<ul class=list0>
+<li style="text-indent: 0px" class=rvps4><span class=rvts37>&#33258;&#23450;&#20041;&#30340;&#26684;&#24335;&#12290;&#22914;&#65306;</span><span class=rvts38>ofPattern(&#8220;yyyy-MM-dd hh:mm:ss&#8221;)</span></li>
+<li style="text-indent: 0px" class=rvps4><span class=rvts38></span></li>
+<li style="text-indent: 0px" class=rvps4><span class=rvts38>&#9313; &#24120;&#29992;&#26041;&#27861;&#65306;</span></li>
+<li style="text-indent: 0px" class=rvps4><img alt="" style="padding : 1px;" src="JDK8中新日期时间API.files/img4.jpg"></li>
+<p class=rvps4><span class=rvts5><br></span></li>
+<p class=rvps4><span class=rvts5><br></span></li>
+</ul>
+<ul class=list0>
+<li style="text-indent: 0px" class=rvps4><span class=rvts9>&#29305;&#21035;&#30340;&#65306;&#33258;&#23450;&#20041;&#30340;&#26684;&#24335;&#12290;&#22914;&#65306;</span><span class=rvts10>ofPattern(&#8220;yyyy-MM-dd hh:mm:ss&#8221;)</span></li>
+<p class=rvps7><span class=rvts26>// &nbsp;</span><span class=rvts27>&#37325;&#28857;&#65306;&#33258;&#23450;&#20041;&#30340;&#26684;&#24335;&#12290;&#22914;&#65306;</span><span class=rvts26>ofPattern(&#8220;yyyy-MM-dd hh:mm:ss&#8221;)</span><br><span class=rvts2>DateTimeFormatter formatter3 = DateTimeFormatter.</span><span class=rvts28>ofPattern</span><span class=rvts2>(</span><span class=rvts39>"yyyy-MM-dd hh:mm:ss"</span><span class=rvts2>);</span><br><span class=rvts26>//</span><span class=rvts27>&#26684;&#24335;&#21270;</span><br><span class=rvts2>String str4 = formatter3.format(LocalDateTime.</span><span class=rvts28>now</span><span class=rvts2>());</span><br><span class=rvts2>System.</span><span class=rvts40>out</span><span class=rvts2>.println(str4);</span><span class=rvts26>//2019-02-18 03:52:09</span><br><span class=rvts26></span><br><span class=rvts26>//</span><span class=rvts27>&#35299;&#26512;</span><br><span class=rvts2>TemporalAccessor accessor = formatter3.parse(</span><span class=rvts39>"2019-02-18 03:52:09"</span><span class=rvts2>);</span><br><span class=rvts2>System.</span><span class=rvts40>out</span><span class=rvts2>.println(accessor);</span></li>
+<p class=rvps2><span class=rvts2><br></span></li>
+<p class=rvps2><span class=rvts2>7.&#20854;&#23427;API&#30340;&#20351;&#29992; &#65288;&#19981;&#35762;&#65289;</span></li>
+<p class=rvps2><span class=rvts2>7.1 &#24102;&#26102;&#21306;&#30340;&#26085;&#26399;&#26102;&#38388;&#65306;ZonedDateTime / ZoneId </span></li>
+<p class=rvps2><span class=rvts2>&#20030;&#20363;&#65306;</span></li>
+<p class=rvps5><span class=rvts12>// ZoneId:&#31867;&#20013;&#21253;&#21547;&#20102;&#25152;&#30340;&#26102;&#21306;&#20449;&#24687;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>@Test</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>public</span><span class=rvts8> </span><span class=rvts14>void</span><span class=rvts8> test1(){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//getAvailableZoneIds():&#33719;&#21462;&#25152;&#30340;ZoneId</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>Set&lt;String&gt; </span><span class=rvts15>zoneIds</span><span class=rvts8> = ZoneId.</span><span class=rvts16>getAvailableZoneIds</span><span class=rvts8>();</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>for</span><span class=rvts8>(String </span><span class=rvts15>s</span><span class=rvts8> : </span><span class=rvts15>zoneIds</span><span class=rvts8>){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>s</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println();</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//&#33719;&#21462;&#8220;Asia/</span><span class=rvts18>Tokyo</span><span class=rvts12>&#8221;&#26102;&#21306;&#23545;&#24212;&#30340;&#26102;&#38388;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDateTime </span><span class=rvts15>localDateTime</span><span class=rvts8> = LocalDateTime.</span><span class=rvts16>now</span><span class=rvts8>(ZoneId.</span><span class=rvts16>of</span><span class=rvts8>(</span><span class=rvts19>"Asia/Tokyo"</span><span class=rvts8>));</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>localDateTime</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p class=rvps5><span class=rvts12>//ZonedDateTime:&#24102;&#26102;&#21306;&#30340;&#26085;&#26399;&#26102;&#38388;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>@Test</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>public</span><span class=rvts8> </span><span class=rvts14>void</span><span class=rvts8> test2(){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//now():&#33719;&#21462;&#26412;&#26102;&#21306;&#30340;ZonedDateTime&#23545;&#35937;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>ZonedDateTime </span><span class=rvts15>zonedDateTime</span><span class=rvts8> = ZonedDateTime.</span><span class=rvts16>now</span><span class=rvts8>();</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>zonedDateTime</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//now(ZoneId id):&#33719;&#21462;&#25351;&#23450;&#26102;&#21306;&#30340;ZonedDateTime&#23545;&#35937;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>ZonedDateTime </span><span class=rvts15>zonedDateTime1</span><span class=rvts8> = ZonedDateTime.</span><span class=rvts16>now</span><span class=rvts8>(ZoneId.</span><span class=rvts16>of</span><span class=rvts8>(</span><span class=rvts19>"Asia/Tokyo"</span><span class=rvts8>));</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>zonedDateTime1</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p class=rvps2><span class=rvts2>7.2 &#26102;&#38388;&#38388;&#38548;&#65306;Duration--</span><span class=rvts21>&#29992;&#20110;&#35745;&#31639;&#20004;&#20010;&#8220;&#26102;&#38388;&#8221;&#38388;&#38548;&#65292;&#20197;&#31186;&#21644;&#32435;&#31186;&#20026;&#22522;&#20934;</span></li>
+<p class=rvps2><img alt="" style="padding : 1px;" src="JDK8中新日期时间API.files/img5.jpg"></li>
+<p class=rvps2><span class=rvts2>&#20030;&#20363;&#65306;</span></li>
+<p class=rvps5><span class=rvts13>@Test</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>public</span><span class=rvts8> </span><span class=rvts14>void</span><span class=rvts8> test3(){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalTime </span><span class=rvts15>localTime</span><span class=rvts8> = LocalTime.</span><span class=rvts16>now</span><span class=rvts8>();</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalTime </span><span class=rvts15>localTime1</span><span class=rvts8> = LocalTime.</span><span class=rvts16>of</span><span class=rvts8>(15, 23, 32);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//between():&#38745;&#24577;&#26041;&#27861;&#65292;&#36820;&#22238;Duration&#23545;&#35937;&#65292;&#34920;&#31034;&#20004;&#20010;&#26102;&#38388;&#30340;&#38388;&#38548;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>Duration </span><span class=rvts15>duration</span><span class=rvts8> = Duration.</span><span class=rvts16>between</span><span class=rvts8>(</span><span class=rvts15>localTime1</span><span class=rvts8>, </span><span class=rvts15>localTime</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>duration</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>duration</span><span class=rvts8>.getSeconds());</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>duration</span><span class=rvts8>.getNano());</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDateTime </span><span class=rvts15>localDateTime</span><span class=rvts8> = LocalDateTime.</span><span class=rvts16>of</span><span class=rvts8>(2016, 6, 12, 15, 23, 32);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDateTime </span><span class=rvts15>localDateTime1</span><span class=rvts8> = LocalDateTime.</span><span class=rvts16>of</span><span class=rvts8>(2017, 6, 12, 15, 23, 32);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>Duration </span><span class=rvts15>duration1</span><span class=rvts8> = Duration.</span><span class=rvts16>between</span><span class=rvts8>(</span><span class=rvts15>localDateTime1</span><span class=rvts8>, </span><span class=rvts15>localDateTime</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>duration1</span><span class=rvts8>.toDays());</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p class=rvps2><span class=rvts2>7.3 &#26085;&#26399;&#38388;&#38548;&#65306;Period --</span><span class=rvts21>&#29992;&#20110;&#35745;&#31639;&#20004;&#20010;&#8220;&#26085;&#26399;&#8221;&#38388;&#38548;&#65292;&#20197;&#24180;&#12289;&#26376;&#12289;&#26085;&#34913;&#37327;</span></li>
+<p class=rvps2><img alt="" style="padding : 1px;" src="JDK8中新日期时间API.files/img6.jpg"></li>
+<p class=rvps2><span class=rvts2>&#20030;&#20363;&#65306;</span></li>
+<p class=rvps5><span class=rvts13> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>@Test</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>public</span><span class=rvts8> </span><span class=rvts14>void</span><span class=rvts8> test4(){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDate </span><span class=rvts15>localDate</span><span class=rvts8> = LocalDate.</span><span class=rvts16>now</span><span class=rvts8>();</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDate </span><span class=rvts15>localDate1</span><span class=rvts8> = LocalDate.</span><span class=rvts16>of</span><span class=rvts8>(2028, 3, 18);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>Period </span><span class=rvts15>period</span><span class=rvts8> = Period.</span><span class=rvts16>between</span><span class=rvts8>(</span><span class=rvts15>localDate</span><span class=rvts8>, </span><span class=rvts15>localDate1</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>period</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>period</span><span class=rvts8>.getYears());</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>period</span><span class=rvts8>.getMonths());</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>period</span><span class=rvts8>.getDays());</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>Period </span><span class=rvts15>period1</span><span class=rvts8> = </span><span class=rvts15>period</span><span class=rvts8>.withYears(2);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>period1</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p class=rvps2><span class=rvts2>7.4 &#26085;&#26399;&#26102;&#38388;&#26657;&#27491;&#22120;&#65306;TemporalAdjuster</span></li>
+<p class=rvps2><span class=rvts2>&#20030;&#20363;&#65306;</span></li>
+<p class=rvps6><span class=rvts13> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>@Test</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>public</span><span class=rvts8> </span><span class=rvts14>void</span><span class=rvts8> test5(){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//&#33719;&#21462;&#24403;&#21069;&#26085;&#26399;&#30340;&#19979;&#19968;&#20010;&#21608;&#26085;&#26159;&#21738;&#22825;&#65311;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>TemporalAdjuster </span><span class=rvts15>temporalAdjuster</span><span class=rvts8> = TemporalAdjusters.</span><span class=rvts16>next</span><span class=rvts8>(DayOfWeek.</span><span class=rvts17>SUNDAY</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDateTime </span><span class=rvts15>localDateTime</span><span class=rvts8> = LocalDateTime.</span><span class=rvts16>now</span><span class=rvts8>().with(</span><span class=rvts15>temporalAdjuster</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts15>localDateTime</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>//&#33719;&#21462;&#19979;&#19968;&#20010;&#24037;&#20316;&#26085;&#26159;&#21738;&#22825;&#65311;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDate </span><span class=rvts15>localDate</span><span class=rvts8> = LocalDate.</span><span class=rvts16>now</span><span class=rvts8>().with(</span><span class=rvts14>new</span><span class=rvts8> TemporalAdjuster(){</span></li>
+<p><span class=rvts20><br></span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>@Override</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>public</span><span class=rvts8> Temporal adjustInto(Temporal </span><span class=rvts15>temporal</span><span class=rvts8>) {</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>LocalDate </span><span class=rvts15>date</span><span class=rvts8> = (LocalDate)</span><span class=rvts15>temporal</span><span class=rvts8>;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>if</span><span class=rvts8>(</span><span class=rvts15>date</span><span class=rvts8>.getDayOfWeek().equals(DayOfWeek.</span><span class=rvts17>FRIDAY</span><span class=rvts8>)){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>return</span><span class=rvts8> </span><span class=rvts15>date</span><span class=rvts8>.plusDays(3);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span><span class=rvts14>else</span><span class=rvts8> </span><span class=rvts14>if</span><span class=rvts8>(</span><span class=rvts15>date</span><span class=rvts8>.getDayOfWeek().equals(DayOfWeek.</span><span class=rvts17>SATURDAY</span><span class=rvts8>)){</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>return</span><span class=rvts8> </span><span class=rvts15>date</span><span class=rvts8>.plusDays(2);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span><span class=rvts14>else</span><span class=rvts8>{</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>return</span><span class=rvts8> </span><span class=rvts15>date</span><span class=rvts8>.plusDays(1);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>});</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>System.</span><span class=rvts17>out</span><span class=rvts8>.println(</span><span class=rvts19>"&#19979;&#19968;&#20010;&#24037;&#20316;&#26085;&#26159;&#65306;"</span><span class=rvts8> + </span><span class=rvts15>localDate</span><span class=rvts8>);</span></li>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>}</span></li>
+</ul>
+</p>
+</body></html>

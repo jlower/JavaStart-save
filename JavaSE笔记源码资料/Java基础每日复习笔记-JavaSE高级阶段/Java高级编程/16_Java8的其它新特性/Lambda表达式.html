@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Lambda表达式.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: '??';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts14>Lambda&#34920;&#36798;&#24335;</span></p>
+<p class=rvps2><span class=rvts14><br></span></p>
+<p class=rvps2><span class=rvts2>1.Lambda&#34920;&#36798;&#24335;&#20351;&#29992;&#21069;&#21518;&#30340;&#23545;&#27604;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#20030;&#20363;&#19968;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>@Test</span><br><span class=rvts6>public void </span><span class=rvts2>test1(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;Runnable r1 = </span><span class=rvts6>new </span><span class=rvts2>Runnable() {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>@Override</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public void </span><span class=rvts2>run() {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(</span><span class=rvts8>"</span><span class=rvts9>&#25105;&#29233;&#21271;&#20140;&#22825;&#23433;&#38376;</span><span class=rvts8>"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;};</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;r1.run();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(</span><span class=rvts8>"***********************"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;Runnable r2 = () -&gt; System.</span><span class=rvts7>out</span><span class=rvts2>.println(</span><span class=rvts8>"</span><span class=rvts9>&#25105;&#29233;&#21271;&#20140;&#25925;&#23467;</span><span class=rvts8>"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;r2.run();</span><br><span class=rvts2>}</span></p>
+<p class=rvps3><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#20030;&#20363;&#20108;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>@Test</span><br><span class=rvts6>public void </span><span class=rvts2>test2(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;Comparator&lt;Integer&gt; com1 = </span><span class=rvts6>new </span><span class=rvts2>Comparator&lt;Integer&gt;() {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>@Override</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public int </span><span class=rvts2>compare(Integer o1, Integer o2) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>return </span><span class=rvts2>Integer.</span><span class=rvts10>compare</span><span class=rvts2>(o1,o2);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;};</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>int </span><span class=rvts2>compare1 = com1.compare(</span><span class=rvts11>12</span><span class=rvts2>,</span><span class=rvts11>21</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(compare1);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(</span><span class=rvts8>"***********************"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts12>//Lambda</span><span class=rvts13>&#34920;&#36798;&#24335;&#30340;&#20889;&#27861;</span><br><span class=rvts13> &nbsp; &nbsp;</span><span class=rvts2>Comparator&lt;Integer&gt; com2 = (o1,o2) -&gt; Integer.</span><span class=rvts10>compare</span><span class=rvts2>(o1,o2);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>int </span><span class=rvts2>compare2 = com2.compare(</span><span class=rvts11>32</span><span class=rvts2>,</span><span class=rvts11>21</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(compare2);</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(</span><span class=rvts8>"***********************"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts12>//</span><span class=rvts13>&#26041;&#27861;&#24341;&#29992;</span><br><span class=rvts13> &nbsp; &nbsp;</span><span class=rvts2>Comparator&lt;Integer&gt; com3 = Integer :: </span><span class=rvts10>compare</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>int </span><span class=rvts2>compare3 = com3.compare(</span><span class=rvts11>32</span><span class=rvts2>,</span><span class=rvts11>21</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts7>out</span><span class=rvts2>.println(compare3);</span><br><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>2.</span><span class=rvts3>Lambda</span><span class=rvts4>&#34920;&#36798;&#24335;&#30340;&#22522;&#26412;&#35821;&#27861;&#65306;</span></p>
+<p class=rvps3><span class=rvts12>* 1.</span><span class=rvts13>&#20030;&#20363;&#65306; </span><span class=rvts12>(o1,o2) -&gt; Integer.compare(o1,o2);</span><br><span class=rvts12>* 2.</span><span class=rvts13>&#26684;&#24335;&#65306;</span><br><span class=rvts12>* &nbsp; &nbsp; &nbsp;-&gt; :lambda</span><span class=rvts13>&#25805;&#20316;&#31526; &#25110; &#31661;&#22836;&#25805;&#20316;&#31526;</span><br><span class=rvts12>* &nbsp; &nbsp; &nbsp;-&gt;</span><span class=rvts13>&#24038;&#36793;&#65306;</span><span class=rvts12>lambda</span><span class=rvts13>&#24418;&#21442;&#21015;&#34920; &#65288;&#20854;&#23454;&#23601;&#26159;&#25509;&#21475;&#20013;&#30340;&#25277;&#35937;&#26041;&#27861;&#30340;&#24418;&#21442;&#21015;&#34920;</span><br><span class=rvts12>* &nbsp; &nbsp; &nbsp;-&gt;</span><span class=rvts13>&#21491;&#36793;&#65306;</span><span class=rvts12>lambda</span><span class=rvts13>&#20307; &#65288;&#20854;&#23454;&#23601;&#26159;&#37325;&#20889;&#30340;&#25277;&#35937;&#26041;&#27861;&#30340;&#26041;&#27861;&#20307;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts4>3.&#22914;&#20309;&#20351;&#29992;&#65306;&#20998;&#20026;&#20845;&#31181;&#24773;&#20917;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Lambda表达式.files/img1.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Lambda表达式.files/img2.jpg"></p>
+<p class=rvps2><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts4>&#24635;&#32467;&#20845;&#31181;&#24773;&#20917;&#65306;</span></p>
+<p class=rvps3><span class=rvts12>-&gt;</span><span class=rvts13>&#24038;&#36793;&#65306;</span><span class=rvts12>lambda</span><span class=rvts13>&#24418;&#21442;&#21015;&#34920;&#30340;&#21442;&#25968;&#31867;&#22411;&#21487;&#20197;&#30465;&#30053;</span><span class=rvts12>(</span><span class=rvts13>&#31867;&#22411;&#25512;&#26029;</span><span class=rvts12>)</span><span class=rvts13>&#65307;&#22914;&#26524;</span><span class=rvts12>lambda</span><span class=rvts13>&#24418;&#21442;&#21015;&#34920;&#21482;&#19968;&#20010;&#21442;&#25968;&#65292;&#20854;&#19968;&#23545;</span><span class=rvts12>()</span><span class=rvts13>&#20063;&#21487;&#20197;&#30465;&#30053;</span><br><span class=rvts12>-&gt;</span><span class=rvts13>&#21491;&#36793;&#65306;</span><span class=rvts12>lambda</span><span class=rvts13>&#20307;&#24212;&#35813;&#20351;&#29992;&#19968;&#23545;</span><span class=rvts12>{}</span><span class=rvts13>&#21253;&#35065;&#65307;&#22914;&#26524;</span><span class=rvts12>lambda</span><span class=rvts13>&#20307;&#21482;&#19968;&#26465;&#25191;&#34892;&#35821;&#21477;&#65288;&#21487;&#33021;&#26159;</span><span class=rvts12>return</span><span class=rvts13>&#35821;&#21477;&#65292;&#30465;&#30053;&#36825;&#19968;&#23545;</span><span class=rvts12>{}</span><span class=rvts13>&#21644;</span><span class=rvts12>return</span><span class=rvts13>&#20851;&#38190;&#23383;</span></p>
+</body></html>

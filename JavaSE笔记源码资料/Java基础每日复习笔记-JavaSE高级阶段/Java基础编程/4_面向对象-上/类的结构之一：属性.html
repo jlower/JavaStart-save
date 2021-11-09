@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>类的结构之一：属性.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts3
+{
+ font-size: 15pt;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ffff00;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 40px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts8>&#31867;&#30340;&#32467;&#26500;&#20043;&#19968;&#65306;&#23646;&#24615;</span></p>
+<p class=rvps2><span class=rvts8><br></span></p>
+<p class=rvps2><span class=rvts3>&#31867;&#30340;&#35774;&#35745;&#20013;&#65292;&#20004;&#20010;&#37325;&#35201;&#32467;&#26500;&#20043;&#19968;&#65306;&#23646;&#24615;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#23545;&#27604;&#65306;&#23646;&#24615; &nbsp;vs &nbsp;&#23616;&#37096;&#21464;&#37327;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>1.&#30456;&#21516;&#28857;&#65306;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>1.1 &nbsp;&#23450;&#20041;&#21464;&#37327;&#30340;&#26684;&#24335;&#65306;&#25968;&#25454;&#31867;&#22411; &nbsp;&#21464;&#37327;&#21517; = &#21464;&#37327;&#20540;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>1.2 &#20808;&#22768;&#26126;&#65292;&#21518;&#20351;&#29992;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>1.3 &#21464;&#37327;&#37117;&#20854;&#23545;&#24212;&#30340;&#20316;&#29992;&#22495; </span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#19981;&#21516;&#28857;&#65306;</span></p>
+<p class=rvps3><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>2.1 &#22312;&#31867;&#20013;&#22768;&#26126;&#30340;&#20301;&#32622;&#30340;&#19981;&#21516;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23646;&#24615;&#65306;&#30452;&#25509;&#23450;&#20041;&#22312;&#31867;&#30340;&#19968;&#23545;{}&#20869;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23616;&#37096;&#21464;&#37327;&#65306;&#22768;&#26126;&#22312;&#26041;&#27861;&#20869;&#12289;&#26041;&#27861;&#24418;&#21442;&#12289;&#20195;&#30721;&#22359;&#20869;&#12289;&#26500;&#36896;&#22120;&#24418;&#21442;&#12289;&#26500;&#36896;&#22120;&#20869;&#37096;&#30340;&#21464;&#37327;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>2.2 &#20851;&#20110;&#26435;&#38480;&#20462;&#39280;&#31526;&#30340;&#19981;&#21516;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23646;&#24615;&#65306;&#21487;&#20197;&#22312;&#22768;&#26126;&#23646;&#24615;&#26102;&#65292;&#25351;&#26126;&#20854;&#26435;&#38480;&#65292;&#20351;&#29992;&#26435;&#38480;&#20462;&#39280;&#31526;&#12290;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#24120;&#29992;&#30340;&#26435;&#38480;&#20462;&#39280;&#31526;&#65306;private&#12289;public&#12289;&#32570;&#30465;&#12289;protected &nbsp;---&gt;&#23553;&#35013;&#24615;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#30446;&#21069;&#65292;&#22823;&#23478;&#22768;&#26126;&#23646;&#24615;&#26102;&#65292;&#37117;&#20351;&#29992;&#32570;&#30465;&#23601;&#21487;&#20197;&#20102;&#12290;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23616;&#37096;&#21464;&#37327;&#65306;&#19981;&#21487;&#20197;&#20351;&#29992;&#26435;&#38480;&#20462;&#39280;&#31526;&#12290;</span></p>
+<p><span class=rvts5> * </span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>2.3 &#40664;&#35748;&#21021;&#22987;&#21270;&#20540;&#30340;&#24773;&#20917;&#65306;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23646;&#24615;&#65306;&#31867;&#30340;&#23646;&#24615;&#65292;&#26681;&#25454;&#20854;&#31867;&#22411;&#65292;&#37117;&#40664;&#35748;&#21021;&#22987;&#21270;&#20540;&#12290;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#25972;&#22411;&#65288;byte&#12289;short&#12289;</span><span class=rvts6>int</span><span class=rvts5>&#12289;long&#65306;0&#65289;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#28014;&#28857;&#22411;&#65288;float&#12289;double&#65306;0.0&#65289;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23383;&#31526;&#22411;&#65288;char&#65306;0 &nbsp;&#65288;&#25110;'\u0000'&#65289;&#65289;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#24067;&#23572;&#22411;&#65288;boolean&#65306;false&#65289;</span></p>
+<p><span class=rvts5> * </span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#24341;&#29992;&#25968;&#25454;&#31867;&#22411;&#65288;&#31867;&#12289;&#25968;&#32452;&#12289;&#25509;&#21475;&#65306;null&#65289;</span></p>
+<p><span class=rvts5> * </span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23616;&#37096;&#21464;&#37327;&#65306;&#27809;&#40664;&#35748;&#21021;&#22987;&#21270;&#20540;&#12290;</span></p>
+<p><span class=rvts5> * &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#24847;&#21619;&#30528;&#65292;&#25105;&#20204;&#22312;&#35843;&#29992;&#23616;&#37096;&#21464;&#37327;&#20043;&#21069;&#65292;&#19968;&#23450;&#35201;&#26174;&#24335;&#36171;&#20540;&#12290;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#29305;&#21035;&#22320;&#65306;&#24418;&#21442;&#22312;&#35843;&#29992;&#26102;&#65292;&#25105;&#20204;&#36171;&#20540;&#21363;&#21487;&#12290;</span></p>
+<p><span class=rvts5> * </span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>2.4 &#22312;&#20869;&#23384;&#20013;&#21152;&#36733;&#30340;&#20301;&#32622;&#65306;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23646;&#24615;&#65306;&#21152;&#36733;&#21040;&#22534;&#31354;&#38388;&#20013; &nbsp; &#65288;&#38750;static&#65289;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>&#23616;&#37096;&#21464;&#37327;&#65306;&#21152;&#36733;&#21040;&#26632;&#31354;&#38388;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#34917;&#20805;&#65306;&#22238;&#39038;&#21464;&#37327;&#30340;&#20998;&#31867;&#65306;</span></p>
+<p><span class=rvts2>&#26041;&#24335;&#19968;&#65306;&#25353;&#29031;&#25968;&#25454;&#31867;&#22411;&#65306;</span></p>
+<p><img alt="" style="padding : 1px;" src="类的结构之一：属性.files/img1.jpg"></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#26041;&#24335;&#20108;&#65306;&#25353;&#29031;&#22312;&#31867;&#20013;&#22768;&#26126;&#30340;&#20301;&#32622;&#65306;</span></p>
+<p><img alt="" style="padding : 1px;" src="类的结构之一：属性.files/img2.jpg"></p>
+</body></html>

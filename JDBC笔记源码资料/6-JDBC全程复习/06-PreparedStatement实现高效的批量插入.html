@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>06-PreparedStatement实现高效的批量插入.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #646464;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+ background-color: #ffff00;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+ background-color: #ffff00;
+}
+span.rvts17
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ffff00;
+}
+span.rvts18
+{
+ font-size: 18pt;
+ font-family: 'Times New Roman', 'Times', serif;
+}
+span.rvts19
+{
+ font-size: 18pt;
+ font-family: 'Times New Roman', 'Times', serif;
+ color: #ff0000;
+}
+span.rvts20
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 36px;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts20>06-PreparedStatement&#23454;&#29616;&#39640;&#25928;&#30340;&#25209;&#37327;&#25554;&#20837;</span></p>
+<p><span class=rvts20><br></span></p>
+<p><span class=rvts3>&#27979;&#35797;&#20351;&#29992;PreparedStatement&#23454;&#29616;&#25209;&#37327;&#25805;&#20316;&#65306; </span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>&#23618;&#27425;&#19968;&#65306;&#20351;&#29992;Statement&#23454;&#29616;</span></p>
+<p><span class=rvts4> * Connection conn = JDBCUtils.getConnection();</span></p>
+<p><span class=rvts4> * Statement st = conn.createStatement();</span></p>
+<p><span class=rvts4> * for(int i = 1;i &lt;= 20000;i++){</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>String sql = "insert into goods(name)values('name_" + i + "')";</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>st.execute(sql);</span></p>
+<p><span class=rvts4> * }</span></p>
+<p class=rvps2><span class=rvts3>&#23618;&#27425;&#20108;&#65306;&#20351;&#29992;PreparedStatement&#26367;&#25442;Statement</span></p>
+<p class=rvps2><span class=rvts3>&#30053;&#12290;</span></p>
+<p class=rvps2><span class=rvts3>&#23618;&#27425;&#19977;&#65306;</span></p>
+<p><span class=rvts4>1.addBatch()&#12289;executeBatch()&#12289;clearBatch()</span></p>
+<p><span class=rvts4>2.mysql&#26381;&#21153;&#22120;&#40664;&#35748;&#26159;&#20851;&#38381;&#25209;&#22788;&#29702;&#30340;&#65292;&#25105;&#20204;&#38656;&#35201;&#36890;&#36807;&#19968;&#20010;&#21442;&#25968;&#65292;&#35753;mysql&#24320;&#21551;&#25209;&#22788;&#29702;&#30340;&#25903;&#25345;&#12290;?rewriteBatchedStatements=true &#20889;&#22312;&#37197;&#32622;&#25991;&#20214;&#30340;url&#21518;&#38754;</span></p>
+<p><span class=rvts4>3.&#20351;&#29992;&#26356;&#26032;&#30340;mysql &#39537;&#21160;&#65306;mysql-connector-java-5.1.37-bin.jar</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4>&#23618;&#27425;&#22235;&#65306;</span><span class=rvts5>&#35774;&#32622;&#36830;&#25509;&#19981;&#20801;&#35768;&#33258;&#21160;&#25552;&#20132;&#25968;&#25454;</span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#26368;&#32456;&#29256;&#30340;&#20195;&#30721;&#20307;&#29616;&#65306;</span></p>
+<p class=rvps3><span class=rvts6> @Test</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts7> </span><span class=rvts10>void</span><span class=rvts7> testInsert3() {</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>Connection </span><span class=rvts8>conn</span><span class=rvts7> = </span><span class=rvts10>null</span><span class=rvts7>;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>PreparedStatement </span><span class=rvts8>ps</span><span class=rvts7> = </span><span class=rvts10>null</span><span class=rvts7>;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>try</span><span class=rvts7> {</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>long</span><span class=rvts7> </span><span class=rvts8>start</span><span class=rvts7> = System.</span><span class=rvts9>currentTimeMillis</span><span class=rvts7>();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>conn</span><span class=rvts7> = JDBCUtils.</span><span class=rvts9>getConnection</span><span class=rvts7>();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>//&#35774;&#32622;&#19981;&#20801;&#35768;&#33258;&#21160;&#25552;&#20132;&#25968;&#25454;</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>conn</span><span class=rvts14>.setAutoCommit(</span><span class=rvts15>false</span><span class=rvts14>);</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>String </span><span class=rvts8>sql</span><span class=rvts7> = </span><span class=rvts12>"insert into goods(name)values(?)"</span><span class=rvts7>;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>ps</span><span class=rvts7> = </span><span class=rvts8>conn</span><span class=rvts7>.prepareStatement(</span><span class=rvts8>sql</span><span class=rvts7>);</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>for</span><span class=rvts7>(</span><span class=rvts10>int</span><span class=rvts7> </span><span class=rvts8>i</span><span class=rvts7> = 1;</span><span class=rvts8>i</span><span class=rvts7> &lt;= 1000000;</span><span class=rvts8>i</span><span class=rvts7>++){</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>ps</span><span class=rvts7>.setObject(1, </span><span class=rvts12>"name_"</span><span class=rvts7> + </span><span class=rvts8>i</span><span class=rvts7>);</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>//1."&#25874;"sql</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>ps</span><span class=rvts14>.addBatch();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>if</span><span class=rvts7>(</span><span class=rvts8>i</span><span class=rvts7> % 500 == 0){</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>//2.&#25191;&#34892;batch</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>ps</span><span class=rvts14>.executeBatch();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>//3.&#28165;&#31354;batch</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>ps</span><span class=rvts14>.clearBatch();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>//&#25552;&#20132;&#25968;&#25454;</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>conn</span><span class=rvts14>.commit();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>long</span><span class=rvts7> </span><span class=rvts8>end</span><span class=rvts7> = System.</span><span class=rvts9>currentTimeMillis</span><span class=rvts7>();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>System.</span><span class=rvts13>out</span><span class=rvts7>.println(</span><span class=rvts12>"&#33457;&#36153;&#30340;&#26102;&#38388;&#20026;&#65306;"</span><span class=rvts7> + (</span><span class=rvts8>end</span><span class=rvts7> - </span><span class=rvts8>start</span><span class=rvts7>)); &nbsp; &nbsp; &nbsp;</span><span class=rvts11>//20000:83065 -- 565</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>} </span><span class=rvts10>catch</span><span class=rvts7> (Exception </span><span class=rvts8>e</span><span class=rvts7>) {</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts11>//1000000:16086 -- 5114</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>e</span><span class=rvts7>.printStackTrace();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span><span class=rvts10>finally</span><span class=rvts7>{</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>JDBCUtils.</span><span class=rvts9>closeResource</span><span class=rvts7>(</span><span class=rvts8>conn</span><span class=rvts7>, </span><span class=rvts8>ps</span><span class=rvts7>);</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#24635;&#32467;&#65306;PreparedStatement&#19982;Statement&#30340;&#24322;&#21516;&#65311;</span></p>
+<p class=rvps2><span class=rvts2>&#9312; &#25351;&#20986;&#20108;&#32773;&#30340;&#20851;&#31995;&#65311; &#25509;&#21475; &#19982; &#23376;&#25509;&#21475;&#30340;&#20851;&#31995;</span></p>
+<p class=rvps2><span class=rvts2>&#9313; &#24320;&#21457;&#20013;&#65292;PreparedStatement&#26367;&#25442;Statement</span></p>
+<p class=rvps2><span class=rvts2>&#9314; </span><span class=rvts18>An object that represents a </span><span class=rvts19>precompiled SQL</span><span class=rvts18> statement. </span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="06-PreparedStatement实现高效的批量插入.files/img1.jpg"></p>
+</body></html>

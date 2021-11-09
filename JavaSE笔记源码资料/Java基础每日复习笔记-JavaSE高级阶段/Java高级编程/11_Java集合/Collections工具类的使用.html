@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Collections工具类的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #c00000;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: '????';
+ color: #c00000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #c00000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #c00000;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #ff0000;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts13
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts14
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #ff0000;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts16
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts17
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 54px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 54px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts17>Collections&#24037;&#20855;&#31867;&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts17><br></span></p>
+<p><span class=rvts2>Collections&#24037;&#20855;&#31867;</span></p>
+<p><span class=rvts2>1.&#20316;&#29992;&#65306;&#25805;&#20316;Collection&#21644;Map&#30340;&#24037;&#20855;&#31867;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#24120;&#29992;&#26041;&#27861;&#65306;</span></p>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts3>reverse(List)</span><span class=rvts4>&#65306;</span><span class=rvts5>&#21453;&#36716; </span><span class=rvts6>List </span><span class=rvts5>&#20013;&#20803;&#32032;&#30340;&#39034;&#24207;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts3>shuffle(List)</span><span class=rvts4>&#65306;</span><span class=rvts5>&#23545; </span><span class=rvts6>List &#38598;&#21512;&#20803;&#32032;&#36827;&#34892;&#38543;&#26426;&#25490;&#24207;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts3>sort(List)</span><span class=rvts4>&#65306;</span><span class=rvts5>&#26681;&#25454;&#20803;&#32032;&#30340;&#33258;&#28982;&#39034;&#24207;&#23545;&#25351;&#23450; </span><span class=rvts6>List </span><span class=rvts5>&#38598;&#21512;&#20803;&#32032;&#21319;&#24207;&#25490;&#24207;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts3>sort(List</span><span class=rvts4>&#65292;</span><span class=rvts3>Comparator)</span><span class=rvts4>&#65306;</span><span class=rvts5>&#26681;&#25454;&#25351;&#23450;&#30340; </span><span class=rvts6>Comparator </span><span class=rvts5>&#20135;&#29983;&#30340;&#39034;&#24207;&#23545; </span><span class=rvts6>List </span><span class=rvts5>&#38598;&#21512;&#20803;&#32032;&#36827;&#34892;&#25490;&#24207;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts3>swap(List</span><span class=rvts4>&#65292;</span><span class=rvts3>int</span><span class=rvts4>&#65292; </span><span class=rvts3>int)</span><span class=rvts4>&#65306;</span><span class=rvts5>&#23558;&#25351;&#23450; </span><span class=rvts6>list </span><span class=rvts5>&#38598;&#21512;&#20013;&#30340; </span><span class=rvts6>i </span><span class=rvts5>&#22788;&#20803;&#32032;&#21644; </span><span class=rvts6>j </span><span class=rvts5>&#22788;&#20803;&#32032;&#36827;&#34892;&#20132;&#25442;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts7>Object max(Collection)</span><span class=rvts8>&#65306;</span><span class=rvts9>&#26681;&#25454;&#20803;&#32032;&#30340;&#33258;&#28982;&#39034;&#24207;&#65292;&#36820;&#22238;&#32473;&#23450;&#38598;&#21512;&#20013;&#30340;&#26368;&#22823;&#20803;&#32032;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts7>Object max(Collection</span><span class=rvts8>&#65292;</span><span class=rvts7>Comparator)</span><span class=rvts8>&#65306;</span><span class=rvts9>&#26681;&#25454; </span><span class=rvts10>Comparator </span><span class=rvts9>&#25351;&#23450;&#30340;&#39034;&#24207;&#65292;&#36820;&#22238;&#32473;&#23450;&#38598;&#21512;&#20013;&#30340;&#26368;&#22823;&#20803;&#32032;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts7>Object min(Collection)</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts7>Object min(Collection</span><span class=rvts8>&#65292;</span><span class=rvts7>Comparator)</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts7>int frequency(Collection</span><span class=rvts8>&#65292;</span><span class=rvts7>Object)</span><span class=rvts8>&#65306;</span><span class=rvts9>&#36820;&#22238;&#25351;&#23450;&#38598;&#21512;&#20013;&#25351;&#23450;&#20803;&#32032;&#30340;&#20986;&#29616;&#27425;&#25968;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts11>void copy(List dest,List src)</span><span class=rvts12>&#65306;&#23558;</span><span class=rvts11>src</span><span class=rvts12>&#20013;&#30340;&#20869;&#23481;&#22797;&#21046;&#21040;</span><span class=rvts11>dest</span><span class=rvts12>&#20013;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps2><span class=rvts7>boolean replaceAll(List list</span><span class=rvts8>&#65292;</span><span class=rvts7>Object oldVal</span><span class=rvts8>&#65292;</span><span class=rvts7>Object newVal)</span><span class=rvts8>&#65306;</span><span class=rvts9>&#20351;&#29992;&#26032;&#20540;&#26367;&#25442; </span><span class=rvts10>List </span><span class=rvts9>&#23545;&#35937;&#30340;&#25152;&#26087;&#20540;</span></li>
+<p class=rvps2><span class=rvts9><br></span></li>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Collections工具类的使用.files/img1.jpg"></li>
+<p class=rvps2><span class=rvts14>&#35828;&#26126;&#65306;ArrayList&#21644;HashMap&#37117;&#26159;&#32447;&#31243;&#19981;&#23433;&#20840;&#30340;&#65292;&#22914;&#26524;&#31243;&#24207;&#35201;&#27714;&#32447;&#31243;&#23433;&#20840;&#65292;&#25105;&#20204;&#21487;&#20197;&#23558;ArrayList&#12289;HashMap&#36716;&#25442;&#20026;&#32447;&#31243;&#30340;&#12290;</span></li>
+<p class=rvps2><span class=rvts14>&#20351;&#29992;synchronizedList(List list&#65289; &#21644; synchronizedMap(Map map&#65289;</span></li>
+<p><span class=rvts13><br></span></li>
+<p><span class=rvts2>3.&#38754;&#35797;&#39064;&#65306;</span></li>
+<p class=rvps3><span class=rvts15>&#38754;&#35797;&#39064;&#65306;</span><span class=rvts16>Collection </span><span class=rvts15>&#21644; </span><span class=rvts16>Collections</span><span class=rvts15>&#30340;&#21306;&#21035;&#65311;</span></li>
+</ul>
+</p>
+</body></html>

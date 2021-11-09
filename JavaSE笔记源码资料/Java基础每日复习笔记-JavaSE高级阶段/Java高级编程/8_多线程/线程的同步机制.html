@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>线程的同步机制.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+ background-color: #ffff00;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #ff0000;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #ff0000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts8>&#32447;&#31243;&#30340;&#21516;&#27493;&#26426;&#21046;</span></p>
+<p class=rvps2><span class=rvts8><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#32972;&#26223;</span></p>
+<p class=rvps3><span class=rvts3>&#20363;&#23376;&#65306;&#21019;&#24314;&#20010;&#31383;&#21475;&#21334;&#31080;&#65292;&#24635;&#31080;&#25968;&#20026;</span><span class=rvts4>100</span><span class=rvts3>&#24352;</span><span class=rvts4>.</span><span class=rvts3>&#20351;&#29992;&#23454;&#29616;</span><span class=rvts4>Runnable</span><span class=rvts3>&#25509;&#21475;&#30340;&#26041;&#24335;</span><br><span class=rvts4>*</span><br><span class=rvts4>* 1.</span><span class=rvts3>&#38382;&#39064;&#65306;&#21334;&#31080;&#36807;&#31243;&#20013;&#65292;&#20986;&#29616;&#20102;&#37325;&#31080;&#12289;&#38169;&#31080; </span><span class=rvts4>--&gt;</span><span class=rvts3>&#20986;&#29616;&#20102;&#32447;&#31243;&#30340;&#23433;&#20840;&#38382;&#39064;</span><br><span class=rvts4>* 2.</span><span class=rvts3>&#38382;&#39064;&#20986;&#29616;&#30340;&#21407;&#22240;&#65306;&#24403;&#26576;&#20010;&#32447;&#31243;&#25805;&#20316;&#36710;&#31080;&#30340;&#36807;&#31243;&#20013;&#65292;&#23578;&#26410;&#25805;&#20316;&#23436;&#25104;&#26102;&#65292;&#20854;&#20182;&#32447;&#31243;&#21442;&#19982;&#36827;&#26469;&#65292;&#20063;&#25805;&#20316;&#36710;&#31080;&#12290;</span><br><span class=rvts4>* 3.</span><span class=rvts3>&#22914;&#20309;&#35299;&#20915;&#65306;&#24403;&#19968;&#20010;&#32447;&#31243;</span><span class=rvts4>a</span><span class=rvts3>&#22312;&#25805;&#20316;</span><span class=rvts4>ticket</span><span class=rvts3>&#30340;&#26102;&#20505;&#65292;&#20854;&#20182;&#32447;&#31243;&#19981;&#33021;&#21442;&#19982;&#36827;&#26469;&#12290;&#30452;&#21040;&#32447;&#31243;</span><span class=rvts4>a</span><span class=rvts3>&#25805;&#20316;&#23436;</span><span class=rvts4>ticket</span><span class=rvts3>&#26102;&#65292;&#20854;&#20182;&#32447;&#31243;&#25165;&#21487;&#20197;&#24320;&#22987;&#25805;&#20316;</span><span class=rvts4>ticket</span><span class=rvts3>&#12290;&#36825;&#31181;&#24773;&#20917;&#21363;&#20351;&#32447;&#31243;</span><span class=rvts4>a</span><span class=rvts3>&#20986;&#29616;&#20102;&#38459;&#22622;&#65292;&#20063;&#19981;&#33021;&#34987;&#25913;&#21464;&#12290;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>2.Java&#35299;&#20915;&#26041;&#26696;&#65306;&#21516;&#27493;&#26426;&#21046;</span></p>
+<p class=rvps3><span class=rvts3>&#22312;</span><span class=rvts4>Java</span><span class=rvts3>&#20013;&#65292;&#25105;&#20204;&#36890;&#36807;&#21516;&#27493;&#26426;&#21046;&#65292;&#26469;&#35299;&#20915;&#32447;&#31243;&#30340;&#23433;&#20840;&#38382;&#39064;&#12290;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts6>&#26041;&#24335;&#19968;&#65306;&#21516;&#27493;&#20195;&#30721;&#22359;</span><br><span class=rvts4>*</span><br><span class=rvts4>* &nbsp; synchronized(</span><span class=rvts3>&#21516;&#27493;&#30417;&#35270;&#22120;</span><span class=rvts4>){</span><br><span class=rvts4>* &nbsp; &nbsp; &nbsp;//</span><span class=rvts3>&#38656;&#35201;&#34987;&#21516;&#27493;&#30340;&#20195;&#30721;</span><br><span class=rvts4>*</span><br><span class=rvts4>* &nbsp; }</span><br><span class=rvts4>* &nbsp;</span><span class=rvts3>&#35828;&#26126;&#65306;</span><span class=rvts4>1.</span><span class=rvts3>&#25805;&#20316;&#20849;&#20139;&#25968;&#25454;&#30340;&#20195;&#30721;&#65292;&#21363;&#20026;&#38656;&#35201;&#34987;&#21516;&#27493;&#30340;&#20195;&#30721;&#12290; &nbsp;</span><span class=rvts4>--&gt;</span><span class=rvts3>&#19981;&#33021;&#21253;&#21547;&#20195;&#30721;&#22810;&#20102;&#65292;&#20063;&#19981;&#33021;&#21253;&#21547;&#20195;&#30721;&#23569;&#20102;&#12290;</span><br><span class=rvts4>* &nbsp; &nbsp; &nbsp; 2.</span><span class=rvts5>&#20849;&#20139;&#25968;&#25454;</span><span class=rvts3>&#65306;&#22810;&#20010;&#32447;&#31243;&#20849;&#21516;&#25805;&#20316;&#30340;&#21464;&#37327;&#12290;&#27604;&#22914;&#65306;</span><span class=rvts4>ticket</span><span class=rvts3>&#23601;&#26159;&#20849;&#20139;&#25968;&#25454;&#12290;</span><br><span class=rvts4>* &nbsp; &nbsp; &nbsp; 3.</span><span class=rvts5>&#21516;&#27493;&#30417;&#35270;&#22120;</span><span class=rvts3>&#65292;&#20439;&#31216;&#65306;&#38145;&#12290;&#20219;&#20309;&#19968;&#20010;&#31867;&#30340;&#23545;&#35937;&#65292;&#37117;&#21487;&#20197;&#20805;&#24403;&#38145;&#12290;</span><br><span class=rvts4>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>&#35201;&#27714;&#65306;&#22810;&#20010;&#32447;&#31243;&#24517;&#39035;&#35201;&#20849;&#29992;&#21516;&#19968;&#25226;&#38145;&#12290;</span><br><span class=rvts4>*</span><br><span class=rvts4>* </span><span class=rvts3>&#34917;&#20805;&#65306;&#22312;&#23454;&#29616;</span><span class=rvts4>Runnable</span><span class=rvts3>&#25509;&#21475;&#21019;&#24314;&#22810;&#32447;&#31243;&#30340;&#26041;&#24335;&#20013;&#65292;&#25105;&#20204;&#21487;&#20197;&#32771;&#34385;&#20351;&#29992;</span><span class=rvts4>this</span><span class=rvts3>&#20805;&#24403;&#21516;&#27493;&#30417;&#35270;&#22120;&#12290;</span></p>
+<p class=rvps3><span class=rvts3> &nbsp; &nbsp; &nbsp; &#22312;&#32487;&#25215;</span><span class=rvts4>Thread</span><span class=rvts3>&#31867;&#21019;&#24314;&#22810;&#32447;&#31243;&#30340;&#26041;&#24335;&#20013;&#65292;&#24910;&#29992;</span><span class=rvts4>this</span><span class=rvts3>&#20805;&#24403;&#21516;&#27493;&#30417;&#35270;&#22120;&#65292;&#32771;&#34385;&#20351;&#29992;&#24403;&#21069;&#31867;&#20805;&#24403;&#21516;&#27493;&#30417;&#35270;&#22120;&#12290;</span></p>
+<p class=rvps3><span class=rvts4></span><br><span class=rvts7>* &nbsp;</span><span class=rvts6>&#26041;&#24335;&#20108;&#65306;&#21516;&#27493;&#26041;&#27861;</span><br><span class=rvts4>* &nbsp; &nbsp; </span><span class=rvts3>&#22914;&#26524;&#25805;&#20316;&#20849;&#20139;&#25968;&#25454;&#30340;&#20195;&#30721;&#23436;&#25972;&#30340;&#22768;&#26126;&#22312;&#19968;&#20010;&#26041;&#27861;&#20013;&#65292;&#25105;&#20204;&#19981;&#22952;&#23558;&#27492;&#26041;&#27861;&#22768;&#26126;&#21516;&#27493;&#30340;&#12290;</span></p>
+<p class=rvps3><span class=rvts3><br></span></p>
+<p class=rvps3><span class=rvts4>* &nbsp;</span><span class=rvts3>&#20851;&#20110;&#21516;&#27493;&#26041;&#27861;&#30340;&#24635;&#32467;&#65306;</span><br><span class=rvts4>* &nbsp;1. </span><span class=rvts3>&#21516;&#27493;&#26041;&#27861;&#20173;&#28982;&#28041;&#21450;&#21040;&#21516;&#27493;&#30417;&#35270;&#22120;&#65292;&#21482;&#26159;&#19981;&#38656;&#35201;&#25105;&#20204;&#26174;&#24335;&#30340;&#22768;&#26126;&#12290;</span><br><span class=rvts4>* &nbsp;2. </span><span class=rvts3>&#38750;&#38745;&#24577;&#30340;&#21516;&#27493;&#26041;&#27861;&#65292;&#21516;&#27493;&#30417;&#35270;&#22120;&#26159;&#65306;</span><span class=rvts4>this</span><br><span class=rvts4>* &nbsp; &nbsp; </span><span class=rvts3>&#38745;&#24577;&#30340;&#21516;&#27493;&#26041;&#27861;&#65292;&#21516;&#27493;&#30417;&#35270;&#22120;&#26159;&#65306;&#24403;&#21069;&#31867;&#26412;&#36523;</span></p>
+<p class=rvps3><span class=rvts3><br></span></p>
+<p class=rvps3><span class=rvts3> &nbsp; </span><span class=rvts6>&#26041;&#24335;&#19977;&#65306;</span><span class=rvts7>Lock</span><span class=rvts6>&#38145; &nbsp;</span><span class=rvts7>--- JDK5.0</span><span class=rvts6>&#26032;&#22686;</span><br><span class=rvts4>* &nbsp; </span><br><span class=rvts4>* 1. </span><span class=rvts3>&#38754;&#35797;&#39064;&#65306;</span><span class=rvts4>synchronized </span><span class=rvts3>&#19982; </span><span class=rvts4>Lock</span><span class=rvts3>&#30340;&#24322;&#21516;&#65311;</span><br><span class=rvts4>* &nbsp; </span><span class=rvts3>&#30456;&#21516;&#65306;&#20108;&#32773;&#37117;&#21487;&#20197;&#35299;&#20915;&#32447;&#31243;&#23433;&#20840;&#38382;&#39064;</span><br><span class=rvts4>* &nbsp; </span><span class=rvts3>&#19981;&#21516;&#65306;</span><span class=rvts4>synchronized</span><span class=rvts3>&#26426;&#21046;&#22312;&#25191;&#34892;&#23436;&#30456;&#24212;&#30340;&#21516;&#27493;&#20195;&#30721;&#20197;&#21518;&#65292;&#33258;&#21160;&#30340;&#37322;&#25918;&#21516;&#27493;&#30417;&#35270;&#22120;</span><br><span class=rvts4>* &nbsp; &nbsp; &nbsp; &nbsp;Lock</span><span class=rvts3>&#38656;&#35201;&#25163;&#21160;&#30340;&#21551;&#21160;&#21516;&#27493;&#65288;</span><span class=rvts4>lock()</span><span class=rvts3>&#65292;&#21516;&#26102;&#32467;&#26463;&#21516;&#27493;&#20063;&#38656;&#35201;&#25163;&#21160;&#30340;&#23454;&#29616;&#65288;</span><span class=rvts4>unlock()&#65289;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps3><span class=rvts3>&#20351;&#29992;&#30340;&#20248;&#20808;&#39034;&#24207;&#65306;</span><br><span class=rvts4>* Lock ---&gt; </span><span class=rvts3>&#21516;&#27493;&#20195;&#30721;&#22359;&#65288;&#24050;&#32463;&#36827;&#20837;&#20102;&#26041;&#27861;&#20307;&#65292;&#20998;&#37197;&#20102;&#30456;&#24212;&#36164;&#28304; ) ---&gt;&#61664; &#21516;&#27493;&#26041;&#27861;&#65288;&#22312;&#26041;&#27861;&#20307;&#20043;&#22806;)</span></p>
+<p class=rvps2><span class=rvts2>3.&#21033;&#24330;</span></p>
+<p class=rvps3><span class=rvts3>&#21516;&#27493;&#30340;&#26041;&#24335;&#65292;&#35299;&#20915;&#20102;&#32447;&#31243;&#30340;&#23433;&#20840;&#38382;&#39064;&#12290;</span><span class=rvts4>---</span><span class=rvts3>&#22909;&#22788;</span><br><span class=rvts3>&#25805;&#20316;&#21516;&#27493;&#20195;&#30721;&#26102;&#65292;&#21482;&#33021;&#19968;&#20010;&#32447;&#31243;&#21442;&#19982;&#65292;&#20854;&#20182;&#32447;&#31243;&#31561;&#24453;&#12290;&#30456;&#24403;&#20110;&#26159;&#19968;&#20010;&#21333;&#32447;&#31243;&#30340;&#36807;&#31243;&#65292;&#25928;&#29575;&#20302;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>4.</span></p>
+<p><span class=rvts2>&#38754;&#35797;&#39064;&#65306;Java&#26159;&#22914;&#20309;&#35299;&#20915;&#32447;&#31243;&#23433;&#20840;&#38382;&#39064;&#30340;&#65292;&#26377;&#20960;&#31181;&#26041;&#24335;&#65311;&#24182;&#23545;&#27604;&#20960;&#31181;&#26041;&#24335;&#30340;&#19981;&#21516;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#38754;&#35797;&#39064;&#65306;synchronized&#21644;Lock&#26041;&#24335;&#35299;&#20915;&#32447;&#31243;&#23433;&#20840;&#38382;&#39064;&#30340;&#23545;&#27604;</span></p>
+</body></html>

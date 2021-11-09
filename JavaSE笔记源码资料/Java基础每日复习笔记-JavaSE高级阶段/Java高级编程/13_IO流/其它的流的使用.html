@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>其它的流的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 84px;
+}
+.rvps4
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+.rvps5
+{
+ background: #ffffff;
+}
+.rvps6
+{
+ text-indent: -27px;
+ margin: 0px 0px 0px 63px;
+}
+.rvps7
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps7><span class=rvts15>&#20854;&#23427;&#30340;&#27969;&#30340;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts15><br></span></p>
+<p class=rvps2><span class=rvts3>1. &#26631;&#20934;&#30340;&#36755;&#20837;&#36755;&#20986;&#27969;&#65306;</span></p>
+<p class=rvps5><span class=rvts4>System.in:</span><span class=rvts5>&#26631;&#20934;&#30340;&#36755;&#20837;&#27969;&#65292;&#40664;&#35748;&#20174;&#38190;&#30424;&#36755;&#20837;</span><br><span class=rvts4>System.out:</span><span class=rvts5>&#26631;&#20934;&#30340;&#36755;&#20986;&#27969;&#65292;&#40664;&#35748;&#20174;&#25511;&#21046;&#21488;&#36755;&#20986;</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts3>&#20462;&#25913;&#40664;&#35748;&#30340;&#36755;&#20837;&#21644;&#36755;&#20986;&#34892;&#20026;&#65306;</span></p>
+<p class=rvps5><span class=rvts4>System</span><span class=rvts5>&#31867;&#30340;</span><span class=rvts4>setIn(InputStream is) / setOut(PrintStream ps)</span><span class=rvts5>&#26041;&#24335;&#37325;&#26032;&#25351;&#23450;&#36755;&#20837;&#21644;&#36755;&#20986;&#30340;&#27969;&#12290;</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts3>2. &#25171;&#21360;&#27969;&#65306;</span></p>
+<p class=rvps5><span class=rvts4>PrintStream </span><span class=rvts5>&#21644;</span><span class=rvts4>PrintWriter</span></p>
+<p class=rvps2><span class=rvts3>&#35828;&#26126;&#65306;</span></p>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps6><span class=rvts6>&#25552;&#20379;&#20102;&#19968;&#31995;&#21015;&#37325;&#36733;&#30340;</span><span class=rvts8>print()</span><span class=rvts6>&#21644;</span><span class=rvts8>println()</span><span class=rvts6>&#26041;&#27861;&#65292;&#29992;&#20110;&#22810;&#31181;&#25968;&#25454;&#31867;&#22411;&#30340;&#36755;&#20986;</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps6><span class=rvts8>System.out</span><span class=rvts7>&#36820;&#22238;&#30340;&#26159;</span><span class=rvts8>PrintStream</span><span class=rvts7>&#30340;&#23454;&#20363;</span></li>
+<p class=rvps2><span class=rvts3>3. &#25968;&#25454;&#27969;&#65306;</span></li>
+<p class=rvps5><span class=rvts4>DataInputStream </span><span class=rvts5>&#21644;</span><span class=rvts4> DataOutputStream</span></li>
+<p class=rvps2><span class=rvts3>&#20316;&#29992;&#65306;</span></li>
+<p class=rvps5><span class=rvts5>&#29992;&#20110;&#35835;&#21462;&#25110;&#20889;&#20986;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#30340;&#21464;&#37327;&#25110;&#23383;&#31526;&#20018;</span></li>
+<p class=rvps5><span class=rvts5><br></span></li>
+<p class=rvps2><span class=rvts3>&#31034;&#20363;&#20195;&#30721;&#65306;</span></li>
+<p class=rvps5><span class=rvts5>/*</span></li>
+<p class=rvps5><span class=rvts5>&#32451;&#20064;&#65306;&#23558;&#20869;&#23384;&#20013;&#30340;&#23383;&#31526;&#20018;&#12289;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#30340;&#21464;&#37327;&#20889;&#20986;&#21040;&#25991;&#20214;&#20013;&#12290;</span><br><span class=rvts5></span><br><span class=rvts5>&#27880;&#24847;&#65306;&#22788;&#29702;&#24322;&#24120;&#30340;&#35805;&#65292;&#20173;&#28982;&#24212;&#35813;&#20351;&#29992;</span><span class=rvts4>try-catch-finally.</span><br><span class=rvts4> */</span><br><span class=rvts9>@Test</span><br><span class=rvts10>public void </span><span class=rvts3>test3() </span><span class=rvts10>throws </span><span class=rvts3>IOException {</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts4>//1.</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>DataOutputStream dos = </span><span class=rvts10>new </span><span class=rvts3>DataOutputStream(</span><span class=rvts10>new </span><span class=rvts3>FileOutputStream(</span><span class=rvts11>"data.txt"</span><span class=rvts3>));</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts4>//2.</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>dos.writeUTF(</span><span class=rvts11>"</span><span class=rvts12>&#21016;&#24314;&#36784;</span><span class=rvts11>"</span><span class=rvts3>);</span><br><span class=rvts3> &nbsp; &nbsp;dos.flush();</span><span class=rvts4>//</span><span class=rvts5>&#21047;&#26032;&#25805;&#20316;&#65292;&#23558;&#20869;&#23384;&#20013;&#30340;&#25968;&#25454;&#20889;&#20837;&#25991;&#20214;</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts3>dos.writeInt(</span><span class=rvts13>23</span><span class=rvts3>);</span><br><span class=rvts3> &nbsp; &nbsp;dos.flush();</span><br><span class=rvts3> &nbsp; &nbsp;dos.writeBoolean(</span><span class=rvts10>true</span><span class=rvts3>);</span><br><span class=rvts3> &nbsp; &nbsp;dos.flush();</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts4>//3.</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>dos.close();</span><br><span class=rvts3></span><br><span class=rvts3></span><br><span class=rvts3>}</span><br><span class=rvts4>/*</span><br><span class=rvts5>&#23558;&#25991;&#20214;&#20013;&#23384;&#20648;&#30340;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#21464;&#37327;&#21644;&#23383;&#31526;&#20018;&#35835;&#21462;&#21040;&#20869;&#23384;&#20013;&#65292;&#20445;&#23384;&#22312;&#21464;&#37327;&#20013;&#12290;</span><br><span class=rvts5></span><br><span class=rvts5>&#27880;&#24847;&#28857;&#65306;&#35835;&#21462;&#19981;&#21516;&#31867;&#22411;&#30340;&#25968;&#25454;&#30340;&#39034;&#24207;&#35201;&#19982;&#24403;&#21021;&#20889;&#20837;&#25991;&#20214;&#26102;&#65292;&#20445;&#23384;&#30340;&#25968;&#25454;&#30340;&#39034;&#24207;&#19968;&#33268;&#65281;</span><br><span class=rvts4></span><br><span class=rvts4> */</span><br><span class=rvts9>@Test</span><br><span class=rvts10>public void </span><span class=rvts3>test4() </span><span class=rvts10>throws </span><span class=rvts3>IOException {</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts4>//1.</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>DataInputStream dis = </span><span class=rvts10>new </span><span class=rvts3>DataInputStream(</span><span class=rvts10>new </span><span class=rvts3>FileInputStream(</span><span class=rvts11>"data.txt"</span><span class=rvts3>));</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts4>//2.</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>String name = dis.readUTF();</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts10>int </span><span class=rvts3>age = dis.readInt();</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts10>boolean </span><span class=rvts3>isMale = dis.readBoolean();</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;System.</span><span class=rvts14>out</span><span class=rvts3>.println(</span><span class=rvts11>"name = " </span><span class=rvts3>+ name);</span><br><span class=rvts3> &nbsp; &nbsp;System.</span><span class=rvts14>out</span><span class=rvts3>.println(</span><span class=rvts11>"age = " </span><span class=rvts3>+ age);</span><br><span class=rvts3> &nbsp; &nbsp;System.</span><span class=rvts14>out</span><span class=rvts3>.println(</span><span class=rvts11>"isMale = " </span><span class=rvts3>+ isMale);</span><br><span class=rvts3></span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts4>//3.</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>dis.close();</span><br><span class=rvts3></span><br><span class=rvts3>}</span></li>
+</ul>
+</p>
+</body></html>

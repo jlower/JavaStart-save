@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Iterator接口与foreach循环 .html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: '??????';
+ font-weight: bold;
+ color: #ff0000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: '??????';
+ color: #ff0000;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #ff0000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts14
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts15
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts16
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts17
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts18
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts19
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts20
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 18px;
+}
+.rvps4
+{
+ background: #ffffff;
+}
+.rvps5
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps5><span class=rvts20>Iterator&#25509;&#21475;&#19982;foreach&#24490;&#29615; </span></p>
+<p class=rvps2><span class=rvts20><br></span></p>
+<p class=rvps2><span class=rvts3>1.&#36941;&#21382;Collection&#30340;&#20004;&#31181;&#26041;&#24335;&#65306;</span></p>
+<p class=rvps2><span class=rvts3>&#9312; &#20351;&#29992;&#36845;&#20195;&#22120;Iterator &nbsp;&#9313; foreach&#24490;&#29615;&#65288;&#25110;&#22686;&#24378;for&#24490;&#29615;&#65289;</span></p>
+<p class=rvps2><span class=rvts3>2.java.utils&#21253;&#19979;&#23450;&#20041;&#30340;&#36845;&#20195;&#22120;&#25509;&#21475;&#65306;Iterator</span></p>
+<p class=rvps2><span class=rvts3>2.1&#35828;&#26126;&#65306;</span></p>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts8>Iterator</span><span class=rvts12>&#23545;&#35937;&#31216;&#20026;&#36845;&#20195;&#22120;</span><span class=rvts8>(</span><span class=rvts12>&#35774;&#35745;&#27169;&#24335;&#30340;&#19968;&#31181;</span><span class=rvts8>)</span><span class=rvts12>&#65292;&#20027;&#35201;&#29992;&#20110;&#36941;&#21382; </span><span class=rvts8>Collection </span><span class=rvts12>&#38598;&#21512;&#20013;&#30340;&#20803;&#32032;&#12290;</span></li>
+</ul>
+<ul class=list0>
+<li style="margin-left: 0px; text-indent: 0px" class=rvps3><span class=rvts8> </span><span class=rvts11>GOF</span><span class=rvts10>&#32473;&#36845;&#20195;&#22120;&#27169;&#24335;&#30340;&#23450;&#20041;&#20026;&#65306;&#25552;&#20379;&#19968;&#31181;&#26041;&#27861;&#35775;&#38382;&#19968;&#20010;&#23481;&#22120;</span><span class=rvts11>(container)</span><span class=rvts10>&#23545;&#35937;&#20013;&#21508;&#20010;&#20803;&#32032;&#65292;&#32780;&#21448;&#19981;&#38656;&#26292;&#38706;&#35813;&#23545;&#35937;&#30340;&#20869;&#37096;&#32454;&#33410;&#12290;</span><span class=rvts9>&#36845;&#20195;&#22120;&#27169;&#24335;&#65292;&#23601;&#26159;&#20026;&#23481;&#22120;&#32780;&#29983;&#12290;</span></li>
+<p class=rvps2><span class=rvts3>2.2&#20316;&#29992;&#65306;&#36941;&#21382;&#38598;&#21512;Collectiton&#20803;&#32032;</span></li>
+<p class=rvps2><span class=rvts3>2.3&#22914;&#20309;&#33719;&#21462;&#23454;&#20363;&#65306;coll.iterator()&#36820;&#22238;&#19968;&#20010;&#36845;&#20195;&#22120;&#23454;&#20363;</span></li>
+<p class=rvps2><span class=rvts3>2.4&#36941;&#21382;&#30340;&#20195;&#30721;&#23454;&#29616;&#65306;</span></li>
+<p class=rvps4><span class=rvts4>Iterator iterator = coll.iterator();</span></li>
+<p class=rvps4><span class=rvts13>//hasNext():</span><span class=rvts14>&#21028;&#26029;&#26159;&#21542;&#36824;&#19979;&#19968;&#20010;&#20803;&#32032;</span><br><span class=rvts15>while</span><span class=rvts4>(iterator.hasNext()){</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts13>//next():&#9312;</span><span class=rvts14>&#25351;&#38024;&#19979;&#31227;</span><span class=rvts13> &#9313;</span><span class=rvts14>&#23558;&#19979;&#31227;&#20197;&#21518;&#38598;&#21512;&#20301;&#32622;&#19978;&#30340;&#20803;&#32032;&#36820;&#22238;</span><br><span class=rvts14> &nbsp; &nbsp;</span><span class=rvts4>System.</span><span class=rvts16>out</span><span class=rvts4>.println(iterator.next());</span><br><span class=rvts4>}</span></li>
+<p><span class=rvts5><br></span></li>
+<p><span class=rvts4>2.5&#22270;&#31034;&#35828;&#26126;&#65306;</span></li>
+<p><img alt="" style="padding : 1px;" src="Iterator接口与foreach循环 .files/img1.jpg"></li>
+<p><span class=rvts4><br></span></li>
+<p><span class=rvts4>2.6 remove()&#30340;&#20351;&#29992;&#65306;</span></li>
+<p class=rvps4><span class=rvts13>//</span><span class=rvts14>&#27979;&#35797;</span><span class=rvts13>Iterator</span><span class=rvts14>&#20013;&#30340;</span><span class=rvts13>remove()</span><br><span class=rvts13>//</span><span class=rvts14>&#22914;&#26524;&#36824;&#26410;&#35843;&#29992;</span><span class=rvts13>next()</span><span class=rvts14>&#25110;&#22312;&#19978;&#19968;&#27425;&#35843;&#29992;</span><span class=rvts13> next </span><span class=rvts14>&#26041;&#27861;&#20043;&#21518;&#24050;&#32463;&#35843;&#29992;&#20102;</span><span class=rvts13> remove </span><span class=rvts14>&#26041;&#27861;&#65292;&#20877;&#35843;&#29992;</span><span class=rvts13>remove</span><span class=rvts14>&#37117;&#20250;&#25253;</span><span class=rvts13>IllegalStateException</span><span class=rvts14>&#12290;</span></li>
+<p class=rvps4><span class=rvts14>//&#20869;&#37096;&#23450;&#20041;&#20102;</span><span class=rvts13>remove(),</span><span class=rvts14>&#21487;&#20197;&#22312;&#36941;&#21382;&#30340;&#26102;&#20505;&#65292;&#21024;&#38500;&#38598;&#21512;&#20013;&#30340;&#20803;&#32032;&#12290;&#27492;&#26041;&#27861;&#19981;&#21516;&#20110;&#38598;&#21512;&#30452;&#25509;&#35843;&#29992;</span><span class=rvts13>remove()</span><br><span class=rvts14> &nbsp; &nbsp;</span><span class=rvts17>@Test</span><br><span class=rvts17> &nbsp; &nbsp;</span><span class=rvts15>public void </span><span class=rvts4>test3(){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;Collection coll = </span><span class=rvts15>new </span><span class=rvts4>ArrayList();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;coll.add(</span><span class=rvts18>123</span><span class=rvts4>);</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;coll.add(</span><span class=rvts18>456</span><span class=rvts4>);</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;coll.add(</span><span class=rvts15>new </span><span class=rvts4>Person(</span><span class=rvts19>"Jerry"</span><span class=rvts4>,</span><span class=rvts18>20</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;coll.add(</span><span class=rvts15>new </span><span class=rvts4>String(</span><span class=rvts19>"Tom"</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;coll.add(</span><span class=rvts15>false</span><span class=rvts4>);</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>//</span><span class=rvts14>&#21024;&#38500;&#38598;&#21512;&#20013;</span><span class=rvts13>"Tom"</span><br><span class=rvts13> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Iterator iterator = coll.iterator();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>while </span><span class=rvts4>(iterator.hasNext()){</span><br><span class=rvts13>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;iterator.remove();</span><br><span class=rvts13> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Object obj = iterator.next();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>if</span><span class=rvts4>(</span><span class=rvts19>"Tom"</span><span class=rvts4>.equals(obj)){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;iterator.remove();</span><br><span class=rvts13>// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;iterator.remove();</span><br><span class=rvts13> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts13>//</span><span class=rvts14>&#36941;&#21382;&#38598;&#21512;</span><br><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>iterator = coll.iterator();</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>while </span><span class=rvts4>(iterator.hasNext()){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts16>out</span><span class=rvts4>.println(iterator.next());</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts4> &nbsp; &nbsp;}</span></li>
+<p><span class=rvts4><br></span></li>
+<p><span class=rvts4><br></span></li>
+<p><span class=rvts4>3.jdk5.0&#26032;&#29305;&#24615;--&#22686;&#24378;for&#24490;&#29615;&#65306;(foreach&#24490;&#29615;)</span></li>
+<p><span class=rvts2><br></span></li>
+<p><span class=rvts4>1.&#36941;&#21382;&#38598;&#21512;&#20030;&#20363;&#65306;</span></li>
+<p><span class=rvts6><br></span></li>
+<p class=rvps4><span class=rvts17>@Test</span><br><span class=rvts15>public void </span><span class=rvts4>test1(){</span><br><span class=rvts4> &nbsp; &nbsp;Collection coll = </span><span class=rvts15>new </span><span class=rvts4>ArrayList();</span><br><span class=rvts4> &nbsp; &nbsp;coll.add(</span><span class=rvts18>123</span><span class=rvts4>);</span><br><span class=rvts4> &nbsp; &nbsp;coll.add(</span><span class=rvts18>456</span><span class=rvts4>);</span><br><span class=rvts4> &nbsp; &nbsp;coll.add(</span><span class=rvts15>new </span><span class=rvts4>Person(</span><span class=rvts19>"Jerry"</span><span class=rvts4>,</span><span class=rvts18>20</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp;coll.add(</span><span class=rvts15>new </span><span class=rvts4>String(</span><span class=rvts19>"Tom"</span><span class=rvts4>));</span><br><span class=rvts4> &nbsp; &nbsp;coll.add(</span><span class=rvts15>false</span><span class=rvts4>);</span><br><span class=rvts4></span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts13>//for(</span><span class=rvts14>&#38598;&#21512;&#20803;&#32032;&#30340;&#31867;&#22411; &#23616;&#37096;&#21464;&#37327;</span><span class=rvts13> : </span><span class=rvts14>&#38598;&#21512;&#23545;&#35937;</span><span class=rvts13>)</span><br><span class=rvts13> &nbsp; &nbsp;</span><br><span class=rvts14> &nbsp; &nbsp;</span><span class=rvts15>for</span><span class=rvts4>(Object obj : coll){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts16>out</span><span class=rvts4>.println(obj);</span><br><span class=rvts4> &nbsp; &nbsp;}</span><br><span class=rvts4>}</span></li>
+<p><span class=rvts6>&#35828;&#26126;&#65306;</span></li>
+<p><span class=rvts14>&#20869;&#37096;&#20173;&#28982;&#35843;&#29992;&#20102;&#36845;&#20195;&#22120;&#12290;</span></li>
+<p><span class=rvts14><br></span></li>
+<p><span class=rvts4>2.&#36941;&#21382;&#25968;&#32452;&#20030;&#20363;&#65306;</span></li>
+<p><span class=rvts7><br></span></li>
+<p class=rvps4><span class=rvts17>@Test</span><br><span class=rvts15>public void </span><span class=rvts4>test2(){</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts15>int</span><span class=rvts4>[] arr = </span><span class=rvts15>new int</span><span class=rvts4>[]{</span><span class=rvts18>1</span><span class=rvts4>,</span><span class=rvts18>2</span><span class=rvts4>,</span><span class=rvts18>3</span><span class=rvts4>,</span><span class=rvts18>4</span><span class=rvts4>,</span><span class=rvts18>5</span><span class=rvts4>,</span><span class=rvts18>6</span><span class=rvts4>};</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts13>//for(</span><span class=rvts14>&#25968;&#32452;&#20803;&#32032;&#30340;&#31867;&#22411; &#23616;&#37096;&#21464;&#37327;</span><span class=rvts13> : </span><span class=rvts14>&#25968;&#32452;&#23545;&#35937;</span><span class=rvts13>)</span><br><span class=rvts13> &nbsp; &nbsp;</span><span class=rvts15>for</span><span class=rvts4>(</span><span class=rvts15>int </span><span class=rvts4>i : arr){</span><br><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts16>out</span><span class=rvts4>.println(i);</span><br><span class=rvts4> &nbsp; &nbsp;}</span><br><span class=rvts4>}</span></li>
+</ul>
+</p>
+</body></html>

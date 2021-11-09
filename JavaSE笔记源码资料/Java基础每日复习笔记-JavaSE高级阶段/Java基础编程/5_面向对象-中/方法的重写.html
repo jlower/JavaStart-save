@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>方法的重写.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+ background-color: #e8f2fe;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: '??????';
+ color: #c00000;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #c00000;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #ff0000;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-family: '??????';
+ color: #ff0000;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 44px;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts14>&#26041;&#27861;&#30340;&#37325;&#20889;</span></p>
+<p class=rvps2><span class=rvts14><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#20160;&#20040;&#26159;&#26041;&#27861;&#30340;&#37325;&#20889;(override &#25110; overwrite)&#65311;</span></p>
+<p><span class=rvts6>&#23376;&#31867;&#32487;&#25215;&#29238;&#31867;&#20197;&#21518;&#65292;&#21487;&#20197;&#23545;&#29238;&#31867;&#20013;&#21516;&#21517;&#21516;&#21442;&#25968;&#30340;&#26041;&#27861;&#65292;&#36827;&#34892;&#35206;&#30422;&#25805;&#20316;.</span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts2>2. &#24212;&#29992;&#65306;</span></p>
+<p><span class=rvts6>&#37325;&#20889;&#20197;&#21518;&#65292;&#24403;&#21019;&#24314;&#23376;&#31867;&#23545;&#35937;&#20197;&#21518;&#65292;&#36890;&#36807;&#23376;&#31867;&#23545;&#35937;&#35843;&#29992;&#23376;&#29238;&#31867;&#20013;&#30340;&#21516;&#21517;&#21516;&#21442;&#25968;&#30340;&#26041;&#27861;&#26102;&#65292;&#23454;&#38469;&#25191;&#34892;&#30340;&#26159;&#23376;&#31867;&#37325;&#20889;&#29238;&#31867;&#30340;&#26041;&#27861;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>3.&#20030;&#20363;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>class Circle{</span></p>
+<p class=rvps3><span class=rvts2>public double findArea(){}//&#27714;&#38754;&#31215;</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>class Cylinder extends Circle{</span></p>
+<p class=rvps3><span class=rvts2>public double findArea(){}//&#27714;&#34920;&#38754;&#31215;</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>***************</span></p>
+<p class=rvps2><span class=rvts2>class Account{</span></p>
+<p class=rvps3><span class=rvts2>public boolean withdraw(double amt){}</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>class CheckAccount extends Account{</span></p>
+<p class=rvps3><span class=rvts2>public boolean withdraw(double amt){}</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>4.&#37325;&#20889;&#30340;&#35268;&#21017;&#65306;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#26041;&#27861;&#30340;&#22768;&#26126;&#65306; &#26435;&#38480;&#20462;&#39280;&#31526; &nbsp;&#36820;&#22238;&#20540;&#31867;&#22411; &nbsp;&#26041;&#27861;&#21517;(&#24418;&#21442;&#21015;&#34920;) throws &#24322;&#24120;&#30340;&#31867;&#22411;{</span></p>
+<p><span class=rvts7> * </span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>//&#26041;&#27861;&#20307;</span></p>
+<p><span class=rvts7> * </span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> * </span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#32422;&#23450;&#20439;&#31216;&#65306;&#23376;&#31867;&#20013;&#30340;&#21483;&#37325;&#20889;&#30340;&#26041;&#27861;&#65292;&#29238;&#31867;&#20013;&#30340;&#21483;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;</span></p>
+<p><span class=rvts7> * </span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#9312; &#23376;&#31867;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#26041;&#27861;&#21517;&#21644;&#24418;&#21442;&#21015;&#34920;&#19982;&#29238;&#31867;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#26041;&#27861;&#21517;&#21644;&#24418;&#21442;&#21015;&#34920;&#30456;&#21516;</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp; &nbsp; &nbsp; &#9313; &#23376;&#31867;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#26435;&#38480;&#20462;&#39280;&#31526;&#19981;&#23567;&#20110;&#29238;&#31867;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#26435;&#38480;&#20462;&#39280;&#31526;</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&gt;&#29305;&#27530;&#24773;&#20917;&#65306;&#23376;&#31867;&#19981;&#33021;&#37325;&#20889;&#29238;&#31867;&#20013;&#22768;&#26126;&#20026;private&#26435;&#38480;&#30340;&#26041;&#27861;</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp; &nbsp; &nbsp; &#9314; &#36820;&#22238;&#20540;&#31867;&#22411;&#65306;</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&gt;&#29238;&#31867;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#26159;void&#65292;&#21017;&#23376;&#31867;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#21482;&#33021;&#26159;void</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&gt;&#29238;&#31867;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#26159;A&#31867;&#22411;&#65292;&#21017;&#23376;&#31867;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#21487;&#20197;&#26159;A&#31867;&#25110;A&#31867;&#30340;&#23376;&#31867;</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&gt;&#29238;&#31867;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#26159;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;(&#27604;&#22914;&#65306;double)&#65292;&#21017;&#23376;&#31867;&#37325;&#20889;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#31867;&#22411;&#24517;&#39035;&#26159;&#30456;&#21516;&#30340;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;(&#24517;&#39035;&#20063;&#26159;double)</span></p>
+<p><span class=rvts7> *</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>&#9315; &#23376;&#31867;&#37325;&#20889;&#30340;&#26041;&#27861;&#25243;&#20986;&#30340;&#24322;&#24120;&#31867;&#22411;&#19981;&#22823;&#20110;&#29238;&#31867;&#34987;&#37325;&#20889;&#30340;&#26041;&#27861;&#25243;&#20986;&#30340;&#24322;&#24120;&#31867;&#22411;&#65288;&#20855;&#20307;&#25918;&#21040;&#24322;&#24120;&#22788;&#29702;&#26102;&#20505;&#35762;&#65289;</span></p>
+<p><span class=rvts7> *</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>**********************************************************************</span></p>
+<p><span class=rvts7> * &nbsp; &nbsp;&#23376;&#31867;&#21644;&#29238;&#31867;&#20013;&#30340;&#21516;&#21517;&#21516;&#21442;&#25968;&#30340;&#26041;&#27861;&#35201;&#20040;&#37117;&#22768;&#26126;&#20026;&#38750;static&#30340;&#65288;&#32771;&#34385;&#37325;&#20889;&#65292;&#35201;&#20040;&#37117;&#22768;&#26126;&#20026;static&#30340;&#65288;&#19981;&#26159;&#37325;&#20889;)&#12290;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>5.&#38754;&#35797;&#39064;&#65306;</span></p>
+<p><span class=rvts3>&#21306;&#20998;&#26041;&#27861;&#30340;&#37325;&#20889;&#21644;&#37325;&#36733;&#65311;</span></p>
+<p class=rvps2><span class=rvts2>&#31572;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#9312; &#20108;&#32773;&#30340;&#27010;&#24565;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#9313; &#37325;&#36733;&#21644;&#37325;&#20889;&#30340;&#20855;&#20307;&#35268;&#21017;</span></p>
+<p class=rvps2><span class=rvts2>&#9314; &#37325;&#36733;&#65306;&#19981;&#34920;&#29616;&#20026;&#22810;&#24577;&#24615;&#12290;</span></p>
+<p class=rvps2><span class=rvts2> &nbsp;&#37325;&#20889;&#65306;&#34920;&#29616;&#20026;&#22810;&#24577;&#24615;&#12290;</span></p>
+<p><span class=rvts8>&#37325;&#36733;&#65292;&#26159;&#25351;&#20801;&#35768;&#23384;&#22312;&#22810;&#20010;&#21516;&#21517;&#26041;&#27861;&#65292;&#32780;&#36825;&#20123;&#26041;&#27861;&#30340;&#21442;&#25968;&#19981;&#21516;&#12290;&#32534;&#35793;&#22120;&#26681;&#25454;&#26041;&#27861;&#19981;&#21516;&#30340;&#21442;&#25968;&#34920;&#65292;&#23545;&#21516;&#21517;&#26041;&#27861;&#30340;&#21517;&#31216;&#20570;&#20462;&#39280;&#12290;&#23545;&#20110;&#32534;&#35793;&#22120;&#32780;&#35328;&#65292;&#36825;&#20123;&#21516;&#21517;&#26041;&#27861;&#23601;&#25104;&#20102;&#19981;&#21516;&#30340;&#26041;&#27861;&#12290;</span><span class=rvts9>&#23427;&#20204;&#30340;&#35843;&#29992;&#22320;&#22336;&#22312;&#32534;&#35793;&#26399;&#23601;&#32465;&#23450;&#20102;&#12290;</span><span class=rvts10>Java</span><span class=rvts8>&#30340;&#37325;&#36733;&#26159;&#21487;&#20197;&#21253;&#25324;&#29238;&#31867;&#21644;&#23376;&#31867;&#30340;&#65292;&#21363;&#23376;&#31867;&#21487;&#20197;&#37325;&#36733;&#29238;&#31867;&#30340;&#21516;&#21517;&#19981;&#21516;&#21442;&#25968;&#30340;&#26041;&#27861;&#12290;</span></p>
+<p><span class=rvts8>&#25152;&#20197;&#65306;&#23545;&#20110;&#37325;&#36733;&#32780;&#35328;&#65292;&#22312;&#26041;&#27861;&#35843;&#29992;&#20043;&#21069;&#65292;&#32534;&#35793;&#22120;&#23601;&#24050;&#32463;&#30830;&#23450;&#20102;&#25152;&#35201;&#35843;&#29992;&#30340;&#26041;&#27861;&#65292;&#36825;&#31216;&#20026;</span><span class=rvts11>&#8220;&#26089;&#32465;&#23450;&#8221;&#25110;&#8220;&#38745;&#24577;&#32465;&#23450;&#8221;</span><span class=rvts8>&#65307;</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts8>&#32780;&#23545;&#20110;&#22810;&#24577;&#65292;&#21482;&#31561;&#21040;&#26041;&#27861;&#35843;&#29992;&#30340;&#37027;&#19968;&#21051;&#65292;&#35299;&#37322;&#36816;&#34892;&#22120;&#25165;&#20250;&#30830;&#23450;&#25152;&#35201;&#35843;&#29992;&#30340;&#20855;&#20307;&#26041;&#27861;&#65292;&#36825;&#31216;&#20026;</span><span class=rvts11>&#8220;&#26202;&#32465;&#23450;&#8221;&#25110;&#8220;&#21160;&#24577;&#32465;&#23450;&#8221;</span><span class=rvts8>&#12290;&nbsp;</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts8>&#24341;&#29992;&#19968;&#21477;</span><span class=rvts10>Bruce Eckel</span><span class=rvts8>&#30340;&#35805;&#65306;</span><span class=rvts12>&#8220;&#19981;&#35201;&#29359;&#20667;&#65292;&#22914;&#26524;&#23427;&#19981;&#26159;</span><span class=rvts13>&#26202;&#32465;&#23450;&#65292;&#23427;&#23601;&#19981;&#26159;&#22810;&#24577;&#12290;&#8221;</span></p>
+</body></html>

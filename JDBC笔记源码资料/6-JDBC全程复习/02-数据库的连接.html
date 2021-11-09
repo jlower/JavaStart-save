@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>02-数据库的连接.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts11
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+ background-color: #d4d4d4;
+}
+span.rvts12
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts13
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+}
+span.rvts14
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts15
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+}
+span.rvts16
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts17
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+ background-color: #d4d4d4;
+}
+span.rvts18
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f9fbf;
+}
+span.rvts19
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 40px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts19>02-&#25968;&#25454;&#24211;&#30340;&#36830;&#25509;</span></p>
+<p class=rvps2><span class=rvts19><br></span></p>
+<p class=rvps2><span class=rvts3>&#26041;&#24335;&#19968;&#12289;&#26041;&#24335;&#20108;&#12289;&#26041;&#24335;&#19977;&#12289;</span><span class=rvts2>&#26041;&#24335;&#22235;&#65306;&#20316;&#20026;&#36807;&#31243;&#23384;&#22312;&#65292;&#20102;&#35299;&#21363;&#21487;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts5>&#26041;&#24335;&#20116;&#65306;&#26368;&#32456;&#29256;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps3><span class=rvts8>/**</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * </span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * </span><span class=rvts18>@Description</span><span class=rvts8> &#33719;&#21462;&#25968;&#25454;&#24211;&#30340;&#36830;&#25509;</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * </span><span class=rvts18>@author</span><span class=rvts8> shkstart</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * </span><span class=rvts18>@date</span><span class=rvts8> &#19978;&#21320;9:11:23</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * </span><span class=rvts18>@return</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> * </span><span class=rvts18>@throws</span><span class=rvts8> </span><span class=rvts17>Exception</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> */</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>public</span><span class=rvts4> </span><span class=rvts10>static</span><span class=rvts4> Connection getConnection() </span><span class=rvts10>throws</span><span class=rvts4> </span><span class=rvts15>Exception</span><span class=rvts4> {</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>// 1.&#35835;&#21462;&#37197;&#32622;&#25991;&#20214;&#20013;&#30340;4&#20010;&#22522;&#26412;&#20449;&#24687;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>InputStream </span><span class=rvts9>is</span><span class=rvts4> = ClassLoader.</span><span class=rvts16>getSystemClassLoader</span><span class=rvts4>().getResourceAsStream(</span><span class=rvts14>"jdbc.properties"</span><span class=rvts4>);</span></p>
+<p><span class=rvts13><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Properties </span><span class=rvts9>pros</span><span class=rvts4> = </span><span class=rvts10>new</span><span class=rvts4> Properties();</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>pros</span><span class=rvts4>.</span><span class=rvts15>load</span><span class=rvts4>(</span><span class=rvts9>is</span><span class=rvts4>);</span></p>
+<p><span class=rvts13><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>String </span><span class=rvts9>user</span><span class=rvts4> = </span><span class=rvts9>pros</span><span class=rvts4>.getProperty(</span><span class=rvts14>"user"</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>String </span><span class=rvts9>password</span><span class=rvts4> = </span><span class=rvts9>pros</span><span class=rvts4>.getProperty(</span><span class=rvts14>"password"</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>String </span><span class=rvts9>url</span><span class=rvts4> = </span><span class=rvts9>pros</span><span class=rvts4>.getProperty(</span><span class=rvts14>"url"</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>String </span><span class=rvts9>driverClass</span><span class=rvts4> = </span><span class=rvts9>pros</span><span class=rvts4>.getProperty(</span><span class=rvts14>"driverClass"</span><span class=rvts4>);</span></p>
+<p><span class=rvts13><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>// 2.&#21152;&#36733;&#39537;&#21160;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Class.</span><span class=rvts11>forName</span><span class=rvts4>(</span><span class=rvts9>driverClass</span><span class=rvts4>);</span></p>
+<p><span class=rvts13><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>// 3.&#33719;&#21462;&#36830;&#25509;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Connection </span><span class=rvts9>conn</span><span class=rvts4> = DriverManager.</span><span class=rvts11>getConnection</span><span class=rvts4>(</span><span class=rvts9>url</span><span class=rvts4>, </span><span class=rvts9>user</span><span class=rvts4>, </span><span class=rvts9>password</span><span class=rvts4>);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>return</span><span class=rvts4> </span><span class=rvts9>conn</span><span class=rvts4>;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>&#20854;&#20013;&#65292;&#37197;&#32622;&#25991;&#20214;&#12304;jdbc.properties&#12305;&#65306;&#27492;&#37197;&#32622;&#25991;&#20214;&#22768;&#26126;&#22312;&#24037;&#31243;&#30340;src&#19979;</span></p>
+<p><span class=rvts6>user=</span><span class=rvts7>root</span></p>
+<p><span class=rvts6>password=</span><span class=rvts7>abc123</span></p>
+<p><span class=rvts6>url=</span><span class=rvts7>jdbc:mysql://localhost:3306/test?rewriteBatchedStatements=true</span></p>
+<p><span class=rvts6>driverClass=</span><span class=rvts7>com.mysql.jdbc.Driver</span></p>
+</body></html>

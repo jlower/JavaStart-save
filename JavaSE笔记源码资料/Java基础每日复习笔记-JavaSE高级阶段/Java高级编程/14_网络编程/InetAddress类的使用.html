@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>InetAddress类的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: '????';
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 54px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts10>InetAddress&#31867;&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts2>&#19968;&#12289;&#23454;&#29616;&#32593;&#32476;&#36890;&#20449;&#38656;&#35201;&#35299;&#20915;&#30340;&#20004;&#20010;&#38382;&#39064;</span></p>
+<p class=rvps3><span class=rvts4>* 1.</span><span class=rvts5>&#22914;&#20309;&#20934;&#30830;&#22320;&#23450;&#20301;&#32593;&#32476;&#19978;&#19968;&#21488;&#25110;&#22810;&#21488;&#20027;&#26426;&#65307;&#23450;&#20301;&#20027;&#26426;&#19978;&#30340;&#29305;&#23450;&#30340;&#24212;&#29992;</span><br><span class=rvts4>* 2.</span><span class=rvts5>&#25214;&#21040;&#20027;&#26426;&#21518;&#22914;&#20309;&#21487;&#38752;&#39640;&#25928;&#22320;&#36827;&#34892;&#25968;&#25454;&#20256;&#36755;</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#20108;&#12289;&#32593;&#32476;&#36890;&#20449;&#30340;&#20004;&#20010;&#35201;&#32032;&#65306;</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps3><span class=rvts4>* 1.</span><span class=rvts5>&#23545;&#24212;&#38382;&#39064;&#19968;&#65306;</span><span class=rvts4>IP</span><span class=rvts5>&#21644;&#31471;&#21475;&#21495;</span><br><span class=rvts4>* 2.</span><span class=rvts5>&#23545;&#24212;&#38382;&#39064;&#20108;&#65306;&#25552;&#20379;&#32593;&#32476;&#36890;&#20449;&#21327;&#35758;&#65306;</span><span class=rvts4>TCP/IP</span><span class=rvts5>&#21442;&#32771;&#27169;&#22411;&#65288;&#24212;&#29992;&#23618;&#12289;&#20256;&#36755;&#23618;&#12289;&#32593;&#32476;&#23618;&#12289;&#29289;&#29702;</span><span class=rvts4>+</span><span class=rvts5>&#25968;&#25454;&#38142;&#36335;&#23618;&#65289;</span><br><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#19977;&#12289;&#36890;&#20449;&#35201;&#32032;&#19968;&#65306;IP&#21644;&#31471;&#21475;&#21495;</span></p>
+<p><span class=rvts2>1.IP&#30340;&#29702;&#35299;</span></p>
+<p class=rvps3><span class=rvts4>* 1. IP:</span><span class=rvts5>&#21807;&#19968;&#30340;&#26631;&#35782; </span><span class=rvts4>Internet </span><span class=rvts5>&#19978;&#30340;&#35745;&#31639;&#26426;&#65288;&#36890;&#20449;&#23454;&#20307;&#65289;</span><br><span class=rvts4>* 2. </span><span class=rvts5>&#22312;</span><span class=rvts4>Java</span><span class=rvts5>&#20013;&#20351;&#29992;</span><span class=rvts4>InetAddress</span><span class=rvts5>&#31867;&#20195;&#34920;</span><span class=rvts4>IP</span><br><span class=rvts4>* 3. IP</span><span class=rvts5>&#20998;&#31867;&#65306;</span><span class=rvts4>IPv4 </span><span class=rvts5>&#21644; </span><span class=rvts4>IPv6 ; </span><span class=rvts5>&#19975;&#32500;&#32593; &#21644; &#23616;&#22495;&#32593;</span><br><span class=rvts4>* 4. </span><span class=rvts5>&#22495;&#21517;</span><span class=rvts4>: &nbsp; www.baidu.com &nbsp; www.mi.com &nbsp;www.sina.com &nbsp;www.jd.com</span><br><span class=rvts4>* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p class=rvps3><span class=rvts4> &nbsp; &nbsp; &#22495;&#21517;&#35299;&#26512;&#65306;</span><span class=rvts6>&#22495;&#21517;&#23481;&#26131;&#35760;&#24518;&#65292;&#24403;&#22312;&#36830;&#25509;&#32593;&#32476;&#26102;&#36755;&#20837;&#19968;&#20010;&#20027;&#26426;&#30340;&#22495;&#21517;&#21518;&#65292;&#22495;&#21517;&#26381;&#21153;&#22120;</span><span class=rvts7>(DNS)</span><span class=rvts6>&#36127;&#36131;&#23558;&#22495;&#21517;&#36716;&#21270;&#25104;</span><span class=rvts7>IP</span><span class=rvts6>&#22320;&#22336;&#65292;&#36825;&#26679;&#25165;&#33021;&#21644;&#20027;&#26426;&#24314;&#31435;&#36830;&#25509;&#12290; </span><span class=rvts8>-------</span><span class=rvts9>&#22495;&#21517;&#35299;&#26512;</span><br><span class=rvts4>* 5. </span><span class=rvts5>&#26412;&#22320;&#22238;&#36335;&#22320;&#22336;&#65306;</span><span class=rvts4>127.0.0.1 </span><span class=rvts5>&#23545;&#24212;&#30528;&#65306;</span><span class=rvts4>localhost</span><br><span class=rvts4>*</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.InetAddress&#31867;:&#27492;&#31867;&#30340;&#19968;&#20010;&#23545;&#35937;&#23601;&#20195;&#34920;&#30528;&#19968;&#20010;&#20855;&#20307;&#30340;IP&#22320;&#22336;</span></p>
+<p><span class=rvts2>2.1&#23454;&#20363;&#21270;</span></p>
+<p class=rvps3><span class=rvts4>getByName(String host) </span><span class=rvts5>&#12289; </span><span class=rvts4>getLocalHost()</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.2&#24120;&#29992;&#26041;&#27861;</span></p>
+<p class=rvps3><span class=rvts4>getHostName() / getHostAddress()</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.&#31471;&#21475;&#21495;&#65306;</span><span class=rvts5>&#27491;&#22312;&#35745;&#31639;&#26426;&#19978;&#36816;&#34892;&#30340;&#36827;&#31243;&#12290;</span><br><span class=rvts4>* </span><span class=rvts5>&#35201;&#27714;&#65306;&#19981;&#21516;&#30340;&#36827;&#31243;&#19981;&#21516;&#30340;&#31471;&#21475;&#21495;</span><br><span class=rvts4>* </span><span class=rvts5>&#33539;&#22260;&#65306;&#34987;&#35268;&#23450;&#20026;&#19968;&#20010; </span><span class=rvts4>16 </span><span class=rvts5>&#20301;&#30340;&#25972;&#25968; </span><span class=rvts4>0~65535</span><span class=rvts5>&#12290;</span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps3><span class=rvts5>&#31471;&#21475;&#21495;&#19982;</span><span class=rvts4>IP</span><span class=rvts5>&#22320;&#22336;&#30340;&#32452;&#21512;&#24471;&#20986;&#19968;&#20010;&#32593;&#32476;&#22871;&#25509;&#23383;&#65306;</span><span class=rvts4>Socket</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#22235;&#12289;&#36890;&#20449;&#35201;&#32032;&#20108;&#65306;&#32593;&#32476;&#36890;&#20449;&#21327;&#35758;</span></p>
+<p class=rvps2><span class=rvts2>1. &#20998;&#22411;&#27169;&#22411;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="InetAddress类的使用.files/img1.jpg"></p>
+<p class=rvps2><span class=rvts2>2.TCP&#21644;UDP&#30340;&#21306;&#21035;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="InetAddress类的使用.files/img2.jpg"></p>
+<p class=rvps2><span class=rvts2>3.TCP&#19977;&#27425;&#25569;&#25163;&#21644;&#22235;&#27425;&#25381;&#25163;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="InetAddress类的使用.files/img3.jpg"></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="InetAddress类的使用.files/img4.jpg"></p>
+</body></html>

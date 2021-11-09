@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>可变个数形参的方法.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts5
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts8
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts9
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts11
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts12
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts13
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts14
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: ;
+}
+span.rvts15
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: ;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts16>&#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#30340;&#26041;&#27861;</span></p>
+<p class=rvps2><span class=rvts16><br></span></p>
+<p class=rvps2><span class=rvts3>1.&#20351;&#29992;&#35828;&#26126;&#65306;</span></p>
+<p><span class=rvts5> * 1.</span><span class=rvts6>jdk</span><span class=rvts5> 5.0&#26032;&#22686;&#30340;&#20869;&#23481;</span></p>
+<p><span class=rvts5> * 2.&#20855;&#20307;&#20351;&#29992;&#65306;</span></p>
+<p><span class=rvts5> * &nbsp; 2.1 &#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#30340;&#26684;&#24335;&#65306;&#25968;&#25454;&#31867;&#22411; ... &#21464;&#37327;&#21517;</span></p>
+<p><span class=rvts5> * &nbsp; 2.2 &#24403;&#35843;&#29992;&#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#30340;&#26041;&#27861;&#26102;&#65292;&#20256;&#20837;&#30340;&#21442;&#25968;&#20010;&#25968;&#21487;&#20197;&#26159;&#65306;0&#20010;&#65292;1&#20010;,2&#20010;&#65292;&#12290;&#12290;&#12290;</span></p>
+<p><span class=rvts5> * &nbsp; 2.3 &#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#30340;&#26041;&#27861;&#19982;&#26412;&#31867;&#20013;&#26041;&#27861;&#21517;&#30456;&#21516;&#65292;&#24418;&#21442;&#19981;&#21516;&#30340;&#26041;&#27861;&#20043;&#38388;&#26500;&#25104;&#37325;&#36733;</span></p>
+<p><span class=rvts5> * &nbsp; 2.4 &#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#30340;&#26041;&#27861;&#19982;&#26412;&#31867;&#20013;&#26041;&#27861;&#21517;&#30456;&#21516;&#65292;&#24418;&#21442;&#31867;&#22411;&#20063;&#30456;&#21516;&#30340;&#25968;&#32452;&#20043;&#38388;&#19981;&#26500;&#25104;&#37325;&#36733;&#12290;&#25442;&#21477;&#35805;&#35828;&#65292;&#20108;&#32773;&#19981;&#33021;&#20849;&#23384;&#12290;</span></p>
+<p><span class=rvts5> * &nbsp; 2.5 &#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#22312;&#26041;&#27861;&#30340;&#24418;&#21442;&#20013;&#65292;&#24517;&#39035;&#22768;&#26126;&#22312;&#26411;&#23614;</span></p>
+<p><span class=rvts5> * </span><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5> 2.6 &nbsp;&#21487;&#21464;&#20010;&#25968;&#24418;&#21442;&#22312;&#26041;&#27861;&#30340;&#24418;&#21442;&#20013;,&#26368;&#22810;&#21482;&#33021;&#22768;&#26126;&#19968;&#20010;&#21487;&#21464;&#24418;&#21442;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>2.&#20030;&#20363;&#35828;&#26126;&#65306;</span></p>
+<p><span class=rvts4> </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts9> </span><span class=rvts4>void</span><span class=rvts9> show(</span><span class=rvts4>int</span><span class=rvts9> </span><span class=rvts10>i</span><span class=rvts9>){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts9> </span><span class=rvts4>void</span><span class=rvts9> show(String </span><span class=rvts10>s</span><span class=rvts9>){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts11>out</span><span class=rvts9>.println(</span><span class=rvts13>"show(String)"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>public</span><span class=rvts9> </span><span class=rvts4>void</span><span class=rvts9> show(String ... </span><span class=rvts10>strs</span><span class=rvts9>){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts11>out</span><span class=rvts9>.println(</span><span class=rvts13>"show(String ... strs)"</span><span class=rvts9>);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>for</span><span class=rvts9>(</span><span class=rvts4>int</span><span class=rvts9> </span><span class=rvts10>i</span><span class=rvts9> = 0;</span><span class=rvts10>i</span><span class=rvts9> &lt; </span><span class=rvts10>strs</span><span class=rvts9>.</span><span class=rvts12>length</span><span class=rvts9>;</span><span class=rvts10>i</span><span class=rvts9>++){</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>System.</span><span class=rvts11>out</span><span class=rvts9>.println(</span><span class=rvts10>strs</span><span class=rvts9>[</span><span class=rvts10>i</span><span class=rvts9>]);</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>}</span></p>
+<p><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>//&#19981;&#33021;&#19982;&#19978;&#19968;&#20010;&#26041;&#27861;&#21516;&#26102;&#23384;&#22312;</span></p>
+<p><span class=rvts7>//</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>public void show(String[] </span><span class=rvts8>strs</span><span class=rvts7>){</span></p>
+<p><span class=rvts7>//</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7>//</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p class=rvps2><span class=rvts3>&#35843;&#29992;&#26102;&#65306;</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>test.show("hello");</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>test.show("hello","world");</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>test.show();</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>test.show(</span><span class=rvts15>new</span><span class=rvts14> String[]{"AA","BB","CC"});</span></p>
+</body></html>

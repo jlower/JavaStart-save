@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>File类的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '????????';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 54px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts7>File&#31867;&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts7><br></span></p>
+<p><span class=rvts2>1.File&#31867;&#30340;&#29702;&#35299;</span></p>
+<p class=rvps2><span class=rvts3>* 1. File</span><span class=rvts4>&#31867;&#30340;&#19968;&#20010;&#23545;&#35937;&#65292;&#20195;&#34920;&#19968;&#20010;&#25991;&#20214;&#25110;&#19968;&#20010;&#25991;&#20214;&#30446;&#24405;</span><span class=rvts3>(</span><span class=rvts4>&#20439;&#31216;&#65306;&#25991;&#20214;&#22841;</span><span class=rvts3>)</span><br><span class=rvts3>* 2. File</span><span class=rvts4>&#31867;&#22768;&#26126;&#22312;</span><span class=rvts3>java.io</span><span class=rvts4>&#21253;&#19979;</span><br><span class=rvts3>* 3. File</span><span class=rvts4>&#31867;&#20013;&#28041;&#21450;&#21040;&#20851;&#20110;&#25991;&#20214;&#25110;&#25991;&#20214;&#30446;&#24405;&#30340;&#21019;&#24314;&#12289;&#21024;&#38500;&#12289;&#37325;&#21629;&#21517;&#12289;&#20462;&#25913;&#26102;&#38388;&#12289;&#25991;&#20214;&#22823;&#23567;&#31561;&#26041;&#27861;&#65292;</span><br><span class=rvts3>* &nbsp; &nbsp;</span><span class=rvts4>&#24182;&#26410;&#28041;&#21450;&#21040;&#20889;&#20837;&#25110;&#35835;&#21462;&#25991;&#20214;&#20869;&#23481;&#30340;&#25805;&#20316;&#12290;&#22914;&#26524;&#38656;&#35201;&#35835;&#21462;&#25110;&#20889;&#20837;&#25991;&#20214;&#20869;&#23481;&#65292;&#24517;&#39035;&#20351;&#29992;</span><span class=rvts3>IO</span><span class=rvts4>&#27969;&#26469;&#23436;&#25104;&#12290;</span><br><span class=rvts3>* 4. </span><span class=rvts4>&#21518;&#32493;</span><span class=rvts3>File</span><span class=rvts4>&#31867;&#30340;&#23545;&#35937;&#24120;&#20250;&#20316;&#20026;&#21442;&#25968;&#20256;&#36882;&#21040;&#27969;&#30340;&#26500;&#36896;&#22120;&#20013;&#65292;&#25351;&#26126;&#35835;&#21462;&#25110;&#20889;&#20837;&#30340;</span><span class=rvts3>"</span><span class=rvts4>&#32456;&#28857;</span><span class=rvts3>".</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.File&#30340;&#23454;&#20363;&#21270;</span></p>
+<p><span class=rvts2>2.1 &#24120;&#29992;&#26500;&#36896;&#22120;</span></p>
+<p class=rvps2><span class=rvts3>File(String filePath)</span><br><span class=rvts3>File(String parentPath,String childPath)</span><br><span class=rvts3>File(File parentFile,String childPath)</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.2 &#36335;&#24452;&#30340;&#20998;&#31867;</span></p>
+<p class=rvps2><span class=rvts4>&#30456;&#23545;&#36335;&#24452;&#65306;&#30456;&#36739;&#20110;&#26576;&#20010;&#36335;&#24452;&#19979;&#65292;&#25351;&#26126;&#30340;&#36335;&#24452;&#12290;</span><br><span class=rvts4>&#32477;&#23545;&#36335;&#24452;&#65306;&#21253;&#21547;&#30424;&#31526;&#22312;&#20869;&#30340;&#25991;&#20214;&#25110;&#25991;&#20214;&#30446;&#24405;&#30340;&#36335;&#24452;</span></p>
+<p class=rvps2><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts4>&#35828;&#26126;&#65306;</span></p>
+<p class=rvps2><span class=rvts4>IDEA&#20013;&#65306;</span></p>
+<p class=rvps2><span class=rvts4>&#22914;&#26524;&#22823;&#23478;&#24320;&#21457;&#20351;&#29992;JUnit&#20013;&#30340;&#21333;&#20803;&#27979;&#35797;&#26041;&#27861;&#27979;&#35797;&#65292;&#30456;&#23545;&#36335;&#24452;&#21363;&#20026;&#24403;&#21069;Module&#19979;&#12290;</span></p>
+<p class=rvps2><span class=rvts4>&#22914;&#26524;&#22823;&#23478;&#20351;&#29992;main()&#27979;&#35797;&#65292;&#30456;&#23545;&#36335;&#24452;&#21363;&#20026;&#24403;&#21069;&#30340;Project&#19979;&#12290;</span></p>
+<p class=rvps2><span class=rvts4>Eclipse&#20013;&#65306;</span></p>
+<p class=rvps2><span class=rvts4>&#19981;&#31649;&#20351;&#29992;&#21333;&#20803;&#27979;&#35797;&#26041;&#27861;&#36824;&#26159;&#20351;&#29992;main()&#27979;&#35797;&#65292;&#30456;&#23545;&#36335;&#24452;&#37117;&#26159;&#24403;&#21069;&#30340;Project&#19979;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.3 &#36335;&#24452;&#20998;&#38548;&#31526;</span></p>
+<p><span class=rvts5>windows</span><span class=rvts6>&#21644;</span><span class=rvts5>DOS</span><span class=rvts6>&#31995;&#32479;&#40664;&#35748;&#20351;&#29992;&#8220;</span><span class=rvts5>\&#8221;&#26469;&#34920;&#31034;</span></p>
+<p><span class=rvts5>UNIX</span><span class=rvts6>&#21644;</span><span class=rvts5>URL</span><span class=rvts6>&#20351;&#29992;&#8220;</span><span class=rvts5>/&#8221;&#26469;&#34920;&#31034;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.File&#31867;&#30340;&#24120;&#29992;&#26041;&#27861;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><img alt="" style="padding : 1px;" src="File类的使用.files/img1.jpg"></p>
+<p><img alt="" style="padding : 1px;" src="File类的使用.files/img2.jpg"></p>
+<p><img alt="" style="padding : 1px;" src="File类的使用.files/img3.jpg"></p>
+</body></html>

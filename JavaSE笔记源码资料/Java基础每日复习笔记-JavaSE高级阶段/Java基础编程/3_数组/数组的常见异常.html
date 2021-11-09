@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>数组的常见异常.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+ text-decoration: underline;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts10
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-indent: 48px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts11>&#25968;&#32452;&#30340;&#24120;&#35265;&#24322;&#24120;</span></p>
+<p><span class=rvts11><br></span></p>
+<p><span class=rvts2>1.&#25968;&#32452;&#35282;&#26631;&#36234;&#30028;&#24322;&#24120;&#65306;ArrayIndexOutOfBoundsException</span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>int</span><span class=rvts4>[] </span><span class=rvts6>arr</span><span class=rvts4> = </span><span class=rvts5>new</span><span class=rvts4> </span><span class=rvts5>int</span><span class=rvts4>[]{1,2,3,4,5};</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>for(</span><span class=rvts7>int</span><span class=rvts3> i = 0;i &lt;= arr.length;i++){</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>System.out.println(</span><span class=rvts7>arr</span><span class=rvts3>[i]);</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>}</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>System.out.println(</span><span class=rvts7>arr</span><span class=rvts3>[-2]);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>System.out.println("hello");</span></p>
+<p><span class=rvts2>2.&#31354;&#25351;&#38024;&#24322;&#24120;&#65306;NullPointerException</span></p>
+<p class=rvps2><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#24773;&#20917;&#19968;&#65306;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>int</span><span class=rvts3>[] arr1 = new </span><span class=rvts7>int</span><span class=rvts3>[]{1,2,3};</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>arr1 = null;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>System.out.println(arr1[0]);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#24773;&#20917;&#20108;&#65306;</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>int</span><span class=rvts3>[][] arr2 = new </span><span class=rvts7>int</span><span class=rvts3>[4][];</span></p>
+<p><span class=rvts3>//</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>System.out.println(arr2[0][0]);</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//&#24773;&#20917;&#65306;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>String[] </span><span class=rvts8>arr3</span><span class=rvts4> = </span><span class=rvts5>new</span><span class=rvts4> String[]{</span><span class=rvts9>"AA"</span><span class=rvts4>,</span><span class=rvts9>"BB"</span><span class=rvts4>,</span><span class=rvts9>"CC"</span><span class=rvts4>};</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>arr3</span><span class=rvts4>[0] = </span><span class=rvts5>null</span><span class=rvts4>;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>System.</span><span class=rvts10>out</span><span class=rvts4>.println(</span><span class=rvts8>arr3</span><span class=rvts4>[0].toString());</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4>&#23567;&#30693;&#35782;&#65306;&#19968;&#26086;&#31243;&#24207;&#20986;&#29616;&#24322;&#24120;&#65292;&#26410;&#22788;&#29702;&#26102;&#65292;&#23601;&#32456;&#27490;&#25191;&#34892;&#12290;</span></p>
+</body></html>

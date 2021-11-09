@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>反射应用三：调用运行时类的指定结构.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts11>&#21453;&#23556;&#24212;&#29992;&#19977;&#65306;&#35843;&#29992;&#36816;&#34892;&#26102;&#31867;&#30340;&#25351;&#23450;&#32467;&#26500;</span></p>
+<p class=rvps2><span class=rvts11><br></span></p>
+<p class=rvps2><span class=rvts2>&#35843;&#29992;&#25351;&#23450;&#30340;&#23646;&#24615;&#65306;</span></p>
+<p class=rvps3><span class=rvts4>@Test</span><br><span class=rvts5>public void </span><span class=rvts2>testField1() </span><span class=rvts5>throws </span><span class=rvts2>Exception {</span><br><span class=rvts2> &nbsp; &nbsp;Class clazz = Person.</span><span class=rvts5>class</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//</span><span class=rvts7>&#21019;&#24314;&#36816;&#34892;&#26102;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts2>Person p = (Person) clazz.newInstance();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//1. getDeclaredField(String fieldName):</span><span class=rvts7>&#33719;&#21462;&#36816;&#34892;&#26102;&#31867;&#20013;&#25351;&#23450;&#21464;&#37327;&#21517;&#30340;&#23646;&#24615;</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts2>Field name = clazz.getDeclaredField(</span><span class=rvts8>"name"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//2.</span><span class=rvts7>&#20445;&#35777;&#24403;&#21069;&#23646;&#24615;&#26159;&#21487;&#35775;&#38382;&#30340;</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts2>name.setAccessible(</span><span class=rvts5>true</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//3.</span><span class=rvts7>&#33719;&#21462;&#12289;&#35774;&#32622;&#25351;&#23450;&#23545;&#35937;&#30340;&#27492;&#23646;&#24615;&#20540;</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts2>name.set(p,</span><span class=rvts8>"Tom"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts9>out</span><span class=rvts2>.println(name.get(p));</span><br><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts3>&#35843;&#29992;&#25351;&#23450;&#30340;&#26041;&#27861;&#65306;</span></p>
+<p class=rvps3><span class=rvts2> </span><span class=rvts4>@Test</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts5>public void </span><span class=rvts2>testMethod() </span><span class=rvts5>throws </span><span class=rvts2>Exception {</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Class clazz = Person.</span><span class=rvts5>class</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//</span><span class=rvts7>&#21019;&#24314;&#36816;&#34892;&#26102;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Person p = (Person) clazz.newInstance();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>/*</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;1.</span><span class=rvts7>&#33719;&#21462;&#25351;&#23450;&#30340;&#26576;&#20010;&#26041;&#27861;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;getDeclaredMethod():</span><span class=rvts7>&#21442;&#25968;</span><span class=rvts6>1 </span><span class=rvts7>&#65306;&#25351;&#26126;&#33719;&#21462;&#30340;&#26041;&#27861;&#30340;&#21517;&#31216; &nbsp;&#21442;&#25968;</span><span class=rvts6>2</span><span class=rvts7>&#65306;&#25351;&#26126;&#33719;&#21462;&#30340;&#26041;&#27861;&#30340;&#24418;&#21442;&#21015;&#34920;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; */</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Method show = clazz.getDeclaredMethod(</span><span class=rvts8>"show"</span><span class=rvts2>, String.</span><span class=rvts5>class</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//2.</span><span class=rvts7>&#20445;&#35777;&#24403;&#21069;&#26041;&#27861;&#26159;&#21487;&#35775;&#38382;&#30340;</span><br><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>show.setAccessible(</span><span class=rvts5>true</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>/*</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;3. </span><span class=rvts7>&#35843;&#29992;&#26041;&#27861;&#30340;</span><span class=rvts6>invoke():</span><span class=rvts7>&#21442;&#25968;</span><span class=rvts6>1</span><span class=rvts7>&#65306;&#26041;&#27861;&#30340;&#35843;&#29992;&#32773; &nbsp;&#21442;&#25968;</span><span class=rvts6>2</span><span class=rvts7>&#65306;&#32473;&#26041;&#27861;&#24418;&#21442;&#36171;&#20540;&#30340;&#23454;&#21442;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;invoke()</span><span class=rvts7>&#30340;&#36820;&#22238;&#20540;&#21363;&#20026;&#23545;&#24212;&#31867;&#20013;&#35843;&#29992;&#30340;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#12290;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp; */</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Object returnValue = show.invoke(p,</span><span class=rvts8>"CHN"</span><span class=rvts2>); </span><span class=rvts6>//String nation = p.show("CHN");</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>System.</span><span class=rvts9>out</span><span class=rvts2>.println(returnValue);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts9>out</span><span class=rvts2>.println(</span><span class=rvts8>"*************</span><span class=rvts10>&#22914;&#20309;&#35843;&#29992;&#38745;&#24577;&#26041;&#27861;</span><span class=rvts8>*****************"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>// private static void showDesc()</span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Method showDesc = clazz.getDeclaredMethod(</span><span class=rvts8>"showDesc"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;showDesc.setAccessible(</span><span class=rvts5>true</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>//</span><span class=rvts7>&#22914;&#26524;&#35843;&#29992;&#30340;&#36816;&#34892;&#26102;&#31867;&#20013;&#30340;&#26041;&#27861;&#27809;&#36820;&#22238;&#20540;&#65292;&#21017;&#27492;</span><span class=rvts6>invoke()</span><span class=rvts7>&#36820;&#22238;</span><span class=rvts6>null</span><br><span class=rvts6>// &nbsp; &nbsp; &nbsp; &nbsp;Object returnVal = showDesc.invoke(null);</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Object returnVal = showDesc.invoke(Person.</span><span class=rvts5>class</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts9>out</span><span class=rvts2>.println(returnVal);</span><span class=rvts6>//null</span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#35843;&#29992;&#25351;&#23450;&#30340;&#26500;&#36896;&#22120;&#65306;</span></p>
+<p class=rvps3><span class=rvts4>@Test</span><br><span class=rvts5>public void </span><span class=rvts2>testConstructor() </span><span class=rvts5>throws </span><span class=rvts2>Exception {</span><br><span class=rvts2> &nbsp; &nbsp;Class clazz = Person.</span><span class=rvts5>class</span><span class=rvts2>;</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//private Person(String name)</span><br><span class=rvts6> &nbsp; &nbsp;/*</span><br><span class=rvts6> &nbsp; &nbsp;1.</span><span class=rvts7>&#33719;&#21462;&#25351;&#23450;&#30340;&#26500;&#36896;&#22120;</span><br><span class=rvts6> &nbsp; &nbsp;getDeclaredConstructor():</span><span class=rvts7>&#21442;&#25968;&#65306;&#25351;&#26126;&#26500;&#36896;&#22120;&#30340;&#21442;&#25968;&#21015;&#34920;</span><br><span class=rvts6> &nbsp; &nbsp; */</span><br><span class=rvts6></span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts2>Constructor constructor = clazz.getDeclaredConstructor(String.</span><span class=rvts5>class</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//2.</span><span class=rvts7>&#20445;&#35777;&#27492;&#26500;&#36896;&#22120;&#26159;&#21487;&#35775;&#38382;&#30340;</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts2>constructor.setAccessible(</span><span class=rvts5>true</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts6>//3.</span><span class=rvts7>&#35843;&#29992;&#27492;&#26500;&#36896;&#22120;&#21019;&#24314;&#36816;&#34892;&#26102;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts2>Person per = (Person) constructor.newInstance(</span><span class=rvts8>"Tom"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;System.</span><span class=rvts9>out</span><span class=rvts2>.println(per);</span><br><span class=rvts2></span><br><span class=rvts2>}</span></p>
+</body></html>

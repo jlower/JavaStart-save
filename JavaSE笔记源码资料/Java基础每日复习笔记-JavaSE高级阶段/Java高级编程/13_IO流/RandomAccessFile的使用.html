@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>RandomAccessFile的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+ background-color: #ffff00;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+ background-color: #ffff00;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts12>RandomAccessFile&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts12><br></span></p>
+<p><span class=rvts2>1.&#38543;&#26426;&#23384;&#21462;&#25991;&#20214;&#27969;&#65306;RandomAccessFile</span></p>
+<p class=rvps2><span class=rvts3><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#20351;&#29992;&#35828;&#26126;&#65306;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>* 1.RandomAccessFile</span><span class=rvts4>&#30452;&#25509;&#32487;&#25215;&#20110;</span><span class=rvts3>java.lang.Object</span><span class=rvts4>&#31867;&#65292;&#23454;&#29616;&#20102;</span><span class=rvts3>DataInput</span><span class=rvts4>&#21644;</span><span class=rvts3>DataOutput</span><span class=rvts4>&#25509;&#21475;</span><br><span class=rvts3>* 2.RandomAccessFile</span><span class=rvts4>&#26082;&#21487;&#20197;&#20316;&#20026;&#19968;&#20010;&#36755;&#20837;&#27969;&#65292;&#21448;&#21487;&#20197;&#20316;&#20026;&#19968;&#20010;&#36755;&#20986;&#27969;</span><br><span class=rvts3>*</span><br><span class=rvts3>* 3.</span><span class=rvts4>&#22914;&#26524;</span><span class=rvts3>RandomAccessFile</span><span class=rvts4>&#20316;&#20026;&#36755;&#20986;&#27969;&#26102;&#65292;&#20889;&#20986;&#21040;&#30340;&#25991;&#20214;&#22914;&#26524;&#19981;&#23384;&#22312;&#65292;&#21017;&#22312;&#25191;&#34892;&#36807;&#31243;&#20013;&#33258;&#21160;&#21019;&#24314;&#12290;</span><br><span class=rvts3>* &nbsp; </span><span class=rvts4>&#22914;&#26524;&#20889;&#20986;&#21040;&#30340;&#25991;&#20214;&#23384;&#22312;&#65292;&#21017;</span><span class=rvts5>&#20250;&#23545;&#21407;&#25991;&#20214;&#20869;&#23481;&#36827;&#34892;&#35206;&#30422;&#12290;</span><span class=rvts4>&#65288;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#20174;&#22836;&#35206;&#30422;&#65289;</span><br><span class=rvts3>*</span><br><span class=rvts3>* 4. </span><span class=rvts4>&#21487;&#20197;&#36890;&#36807;&#30456;&#20851;&#30340;&#25805;&#20316;&#65292;&#23454;&#29616;</span><span class=rvts3>RandomAccessFile&#8220;</span><span class=rvts4>&#25554;&#20837;</span><span class=rvts3>&#8221;</span><span class=rvts4>&#25968;&#25454;&#30340;&#25928;&#26524;&#12290;seek(int pos)</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.</span></p>
+<p><span class=rvts2>&#20856;&#22411;&#20195;&#30721;1&#65306;</span></p>
+<p class=rvps2><span class=rvts6>@Test</span><br><span class=rvts7>public void </span><span class=rvts2>test1() {</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;RandomAccessFile raf1 = </span><span class=rvts7>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;RandomAccessFile raf2 = </span><span class=rvts7>null</span><span class=rvts2>;</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//1.</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>raf1 = </span><span class=rvts7>new </span><span class=rvts2>RandomAccessFile(</span><span class=rvts7>new </span><span class=rvts2>File(</span><span class=rvts8>"</span><span class=rvts9>&#29233;&#24773;&#19982;&#21451;&#24773;</span><span class=rvts8>.jpg"</span><span class=rvts2>),</span><span class=rvts11>"r"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;raf2 = </span><span class=rvts7>new </span><span class=rvts2>RandomAccessFile(</span><span class=rvts7>new </span><span class=rvts2>File(</span><span class=rvts8>"</span><span class=rvts9>&#29233;&#24773;&#19982;&#21451;&#24773;</span><span class=rvts8>1.jpg"</span><span class=rvts2>),</span><span class=rvts11>"rw"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//2.</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>byte</span><span class=rvts2>[] buffer = </span><span class=rvts7>new byte</span><span class=rvts2>[</span><span class=rvts10>1024</span><span class=rvts2>];</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>int </span><span class=rvts2>len;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>while</span><span class=rvts2>((len = raf1.read(buffer)) != -</span><span class=rvts10>1</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;raf2.write(buffer,</span><span class=rvts10>0</span><span class=rvts2>,len);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp;} </span><span class=rvts7>finally </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>//3.</span><br><span class=rvts3> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>if</span><span class=rvts2>(raf1 != </span><span class=rvts7>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;raf1.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>if</span><span class=rvts2>(raf2 != </span><span class=rvts7>null</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>try </span><span class=rvts2>{</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;raf2.close();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} </span><span class=rvts7>catch </span><span class=rvts2>(IOException e) {</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>&#20856;&#22411;&#20195;&#30721;2&#65306;</span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>/*</span><br><span class=rvts4>&#20351;&#29992;</span><span class=rvts3>RandomAccessFile</span><span class=rvts4>&#23454;&#29616;&#25968;&#25454;&#30340;&#25554;&#20837;&#25928;&#26524;</span><br><span class=rvts3> */</span><br><span class=rvts6>@Test</span><br><span class=rvts7>public void </span><span class=rvts2>test3() </span><span class=rvts7>throws </span><span class=rvts2>IOException {</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;RandomAccessFile raf1 = </span><span class=rvts7>new </span><span class=rvts2>RandomAccessFile(</span><span class=rvts8>"hello.txt"</span><span class=rvts2>,</span><span class=rvts8>"rw"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;raf1.seek(</span><span class=rvts10>3</span><span class=rvts2>);</span><span class=rvts3>//</span><span class=rvts4>&#23558;&#25351;&#38024;&#35843;&#21040;&#35282;&#26631;&#20026;</span><span class=rvts3>3</span><span class=rvts4>&#30340;&#20301;&#32622;</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#20445;&#23384;&#25351;&#38024;</span><span class=rvts3>3</span><span class=rvts4>&#21518;&#38754;&#30340;&#25152;&#25968;&#25454;&#21040;</span><span class=rvts3>StringBuilder</span><span class=rvts4>&#20013;</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts2>StringBuilder builder = </span><span class=rvts7>new </span><span class=rvts2>StringBuilder((</span><span class=rvts7>int</span><span class=rvts2>) </span><span class=rvts7>new </span><span class=rvts2>File(</span><span class=rvts8>"hello.txt"</span><span class=rvts2>).length());</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>byte</span><span class=rvts2>[] buffer = </span><span class=rvts7>new byte</span><span class=rvts2>[</span><span class=rvts10>20</span><span class=rvts2>];</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>int </span><span class=rvts2>len;</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>while</span><span class=rvts2>((len = raf1.read(buffer)) != -</span><span class=rvts10>1</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;builder.append(</span><span class=rvts7>new </span><span class=rvts2>String(buffer,</span><span class=rvts10>0</span><span class=rvts2>,len)) ;</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#35843;&#22238;&#25351;&#38024;&#65292;&#20889;&#20837;</span><span class=rvts3>&#8220;xyz&#8221;</span><br><span class=rvts3> &nbsp; &nbsp;</span><span class=rvts2>raf1.seek(</span><span class=rvts10>3</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;raf1.write(</span><span class=rvts8>"xyz"</span><span class=rvts2>.getBytes());</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#23558;</span><span class=rvts3>StringBuilder</span><span class=rvts4>&#20013;&#30340;&#25968;&#25454;&#20889;&#20837;&#21040;&#25991;&#20214;&#20013;</span><br><span class=rvts4> &nbsp; &nbsp;</span><span class=rvts2>raf1.write(builder.toString().getBytes());</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;raf1.close();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts3>//</span><span class=rvts4>&#24605;&#32771;&#65306;&#23558;</span><span class=rvts3>StringBuilder</span><span class=rvts4>&#26367;&#25442;&#20026;</span><span class=rvts3>ByteArrayOutputStream</span><br><span class=rvts2>}</span></p>
+</body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>代理模式.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 19pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts9
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #646464;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts15>&#20195;&#29702;&#27169;&#24335;</span></p>
+<p><span class=rvts15><br></span></p>
+<p><span class=rvts2>1. &#35299;&#20915;&#30340;&#38382;&#39064;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts4>&#20195;&#29702;&#27169;&#24335;&#26159;</span><span class=rvts5>Java</span><span class=rvts4>&#24320;&#21457;&#20013;&#20351;&#29992;&#36739;&#22810;&#30340;&#19968;&#31181;&#35774;&#35745;&#27169;&#24335;&#12290;&#20195;&#29702;&#35774;&#35745;&#23601;&#26159;&#20026;&#20854;&#20182;&#23545;&#35937;&#25552;&#20379;&#19968;&#31181;&#20195;&#29702;&#20197;&#25511;&#21046;&#23545;&#36825;&#20010;&#23545;&#35937;&#30340;&#35775;&#38382;&#12290; </span></p>
+<p><span class=rvts3><br></span></p>
+<p><span class=rvts2>2. &#20030;&#20363;</span></p>
+<p><span class=rvts6>interface</span><span class=rvts7> NetWork{</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts7> </span><span class=rvts6>void</span><span class=rvts7> browse();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7>}</span></p>
+<p><span class=rvts12><br></span></p>
+<p><span class=rvts14>//&#34987;&#20195;&#29702;&#31867;</span></p>
+<p><span class=rvts6>class</span><span class=rvts7> Server </span><span class=rvts6>implements</span><span class=rvts7> NetWork{</span></p>
+<p><span class=rvts12><br></span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>@Override</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts7> </span><span class=rvts6>void</span><span class=rvts7> browse() {</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>System.</span><span class=rvts11>out</span><span class=rvts7>.println(</span><span class=rvts10>"&#30495;&#23454;&#30340;&#26381;&#21153;&#22120;&#35775;&#38382;&#32593;&#32476;"</span><span class=rvts7>);</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts12><br></span></p>
+<p><span class=rvts7>}</span></p>
+<p><span class=rvts14>//&#20195;&#29702;&#31867;</span></p>
+<p><span class=rvts6>class</span><span class=rvts7> ProxyServer </span><span class=rvts6>implements</span><span class=rvts7> NetWork{</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>private</span><span class=rvts7> NetWork </span><span class=rvts8>work</span><span class=rvts7>;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts7> ProxyServer(NetWork </span><span class=rvts13>work</span><span class=rvts7>){</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>this</span><span class=rvts7>.</span><span class=rvts8>work</span><span class=rvts7> = </span><span class=rvts13>work</span><span class=rvts7>;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts12><br></span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts7> </span><span class=rvts6>void</span><span class=rvts7> check(){</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>System.</span><span class=rvts11>out</span><span class=rvts7>.println(</span><span class=rvts10>"&#32852;&#32593;&#20043;&#21069;&#30340;&#26816;&#26597;&#24037;&#20316;"</span><span class=rvts7>);</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts9>@Override</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>public</span><span class=rvts7> </span><span class=rvts6>void</span><span class=rvts7> browse() {</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>check();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>work</span><span class=rvts7>.browse();</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>}</span></p>
+<p><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts7>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3. &#24212;&#29992;&#22330;&#26223;</span></p>
+<p><img alt="" style="padding : 1px;" src="代理模式.files/img1.jpg"></p>
+</body></html>

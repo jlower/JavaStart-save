@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>类的结构之二：方法.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts4
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts5
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ffff00;
+}
+span.rvts7
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #ff0000;
+ background-color: #ffff00;
+}
+span.rvts8
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts8>&#31867;&#30340;&#32467;&#26500;&#20043;&#20108;&#65306;&#26041;&#27861;</span></p>
+<p class=rvps2><span class=rvts8><br></span></p>
+<p class=rvps2><span class=rvts2>&#31867;&#30340;&#35774;&#35745;&#20013;&#65292;&#20004;&#20010;&#37325;&#35201;&#32467;&#26500;&#20043;&#20108;&#65306;&#26041;&#27861;</span></p>
+<p><span class=rvts3> </span><span class=rvts4>&#26041;&#27861;&#65306;&#25551;&#36848;&#31867;&#24212;&#35813;&#20855;&#30340;&#21151;&#33021;&#12290;</span></p>
+<p><span class=rvts4> * &#27604;&#22914;&#65306;Math&#31867;&#65306;</span><span class=rvts5>sqrt</span><span class=rvts4>()\random() \...</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; Scanner&#31867;&#65306;nextXxx() ...</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; Arrays&#31867;&#65306;sort() \ binarySearch() \ toString() \ equals() \ ...</span></p>
+<p><span class=rvts4> * </span></p>
+<p><span class=rvts4> * 1.&#20030;&#20363;&#65306;</span></p>
+<p><span class=rvts4> * public void eat(){}</span></p>
+<p><span class=rvts4> * public void sleep(</span><span class=rvts5>int</span><span class=rvts4> hour){}</span></p>
+<p><span class=rvts4> * public String getName(){}</span></p>
+<p><span class=rvts4> * public String getNation(String nation){}</span></p>
+<p><span class=rvts4> * </span></p>
+<p><span class=rvts4> * 2. </span><span class=rvts6>&#26041;&#27861;&#30340;&#22768;&#26126;&#65306;&#26435;&#38480;&#20462;&#39280;&#31526; &nbsp;</span><span class=rvts7>&#36820;&#22238;&#20540;&#31867;&#22411;</span><span class=rvts6> &nbsp;&#26041;&#27861;&#21517;(</span><span class=rvts7>&#24418;&#21442;&#21015;&#34920;</span><span class=rvts6>){</span></p>
+<p><span class=rvts6> * </span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>&#26041;&#27861;&#20307;</span></p>
+<p><span class=rvts6> * </span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp;}</span></p>
+<p><span class=rvts4> * &nbsp; &#27880;&#24847;&#65306;static&#12289;final&#12289;abstract &#26469;&#20462;&#39280;&#30340;&#26041;&#27861;&#65292;&#21518;&#38754;&#20877;&#35762;&#12290;</span></p>
+<p><span class=rvts4> * &nbsp; </span></p>
+<p><span class=rvts4> * 3. &#35828;&#26126;&#65306;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>3.1 &#20851;&#20110;&#26435;&#38480;&#20462;&#39280;&#31526;&#65306;&#40664;&#35748;&#26041;&#27861;&#30340;&#26435;&#38480;&#20462;&#39280;&#31526;&#20808;&#37117;&#20351;&#29992;public</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>Java&#35268;&#23450;&#30340;4&#31181;&#26435;&#38480;&#20462;&#39280;&#31526;&#65306;private&#12289;public&#12289;&#32570;&#30465;&#12289;protected &nbsp;--&gt;&#23553;&#35013;&#24615;&#20877;&#32454;&#35828;</span></p>
+<p><span class=rvts4> * </span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>3.2 &#36820;&#22238;&#20540;&#31867;&#22411;&#65306; &#36820;&#22238;&#20540; &nbsp;</span><span class=rvts5>vs</span><span class=rvts4> &#27809;&#36820;&#22238;&#20540;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>3.2.1 &nbsp;&#22914;&#26524;&#26041;&#27861;&#36820;&#22238;&#20540;&#65292;&#21017;&#24517;&#39035;&#22312;&#26041;&#27861;&#22768;&#26126;&#26102;&#65292;&#25351;&#23450;&#36820;&#22238;&#20540;&#30340;&#31867;&#22411;&#12290;&#21516;&#26102;&#65292;&#26041;&#27861;&#20013;&#65292;&#38656;&#35201;&#20351;&#29992;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return&#20851;&#38190;&#23383;&#26469;&#36820;&#22238;&#25351;&#23450;&#31867;&#22411;&#30340;&#21464;&#37327;&#25110;&#24120;&#37327;&#65306;&#8220;return &#25968;&#25454;&#8221;&#12290;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp;&#22914;&#26524;&#26041;&#27861;&#27809;&#36820;&#22238;&#20540;&#65292;&#21017;&#26041;&#27861;&#22768;&#26126;&#26102;&#65292;&#20351;&#29992;void&#26469;&#34920;&#31034;&#12290;&#36890;&#24120;&#65292;&#27809;&#36820;&#22238;&#20540;&#30340;&#26041;&#27861;&#20013;&#65292;&#23601;&#19981;&#38656;&#35201;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#20351;&#29992;return.&#20294;&#26159;&#65292;&#22914;&#26524;&#20351;&#29992;&#30340;&#35805;&#65292;&#21482;&#33021;&#8220;return;&#8221;&#34920;&#31034;&#32467;&#26463;&#27492;&#26041;&#27861;&#30340;&#24847;&#24605;&#12290;</span></p>
+<p><span class=rvts4> * </span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>3.2.2 &#25105;&#20204;&#23450;&#20041;&#26041;&#27861;&#35813;&#19981;&#35813;&#36820;&#22238;&#20540;&#65311;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>&#9312; &#39064;&#30446;&#35201;&#27714;</span></p>
+<p><span class=rvts4> * </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>&#9313; &#20973;&#32463;&#39564;&#65306;&#20855;&#20307;&#38382;&#39064;&#20855;&#20307;&#20998;&#26512;</span></p>
+<p><span class=rvts4> * </span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp;3.3 &#26041;&#27861;&#21517;&#65306;&#23646;&#20110;&#26631;&#35782;&#31526;&#65292;&#36981;&#24490;&#26631;&#35782;&#31526;&#30340;&#35268;&#21017;&#21644;&#35268;&#33539;&#65292;&#8220;&#35265;&#21517;&#30693;&#24847;&#8221;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp;3.4 &#24418;&#21442;&#21015;&#34920;&#65306; &#26041;&#27861;&#21487;&#20197;&#22768;&#26126;0&#20010;&#65292;1&#20010;&#65292;&#25110;&#22810;&#20010;&#24418;&#21442;&#12290;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; 3.4.1 &#26684;&#24335;&#65306;&#25968;&#25454;&#31867;&#22411;1 &#24418;&#21442;1,&#25968;&#25454;&#31867;&#22411;2 &#24418;&#21442;2,...</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; 3.4.2 &#25105;&#20204;&#23450;&#20041;&#26041;&#27861;&#26102;&#65292;&#35813;&#19981;&#35813;&#23450;&#20041;&#24418;&#21442;&#65311;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>&#9312; &#39064;&#30446;&#35201;&#27714;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>&#9313; &#20973;&#32463;&#39564;&#65306;&#20855;&#20307;&#38382;&#39064;&#20855;&#20307;&#20998;&#26512;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &nbsp;3.5 &#26041;&#27861;&#20307;&#65306;&#26041;&#27861;&#21151;&#33021;&#30340;&#20307;&#29616;&#12290; </span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4>4. &#26041;&#27861;&#30340;&#20351;&#29992;&#20013;&#65292;&#21487;&#20197;&#35843;&#29992;&#24403;&#21069;&#31867;&#30340;&#23646;&#24615;&#25110;&#26041;&#27861;</span></p>
+<p><span class=rvts4> * &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>&#29305;&#27530;&#30340;&#65306;&#26041;&#27861;A&#20013;&#21448;&#35843;&#29992;&#20102;&#26041;&#27861;A:&#36882;&#24402;&#26041;&#27861;&#12290;</span></p>
+<p><span class=rvts4> * &nbsp; &nbsp; &#26041;&#27861;&#20013;&#65292;&#19981;&#21487;&#20197;&#23450;&#20041;&#26041;&#27861;&#12290;</span></p>
+</body></html>

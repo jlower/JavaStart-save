@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>自定义异常类.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+ background-color: #f0d8a8;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+ background-color: #d4d4d4;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps3><span class=rvts10>&#33258;&#23450;&#20041;&#24322;&#24120;&#31867;</span></p>
+<p class=rvps2><span class=rvts10><br></span></p>
+<p class=rvps2><span class=rvts2>&#22914;&#20309;&#33258;&#23450;&#20041;&#19968;&#20010;&#24322;&#24120;&#31867;&#65311;</span></p>
+<p><span class=rvts4>/*</span></p>
+<p><span class=rvts4> * &#22914;&#20309;&#33258;&#23450;&#20041;&#24322;&#24120;&#31867;&#65311;</span></p>
+<p><span class=rvts4> * 1. &#32487;&#25215;&#20110;&#29616;&#30340;&#24322;&#24120;&#32467;&#26500;&#65306;RuntimeException &#12289;Exception</span></p>
+<p><span class=rvts4> * 2. &#25552;&#20379;&#20840;&#23616;&#24120;&#37327;&#65306;serialVersionUID</span></p>
+<p><span class=rvts4> * 3. &#25552;&#20379;&#37325;&#36733;&#30340;&#26500;&#36896;&#22120;</span></p>
+<p><span class=rvts4> * </span></p>
+<p><span class=rvts4> */</span></p>
+<p><span class=rvts5>public</span><span class=rvts6> </span><span class=rvts5>class</span><span class=rvts6> MyException </span><span class=rvts5>extends</span><span class=rvts6> Exception{</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>static</span><span class=rvts6> </span><span class=rvts5>final</span><span class=rvts6> </span><span class=rvts5>long</span><span class=rvts6> </span><span class=rvts7>serialVersionUID</span><span class=rvts6> = -7034897193246939L;</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>public</span><span class=rvts6> MyException(){</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>}</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>public</span><span class=rvts6> MyException(String </span><span class=rvts8>msg</span><span class=rvts6>){</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>super</span><span class=rvts6>(</span><span class=rvts9>msg</span><span class=rvts6>);</span></p>
+<p><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts6>}</span></p>
+<p><span class=rvts6>}</span></p>
+</body></html>

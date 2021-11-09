@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>转换流的使用.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ background: #ffffff;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts11>&#36716;&#25442;&#27969;&#30340;&#20351;&#29992;</span></p>
+<p><span class=rvts11><br></span></p>
+<p><span class=rvts2>1.&#36716;&#25442;&#27969;&#28041;&#21450;&#21040;&#30340;&#31867;&#65306;&#23646;&#20110;&#23383;&#31526;&#27969;</span></p>
+<p class=rvps2><span class=rvts4>InputStreamReader</span><span class=rvts5>&#65306;&#23558;&#19968;&#20010;&#23383;&#33410;&#30340;&#36755;&#20837;&#27969;&#36716;&#25442;&#20026;&#23383;&#31526;&#30340;&#36755;&#20837;&#27969;</span></p>
+<p class=rvps2><span class=rvts5>&#35299;&#30721;&#65306;&#23383;&#33410;&#12289;&#23383;&#33410;&#25968;&#32452; &nbsp;</span><span class=rvts4>---&gt;</span><span class=rvts5>&#23383;&#31526;&#25968;&#32452;&#12289;&#23383;&#31526;&#20018;</span></p>
+<p class=rvps2><span class=rvts5></span><br><span class=rvts4>OutputStreamWriter</span><span class=rvts5>&#65306;&#23558;&#19968;&#20010;&#23383;&#31526;&#30340;&#36755;&#20986;&#27969;&#36716;&#25442;&#20026;&#23383;&#33410;&#30340;&#36755;&#20986;&#27969;</span></p>
+<p class=rvps2><span class=rvts5>&#32534;&#30721;&#65306;&#23383;&#31526;&#25968;&#32452;&#12289;&#23383;&#31526;&#20018; </span><span class=rvts4>---&gt; </span><span class=rvts5>&#23383;&#33410;&#12289;&#23383;&#33410;&#25968;&#32452;</span></p>
+<p class=rvps2><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts5>&#35828;&#26126;&#65306;&#32534;&#30721;&#20915;&#23450;&#20102;&#35299;&#30721;&#30340;&#26041;&#24335;</span></p>
+<p class=rvps2><span class=rvts5><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.&#20316;&#29992;&#65306;</span><span class=rvts5>&#25552;&#20379;&#23383;&#33410;&#27969;&#19982;&#23383;&#31526;&#27969;&#20043;&#38388;&#30340;&#36716;&#25442;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.&#22270;&#31034;&#65306;</span></p>
+<p><img alt="" style="padding : 1px;" src="转换流的使用.files/img1.jpg"></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts3>4.&#20856;&#22411;&#23454;&#29616;&#65306;</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts6>@Test</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts7>public void </span><span class=rvts2>test1() </span><span class=rvts7>throws </span><span class=rvts2>IOException {</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;FileInputStream fis = </span><span class=rvts7>new </span><span class=rvts2>FileInputStream(</span><span class=rvts8>"dbcp.txt"</span><span class=rvts2>);</span><br><span class=rvts4>// &nbsp; &nbsp; &nbsp; &nbsp;InputStreamReader isr = new InputStreamReader(fis);//</span><span class=rvts5>&#20351;&#29992;&#31995;&#32479;&#40664;&#35748;&#30340;&#23383;&#31526;&#38598;</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>//</span><span class=rvts5>&#21442;&#25968;</span><span class=rvts4>2</span><span class=rvts5>&#25351;&#26126;&#20102;&#23383;&#31526;&#38598;&#65292;&#20855;&#20307;&#20351;&#29992;&#21738;&#20010;&#23383;&#31526;&#38598;&#65292;&#21462;&#20915;&#20110;&#25991;&#20214;</span><span class=rvts4>dbcp.txt</span><span class=rvts5>&#20445;&#23384;&#26102;&#20351;&#29992;&#30340;&#23383;&#31526;&#38598;</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>InputStreamReader isr = </span><span class=rvts7>new </span><span class=rvts2>InputStreamReader(fis,</span><span class=rvts8>"UTF-8"</span><span class=rvts2>);</span><span class=rvts4>//</span><span class=rvts5>&#20351;&#29992;&#31995;&#32479;&#40664;&#35748;&#30340;&#23383;&#31526;&#38598;</span><br><span class=rvts5></span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>char</span><span class=rvts2>[] cbuf = </span><span class=rvts7>new char</span><span class=rvts2>[</span><span class=rvts9>20</span><span class=rvts2>];</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>int </span><span class=rvts2>len;</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>while</span><span class=rvts2>((len = isr.read(cbuf)) != -</span><span class=rvts9>1</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String str = </span><span class=rvts7>new </span><span class=rvts2>String(cbuf,</span><span class=rvts9>0</span><span class=rvts2>,len);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts10>out</span><span class=rvts2>.print(str);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;isr.close();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts4>/*</span><br><span class=rvts5>&#27492;&#26102;&#22788;&#29702;&#24322;&#24120;&#30340;&#35805;&#65292;&#20173;&#28982;&#24212;&#35813;&#20351;&#29992;</span><span class=rvts4>try-catch-finally</span><br><span class=rvts4></span><br><span class=rvts5>&#32508;&#21512;&#20351;&#29992;</span><span class=rvts4>InputStreamReader</span><span class=rvts5>&#21644;</span><span class=rvts4>OutputStreamWriter</span><br><span class=rvts4> */</span><br><span class=rvts6>@Test</span><br><span class=rvts7>public void </span><span class=rvts2>test2() </span><span class=rvts7>throws </span><span class=rvts2>Exception {</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//1.</span><span class=rvts5>&#36896;&#25991;&#20214;&#12289;&#36896;&#27969;</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts2>File file1 = </span><span class=rvts7>new </span><span class=rvts2>File(</span><span class=rvts8>"dbcp.txt"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;File file2 = </span><span class=rvts7>new </span><span class=rvts2>File(</span><span class=rvts8>"dbcp_gbk.txt"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;FileInputStream fis = </span><span class=rvts7>new </span><span class=rvts2>FileInputStream(file1);</span><br><span class=rvts2> &nbsp; &nbsp;FileOutputStream fos = </span><span class=rvts7>new </span><span class=rvts2>FileOutputStream(file2);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;InputStreamReader isr = </span><span class=rvts7>new </span><span class=rvts2>InputStreamReader(fis,</span><span class=rvts8>"utf-8"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp;OutputStreamWriter osw = </span><span class=rvts7>new </span><span class=rvts2>OutputStreamWriter(fos,</span><span class=rvts8>"gbk"</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//2.</span><span class=rvts5>&#35835;&#20889;&#36807;&#31243;</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts7>char</span><span class=rvts2>[] cbuf = </span><span class=rvts7>new char</span><span class=rvts2>[</span><span class=rvts9>20</span><span class=rvts2>];</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>int </span><span class=rvts2>len;</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts7>while</span><span class=rvts2>((len = isr.read(cbuf)) != -</span><span class=rvts9>1</span><span class=rvts2>){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;osw.write(cbuf,</span><span class=rvts9>0</span><span class=rvts2>,len);</span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts4>//3.</span><span class=rvts5>&#20851;&#38381;&#36164;&#28304;</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts2>isr.close();</span><br><span class=rvts2> &nbsp; &nbsp;osw.close();</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts2>}</span></p>
+<p><span class=rvts2>5.&#35828;&#26126;&#65306;</span></p>
+<p><span class=rvts4>//&#25991;&#20214;&#32534;&#30721;&#30340;&#26041;&#24335;&#65288;&#27604;&#22914;&#65306;GBK&#65289;&#65292;&#20915;&#23450;&#20102;&#35299;&#26512;&#26102;&#20351;&#29992;&#30340;&#23383;&#31526;&#38598;&#65288;&#20063;&#21482;&#33021;&#26159;GBK&#65289;&#12290;</span></p>
+</body></html>

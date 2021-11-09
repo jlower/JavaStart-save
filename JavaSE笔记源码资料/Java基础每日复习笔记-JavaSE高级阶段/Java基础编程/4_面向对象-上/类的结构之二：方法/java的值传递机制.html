@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>java的值传递机制.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts4
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts7
+{
+ font-size: 13pt;
+ font-family: 'Consolas';
+ color: #3f5fbf;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts10
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts12
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts17
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts18
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #ffff00;
+}
+span.rvts19
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: 36px;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 18px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts19>java&#30340;&#20540;&#20256;&#36882;&#26426;&#21046;</span></p>
+<p class=rvps2><span class=rvts19><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#38024;&#23545;&#20110;&#26041;&#27861;&#20869;&#21464;&#37327;&#30340;&#36171;&#20540;&#20030;&#20363;&#65306;</span></p>
+<p class=rvps3><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts14>out</span><span class=rvts10>.println(</span><span class=rvts13>"***********&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;****************"</span><span class=rvts10>);</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>int</span><span class=rvts10> </span><span class=rvts12>m</span><span class=rvts10> = 10;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts16>int</span><span class=rvts10> </span><span class=rvts12>n</span><span class=rvts10> = </span><span class=rvts12>m</span><span class=rvts10>;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts14>out</span><span class=rvts10>.println(</span><span class=rvts13>"m = "</span><span class=rvts10> + </span><span class=rvts12>m</span><span class=rvts10> + </span><span class=rvts13>", n = "</span><span class=rvts10> + </span><span class=rvts12>n</span><span class=rvts10>);</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>n</span><span class=rvts10> = 20;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts14>out</span><span class=rvts10>.println(</span><span class=rvts13>"m = "</span><span class=rvts10> + </span><span class=rvts12>m</span><span class=rvts10> + </span><span class=rvts13>", n = "</span><span class=rvts10> + </span><span class=rvts12>n</span><span class=rvts10>);</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts14>out</span><span class=rvts10>.println(</span><span class=rvts13>"***********&#24341;&#29992;&#25968;&#25454;&#31867;&#22411;&#65306;****************"</span><span class=rvts10>);</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>Order </span><span class=rvts12>o1</span><span class=rvts10> = </span><span class=rvts16>new</span><span class=rvts10> Order();</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>o1</span><span class=rvts10>.</span><span class=rvts11>orderId</span><span class=rvts10> = 1001;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>Order </span><span class=rvts12>o2</span><span class=rvts10> = </span><span class=rvts12>o1</span><span class=rvts10>;</span><span class=rvts15>//&#36171;&#20540;&#20197;&#21518;&#65292;o1&#21644;o2&#30340;&#22320;&#22336;&#20540;&#30456;&#21516;&#65292;&#37117;&#25351;&#21521;&#20102;&#22534;&#31354;&#38388;&#20013;&#21516;&#19968;&#20010;&#23545;&#35937;&#23454;&#20307;&#12290;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts14>out</span><span class=rvts10>.println(</span><span class=rvts13>"o1.orderId = "</span><span class=rvts10> + </span><span class=rvts12>o1</span><span class=rvts10>.</span><span class=rvts11>orderId</span><span class=rvts10> + </span><span class=rvts13>",o2.orderId = "</span><span class=rvts10> +</span><span class=rvts12>o2</span><span class=rvts10>.</span><span class=rvts11>orderId</span><span class=rvts10>);</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts12>o2</span><span class=rvts10>.</span><span class=rvts11>orderId</span><span class=rvts10> = 1002;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>System.</span><span class=rvts14>out</span><span class=rvts10>.println(</span><span class=rvts13>"o1.orderId = "</span><span class=rvts10> + </span><span class=rvts12>o1</span><span class=rvts10>.</span><span class=rvts11>orderId</span><span class=rvts10> + </span><span class=rvts13>",o2.orderId = "</span><span class=rvts10> +</span><span class=rvts12>o2</span><span class=rvts10>.</span><span class=rvts11>orderId</span><span class=rvts10>);</span></p>
+<p><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>&#35268;&#21017;&#65306;</span></p>
+<p><span class=rvts9>&#22914;&#26524;&#21464;&#37327;&#26159;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65292;&#27492;&#26102;&#36171;&#20540;&#30340;&#26159;&#21464;&#37327;&#25152;&#20445;&#23384;&#30340;&#25968;&#25454;&#20540;&#12290;</span></p>
+<p><span class=rvts9>&#22914;&#26524;&#21464;&#37327;&#26159;&#24341;&#29992;&#25968;&#25454;&#31867;&#22411;&#65292;&#27492;&#26102;&#36171;&#20540;&#30340;&#26159;&#21464;&#37327;&#25152;&#20445;&#23384;&#30340;&#25968;&#25454;&#30340;&#22320;&#22336;&#20540;&#12290;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#38024;&#23545;&#20110;&#26041;&#27861;&#30340;&#21442;&#25968;&#27010;&#24565;</span></p>
+<p class=rvps2><span class=rvts2>&#24418;&#21442;&#65306;</span><span class=rvts17>&#26041;&#27861;&#23450;&#20041;&#26102;&#65292;&#22768;&#26126;&#30340;&#23567;&#25324;&#21495;&#20869;&#30340;&#21442;&#25968;</span></p>
+<p class=rvps2><span class=rvts2>&#23454;&#21442;&#65306;</span><span class=rvts17>&#26041;&#27861;&#35843;&#29992;&#26102;&#65292;&#23454;&#38469;&#20256;&#36882;&#32473;&#24418;&#21442;&#30340;&#25968;&#25454;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.java&#20013;&#21442;&#25968;&#20256;&#36882;&#26426;&#21046;&#65306;&#20540;&#20256;&#36882;</span></p>
+<p class=rvps2><span class=rvts2>&#35268;&#21017;&#65306;</span></p>
+<p><span class=rvts9> * &#22914;&#26524;&#21442;&#25968;&#26159;&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65292;&#27492;&#26102;&#23454;&#21442;&#36171;&#32473;&#24418;&#21442;&#30340;&#26159;&#23454;&#21442;&#30495;&#23454;&#23384;&#20648;&#30340;&#25968;&#25454;&#20540;&#12290;</span></p>
+<p><span class=rvts9> * &#22914;&#26524;&#21442;&#25968;&#26159;&#24341;&#29992;&#25968;&#25454;&#31867;&#22411;&#65292;&#27492;&#26102;&#23454;&#21442;&#36171;&#32473;&#24418;&#21442;&#30340;&#26159;&#23454;&#21442;&#23384;&#20648;&#25968;&#25454;&#30340;&#22320;&#22336;&#20540;&#12290;</span></p>
+<p><span class=rvts7><br></span></p>
+<p class=rvps2><span class=rvts2>&#25512;&#24191;&#65306;</span></p>
+<p><span class=rvts9>&#22914;&#26524;&#21464;&#37327;&#26159;</span><span class=rvts18>&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;</span><span class=rvts9>&#65292;&#27492;&#26102;&#36171;&#20540;&#30340;&#26159;&#21464;&#37327;&#25152;&#20445;&#23384;&#30340;</span><span class=rvts18>&#25968;&#25454;&#20540;</span><span class=rvts9>&#12290;</span></p>
+<p><span class=rvts9>&#22914;&#26524;&#21464;&#37327;&#26159;</span><span class=rvts18>&#24341;&#29992;&#25968;&#25454;&#31867;&#22411;</span><span class=rvts9>&#65292;&#27492;&#26102;&#36171;&#20540;&#30340;&#26159;&#21464;&#37327;&#25152;&#20445;&#23384;&#30340;&#25968;&#25454;&#30340;</span><span class=rvts18>&#22320;&#22336;&#20540;</span><span class=rvts9>&#12290;</span></p>
+<p><span class=rvts6><br></span></p>
+<p class=rvps2><span class=rvts2>4.&#20856;&#22411;&#20363;&#39064;&#19982;&#20869;&#23384;&#35299;&#26512;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#12304;&#20363;&#39064;1&#12305;</span></p>
+<p><img alt="" style="padding : 1px;" src="java的值传递机制.files/img1.jpg"></p>
+<p><span class=rvts5><br></span></p>
+<p><span class=rvts4>&#12304;&#20363;&#39064;2&#12305;</span></p>
+<p><span class=rvts3><br></span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="java的值传递机制.files/img2.jpg"></p>
+</body></html>

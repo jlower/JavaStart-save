@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>反射应用四：动态代理.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts6
+{
+ font-size: 14pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 14pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: '??????';
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: '????';
+ color: #000000;
+ background-color: #ffff00;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: ;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: ;
+}
+span.rvts13
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: ;
+}
+span.rvts14
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts15
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts16
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts17
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts18
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts19
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts20
+{
+ font-size: 12pt;
+ font-family: '??';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts21
+{
+ font-size: 12pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts22
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts23
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts24
+{
+ font-size: 12pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #008017;
+}
+span.rvts25
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ text-indent: -36px;
+ margin: 0px 0px 0px 36px;
+}
+.rvps4
+{
+ text-indent: 44px;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps5
+{
+ text-indent: -18px;
+ margin: 0px 0px 0px 18px;
+}
+.rvps6
+{
+ background: #ffffff;
+}
+.rvps7
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 84px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps7><span class=rvts25>&#21453;&#23556;&#24212;&#29992;&#22235;&#65306;&#21160;&#24577;&#20195;&#29702;</span></p>
+<p class=rvps2><span class=rvts25><br></span></p>
+<p class=rvps2><span class=rvts2>1.&#20195;&#29702;&#27169;&#24335;&#30340;&#21407;&#29702;&#65306;</span></p>
+<p><span class=rvts4>&#20351;&#29992;&#19968;&#20010;&#20195;&#29702;&#23558;&#23545;&#35937;&#21253;&#35013;&#36215;&#26469;</span><span class=rvts7>, </span><span class=rvts4>&#28982;&#21518;&#29992;&#35813;&#20195;&#29702;&#23545;&#35937;&#21462;&#20195;&#21407;&#22987;&#23545;&#35937;&#12290;&#20219;&#20309;&#23545;&#21407;&#22987;&#23545;&#35937;&#30340;&#35843;&#29992;&#37117;&#35201;&#36890;&#36807;&#20195;&#29702;&#12290;&#20195;&#29702;&#23545;&#35937;&#20915;&#23450;&#26159;&#21542;&#20197;&#21450;&#20309;&#26102;&#23558;&#26041;&#27861;&#35843;&#29992;&#36716;&#21040;&#21407;&#22987;&#23545;&#35937;&#19978;&#12290;</span><span class=rvts6> </span></p>
+<p><span class=rvts5><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#38745;&#24577;&#20195;&#29702;</span></p>
+<p class=rvps2><span class=rvts2>2.1 &#20030;&#20363;&#65306;</span></p>
+<p class=rvps2><span class=rvts2>&#23454;&#29616;Runnable&#25509;&#21475;&#30340;&#26041;&#27861;&#21019;&#24314;&#22810;&#32447;&#31243;&#12290;</span></p>
+<p class=rvps2><span class=rvts2>Class MyThread implements Runnable{} //&#30456;&#24403;&#20110;&#34987;&#20195;&#29702;&#31867;</span></p>
+<p class=rvps2><span class=rvts2>Class Thread implements Runnable{} //&#30456;&#24403;&#20110;&#20195;&#29702;&#31867;</span></p>
+<p class=rvps2><span class=rvts2>main(){</span></p>
+<p class=rvps4><span class=rvts2>MyThread t = new MyThread();</span></p>
+<p class=rvps4><span class=rvts2>Thread thread = new Thread(t);</span></p>
+<p class=rvps4><span class=rvts2>thread.start();//&#21551;&#21160;&#32447;&#31243;&#65307;&#35843;&#29992;&#32447;&#31243;&#30340;run()</span></p>
+<p class=rvps2><span class=rvts2>}</span></p>
+<p class=rvps2><span class=rvts2>2.2 &#38745;&#24577;&#20195;&#29702;&#30340;&#32570;&#28857;&#65306;</span></p>
+<p class=rvps5><span class=rvts8>&#9312; &#20195;&#29702;&#31867;&#21644;&#30446;&#26631;&#23545;&#35937;&#30340;&#31867;&#37117;&#26159;&#22312;&#32534;&#35793;&#26399;&#38388;&#30830;&#23450;&#19979;&#26469;&#65292;&#19981;&#21033;&#20110;&#31243;&#24207;&#30340;&#25193;&#23637;&#12290;</span></p>
+<p class=rvps5><span class=rvts8>&#9313; &#27599;&#19968;&#20010;&#20195;&#29702;&#31867;&#21482;&#33021;&#20026;&#19968;&#20010;&#25509;&#21475;&#26381;&#21153;&#65292;&#36825;&#26679;&#19968;&#26469;&#31243;&#24207;&#24320;&#21457;&#20013;&#24517;&#28982;&#20135;&#29983;&#36807;&#22810;&#30340;&#20195;&#29702;&#12290;</span></p>
+<p class=rvps3><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>3.&#21160;&#24577;&#20195;&#29702;&#30340;&#29305;&#28857;&#65306;</span></p>
+<p class=rvps5><span class=rvts9>&#21160;&#24577;&#20195;&#29702;&#26159;&#25351;&#23458;&#25143;&#36890;&#36807;&#20195;&#29702;&#31867;&#26469;&#35843;&#29992;&#20854;&#23427;&#23545;&#35937;&#30340;&#26041;&#27861;&#65292;&#24182;&#19988;&#26159;&#22312;&#31243;&#24207;</span><span class=rvts10>&#36816;&#34892;&#26102;&#26681;&#25454;&#38656;&#35201;&#21160;&#24577;&#21019;&#24314;</span><span class=rvts9>&#30446;&#26631;&#31867;&#30340;&#20195;&#29702;&#23545;</span></p>
+<p class=rvps5><span class=rvts9>&#35937;&#12290;</span></p>
+<p class=rvps5><span class=rvts9><br></span></p>
+<p class=rvps2><span class=rvts2>4.&#21160;&#24577;&#20195;&#29702;&#30340;&#23454;&#29616;</span></p>
+<p class=rvps2><span class=rvts2>4.1 &#38656;&#35201;&#35299;&#20915;&#30340;&#20004;&#20010;&#20027;&#35201;&#38382;&#39064;&#65306;</span></p>
+<p class=rvps6><span class=rvts11>&#38382;&#39064;&#19968;&#65306;&#22914;&#20309;&#26681;&#25454;&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#30340;&#34987;&#20195;&#29702;&#31867;&#65292;&#21160;&#24577;&#30340;&#21019;&#24314;&#19968;&#20010;&#20195;&#29702;&#31867;&#21450;&#20854;&#23545;&#35937;&#12290; </span></p>
+<p class=rvps6><span class=rvts11>&#65288;&#36890;&#36807;</span><span class=rvts13>Proxy.</span><span class=rvts12>newProxyInstance()&#23454;&#29616;</span><span class=rvts11>&#65289;</span><br><span class=rvts11>&#38382;&#39064;&#20108;&#65306;&#24403;&#36890;&#36807;&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;&#35843;&#29992;&#26041;&#27861;</span><span class=rvts12>a</span><span class=rvts11>&#26102;&#65292;&#22914;&#20309;&#21160;&#24577;&#30340;&#21435;&#35843;&#29992;&#34987;&#20195;&#29702;&#31867;&#20013;&#30340;&#21516;&#21517;&#26041;&#27861;</span><span class=rvts12>a</span><span class=rvts11>&#12290;</span></p>
+<p class=rvps6><span class=rvts11>(&#36890;&#36807;InvocationHandler&#25509;&#21475;&#30340;&#23454;&#29616;&#31867;&#21450;&#20854;&#26041;&#27861;invoke())</span></p>
+<p class=rvps2><span class=rvts2>4.2 &#20195;&#30721;&#23454;&#29616;&#65306;</span></p>
+<p class=rvps6><span class=rvts14>/**</span><br><span class=rvts14> *</span><br><span class=rvts14> * </span><span class=rvts21>&#21160;&#24577;&#20195;&#29702;&#30340;&#20030;&#20363;</span><br><span class=rvts21> </span><span class=rvts14>*</span><br><span class=rvts14> * </span><span class=rvts24>@author </span><span class=rvts14>shkstart</span><br><span class=rvts14> * </span><span class=rvts24>@create </span><span class=rvts14>2019 </span><span class=rvts21>&#19978;&#21320; </span><span class=rvts14>10:18</span><br><span class=rvts14> */</span><br><span class=rvts14></span><br><span class=rvts17>interface </span><span class=rvts15>Human{</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;String getBelief();</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts17>void </span><span class=rvts15>eat(String food);</span><br><span class=rvts15></span><br><span class=rvts15>}</span><br><span class=rvts14>//</span><span class=rvts21>&#34987;&#20195;&#29702;&#31867;</span><br><span class=rvts17>class </span><span class=rvts15>SuperMan </span><span class=rvts17>implements </span><span class=rvts15>Human{</span><br><span class=rvts15></span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts23>@Override</span><br><span class=rvts23> &nbsp; &nbsp;</span><span class=rvts17>public </span><span class=rvts15>String getBelief() {</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>return </span><span class=rvts18>"I believe I can fly!"</span><span class=rvts15>;</span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts23>@Override</span><br><span class=rvts23> &nbsp; &nbsp;</span><span class=rvts17>public void </span><span class=rvts15>eat(String food) {</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts19>out</span><span class=rvts15>.println(</span><span class=rvts18>"</span><span class=rvts20>&#25105;&#21916;&#27426;&#21507;</span><span class=rvts18>" </span><span class=rvts15>+ food);</span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15>}</span><br><span class=rvts15></span><br><span class=rvts17>class </span><span class=rvts15>HumanUtil{</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts17>public void </span><span class=rvts15>method1(){</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts19>out</span><span class=rvts15>.println(</span><span class=rvts18>"====================</span><span class=rvts20>&#36890;&#29992;&#26041;&#27861;&#19968;</span><span class=rvts18>===================="</span><span class=rvts15>);</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts17>public void </span><span class=rvts15>method2(){</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts19>out</span><span class=rvts15>.println(</span><span class=rvts18>"====================</span><span class=rvts20>&#36890;&#29992;&#26041;&#27861;&#20108;</span><span class=rvts18>===================="</span><span class=rvts15>);</span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15></span><br><span class=rvts15>}</span><br><span class=rvts15></span><br><span class=rvts14></span><br><span class=rvts17>class </span><span class=rvts15>ProxyFactory{</span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts14>//</span><span class=rvts21>&#35843;&#29992;&#27492;&#26041;&#27861;&#65292;&#36820;&#22238;&#19968;&#20010;&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;&#12290;&#35299;&#20915;&#38382;&#39064;&#19968;</span><br><span class=rvts21> &nbsp; &nbsp;</span><span class=rvts17>public static </span><span class=rvts15>Object getProxyInstance(Object obj){</span><span class=rvts14>//obj:</span><span class=rvts21>&#34987;&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts21> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>MyInvocationHandler handler = </span><span class=rvts17>new </span><span class=rvts15>MyInvocationHandler();</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;handler.bind(obj);</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>return </span><span class=rvts15>Proxy.</span><span class=rvts16>newProxyInstance</span><span class=rvts15>(obj.getClass().getClassLoader(),obj.getClass().getInterfaces(),handler);</span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15></span><br><span class=rvts15>}</span><br><span class=rvts15></span><br><span class=rvts17>class </span><span class=rvts15>MyInvocationHandler </span><span class=rvts17>implements </span><span class=rvts15>InvocationHandler{</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts17>private </span><span class=rvts15>Object </span><span class=rvts22>obj</span><span class=rvts15>;</span><span class=rvts14>//</span><span class=rvts21>&#38656;&#35201;&#20351;&#29992;&#34987;&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;&#36827;&#34892;&#36171;&#20540;</span><br><span class=rvts21></span><br><span class=rvts21> &nbsp; &nbsp;</span><span class=rvts17>public void </span><span class=rvts15>bind(Object obj){</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>this</span><span class=rvts15>.</span><span class=rvts22>obj </span><span class=rvts15>= obj;</span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts14>//</span><span class=rvts21>&#24403;&#25105;&#20204;&#36890;&#36807;&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;&#65292;&#35843;&#29992;&#26041;&#27861;</span><span class=rvts14>a</span><span class=rvts21>&#26102;&#65292;&#23601;&#20250;&#33258;&#21160;&#30340;&#35843;&#29992;&#22914;&#19979;&#30340;&#26041;&#27861;&#65306;</span><span class=rvts14>invoke()</span><br><span class=rvts14> &nbsp; &nbsp;//</span><span class=rvts21>&#23558;&#34987;&#20195;&#29702;&#31867;&#35201;&#25191;&#34892;&#30340;&#26041;&#27861;</span><span class=rvts14>a</span><span class=rvts21>&#30340;&#21151;&#33021;&#23601;&#22768;&#26126;&#22312;</span><span class=rvts14>invoke()</span><span class=rvts21>&#20013;</span><br><span class=rvts21> &nbsp; &nbsp;</span><span class=rvts23>@Override</span><br><span class=rvts23> &nbsp; &nbsp;</span><span class=rvts17>public </span><span class=rvts15>Object invoke(Object proxy, Method method, Object[] args) </span><span class=rvts17>throws </span><span class=rvts15>Throwable {</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;HumanUtil util = </span><span class=rvts17>new </span><span class=rvts15>HumanUtil();</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;util.method1();</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>//method:</span><span class=rvts21>&#21363;&#20026;&#20195;&#29702;&#31867;&#23545;&#35937;&#35843;&#29992;&#30340;&#26041;&#27861;&#65292;&#27492;&#26041;&#27861;&#20063;&#23601;&#20316;&#20026;&#20102;&#34987;&#20195;&#29702;&#31867;&#23545;&#35937;&#35201;&#35843;&#29992;&#30340;&#26041;&#27861;</span><br><span class=rvts21> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>//obj:</span><span class=rvts21>&#34987;&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts21> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>Object returnValue = method.invoke(</span><span class=rvts22>obj</span><span class=rvts15>,args);</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;util.method2();</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>//</span><span class=rvts21>&#19978;&#36848;&#26041;&#27861;&#30340;&#36820;&#22238;&#20540;&#23601;&#20316;&#20026;&#24403;&#21069;&#31867;&#20013;&#30340;</span><span class=rvts14>invoke()</span><span class=rvts21>&#30340;&#36820;&#22238;&#20540;&#12290;</span><br><span class=rvts21> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts17>return </span><span class=rvts15>returnValue;</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15>}</span><br><span class=rvts15></span><br><span class=rvts17>public class </span><span class=rvts15>ProxyTest {</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;</span><span class=rvts17>public static void </span><span class=rvts15>main(String[] args) {</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;SuperMan superMan = </span><span class=rvts17>new </span><span class=rvts15>SuperMan();</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>//proxyInstance:</span><span class=rvts21>&#20195;&#29702;&#31867;&#30340;&#23545;&#35937;</span><br><span class=rvts21> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>Human proxyInstance = (Human) ProxyFactory.</span><span class=rvts16>getProxyInstance</span><span class=rvts15>(superMan);</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts14>//</span><span class=rvts21>&#24403;&#36890;&#36807;&#20195;&#29702;&#31867;&#23545;&#35937;&#35843;&#29992;&#26041;&#27861;&#26102;&#65292;&#20250;&#33258;&#21160;&#30340;&#35843;&#29992;&#34987;&#20195;&#29702;&#31867;&#20013;&#21516;&#21517;&#30340;&#26041;&#27861;</span><br><span class=rvts21> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts15>String belief = proxyInstance.getBelief();</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts19>out</span><span class=rvts15>.println(belief);</span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;proxyInstance.eat(</span><span class=rvts18>"</span><span class=rvts20>&#22235;&#24029;&#40635;&#36771;&#28907;</span><span class=rvts18>"</span><span class=rvts15>);</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;System.</span><span class=rvts19>out</span><span class=rvts15>.println(</span><span class=rvts18>"*****************************"</span><span class=rvts15>);</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;NikeClothFactory nikeClothFactory = </span><span class=rvts17>new </span><span class=rvts15>NikeClothFactory();</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;ClothFactory proxyClothFactory = (ClothFactory) ProxyFactory.</span><span class=rvts16>getProxyInstance</span><span class=rvts15>(nikeClothFactory);</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;proxyClothFactory.produceCloth();</span><br><span class=rvts15></span><br><span class=rvts15> &nbsp; &nbsp;}</span><br><span class=rvts15>}</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts3>&#20307;&#20250;&#65306;&#21453;&#23556;&#30340;&#21160;&#24577;&#24615;&#12290;</span></p>
+</body></html>

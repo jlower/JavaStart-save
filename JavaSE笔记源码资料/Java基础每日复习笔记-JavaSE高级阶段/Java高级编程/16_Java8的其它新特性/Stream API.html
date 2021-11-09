@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Stream API.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: 'ËÎÌו';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 14pt;
+ font-family: '??';
+ font-style: italic;
+ color: #1115ff;
+}
+span.rvts4
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #1115ff;
+}
+span.rvts5
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts6
+{
+ font-size: 15pt;
+ font-family: '??';
+ font-style: italic;
+ color: #008017;
+}
+span.rvts7
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #808000;
+}
+span.rvts8
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts9
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #000000;
+}
+span.rvts10
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #0000ff;
+}
+span.rvts11
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #008000;
+}
+span.rvts12
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #660e7a;
+}
+span.rvts13
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+.rvps3
+{
+ background: #ffffff;
+}
+.rvps4
+{
+ text-align: center;
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 0px; list-style-position: outside; list-style-type: disc;}
+--></style>
+</head>
+<body>
+<p class=rvps4><span class=rvts13>Stream API</span></p>
+<p class=rvps2><span class=rvts13><br></span></p>
+<p class=rvps2><span class=rvts2>1.Stream API&#30340;&#29702;&#35299;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>1.1 Stream&#20851;&#27880;&#30340;&#26159;&#23545;&#25968;&#25454;&#30340;&#36816;&#31639;&#65292;&#19982;CPU&#25171;&#20132;&#36947;</span><br><span class=rvts5>&#38598;&#21512;&#20851;&#27880;&#30340;&#26159;&#25968;&#25454;&#30340;&#23384;&#20648;&#65292;&#19982;&#20869;&#23384;&#25171;&#20132;&#36947;</span></p>
+<p class=rvps3><span class=rvts5><br></span></p>
+<p class=rvps3><span class=rvts5>1.2 java8&#25552;&#20379;&#20102;&#19968;&#22871;api,&#20351;&#29992;&#36825;&#22871;api&#21487;&#20197;&#23545;&#20869;&#23384;&#20013;&#30340;&#25968;&#25454;&#36827;&#34892;&#36807;&#28388;&#12289;&#25490;&#24207;&#12289;&#26144;&#23556;&#12289;&#24402;&#32422;&#31561;&#25805;&#20316;&#12290;&#31867;&#20284;&#20110;sql&#23545;&#25968;&#25454;&#24211;&#20013;&#34920;&#30340;&#30456;&#20851;&#25805;&#20316;&#12290;</span></p>
+<p class=rvps3><span class=rvts6><br></span></p>
+<p class=rvps3><span class=rvts3><br></span></p>
+<p class=rvps2><span class=rvts2>2.&#27880;&#24847;&#28857;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>* &#9312;Stream </span><span class=rvts6>&#33258;&#24049;&#19981;&#20250;&#23384;&#20648;&#20803;&#32032;&#12290;</span><br><span class=rvts5>* &#9313;Stream </span><span class=rvts6>&#19981;&#20250;&#25913;&#21464;&#28304;&#23545;&#35937;&#12290;&#30456;&#21453;&#65292;&#20182;&#20204;&#20250;&#36820;&#22238;&#19968;&#20010;&#25345;&#26377;&#32467;&#26524;&#30340;&#26032;</span><span class=rvts5>Stream</span><span class=rvts6>&#12290;</span><br><span class=rvts5>* &#9314;Stream </span><span class=rvts6>&#25805;&#20316;&#26159;&#24310;&#36831;&#25191;&#34892;&#30340;&#12290;&#36825;&#24847;&#21619;&#30528;&#20182;&#20204;&#20250;&#31561;&#21040;&#38656;&#35201;&#32467;&#26524;&#30340;&#26102;&#20505;&#25165;&#25191;&#34892;&#12290;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>3.Stream&#30340;&#20351;&#29992;&#27969;&#31243;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>* &#9312; Stream</span><span class=rvts6>&#30340;&#23454;&#20363;&#21270;</span><br><span class=rvts5>* &#9313; </span><span class=rvts6>&#19968;&#31995;&#21015;&#30340;&#20013;&#38388;&#25805;&#20316;&#65288;&#36807;&#28388;&#12289;&#26144;&#23556;&#12289;</span><span class=rvts5>...)</span><br><span class=rvts5>* &#9314; </span><span class=rvts6>&#32456;&#27490;&#25805;&#20316;</span></p>
+<p class=rvps3><span class=rvts4><br></span></p>
+<p class=rvps2><span class=rvts2>4.&#20351;&#29992;&#27969;&#31243;&#30340;&#27880;&#24847;&#28857;&#65306;</span></p>
+<p class=rvps3><span class=rvts5>* 4.1 </span><span class=rvts6>&#19968;&#20010;&#20013;&#38388;&#25805;&#20316;&#38142;&#65292;&#23545;&#25968;&#25454;&#28304;&#30340;&#25968;&#25454;&#36827;&#34892;&#22788;&#29702;</span><br><span class=rvts5>* 4.2 </span><span class=rvts6>&#19968;&#26086;&#25191;&#34892;&#32456;&#27490;&#25805;&#20316;&#65292;&#23601;&#25191;&#34892;&#20013;&#38388;&#25805;&#20316;&#38142;&#65292;&#24182;&#20135;&#29983;&#32467;&#26524;&#12290;&#20043;&#21518;&#65292;&#19981;&#20250;&#20877;&#34987;&#20351;&#29992;</span></p>
+<p class=rvps2><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>5.&#27493;&#39588;&#19968;&#65306;Stream&#23454;&#20363;&#21270;</span></p>
+<p class=rvps3><span class=rvts5>//</span><span class=rvts6>&#21019;&#24314;</span><span class=rvts5> Stream</span><span class=rvts6>&#26041;&#24335;&#19968;&#65306;&#36890;&#36807;&#38598;&#21512;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts7>@Test</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts8>public void </span><span class=rvts2>test1(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;List&lt;Employee&gt; employees = EmployeeData.</span><span class=rvts9>getEmployees</span><span class=rvts2>();</span><br><span class=rvts2></span><br><span class=rvts5>// &nbsp; &nbsp; &nbsp; &nbsp;default Stream&lt;E&gt; stream() : </span><span class=rvts6>&#36820;&#22238;&#19968;&#20010;&#39034;&#24207;&#27969;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Stream&lt;Employee&gt; stream = employees.stream();</span><br><span class=rvts2></span><br><span class=rvts5>// &nbsp; &nbsp; &nbsp; &nbsp;default Stream&lt;E&gt; parallelStream() : </span><span class=rvts6>&#36820;&#22238;&#19968;&#20010;&#24182;&#34892;&#27969;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Stream&lt;Employee&gt; parallelStream = employees.parallelStream();</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>//</span><span class=rvts6>&#21019;&#24314;</span><span class=rvts5> Stream</span><span class=rvts6>&#26041;&#24335;&#20108;&#65306;&#36890;&#36807;&#25968;&#32452;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts7>@Test</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts8>public void </span><span class=rvts2>test2(){</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts8>int</span><span class=rvts2>[] arr = </span><span class=rvts8>new int</span><span class=rvts2>[]{</span><span class=rvts10>1</span><span class=rvts2>,</span><span class=rvts10>2</span><span class=rvts2>,</span><span class=rvts10>3</span><span class=rvts2>,</span><span class=rvts10>4</span><span class=rvts2>,</span><span class=rvts10>5</span><span class=rvts2>,</span><span class=rvts10>6</span><span class=rvts2>};</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts5>//</span><span class=rvts6>&#35843;&#29992;</span><span class=rvts5>Arrays</span><span class=rvts6>&#31867;&#30340;</span><span class=rvts5>static &lt;T&gt; Stream&lt;T&gt; stream(T[] array): </span><span class=rvts6>&#36820;&#22238;&#19968;&#20010;&#27969;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>IntStream stream = Arrays.</span><span class=rvts9>stream</span><span class=rvts2>(arr);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Employee e1 = </span><span class=rvts8>new </span><span class=rvts2>Employee(</span><span class=rvts10>1001</span><span class=rvts2>,</span><span class=rvts11>"Tom"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Employee e2 = </span><span class=rvts8>new </span><span class=rvts2>Employee(</span><span class=rvts10>1002</span><span class=rvts2>,</span><span class=rvts11>"Jerry"</span><span class=rvts2>);</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Employee[] arr1 = </span><span class=rvts8>new </span><span class=rvts2>Employee[]{e1,e2};</span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Stream&lt;Employee&gt; stream1 = Arrays.</span><span class=rvts9>stream</span><span class=rvts2>(arr1);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>//</span><span class=rvts6>&#21019;&#24314;</span><span class=rvts5> Stream</span><span class=rvts6>&#26041;&#24335;&#19977;&#65306;&#36890;&#36807;</span><span class=rvts5>Stream</span><span class=rvts6>&#30340;</span><span class=rvts5>of()</span><br><span class=rvts5> &nbsp; &nbsp;</span><span class=rvts7>@Test</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts8>public void </span><span class=rvts2>test3(){</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;Stream&lt;Integer&gt; stream = Stream.</span><span class=rvts9>of</span><span class=rvts2>(</span><span class=rvts10>1</span><span class=rvts2>, </span><span class=rvts10>2</span><span class=rvts2>, </span><span class=rvts10>3</span><span class=rvts2>, </span><span class=rvts10>4</span><span class=rvts2>, </span><span class=rvts10>5</span><span class=rvts2>, </span><span class=rvts10>6</span><span class=rvts2>);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;</span><span class=rvts5>//</span><span class=rvts6>&#21019;&#24314;</span><span class=rvts5> Stream</span><span class=rvts6>&#26041;&#24335;&#22235;&#65306;&#21019;&#24314;&#26080;&#38480;&#27969;</span><br><span class=rvts6> &nbsp; &nbsp;</span><span class=rvts7>@Test</span><br><span class=rvts7> &nbsp; &nbsp;</span><span class=rvts8>public void </span><span class=rvts2>test4(){</span><br><span class=rvts2></span><br><span class=rvts5>// &nbsp; &nbsp; &nbsp;</span><span class=rvts6>&#36845;&#20195;</span><br><span class=rvts5>// &nbsp; &nbsp; &nbsp;public static&lt;T&gt; Stream&lt;T&gt; iterate(final T seed, final UnaryOperator&lt;T&gt; f)</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;//</span><span class=rvts6>&#36941;&#21382;&#21069;</span><span class=rvts5>10</span><span class=rvts6>&#20010;&#20598;&#25968;</span><br><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Stream.</span><span class=rvts9>iterate</span><span class=rvts2>(</span><span class=rvts10>0</span><span class=rvts2>, t -&gt; t + </span><span class=rvts10>2</span><span class=rvts2>).limit(</span><span class=rvts10>10</span><span class=rvts2>).forEach(System.</span><span class=rvts12>out</span><span class=rvts2>::println);</span><br><span class=rvts2></span><br><span class=rvts2></span><br><span class=rvts5>// &nbsp; &nbsp; &nbsp;</span><span class=rvts6>&#29983;&#25104;</span><br><span class=rvts5>// &nbsp; &nbsp; &nbsp;public static&lt;T&gt; Stream&lt;T&gt; generate(Supplier&lt;T&gt; s)</span><br><span class=rvts5> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts2>Stream.</span><span class=rvts9>generate</span><span class=rvts2>(Math::</span><span class=rvts9>random</span><span class=rvts2>).limit(</span><span class=rvts10>10</span><span class=rvts2>).forEach(System.</span><span class=rvts12>out</span><span class=rvts2>::println);</span><br><span class=rvts2></span><br><span class=rvts2> &nbsp; &nbsp;}</span></p>
+<p class=rvps3><span class=rvts2><br></span></p>
+<p class=rvps2><span class=rvts2>6.&#27493;&#39588;&#20108;&#65306;&#20013;&#38388;&#25805;&#20316;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img1.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img2.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img3.jpg"></p>
+<p class=rvps2><span class=rvts2>7.&#27493;&#39588;&#19977;&#65306;&#32456;&#27490;&#25805;&#20316;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img4.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img5.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img6.jpg"></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img7.jpg"></p>
+<p class=rvps2><span class=rvts2>Collector&#38656;&#35201;&#20351;&#29992;Collectors&#25552;&#20379;&#23454;&#20363;&#12290;</span></p>
+<p class=rvps2><img alt="" style="padding : 1px;" src="Stream API.files/img8.jpg"></p>
+</body></html>

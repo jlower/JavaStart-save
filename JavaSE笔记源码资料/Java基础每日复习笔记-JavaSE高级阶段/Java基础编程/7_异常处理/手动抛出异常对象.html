@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>手动抛出异常对象.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 23px 15px 23px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 9pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 15pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts3
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts4
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts5
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #6a3e3e;
+}
+span.rvts7
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #3f7f5f;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #2a00ff;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+}
+span.rvts10
+{
+ font-size: 16pt;
+ font-family: 'Consolas';
+ color: #646464;
+}
+span.rvts11
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ line-height: 1.50;
+ margin: 5px 0px 5px 0px;
+}
+/* ========== Lists ========== */
+.list0 {text-indent: 0px; margin-left: 63px; list-style-position: outside;}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts11>&#25163;&#21160;&#25243;&#20986;&#24322;&#24120;&#23545;&#35937;</span></p>
+<p><span class=rvts11><br></span></p>
+<p><span class=rvts2>1.&#20351;&#29992;&#35828;&#26126;</span></p>
+<p><span class=rvts2>&#22312;&#31243;&#24207;&#25191;&#34892;&#20013;&#65292;&#38500;&#20102;&#33258;&#21160;&#25243;&#20986;&#24322;&#24120;&#23545;&#35937;&#30340;&#24773;&#20917;&#20043;&#22806;&#65292;&#25105;&#20204;&#36824;&#21487;&#20197;&#25163;&#21160;&#30340;throw&#19968;&#20010;&#24322;&#24120;&#31867;&#30340;&#23545;&#35937;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>2.[&#38754;&#35797;&#39064;] </span></p>
+<p><span class=rvts2>throw &#21644; &nbsp;throws&#21306;&#21035;&#65306;</span></p>
+<p><span class=rvts2>throw &#34920;&#31034;&#25243;&#20986;&#19968;&#20010;&#24322;&#24120;&#31867;&#30340;&#23545;&#35937;&#65292;&#29983;&#25104;&#24322;&#24120;&#23545;&#35937;&#30340;&#36807;&#31243;&#12290;&#22768;&#26126;&#22312;&#26041;&#27861;&#20307;&#20869;&#12290;</span></p>
+<p><span class=rvts2>throws &#23646;&#20110;&#24322;&#24120;&#22788;&#29702;&#30340;&#19968;&#31181;&#26041;&#24335;&#65292;&#22768;&#26126;&#22312;&#26041;&#27861;&#30340;&#22768;&#26126;&#22788;&#12290;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2>3.&#20856;&#22411;&#20363;&#39064;</span></p>
+<p><span class=rvts3>class</span><span class=rvts4> Student{</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>private</span><span class=rvts4> </span><span class=rvts3>int</span><span class=rvts4> </span><span class=rvts5>id</span><span class=rvts4>;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>public</span><span class=rvts4> </span><span class=rvts3>void</span><span class=rvts4> regist(</span><span class=rvts3>int</span><span class=rvts4> </span><span class=rvts6>id</span><span class=rvts4>) </span><span class=rvts3>throws</span><span class=rvts4> Exception {</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>if</span><span class=rvts4>(</span><span class=rvts6>id</span><span class=rvts4> &gt; 0){</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>this</span><span class=rvts4>.</span><span class=rvts5>id</span><span class=rvts4> = </span><span class=rvts6>id</span><span class=rvts4>;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span><span class=rvts3>else</span><span class=rvts4>{</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>//&#25163;&#21160;&#25243;&#20986;&#24322;&#24120;&#23545;&#35937;</span></p>
+<p><span class=rvts7>//</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>throw new RuntimeException("&#24744;&#36755;&#20837;&#30340;&#25968;&#25454;&#38750;&#27861;&#65281;");</span></p>
+<p><span class=rvts7>//</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts7>throw new Exception("&#24744;&#36755;&#20837;&#30340;&#25968;&#25454;&#38750;&#27861;&#65281;");</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>throw</span><span class=rvts4> </span><span class=rvts3>new</span><span class=rvts4> MyException(</span><span class=rvts8>"&#19981;&#33021;&#36755;&#20837;&#36127;&#25968;"</span><span class=rvts4>);</span></p>
+<p><span class=rvts4><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span></p>
+<p><span class=rvts9><br></span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10>@Override</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>public</span><span class=rvts4> String toString() {</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts3>return</span><span class=rvts4> </span><span class=rvts8>"Student [id="</span><span class=rvts4> + </span><span class=rvts5>id</span><span class=rvts4> + </span><span class=rvts8>"]"</span><span class=rvts4>;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts4>}</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts4>}</span></p>
+</body></html>
